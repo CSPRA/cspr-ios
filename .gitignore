@@ -1,0 +1,27 @@
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData
+*.xcuserstate
+.DS_Store
+build/
+*.hmap
+*.ipa
+**/.DS_Store
+*.xcbkptlist
+.Trashes
+#### http://stackoverflow.com/questions/49478/git-ignore-file-for-xcode-projects
+# Xcode temporary files that should never be committed
+# 
+# NB: NIB/XIB files still exist even on Storyboard projects, so we want this...
+  
+*~.nib
