@@ -48,3 +48,21 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 6
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 0
 
+// Crashlytics
+#define COCOAPODS_POD_AVAILABLE_Crashlytics
+#define COCOAPODS_VERSION_MAJOR_Crashlytics 3
+#define COCOAPODS_VERSION_MINOR_Crashlytics 3
+#define COCOAPODS_VERSION_PATCH_Crashlytics 1
+
+// Fabric
+#define COCOAPODS_POD_AVAILABLE_Fabric
+#define COCOAPODS_VERSION_MAJOR_Fabric 1
+#define COCOAPODS_VERSION_MINOR_Fabric 5
+#define COCOAPODS_VERSION_PATCH_Fabric 1
+
+// Fabric/Base
+#define COCOAPODS_POD_AVAILABLE_Fabric_Base
+#define COCOAPODS_VERSION_MAJOR_Fabric_Base 1
+#define COCOAPODS_VERSION_MINOR_Fabric_Base 5
+#define COCOAPODS_VERSION_PATCH_Fabric_Base 1
+
