@@ -4,3 +4,5 @@ platform :ios, "8.0"
 pod "AFNetworking", "~> 2.0"
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'Digits'
+pod 'TwitterCore'

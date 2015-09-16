@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
+#import <DigitsKit/DigitsKit.h>
 #import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
@@ -18,7 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [Fabric with:@[[Crashlytics class]]];
+    [Fabric with:@[[Crashlytics class], [Digits class]]];
     return YES;
 }
 

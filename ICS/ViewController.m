@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <DigitsKit/DigitsKit.h>
 
 @interface ViewController ()
 
@@ -16,12 +17,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self addDigitsView];
+}
+
+-(void)addDigitsView{
+    DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
+        if(!error) {
+            NSString * alertMessage = [NSString stringWithFormat:@"%@ verified successfully", session.phoneNumber];
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:alertMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            authenticateButton.hidden = YES;
+        }
+    }];
+    authenticateButton.center = self.view.center;
+    [self.view addSubview:authenticateButton];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

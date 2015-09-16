@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_Crashlytics 3
 #define COCOAPODS_VERSION_PATCH_Crashlytics 1
 
+// Digits
+#define COCOAPODS_POD_AVAILABLE_Digits
+#define COCOAPODS_VERSION_MAJOR_Digits 1
+#define COCOAPODS_VERSION_MINOR_Digits 10
+#define COCOAPODS_VERSION_PATCH_Digits 1
+
 // Fabric
 #define COCOAPODS_POD_AVAILABLE_Fabric
 #define COCOAPODS_VERSION_MAJOR_Fabric 1
@@ -65,4 +71,10 @@
 #define COCOAPODS_VERSION_MAJOR_Fabric_Base 1
 #define COCOAPODS_VERSION_MINOR_Fabric_Base 5
 #define COCOAPODS_VERSION_PATCH_Fabric_Base 1
+
+// TwitterCore
+#define COCOAPODS_POD_AVAILABLE_TwitterCore
+#define COCOAPODS_VERSION_MAJOR_TwitterCore 1
+#define COCOAPODS_VERSION_MINOR_TwitterCore 10
+#define COCOAPODS_VERSION_PATCH_TwitterCore 1
 
