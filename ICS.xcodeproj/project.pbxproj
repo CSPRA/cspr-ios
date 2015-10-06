@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E10E1C51BC448C4008B9296 /* NSString+MD5.m */; settings = {ASSET_TAGS = (); }; };
+		3E43FA491BC40F6B0021AE81 /* ICSHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA461BC40F6B0021AE81 /* ICSHTTPClient.m */; settings = {ASSET_TAGS = (); }; };
+		3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA481BC40F6B0021AE81 /* ICSStyleGuide.m */; settings = {ASSET_TAGS = (); }; };
+		3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA4C1BC410340021AE81 /* ICSDataManager.m */; settings = {ASSET_TAGS = (); }; };
+		3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA4F1BC410630021AE81 /* ICSUtilities.m */; settings = {ASSET_TAGS = (); }; };
+		3E43FA551BC4108E0021AE81 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA541BC4108E0021AE81 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3E43FA591BC413880021AE81 /* PhoneVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA581BC413880021AE81 /* PhoneVerificationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3E43FA5C1BC413AD0021AE81 /* VolunteerSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA5B1BC413AD0021AE81 /* VolunteerSignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3EACD9CF1BA9D053003E4540 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9CE1BA9D053003E4540 /* main.m */; };
 		3EACD9D21BA9D053003E4540 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9D11BA9D053003E4540 /* AppDelegate.m */; };
-		3EACD9D51BA9D053003E4540 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9D41BA9D053003E4540 /* ViewController.m */; };
 		3EACD9D81BA9D053003E4540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9D61BA9D053003E4540 /* Main.storyboard */; };
 		3EACD9DA1BA9D053003E4540 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9D91BA9D053003E4540 /* Images.xcassets */; };
 		3EACD9DD1BA9D053003E4540 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9DB1BA9D053003E4540 /* LaunchScreen.xib */; };
@@ -29,13 +36,27 @@
 
 /* Begin PBXFileReference section */
 		3C4ED20F431993D569F26029 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3E10E1C41BC448C4008B9296 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		3E10E1C51BC448C4008B9296 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		3E43FA451BC40F6B0021AE81 /* ICSHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSHTTPClient.h; sourceTree = "<group>"; };
+		3E43FA461BC40F6B0021AE81 /* ICSHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSHTTPClient.m; sourceTree = "<group>"; };
+		3E43FA471BC40F6B0021AE81 /* ICSStyleGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSStyleGuide.h; sourceTree = "<group>"; };
+		3E43FA481BC40F6B0021AE81 /* ICSStyleGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSStyleGuide.m; sourceTree = "<group>"; };
+		3E43FA4B1BC410340021AE81 /* ICSDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSDataManager.h; sourceTree = "<group>"; };
+		3E43FA4C1BC410340021AE81 /* ICSDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSDataManager.m; sourceTree = "<group>"; };
+		3E43FA4E1BC410630021AE81 /* ICSUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSUtilities.h; sourceTree = "<group>"; };
+		3E43FA4F1BC410630021AE81 /* ICSUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSUtilities.m; sourceTree = "<group>"; };
+		3E43FA531BC4108E0021AE81 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		3E43FA541BC4108E0021AE81 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		3E43FA571BC413880021AE81 /* PhoneVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneVerificationViewController.h; sourceTree = "<group>"; };
+		3E43FA581BC413880021AE81 /* PhoneVerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneVerificationViewController.m; sourceTree = "<group>"; };
+		3E43FA5A1BC413AD0021AE81 /* VolunteerSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolunteerSignUpViewController.h; sourceTree = "<group>"; };
+		3E43FA5B1BC413AD0021AE81 /* VolunteerSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolunteerSignUpViewController.m; sourceTree = "<group>"; };
 		3EACD9C91BA9D053003E4540 /* ICS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EACD9CD1BA9D053003E4540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EACD9CE1BA9D053003E4540 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3EACD9D01BA9D053003E4540 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3EACD9D11BA9D053003E4540 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3EACD9D31BA9D053003E4540 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3EACD9D41BA9D053003E4540 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3EACD9D71BA9D053003E4540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EACD9D91BA9D053003E4540 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3EACD9DC1BA9D053003E4540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -65,6 +86,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E10E1C31BC448C4008B9296 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3E10E1C41BC448C4008B9296 /* NSString+MD5.h */,
+				3E10E1C51BC448C4008B9296 /* NSString+MD5.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		3E43FA391BC40EA70021AE81 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E43FA561BC413880021AE81 /* Onboarding */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3E43FA441BC40F6B0021AE81 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3E10E1C31BC448C4008B9296 /* Categories */,
+				3E43FA451BC40F6B0021AE81 /* ICSHTTPClient.h */,
+				3E43FA461BC40F6B0021AE81 /* ICSHTTPClient.m */,
+				3E43FA4E1BC410630021AE81 /* ICSUtilities.h */,
+				3E43FA4F1BC410630021AE81 /* ICSUtilities.m */,
+				3E43FA471BC40F6B0021AE81 /* ICSStyleGuide.h */,
+				3E43FA481BC40F6B0021AE81 /* ICSStyleGuide.m */,
+				3E43FA4B1BC410340021AE81 /* ICSDataManager.h */,
+				3E43FA4C1BC410340021AE81 /* ICSDataManager.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3E43FA511BC4108E0021AE81 /* ETs */ = {
+			isa = PBXGroup;
+			children = (
+				3E43FA521BC4108E0021AE81 /* Reachability */,
+			);
+			path = ETs;
+			sourceTree = "<group>";
+		};
+		3E43FA521BC4108E0021AE81 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				3E43FA531BC4108E0021AE81 /* Reachability.h */,
+				3E43FA541BC4108E0021AE81 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		3E43FA561BC413880021AE81 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3E43FA571BC413880021AE81 /* PhoneVerificationViewController.h */,
+				3E43FA581BC413880021AE81 /* PhoneVerificationViewController.m */,
+				3E43FA5A1BC413AD0021AE81 /* VolunteerSignUpViewController.h */,
+				3E43FA5B1BC413AD0021AE81 /* VolunteerSignUpViewController.m */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		3EACD9C01BA9D053003E4540 = {
 			isa = PBXGroup;
 			children = (
@@ -90,8 +172,9 @@
 			children = (
 				3EACD9D01BA9D053003E4540 /* AppDelegate.h */,
 				3EACD9D11BA9D053003E4540 /* AppDelegate.m */,
-				3EACD9D31BA9D053003E4540 /* ViewController.h */,
-				3EACD9D41BA9D053003E4540 /* ViewController.m */,
+				3E43FA511BC4108E0021AE81 /* ETs */,
+				3E43FA441BC40F6B0021AE81 /* Utilities */,
+				3E43FA391BC40EA70021AE81 /* Controllers */,
 				3EACD9D61BA9D053003E4540 /* Main.storyboard */,
 				3EACD9D91BA9D053003E4540 /* Images.xcassets */,
 				3EACD9DB1BA9D053003E4540 /* LaunchScreen.xib */,
@@ -190,7 +273,7 @@
 		3EACD9C11BA9D053003E4540 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Meraki;
 				TargetAttributes = {
 					3EACD9C81BA9D053003E4540 = {
@@ -292,8 +375,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EACD9D51BA9D053003E4540 /* ViewController.m in Sources */,
+				3E43FA491BC40F6B0021AE81 /* ICSHTTPClient.m in Sources */,
+				3E43FA591BC413880021AE81 /* PhoneVerificationViewController.m in Sources */,
+				3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */,
+				3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */,
+				3E43FA551BC4108E0021AE81 /* Reachability.m in Sources */,
+				3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */,
 				3EACD9D21BA9D053003E4540 /* AppDelegate.m in Sources */,
+				3E43FA5C1BC413AD0021AE81 /* VolunteerSignUpViewController.m in Sources */,
+				3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */,
 				3EACD9CF1BA9D053003E4540 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +447,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -423,6 +514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ICS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GHCI-CSPR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -434,6 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ICS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GHCI-CSPR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -452,6 +545,7 @@
 				);
 				INFOPLIST_FILE = ICSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GHCI-CSPR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ICS.app/ICS";
 			};
@@ -467,6 +561,7 @@
 				);
 				INFOPLIST_FILE = ICSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GHCI-CSPR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ICS.app/ICS";
 			};
