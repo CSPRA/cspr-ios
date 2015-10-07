@@ -22,6 +22,9 @@
 		3EACD9DD1BA9D053003E4540 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9DB1BA9D053003E4540 /* LaunchScreen.xib */; };
 		3EACD9E91BA9D053003E4540 /* ICSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9E81BA9D053003E4540 /* ICSTests.m */; };
 		DDE48E7F0DAE62D7C1126C6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994084B95641F268B490CD7C /* libPods.a */; };
+		FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB5F1BC526C100421EAA /* PhotoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		FA02CB681BC52EBF00421EAA /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB671BC52EBF00421EAA /* Patient.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,12 @@
 		3EACD9E81BA9D053003E4540 /* ICSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICSTests.m; sourceTree = "<group>"; };
 		793A7E32DFA657975E9804EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		994084B95641F268B490CD7C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA02CB5E1BC526C100421EAA /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		FA02CB5F1BC526C100421EAA /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoViewController.m; path = ICS/Controllers/PhotoViewController.m; sourceTree = SOURCE_ROOT; };
+		FA02CB621BC52B6500421EAA /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoCollectionViewCell.h; path = Cells/PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoCollectionViewCell.m; path = Cells/PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		FA02CB661BC52EBF00421EAA /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = Model/Patient.h; sourceTree = "<group>"; };
+		FA02CB671BC52EBF00421EAA /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Patient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				3E43FA561BC413880021AE81 /* Onboarding */,
+				FA02CB5E1BC526C100421EAA /* PhotoViewController.h */,
+				FA02CB5F1BC526C100421EAA /* PhotoViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,8 +181,10 @@
 		3EACD9CB1BA9D053003E4540 /* ICS */ = {
 			isa = PBXGroup;
 			children = (
+				FA02CB651BC52E9000421EAA /* Model */,
 				3EACD9D01BA9D053003E4540 /* AppDelegate.h */,
 				3EACD9D11BA9D053003E4540 /* AppDelegate.m */,
+				FA02CB611BC52B4100421EAA /* Cells */,
 				3E43FA511BC4108E0021AE81 /* ETs */,
 				3E43FA441BC40F6B0021AE81 /* Utilities */,
 				3E43FA391BC40EA70021AE81 /* Controllers */,
@@ -224,6 +237,24 @@
 				994084B95641F268B490CD7C /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA02CB611BC52B4100421EAA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA02CB621BC52B6500421EAA /* PhotoCollectionViewCell.h */,
+				FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		FA02CB651BC52E9000421EAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA02CB661BC52EBF00421EAA /* Patient.h */,
+				FA02CB671BC52EBF00421EAA /* Patient.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E43FA491BC40F6B0021AE81 /* ICSHTTPClient.m in Sources */,
+				FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */,
 				3E43FA591BC413880021AE81 /* PhoneVerificationViewController.m in Sources */,
 				3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */,
 				3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */,
@@ -383,7 +415,9 @@
 				3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */,
 				3EACD9D21BA9D053003E4540 /* AppDelegate.m in Sources */,
 				3E43FA5C1BC413AD0021AE81 /* VolunteerSignUpViewController.m in Sources */,
+				FA02CB681BC52EBF00421EAA /* Patient.m in Sources */,
 				3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */,
+				FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */,
 				3EACD9CF1BA9D053003E4540 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
