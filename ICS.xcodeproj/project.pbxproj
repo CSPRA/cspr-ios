@@ -25,6 +25,7 @@
 		FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB5F1BC526C100421EAA /* PhotoViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		FA02CB681BC52EBF00421EAA /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB671BC52EBF00421EAA /* Patient.m */; settings = {ASSET_TAGS = (); }; };
+		FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE6B61BC54123008729AE /* SharedModel.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoCollectionViewCell.m; path = Cells/PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		FA02CB661BC52EBF00421EAA /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = Model/Patient.h; sourceTree = "<group>"; };
 		FA02CB671BC52EBF00421EAA /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Patient.m; sourceTree = "<group>"; };
+		FA0FE6B51BC54123008729AE /* SharedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedModel.h; sourceTree = "<group>"; };
+		FA0FE6B61BC54123008729AE /* SharedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +256,8 @@
 			children = (
 				FA02CB661BC52EBF00421EAA /* Patient.h */,
 				FA02CB671BC52EBF00421EAA /* Patient.m */,
+				FA0FE6B51BC54123008729AE /* SharedModel.h */,
+				FA0FE6B61BC54123008729AE /* SharedModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 			files = (
 				3E43FA491BC40F6B0021AE81 /* ICSHTTPClient.m in Sources */,
 				FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */,
+				FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */,
 				3E43FA591BC413880021AE81 /* PhoneVerificationViewController.m in Sources */,
 				3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */,
 				3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */,
