@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E10E1C51BC448C4008B9296 /* NSString+MD5.m */; settings = {ASSET_TAGS = (); }; };
+		3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E10E1C51BC448C4008B9296 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3E43FA491BC40F6B0021AE81 /* ICSHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA461BC40F6B0021AE81 /* ICSHTTPClient.m */; settings = {ASSET_TAGS = (); }; };
 		3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA481BC40F6B0021AE81 /* ICSStyleGuide.m */; settings = {ASSET_TAGS = (); }; };
 		3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA4C1BC410340021AE81 /* ICSDataManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -18,7 +18,6 @@
 		3EACD9CF1BA9D053003E4540 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9CE1BA9D053003E4540 /* main.m */; };
 		3EACD9D21BA9D053003E4540 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9D11BA9D053003E4540 /* AppDelegate.m */; };
 		3EACD9D81BA9D053003E4540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9D61BA9D053003E4540 /* Main.storyboard */; };
-		3EACD9DA1BA9D053003E4540 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9D91BA9D053003E4540 /* Images.xcassets */; };
 		3EACD9DD1BA9D053003E4540 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9DB1BA9D053003E4540 /* LaunchScreen.xib */; };
 		3EACD9E91BA9D053003E4540 /* ICSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9E81BA9D053003E4540 /* ICSTests.m */; };
 		DDE48E7F0DAE62D7C1126C6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994084B95641F268B490CD7C /* libPods.a */; };
@@ -26,6 +25,9 @@
 		FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		FA02CB681BC52EBF00421EAA /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB671BC52EBF00421EAA /* Patient.m */; settings = {ASSET_TAGS = (); }; };
 		FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE6B61BC54123008729AE /* SharedModel.m */; settings = {ASSET_TAGS = (); }; };
+		FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */; settings = {ASSET_TAGS = (); }; };
+		FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEB61BC681A30053E659 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		FAFAAEBD1BC683210053E659 /* FullImageContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEBC1BC683210053E659 /* FullImageContainerView.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +64,6 @@
 		3EACD9D01BA9D053003E4540 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3EACD9D11BA9D053003E4540 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3EACD9D71BA9D053003E4540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3EACD9D91BA9D053003E4540 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3EACD9DC1BA9D053003E4540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3EACD9E21BA9D053003E4540 /* ICSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EACD9E71BA9D053003E4540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +78,12 @@
 		FA02CB671BC52EBF00421EAA /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Patient.m; sourceTree = "<group>"; };
 		FA0FE6B51BC54123008729AE /* SharedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedModel.h; sourceTree = "<group>"; };
 		FA0FE6B61BC54123008729AE /* SharedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedModel.m; sourceTree = "<group>"; };
+		FAA103F71BC64AEA00C6CEFC /* FullImageContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullImageContainerView.h; path = Views/FullImageContainerView.h; sourceTree = "<group>"; };
+		FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullImageContainerView.m; path = Views/FullImageContainerView.m; sourceTree = "<group>"; };
+		FAFAAEB01BC67FC90053E659 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FAFAAEB51BC681A30053E659 /* ICS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ICS-Prefix.pch"; path = "ICS/Resources/ICS-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		FAFAAEB61BC681A30053E659 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
+		FAFAAEBC1BC683210053E659 /* FullImageContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FullImageContainerView.xib; path = Views/FullImageContainerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +171,7 @@
 		3EACD9C01BA9D053003E4540 = {
 			isa = PBXGroup;
 			children = (
+				FAFAAEB01BC67FC90053E659 /* Constants.h */,
 				3EACD9CB1BA9D053003E4540 /* ICS */,
 				3EACD9E51BA9D053003E4540 /* ICSTests */,
 				3EACD9CA1BA9D053003E4540 /* Products */,
@@ -184,6 +192,7 @@
 		3EACD9CB1BA9D053003E4540 /* ICS */ = {
 			isa = PBXGroup;
 			children = (
+				FAA103F61BC64AB800C6CEFC /* Views */,
 				FA02CB651BC52E9000421EAA /* Model */,
 				3EACD9D01BA9D053003E4540 /* AppDelegate.h */,
 				3EACD9D11BA9D053003E4540 /* AppDelegate.m */,
@@ -191,9 +200,7 @@
 				3E43FA511BC4108E0021AE81 /* ETs */,
 				3E43FA441BC40F6B0021AE81 /* Utilities */,
 				3E43FA391BC40EA70021AE81 /* Controllers */,
-				3EACD9D61BA9D053003E4540 /* Main.storyboard */,
-				3EACD9D91BA9D053003E4540 /* Images.xcassets */,
-				3EACD9DB1BA9D053003E4540 /* LaunchScreen.xib */,
+				FAFAAEB31BC680FF0053E659 /* Resources */,
 				3EACD9CC1BA9D053003E4540 /* Supporting Files */,
 			);
 			path = ICS;
@@ -260,6 +267,27 @@
 				FA0FE6B61BC54123008729AE /* SharedModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		FAA103F61BC64AB800C6CEFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAFAAEBC1BC683210053E659 /* FullImageContainerView.xib */,
+				FAA103F71BC64AEA00C6CEFC /* FullImageContainerView.h */,
+				FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FAFAAEB31BC680FF0053E659 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAFAAEB51BC681A30053E659 /* ICS-Prefix.pch */,
+				FAFAAEB61BC681A30053E659 /* Images.xcassets */,
+				3EACD9D61BA9D053003E4540 /* Main.storyboard */,
+				3EACD9DB1BA9D053003E4540 /* LaunchScreen.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,8 +374,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EACD9D81BA9D053003E4540 /* Main.storyboard in Resources */,
+				FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */,
 				3EACD9DD1BA9D053003E4540 /* LaunchScreen.xib in Resources */,
-				3EACD9DA1BA9D053003E4540 /* Images.xcassets in Resources */,
+				FAFAAEBD1BC683210053E659 /* FullImageContainerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +401,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" eef6f009745543260c5b4fce194761f38d3ded72 ecbd90bfd5231b13f708d423735a7d4141000b4a3d33a182e215dfa446e67a42";
+			shellScript = "";
 		};
 		866239C001D04762F5F817A0 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -416,6 +445,7 @@
 				FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */,
 				3E43FA591BC413880021AE81 /* PhoneVerificationViewController.m in Sources */,
 				3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */,
+				FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */,
 				3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */,
 				3E43FA551BC4108E0021AE81 /* Reachability.m in Sources */,
 				3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */,
@@ -486,12 +516,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "ICS/Resources/ICS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -503,7 +535,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -530,17 +562,19 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "ICS/Resources/ICS-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

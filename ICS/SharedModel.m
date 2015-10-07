@@ -20,7 +20,6 @@
 }
 
 
-
 - (id)init {
   self = [super init];
   if(self) {
@@ -29,19 +28,14 @@
   return self;
 }
 
-- (NSString*)userDataStorageDirectory {
-  NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                       NSUserDomainMask, YES);
-  NSString *documentPath = [path firstObject];
-  NSString* destinationPath = [documentPath stringByAppendingPathComponent:@"/patientsImages"];
-  
-  return destinationPath;
-}
-
 
 - (NSString*)filePathWithPatientID :(NSString*)patientId {
-  NSString *directoryPath = [self userDataStorageDirectory];
-  return [directoryPath stringByAppendingPathComponent:patientId];
+  NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                      NSUserDomainMask,
+                                                      YES);
+  NSString *documentPath = [path firstObject];
+  NSString *destinationPath = [documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"patientsImages-%@",patientId]];
+  return [destinationPath stringByAppendingPathExtension:@"plist"];
 }
 
 @end

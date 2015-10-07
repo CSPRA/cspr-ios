@@ -1,0 +1,25 @@
+//
+//  ICS-Prefix.pch
+//  ICS
+//
+//  Created by aam-fueled on 08/10/15.
+//  Copyright © 2015 Meraki. All rights reserved.
+//
+
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#ifndef ICS_Prefix_h
+#define ICS_Prefix_h
+
+
+#endif /* ICS_Prefix_h */
+
+#ifdef __OBJC__
+
+#import "Constants.h"
+
+#endif
