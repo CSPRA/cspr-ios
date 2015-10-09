@@ -27,6 +27,7 @@ PODS:
   - Fabric/Base (1.5.1)
   - IQKeyboardManager (3.3.2)
   - TwitterCore (1.10.1)
+  - XLForm (3.0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
@@ -35,6 +36,16 @@ DEPENDENCIES:
   - Fabric
   - IQKeyboardManager
   - TwitterCore
+  - XLForm (from `https://github.com/xmartlabs/XLForm.git`)
+
+EXTERNAL SOURCES:
+  XLForm:
+    :git: https://github.com/xmartlabs/XLForm.git
+
+CHECKOUT OPTIONS:
+  XLForm:
+    :commit: a4fc47d5b0a7fe32dfd3e8df524b59d2bfbc5f59
+    :git: https://github.com/xmartlabs/XLForm.git
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
@@ -43,5 +54,6 @@ SPEC CHECKSUMS:
   Fabric: 03c3b3fe77e11a2bc31421b989a9c7adaa4779a5
   IQKeyboardManager: d863eb0bca424d1f6dad6bdd1f856af52664add8
   TwitterCore: 632e809318be9ea2b6f38cc21611033367681adc
+  XLForm: 29b76283849dc70e987eaa5812783322465c2b98
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.35.0

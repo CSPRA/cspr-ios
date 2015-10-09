@@ -7,3 +7,5 @@ pod 'Crashlytics'
 pod 'Digits'
 pod 'TwitterCore'
 pod 'IQKeyboardManager'
+pod 'XLForm', :git => 'https://github.com/xmartlabs/XLForm.git'
+

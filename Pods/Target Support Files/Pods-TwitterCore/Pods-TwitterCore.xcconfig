@@ -1,0 +1,2 @@
+PODS_TWITTERCORE_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/TwitterCore"
+PODS_TWITTERCORE_OTHER_LDFLAGS = -framework "Accounts" -framework "CoreData" -framework "CoreGraphics" -framework "Foundation" -framework "Security" -framework "Social" -framework "TwitterCore" -framework "UIKit"

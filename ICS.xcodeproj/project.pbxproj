@@ -26,6 +26,7 @@
 		FA02CB681BC52EBF00421EAA /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB671BC52EBF00421EAA /* Patient.m */; settings = {ASSET_TAGS = (); }; };
 		FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE6B61BC54123008729AE /* SharedModel.m */; settings = {ASSET_TAGS = (); }; };
 		FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */; settings = {ASSET_TAGS = (); }; };
+		FAA5132E1BC7A8E2009A6D2E /* PatientInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEB61BC681A30053E659 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		FAFAAEBD1BC683210053E659 /* FullImageContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEBC1BC683210053E659 /* FullImageContainerView.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -80,6 +81,8 @@
 		FA0FE6B61BC54123008729AE /* SharedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedModel.m; sourceTree = "<group>"; };
 		FAA103F71BC64AEA00C6CEFC /* FullImageContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullImageContainerView.h; path = Views/FullImageContainerView.h; sourceTree = "<group>"; };
 		FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullImageContainerView.m; path = Views/FullImageContainerView.m; sourceTree = "<group>"; };
+		FAA5132C1BC7A8E2009A6D2E /* PatientInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientInformationViewController.h; sourceTree = "<group>"; };
+		FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientInformationViewController.m; sourceTree = "<group>"; };
 		FAFAAEB01BC67FC90053E659 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FAFAAEB51BC681A30053E659 /* ICS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ICS-Prefix.pch"; path = "ICS/Resources/ICS-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FAFAAEB61BC681A30053E659 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				3E43FA561BC413880021AE81 /* Onboarding */,
 				FA02CB5E1BC526C100421EAA /* PhotoViewController.h */,
 				FA02CB5F1BC526C100421EAA /* PhotoViewController.m */,
+				FAA5132C1BC7A8E2009A6D2E /* PatientInformationViewController.h */,
+				FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 				3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */,
 				3E43FA551BC4108E0021AE81 /* Reachability.m in Sources */,
 				3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */,
+				FAA5132E1BC7A8E2009A6D2E /* PatientInformationViewController.m in Sources */,
 				3EACD9D21BA9D053003E4540 /* AppDelegate.m in Sources */,
 				3E43FA5C1BC413AD0021AE81 /* VolunteerSignUpViewController.m in Sources */,
 				FA02CB681BC52EBF00421EAA /* Patient.m in Sources */,
