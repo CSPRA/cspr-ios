@@ -27,6 +27,11 @@
 		FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE6B61BC54123008729AE /* SharedModel.m */; settings = {ASSET_TAGS = (); }; };
 		FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */; settings = {ASSET_TAGS = (); }; };
 		FAA5132E1BC7A8E2009A6D2E /* PatientInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FADA7C591BCBA8E300CACD1D /* CustomFormButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADA7C581BCBA8E300CACD1D /* CustomFormButtonCell.xib */; settings = {ASSET_TAGS = (); }; };
+		FADA7C5C1BCBA90500CACD1D /* CustomFormButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA7C5B1BCBA90500CACD1D /* CustomFormButtonCell.m */; settings = {ASSET_TAGS = (); }; };
+		FADA7C5F1BCBD42200CACD1D /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA7C5E1BCBD42200CACD1D /* RatingView.m */; settings = {ASSET_TAGS = (); }; };
+		FADA7C621BCBD5CC00CACD1D /* RatingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA7C611BCBD5CC00CACD1D /* RatingViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		FADA7C641BCBD5DD00CACD1D /* RatingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADA7C631BCBD5DD00CACD1D /* RatingViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEB61BC681A30053E659 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		FAFAAEBD1BC683210053E659 /* FullImageContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEBC1BC683210053E659 /* FullImageContainerView.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -83,6 +88,14 @@
 		FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullImageContainerView.m; path = Views/FullImageContainerView.m; sourceTree = "<group>"; };
 		FAA5132C1BC7A8E2009A6D2E /* PatientInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientInformationViewController.h; sourceTree = "<group>"; };
 		FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientInformationViewController.m; sourceTree = "<group>"; };
+		FADA7C581BCBA8E300CACD1D /* CustomFormButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomFormButtonCell.xib; sourceTree = "<group>"; };
+		FADA7C5A1BCBA90500CACD1D /* CustomFormButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFormButtonCell.h; sourceTree = "<group>"; };
+		FADA7C5B1BCBA90500CACD1D /* CustomFormButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFormButtonCell.m; sourceTree = "<group>"; };
+		FADA7C5D1BCBD42200CACD1D /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
+		FADA7C5E1BCBD42200CACD1D /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
+		FADA7C601BCBD5CC00CACD1D /* RatingViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewCell.h; sourceTree = "<group>"; };
+		FADA7C611BCBD5CC00CACD1D /* RatingViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewCell.m; sourceTree = "<group>"; };
+		FADA7C631BCBD5DD00CACD1D /* RatingViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewCell.xib; sourceTree = "<group>"; };
 		FAFAAEB01BC67FC90053E659 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FAFAAEB51BC681A30053E659 /* ICS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ICS-Prefix.pch"; path = "ICS/Resources/ICS-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FAFAAEB61BC681A30053E659 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
@@ -259,6 +272,14 @@
 			children = (
 				FA02CB621BC52B6500421EAA /* PhotoCollectionViewCell.h */,
 				FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */,
+				FADA7C581BCBA8E300CACD1D /* CustomFormButtonCell.xib */,
+				FADA7C5A1BCBA90500CACD1D /* CustomFormButtonCell.h */,
+				FADA7C5B1BCBA90500CACD1D /* CustomFormButtonCell.m */,
+				FADA7C5D1BCBD42200CACD1D /* RatingView.h */,
+				FADA7C5E1BCBD42200CACD1D /* RatingView.m */,
+				FADA7C601BCBD5CC00CACD1D /* RatingViewCell.h */,
+				FADA7C611BCBD5CC00CACD1D /* RatingViewCell.m */,
+				FADA7C631BCBD5DD00CACD1D /* RatingViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -378,8 +399,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADA7C591BCBA8E300CACD1D /* CustomFormButtonCell.xib in Resources */,
 				3EACD9D81BA9D053003E4540 /* Main.storyboard in Resources */,
 				FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */,
+				FADA7C641BCBD5DD00CACD1D /* RatingViewCell.xib in Resources */,
 				3EACD9DD1BA9D053003E4540 /* LaunchScreen.xib in Resources */,
 				FAFAAEBD1BC683210053E659 /* FullImageContainerView.xib in Resources */,
 			);
@@ -449,6 +472,7 @@
 				FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */,
 				FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */,
 				3E43FA591BC413880021AE81 /* PhoneVerificationViewController.m in Sources */,
+				FADA7C5C1BCBA90500CACD1D /* CustomFormButtonCell.m in Sources */,
 				3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */,
 				FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */,
 				3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */,
@@ -459,7 +483,9 @@
 				3E43FA5C1BC413AD0021AE81 /* VolunteerSignUpViewController.m in Sources */,
 				FA02CB681BC52EBF00421EAA /* Patient.m in Sources */,
 				3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */,
+				FADA7C5F1BCBD42200CACD1D /* RatingView.m in Sources */,
 				FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */,
+				FADA7C621BCBD5CC00CACD1D /* RatingViewCell.m in Sources */,
 				3EACD9CF1BA9D053003E4540 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

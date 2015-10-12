@@ -8,11 +8,12 @@
 
 #import "PatientInformationViewController.h"
 #import <XLForm/XLForm.h>
+#import "RatingViewCell.h"
 
 NSString *const kFullName = @"Full Name";
 NSString *const kGender = @"Gender";
 NSString *const kDOB = @"Date of birth";
-NSString *const kPhoneNumber = @"PhoneNumber";
+NSString *const kPhoneNumber = @"Phone Number";
 NSString *const kAddPhone = @"Add Phone Number";
 NSString *const kEmail = @"Email";
 NSString *const kAddEmail = @"Add Email";
@@ -20,7 +21,13 @@ NSString *const kAddress = @"Address";
 NSString *const kEatingHabits = @"Eating Habits";
 NSString *const kConsumeCigarettes = @"Consume Cigarettes";
 NSString *const kConsumeAlcohal = @"ConsumeAlcohal";
-NSString *const kNotes = @"notes";
+NSString *const kConsumePanMasala = @"Consume Pan Masala";
+NSString *const kAddOtherAdiction = @"Add Other Adiction";
+NSString *const kMedicalHistory = @"Medical History";
+NSString *const kDoctorBasicInfo = @"Doctor Basic Info";
+NSString *const kAssignDoctor = @"Assign Doctor";
+static NSString * const kCustomRowFirstRatingTag = @"CustomRowFirstRatingTag";
+static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
 
 @interface PatientInformationViewController ()
 @end
@@ -117,32 +124,28 @@ NSString *const kNotes = @"notes";
               section:section];
   
   //phone number fields
-  XLFormSectionDescriptor *phoneSection = [XLFormSectionDescriptor formSectionWithTitle:@""];
-  [form addFormSection:phoneSection];
-  
+ 
   [self addRowWithTag:kPhoneNumber
               rowType:XLFormRowDescriptorTypePhone
                 title:kPhoneNumber
-              section:phoneSection];
+              section:section];
   
   [self addRowWithTag:kAddPhone
               rowType:XLFormRowDescriptorTypeButton
                 title:kAddPhone
-              section:phoneSection];
+              section:section];
   
   //Email fields
-  XLFormSectionDescriptor *emailSection = [XLFormSectionDescriptor formSectionWithTitle:@""];
-  [form addFormSection:emailSection];
-  
+
   [self addRowWithTag:kEmail
               rowType:XLFormRowDescriptorTypeEmail
                 title:kEmail
-              section:emailSection];
+              section:section];
   
   [self addRowWithTag:kAddEmail
               rowType:XLFormRowDescriptorTypeButton
                 title:kAddEmail
-              section:emailSection];
+              section:section];
   
   //address field
   [self addRowWithTag:kAddress
@@ -166,8 +169,33 @@ NSString *const kNotes = @"notes";
                 title:kConsumeAlcohal
               section:section];
   
+ row = [self addRowWithTag:kAssignDoctor
+              rowType:XLFormRowDescriptorTypeButton
+                title:kAssignDoctor
+              section:section];
   
+  row.action.formSelector = @selector(didTappedAssignDoctor:);
+  [section addFormRow:row];
+
+  [section addFormRow:[self addRatingCell]];
   self.form = form;
 }
 
+- (XLFormRowDescriptor*)addRatingCell {
+ 
+    XLFormRowDescriptor * row;
+    
+    // Section Ratings
+  
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"First Rating"];
+    row.value = @(3);
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowSecondRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Second Rating"];
+    row.value = @(1);
+  return row;
+}
+- (void)didTappedAssignDoctor:(XLFormRowDescriptor*)sender {
+  
+}
 @end

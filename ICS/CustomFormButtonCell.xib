@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xXX-j4-r8P" customClass="CustomFormButtonCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xXX-j4-r8P" id="yjp-Fw-35E">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xte-u8-g5X">
+                        <rect key="frame" x="5" y="2" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="9Eg-9W-v7d"/>
+                            <constraint firstAttribute="width" constant="40" id="dfl-2m-lSq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfg-Al-eHW">
+                        <rect key="frame" x="53" y="7" width="259" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="IgN-4h-vz9"/>
+                            <constraint firstAttribute="width" constant="259" id="WUx-bL-Zcr"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xte-u8-g5X" firstAttribute="leading" secondItem="yjp-Fw-35E" secondAttribute="leading" constant="5" id="7dc-8i-Tcb"/>
+                    <constraint firstItem="xte-u8-g5X" firstAttribute="centerY" secondItem="yjp-Fw-35E" secondAttribute="centerY" id="9Om-vw-jRh"/>
+                    <constraint firstItem="Hfg-Al-eHW" firstAttribute="centerY" secondItem="yjp-Fw-35E" secondAttribute="centerY" id="ei6-Vz-xEE"/>
+                    <constraint firstItem="Hfg-Al-eHW" firstAttribute="leading" secondItem="xte-u8-g5X" secondAttribute="trailing" constant="8" id="wf9-W2-kpr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="buttonImageView" destination="xte-u8-g5X" id="Txf-ap-mym"/>
+                <outlet property="imageView" destination="xte-u8-g5X" id="gVf-5a-DGt"/>
+                <outlet property="titleLabel" destination="Hfg-Al-eHW" id="721-uq-xNP"/>
+            </connections>
+            <point key="canvasLocation" x="450" y="256"/>
+        </tableViewCell>
+    </objects>
+</document>

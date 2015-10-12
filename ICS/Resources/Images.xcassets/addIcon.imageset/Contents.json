@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "redCrossButton.png",
+      "filename" : "addIcon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "redCrossButton@2x.png",
+      "filename" : "addIcon@2x.png",
       "scale" : "2x"
     },
     {
