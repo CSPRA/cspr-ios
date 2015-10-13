@@ -9,27 +9,30 @@
 #import "PatientInformationViewController.h"
 #import <XLForm/XLForm.h>
 #import "RatingViewCell.h"
+#import "Doctor.h"
 
-NSString *const kFullName = @"Full Name";
-NSString *const kGender = @"Gender";
-NSString *const kDOB = @"Date of birth";
-NSString *const kPhoneNumber = @"Phone Number";
-NSString *const kAddPhone = @"Add Phone Number";
-NSString *const kEmail = @"Email";
-NSString *const kAddEmail = @"Add Email";
-NSString *const kAddress = @"Address";
-NSString *const kEatingHabits = @"Eating Habits";
-NSString *const kConsumeCigarettes = @"Consume Cigarettes";
-NSString *const kConsumeAlcohal = @"ConsumeAlcohal";
-NSString *const kConsumePanMasala = @"Consume Pan Masala";
-NSString *const kAddOtherAdiction = @"Add Other Adiction";
-NSString *const kMedicalHistory = @"Medical History";
-NSString *const kDoctorBasicInfo = @"Doctor Basic Info";
-NSString *const kAssignDoctor = @"Assign Doctor";
+static NSString *const kFullName = @"Full Name";
+static NSString *const kGender = @"Gender";
+static NSString *const kDOB = @"Date of birth";
+static NSString *const kPhoneNumber = @"Phone Number";
+static NSString *const kAddPhone = @"Add Phone Number";
+static NSString *const kEmail = @"Email";
+static NSString *const kAddEmail = @"Add Email";
+static NSString *const kAddress = @"Address";
+static NSString *const kEatingHabits = @"Eating Habits";
+static NSString *const kConsumeCigarettes = @"Consume Cigarettes";
+static NSString *const kConsumeAlcohal = @"ConsumeAlcohal";
+static NSString *const kConsumePanMasala = @"Consume Pan Masala";
+static NSString *const kAddOtherAdiction = @"Add Other Adiction";
+static NSString *const kMedicalHistory = @"Medical History";
+static NSString *const kDoctorBasicInfo = @"Doctor Basic Info";
+static NSString *const kAssignDoctor = @"Assign Doctor";
 static NSString * const kCustomRowFirstRatingTag = @"CustomRowFirstRatingTag";
 static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
+static NSString * const khidesection = @"tag1";
 
-@interface PatientInformationViewController ()
+@interface PatientInformationViewController ()<RatingViewCellDelegate>
+@property (nonatomic, strong) NSArray *doctorList;
 @end
 
 @implementation PatientInformationViewController
@@ -38,6 +41,47 @@ static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
   self = [super initWithCoder:aDecoder];
   [self setupForm];
   return self;
+}
+
+
+- (void)initializeDummyData {
+  Doctor *doc1 = [[Doctor alloc] init];
+  doc1.doctorId = @"doc1";
+  doc1.firstName= @"Arun";
+  doc1.lastName = @"Jain";
+  doc1.location = @"Bangalore";
+  doc1.specialization = @"Cancer Specialist";
+  doc1.doctorRatingValue = @(3);
+  
+  Doctor *doc2 = [[Doctor alloc] init];
+  doc2.doctorId = @"doc2";
+  doc2.firstName= @"Biswas";
+  doc2.lastName = @"Rao";
+  doc2.location = @"Delhi";
+  doc2.specialization = @"Cancer Specialist";
+  doc2.doctorRatingValue = @(3);
+
+  
+  Doctor *doc3 = [[Doctor alloc] init];
+  doc3.doctorId = @"doc3";
+  doc3.firstName= @"Arun";
+  doc3.lastName = @"Jain";
+  doc3.location = @"Bangalore";
+  doc3.specialization = @"Cancer Specialist";
+  doc3.doctorRatingValue = @(3);
+
+  
+  Doctor *doc4 = [[Doctor alloc] init];
+  doc4.doctorId = @"doc4";
+  doc4.firstName= @"Sunil";
+  doc4.lastName = @"Jain";
+  doc4.location = @"Bangalore";
+  doc4.specialization = @"Cancer Specialist";
+  doc1.doctorRatingValue = @(3);
+
+  
+  NSMutableArray *doctorArray = [[NSMutableArray alloc] initWithObjects:doc1,doc2,doc3,doc4, nil];
+  self.doctorList = doctorArray;
 }
 
 - (void)didTappedButtonRow:(XLFormRowDescriptor*)sender {
@@ -174,25 +218,42 @@ static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
   row.action.formSelector = @selector(didTappedAssignDoctor:);
   [section addFormRow:row];
 
-  [section addFormRow:[self addRatingCell]];
   self.form = form;
 }
 
-- (XLFormRowDescriptor*)addRatingCell {
- 
-    XLFormRowDescriptor * row;
-    
-    // Section Ratings
-  
-    
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"First Rating"];
-    row.value = @(3);
-    
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowSecondRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Second Rating"];
-    row.value = @(1);
-  return row;
+#pragma mark - Handling assign doctors cells
+
+- (void)addDoctorInfoCell:(Doctor*)doctor section:(XLFormSectionDescriptor*)section {
+   XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"First Rating"];
+  NSDictionary *value =[NSDictionary dictionaryWithObjects:@[doctor,self] forKeys:@[@"doctorInfo",@"delegateInfo"]];
+  row.value = value;
+  [section addFormRow:row];
 }
-- (void)didTappedAssignDoctor:(XLFormRowDescriptor*)sender {
+
+- (void)addDoctorsBasicInfoCells:(NSArray*)doctorsArray {
+ 
+  XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@"Assign Doctor From List"];
+  section.hidden = [NSString stringWithFormat:@"$%@==0", khidesection];
+  [self.form addFormSection:section];
+  [doctorsArray enumerateObjectsUsingBlock:^(Doctor *doctor, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self addDoctorInfoCell:doctor section:section];
+  }];
   
+}
+
+- (void)didTappedAssignDoctor:(XLFormRowDescriptor*)sender {
+  if (!self.doctorList) {
+    [self initializeDummyData];
+    [self addDoctorsBasicInfoCells:self.doctorList];
+  }
+  else{
+    return;
+  }
+}
+
+#pragma RatingViewCellDelegate
+- (void)didAssignedDoctor:(RatingViewCell *)cell {
+  
+  NSLog(@"doctor assigned %@",cell.nameLabel.text);
 }
 @end

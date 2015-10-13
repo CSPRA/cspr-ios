@@ -8,8 +8,13 @@
 //
 
 #import "RatingViewCell.h"
+#import "Doctor.h"
 
 NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
+
+@interface RatingViewCell ()
+@property (nonatomic, strong) Doctor *doctor;
+@end
 
 @implementation RatingViewCell
 
@@ -18,13 +23,12 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
 }
 
 + (void)load {
-//  RatingViewCell *ratingViewCell =
-//  [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([RatingViewCell class])
-//                                owner:nil options:nil][0];
-  [XLFormViewController.cellClassesForRowDescriptorTypes setObject:NSStringFromClass([RatingViewCell class]) forKey:XLFormRowDescriptorTypeRate];
+  [XLFormViewController.cellClassesForRowDescriptorTypes setObject:NSStringFromClass([RatingViewCell class])
+                                                            forKey:XLFormRowDescriptorTypeRate];
+  
 }
 
-
+#pragma mark - Layout cell methods
 - (void)configure
 {
   [super configure];
@@ -37,8 +41,12 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
 {
   [super update];
   
-  self.ratingView.value = [self.rowDescriptor.value floatValue];
   
+  self.doctor = [self.rowDescriptor.value objectForKey:@"doctorInfo"];
+  self.delegate = [self.rowDescriptor.value objectForKey:@"delegateInfo"];
+  self.ratingView.value = [self.doctor.doctorRatingValue floatValue];
+  self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",_doctor.firstName,_doctor.lastName];
+  self.docInfoLabel.text = [NSString stringWithFormat:@"%@, %@",_doctor.specialization,_doctor.location];
   
   [self.ratingView setAlpha:((self.rowDescriptor.isDisabled) ? .6 : 1)];
 }
@@ -50,7 +58,12 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
   self.rowDescriptor.value = [NSNumber numberWithFloat:ratingView.value];
 }
 
+#pragma mark - IBActions
+
 - (IBAction)assignButtonTapped:(UIButton *)sender {
+  if ([self.delegate respondsToSelector:@selector(didAssignedDoctor:)]) {
+    [self.delegate didAssignedDoctor:self];
+  }
 }
 
 @end

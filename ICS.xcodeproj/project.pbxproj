@@ -25,6 +25,7 @@
 		FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		FA02CB681BC52EBF00421EAA /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB671BC52EBF00421EAA /* Patient.m */; settings = {ASSET_TAGS = (); }; };
 		FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE6B61BC54123008729AE /* SharedModel.m */; settings = {ASSET_TAGS = (); }; };
+		FA6669B71BCCEA4D00F7B966 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6669B61BCCEA4D00F7B966 /* Doctor.m */; settings = {ASSET_TAGS = (); }; };
 		FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */; settings = {ASSET_TAGS = (); }; };
 		FAA5132E1BC7A8E2009A6D2E /* PatientInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FADA7C591BCBA8E300CACD1D /* CustomFormButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADA7C581BCBA8E300CACD1D /* CustomFormButtonCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -84,6 +85,8 @@
 		FA02CB671BC52EBF00421EAA /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Patient.m; sourceTree = "<group>"; };
 		FA0FE6B51BC54123008729AE /* SharedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedModel.h; sourceTree = "<group>"; };
 		FA0FE6B61BC54123008729AE /* SharedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedModel.m; sourceTree = "<group>"; };
+		FA6669B51BCCEA4D00F7B966 /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
+		FA6669B61BCCEA4D00F7B966 /* Doctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doctor.m; sourceTree = "<group>"; };
 		FAA103F71BC64AEA00C6CEFC /* FullImageContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullImageContainerView.h; path = Views/FullImageContainerView.h; sourceTree = "<group>"; };
 		FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullImageContainerView.m; path = Views/FullImageContainerView.m; sourceTree = "<group>"; };
 		FAA5132C1BC7A8E2009A6D2E /* PatientInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientInformationViewController.h; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 				FA02CB671BC52EBF00421EAA /* Patient.m */,
 				FA0FE6B51BC54123008729AE /* SharedModel.h */,
 				FA0FE6B61BC54123008729AE /* SharedModel.m */,
+				FA6669B51BCCEA4D00F7B966 /* Doctor.h */,
+				FA6669B61BCCEA4D00F7B966 /* Doctor.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				3EACD9D21BA9D053003E4540 /* AppDelegate.m in Sources */,
 				3E43FA5C1BC413AD0021AE81 /* VolunteerSignUpViewController.m in Sources */,
 				FA02CB681BC52EBF00421EAA /* Patient.m in Sources */,
+				FA6669B71BCCEA4D00F7B966 /* Doctor.m in Sources */,
 				3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */,
 				FADA7C5F1BCBD42200CACD1D /* RatingView.m in Sources */,
 				FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */,

@@ -11,11 +11,20 @@
 
 extern NSString * const XLFormRowDescriptorTypeRate;
 
+@protocol RatingViewCellDelegate;
+
 @interface RatingViewCell : XLFormBaseCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *docInfoLabel;
 @property (weak, nonatomic) IBOutlet RatingView *ratingView;
 @property (weak, nonatomic) IBOutlet UIButton *assignButton;
+@property (weak, nonatomic) id<RatingViewCellDelegate>delegate;
+@end
+
+
+@protocol RatingViewCellDelegate <NSObject>
+
+- (void)didAssignedDoctor: (RatingViewCell*)cell;
 
 @end
