@@ -9,14 +9,31 @@
 #import "CustomFormButtonCell.h"
 
 NSString *const kAssignDoctorButtonTitle = @"Assign Doctor";
+NSString *const XLFormRowDescriptorTypeCustomButton = @"XLFormRowDescriptorTypeCustomButton";
 
 @implementation CustomFormButtonCell
+
++ (void)load {
+  [XLFormViewController.cellClassesForRowDescriptorTypes setObject:NSStringFromClass([CustomFormButtonCell class])
+                                                            forKey:XLFormRowDescriptorTypeCustomButton];
+  
+}
 
 - (void)awakeFromNib {
   [super awakeFromNib];
 }
 
+- (void)configure {
+  [super configure];
+}
+
+- (void)update {
+  [super update];
+  [self initialSetup];
+}
+
 - (void)initialSetup {
+  self.buttonType = (CustonFormButtonType)self.rowDescriptor.value;
   switch (self.buttonType) {
     case kButtonTypeAddRow:
       self.buttonImageView.image = [UIImage imageNamed:@"addIcon"];
@@ -24,12 +41,13 @@ NSString *const kAssignDoctorButtonTitle = @"Assign Doctor";
     case kButtonTypeAssignDoctor:
       self.buttonImageView.image = [UIImage imageNamed:@"image2"];
       break;
-    case kButtonTypeRating:
-      
-      break;
     default:
       break;
   }
+}
+
+- (void)formDescriptorCellDidSelectedWithFormController:(XLFormViewController *)controller {
+  [super formDescriptorCellDidSelectedWithFormController:controller];
 }
 
 @end

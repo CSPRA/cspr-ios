@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xte-u8-g5X">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="xte-u8-g5X">
                         <rect key="frame" x="5" y="2" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="9Eg-9W-v7d"/>
@@ -39,6 +39,7 @@
                     <constraint firstItem="Hfg-Al-eHW" firstAttribute="leading" secondItem="xte-u8-g5X" secondAttribute="trailing" constant="8" id="wf9-W2-kpr"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.68235294120000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="buttonImageView" destination="xte-u8-g5X" id="Txf-ap-mym"/>
                 <outlet property="imageView" destination="xte-u8-g5X" id="gVf-5a-DGt"/>
@@ -47,4 +48,7 @@
             <point key="canvasLocation" x="450" y="256"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="image1" width="16" height="16"/>
+    </resources>
 </document>

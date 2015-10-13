@@ -6,7 +6,9 @@
 //  Copyright © 2015 Meraki. All rights reserved.
 //
 
-#import "XLFormBaseCell.h"
+#import "XLFormButtonCell.h"
+
+extern NSString * const XLFormRowDescriptorTypeCustomButton;
 
 typedef NS_ENUM(NSUInteger, CustonFormButtonType) {
   kButtonTypeAssignDoctor,
@@ -14,7 +16,7 @@ typedef NS_ENUM(NSUInteger, CustonFormButtonType) {
   kButtonTypeRating
 };
 
-@interface CustomFormButtonCell : XLFormBaseCell
+@interface CustomFormButtonCell : XLFormButtonCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *buttonImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

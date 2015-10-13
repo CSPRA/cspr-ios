@@ -1,31 +1,30 @@
 
 //
-//  RatingViewCell.m
+//  DoctorInformationCell.m
 //  ICS
 //
 //  Created by aam-fueled on 12/10/15.
 //  Copyright © 2015 Meraki. All rights reserved.
 //
 
-#import "RatingViewCell.h"
+#import "DoctorInformationCell.h"
 #import "Doctor.h"
 
 NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
 
-@interface RatingViewCell ()
+@interface DoctorInformationCell ()
 @property (nonatomic, strong) Doctor *doctor;
 @end
 
-@implementation RatingViewCell
+@implementation DoctorInformationCell
 
 - (void)awakeFromNib {
   [super awakeFromNib];
 }
 
 + (void)load {
-  [XLFormViewController.cellClassesForRowDescriptorTypes setObject:NSStringFromClass([RatingViewCell class])
-                                                            forKey:XLFormRowDescriptorTypeRate];
-  
+  [XLFormViewController.cellClassesForRowDescriptorTypes setObject:NSStringFromClass([DoctorInformationCell class])
+                                                            forKey:XLFormRowDescriptorTypeRate];  
 }
 
 #pragma mark - Layout cell methods
@@ -41,21 +40,25 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
 {
   [super update];
   
-  
   self.doctor = [self.rowDescriptor.value objectForKey:@"doctorInfo"];
   self.delegate = [self.rowDescriptor.value objectForKey:@"delegateInfo"];
-  self.ratingView.value = [self.doctor.doctorRatingValue floatValue];
+  self.ratingView.value = [self.doctor.doctorRatingValue intValue];
   self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",_doctor.firstName,_doctor.lastName];
   self.docInfoLabel.text = [NSString stringWithFormat:@"%@, %@",_doctor.specialization,_doctor.location];
   
   [self.ratingView setAlpha:((self.rowDescriptor.isDisabled) ? .6 : 1)];
 }
 
+- (void)formDescriptorCellDidSelectedWithFormController:(XLFormViewController *)controller {
+  [super formDescriptorCellDidSelectedWithFormController:controller];
+}
+
 #pragma mark - Events
 
 -(void)rateChanged:(RatingView *)ratingView
 {
-  self.rowDescriptor.value = [NSNumber numberWithFloat:ratingView.value];
+  _doctor.doctorRatingValue = [NSNumber numberWithInt:ratingView.value];
+
 }
 
 #pragma mark - IBActions

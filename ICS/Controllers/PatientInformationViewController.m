@@ -8,8 +8,9 @@
 
 #import "PatientInformationViewController.h"
 #import <XLForm/XLForm.h>
-#import "RatingViewCell.h"
+#import "DoctorInformationCell.h"
 #import "Doctor.h"
+#import "CustomFormButtonCell.h"
 
 static NSString *const kFullName = @"Full Name";
 static NSString *const kGender = @"Gender";
@@ -31,7 +32,7 @@ static NSString * const kCustomRowFirstRatingTag = @"CustomRowFirstRatingTag";
 static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
 static NSString * const khidesection = @"tag1";
 
-@interface PatientInformationViewController ()<RatingViewCellDelegate>
+@interface PatientInformationViewController ()<DoctorInformationCellDelegate>
 @property (nonatomic, strong) NSArray *doctorList;
 @end
 
@@ -43,7 +44,7 @@ static NSString * const khidesection = @"tag1";
   return self;
 }
 
-
+#warning dummy data: remove when api integrated.
 - (void)initializeDummyData {
   Doctor *doc1 = [[Doctor alloc] init];
   doc1.doctorId = @"doc1";
@@ -79,11 +80,11 @@ static NSString * const khidesection = @"tag1";
   doc4.specialization = @"Cancer Specialist";
   doc1.doctorRatingValue = @(3);
 
-  
   NSMutableArray *doctorArray = [[NSMutableArray alloc] initWithObjects:doc1,doc2,doc3,doc4, nil];
   self.doctorList = doctorArray;
 }
 
+#pragma mark - row configuration
 - (void)didTappedButtonRow:(XLFormRowDescriptor*)sender {
   if (sender.tag == kAddEmail) {
     [self addRowWithTag:kEmail
@@ -143,6 +144,7 @@ static NSString * const khidesection = @"tag1";
   [section addFormRow:row];
 }
 
+#pragma mark - form intialization
 - (void)setupForm {
   XLFormDescriptor *form = [XLFormDescriptor formDescriptorWithTitle:@"Patient Information"];
   XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@""];
@@ -213,24 +215,24 @@ static NSString * const khidesection = @"tag1";
                 title:kConsumeAlcohal
               section:section];
   
- XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kAssignDoctor rowType:XLFormRowDescriptorTypeButton title:kAssignDoctor];
-  
+ XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kAssignDoctor rowType:XLFormRowDescriptorTypeCustomButton title:kAssignDoctor];
+  row.value = kButtonTypeAssignDoctor;
   row.action.formSelector = @selector(didTappedAssignDoctor:);
   [section addFormRow:row];
 
   self.form = form;
 }
 
-#pragma mark - Handling assign doctors cells
+#pragma mark - Handling assign doctors section
 
 - (void)addDoctorInfoCell:(Doctor*)doctor section:(XLFormSectionDescriptor*)section {
-   XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"First Rating"];
+   XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Rating"];
   NSDictionary *value =[NSDictionary dictionaryWithObjects:@[doctor,self] forKeys:@[@"doctorInfo",@"delegateInfo"]];
   row.value = value;
   [section addFormRow:row];
 }
 
-- (void)addDoctorsBasicInfoCells:(NSArray*)doctorsArray {
+- (void)addAssignDoctorSectionWithDoctorList:(NSArray*)doctorsArray {
  
   XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@"Assign Doctor From List"];
   section.hidden = [NSString stringWithFormat:@"$%@==0", khidesection];
@@ -244,16 +246,15 @@ static NSString * const khidesection = @"tag1";
 - (void)didTappedAssignDoctor:(XLFormRowDescriptor*)sender {
   if (!self.doctorList) {
     [self initializeDummyData];
-    [self addDoctorsBasicInfoCells:self.doctorList];
+    [self addAssignDoctorSectionWithDoctorList:self.doctorList];
   }
   else{
     return;
   }
 }
 
-#pragma RatingViewCellDelegate
-- (void)didAssignedDoctor:(RatingViewCell *)cell {
-  
+#pragma DoctorInformationCellDelegate
+- (void)didAssignedDoctor:(DoctorInformationCell *)cell {
   NSLog(@"doctor assigned %@",cell.nameLabel.text);
 }
 @end

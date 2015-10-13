@@ -132,12 +132,12 @@
   }
 }
 
-- (void)setStepInterval:(float)stepInterval
+- (void)setStepInterval:(int)stepInterval
 {
   _stepInterval = MAX(stepInterval, 0.0);
 }
 
-- (void)setValue:(float)value
+- (void)setValue:(int)value
 {
   if (_value != value) {
     _value = MIN(MAX(value, 0.0), _numberOfStar);

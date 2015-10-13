@@ -19,9 +19,9 @@
 @property (strong, nonatomic) UIImage *markImage;
 @property (strong, nonatomic) UIColor *baseColor;
 @property (strong, nonatomic) UIColor *highlightColor;
-@property (nonatomic) float value;
-@property (nonatomic) float stepInterval;
-@property (nonatomic) float minimumValue;
+@property (nonatomic) int value;
+@property (nonatomic) int stepInterval;
+@property (nonatomic) int minimumValue;
 
 
 @end

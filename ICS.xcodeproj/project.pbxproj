@@ -31,8 +31,8 @@
 		FADA7C591BCBA8E300CACD1D /* CustomFormButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADA7C581BCBA8E300CACD1D /* CustomFormButtonCell.xib */; settings = {ASSET_TAGS = (); }; };
 		FADA7C5C1BCBA90500CACD1D /* CustomFormButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA7C5B1BCBA90500CACD1D /* CustomFormButtonCell.m */; settings = {ASSET_TAGS = (); }; };
 		FADA7C5F1BCBD42200CACD1D /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA7C5E1BCBD42200CACD1D /* RatingView.m */; settings = {ASSET_TAGS = (); }; };
-		FADA7C621BCBD5CC00CACD1D /* RatingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA7C611BCBD5CC00CACD1D /* RatingViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		FADA7C641BCBD5DD00CACD1D /* RatingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADA7C631BCBD5DD00CACD1D /* RatingViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		FADA7C621BCBD5CC00CACD1D /* DoctorInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA7C611BCBD5CC00CACD1D /* DoctorInformationCell.m */; settings = {ASSET_TAGS = (); }; };
+		FADA7C641BCBD5DD00CACD1D /* DoctorInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADA7C631BCBD5DD00CACD1D /* DoctorInformationCell.xib */; settings = {ASSET_TAGS = (); }; };
 		FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEB61BC681A30053E659 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		FAFAAEBD1BC683210053E659 /* FullImageContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEBC1BC683210053E659 /* FullImageContainerView.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -96,9 +96,9 @@
 		FADA7C5B1BCBA90500CACD1D /* CustomFormButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFormButtonCell.m; sourceTree = "<group>"; };
 		FADA7C5D1BCBD42200CACD1D /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
 		FADA7C5E1BCBD42200CACD1D /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
-		FADA7C601BCBD5CC00CACD1D /* RatingViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewCell.h; sourceTree = "<group>"; };
-		FADA7C611BCBD5CC00CACD1D /* RatingViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewCell.m; sourceTree = "<group>"; };
-		FADA7C631BCBD5DD00CACD1D /* RatingViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewCell.xib; sourceTree = "<group>"; };
+		FADA7C601BCBD5CC00CACD1D /* DoctorInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorInformationCell.h; sourceTree = "<group>"; };
+		FADA7C611BCBD5CC00CACD1D /* DoctorInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorInformationCell.m; sourceTree = "<group>"; };
+		FADA7C631BCBD5DD00CACD1D /* DoctorInformationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorInformationCell.xib; sourceTree = "<group>"; };
 		FAFAAEB01BC67FC90053E659 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FAFAAEB51BC681A30053E659 /* ICS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ICS-Prefix.pch"; path = "ICS/Resources/ICS-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FAFAAEB61BC681A30053E659 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
@@ -280,9 +280,9 @@
 				FADA7C5B1BCBA90500CACD1D /* CustomFormButtonCell.m */,
 				FADA7C5D1BCBD42200CACD1D /* RatingView.h */,
 				FADA7C5E1BCBD42200CACD1D /* RatingView.m */,
-				FADA7C601BCBD5CC00CACD1D /* RatingViewCell.h */,
-				FADA7C611BCBD5CC00CACD1D /* RatingViewCell.m */,
-				FADA7C631BCBD5DD00CACD1D /* RatingViewCell.xib */,
+				FADA7C601BCBD5CC00CACD1D /* DoctorInformationCell.h */,
+				FADA7C611BCBD5CC00CACD1D /* DoctorInformationCell.m */,
+				FADA7C631BCBD5DD00CACD1D /* DoctorInformationCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -407,7 +407,7 @@
 				FADA7C591BCBA8E300CACD1D /* CustomFormButtonCell.xib in Resources */,
 				3EACD9D81BA9D053003E4540 /* Main.storyboard in Resources */,
 				FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */,
-				FADA7C641BCBD5DD00CACD1D /* RatingViewCell.xib in Resources */,
+				FADA7C641BCBD5DD00CACD1D /* DoctorInformationCell.xib in Resources */,
 				3EACD9DD1BA9D053003E4540 /* LaunchScreen.xib in Resources */,
 				FAFAAEBD1BC683210053E659 /* FullImageContainerView.xib in Resources */,
 			);
@@ -491,7 +491,7 @@
 				3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */,
 				FADA7C5F1BCBD42200CACD1D /* RatingView.m in Sources */,
 				FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */,
-				FADA7C621BCBD5CC00CACD1D /* RatingViewCell.m in Sources */,
+				FADA7C621BCBD5CC00CACD1D /* DoctorInformationCell.m in Sources */,
 				3EACD9CF1BA9D053003E4540 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
