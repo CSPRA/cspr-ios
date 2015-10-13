@@ -33,7 +33,7 @@
 {
   self = [super initWithCoder:aDecoder];
   if (self) {
-    [self customize];
+    [self initialSetup];
   }
   return self;
 }

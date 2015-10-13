@@ -169,10 +169,7 @@ static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
                 title:kConsumeAlcohal
               section:section];
   
- row = [self addRowWithTag:kAssignDoctor
-              rowType:XLFormRowDescriptorTypeButton
-                title:kAssignDoctor
-              section:section];
+ XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kAssignDoctor rowType:XLFormRowDescriptorTypeButton title:kAssignDoctor];
   
   row.action.formSelector = @selector(didTappedAssignDoctor:);
   [section addFormRow:row];
