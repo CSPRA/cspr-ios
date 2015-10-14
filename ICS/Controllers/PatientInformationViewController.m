@@ -40,8 +40,17 @@ static NSString * const khidesection = @"tag1";
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
   self = [super initWithCoder:aDecoder];
+  [self setupNavigationBar];
   [self setupForm];
+  
   return self;
+}
+- (void)setupNavigationBar {
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextTapped:)];
+}
+- (void)nextTapped:(UIBarButtonItem*)sender {
+  UIViewController *patientHabitsVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientHabitsVCIdentifier];
+  [self.navigationController pushViewController:patientHabitsVC animated:YES];
 }
 
 #warning dummy data: remove when api integrated.

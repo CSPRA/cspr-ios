@@ -25,6 +25,9 @@
 		FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		FA02CB681BC52EBF00421EAA /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB671BC52EBF00421EAA /* Patient.m */; settings = {ASSET_TAGS = (); }; };
 		FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE6B61BC54123008729AE /* SharedModel.m */; settings = {ASSET_TAGS = (); }; };
+		FA55FE081BCE4463004BCD2F /* PatientEatingHabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FA55FE0D1BCE610D004BCD2F /* ICSCustomRowDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55FE0C1BCE610D004BCD2F /* ICSCustomRowDescriptor.m */; settings = {ASSET_TAGS = (); }; };
+		FA55FE101BCE8A79004BCD2F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55FE0F1BCE8A79004BCD2F /* Question.m */; settings = {ASSET_TAGS = (); }; };
 		FA6669B71BCCEA4D00F7B966 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6669B61BCCEA4D00F7B966 /* Doctor.m */; settings = {ASSET_TAGS = (); }; };
 		FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */; settings = {ASSET_TAGS = (); }; };
 		FAA5132E1BC7A8E2009A6D2E /* PatientInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -85,6 +88,12 @@
 		FA02CB671BC52EBF00421EAA /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Patient.m; sourceTree = "<group>"; };
 		FA0FE6B51BC54123008729AE /* SharedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedModel.h; sourceTree = "<group>"; };
 		FA0FE6B61BC54123008729AE /* SharedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedModel.m; sourceTree = "<group>"; };
+		FA55FE061BCE4463004BCD2F /* PatientEatingHabitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientEatingHabitsViewController.h; sourceTree = "<group>"; };
+		FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientEatingHabitsViewController.m; sourceTree = "<group>"; };
+		FA55FE0B1BCE610D004BCD2F /* ICSCustomRowDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSCustomRowDescriptor.h; sourceTree = "<group>"; };
+		FA55FE0C1BCE610D004BCD2F /* ICSCustomRowDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSCustomRowDescriptor.m; sourceTree = "<group>"; };
+		FA55FE0E1BCE8A79004BCD2F /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		FA55FE0F1BCE8A79004BCD2F /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		FA6669B51BCCEA4D00F7B966 /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
 		FA6669B61BCCEA4D00F7B966 /* Doctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doctor.m; sourceTree = "<group>"; };
 		FAA103F71BC64AEA00C6CEFC /* FullImageContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullImageContainerView.h; path = Views/FullImageContainerView.h; sourceTree = "<group>"; };
@@ -141,6 +150,8 @@
 				FA02CB5F1BC526C100421EAA /* PhotoViewController.m */,
 				FAA5132C1BC7A8E2009A6D2E /* PatientInformationViewController.h */,
 				FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */,
+				FA55FE061BCE4463004BCD2F /* PatientEatingHabitsViewController.h */,
+				FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -283,6 +294,8 @@
 				FADA7C601BCBD5CC00CACD1D /* DoctorInformationCell.h */,
 				FADA7C611BCBD5CC00CACD1D /* DoctorInformationCell.m */,
 				FADA7C631BCBD5DD00CACD1D /* DoctorInformationCell.xib */,
+				FA55FE0B1BCE610D004BCD2F /* ICSCustomRowDescriptor.h */,
+				FA55FE0C1BCE610D004BCD2F /* ICSCustomRowDescriptor.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -296,6 +309,8 @@
 				FA0FE6B61BC54123008729AE /* SharedModel.m */,
 				FA6669B51BCCEA4D00F7B966 /* Doctor.h */,
 				FA6669B61BCCEA4D00F7B966 /* Doctor.m */,
+				FA55FE0E1BCE8A79004BCD2F /* Question.h */,
+				FA55FE0F1BCE8A79004BCD2F /* Question.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -473,6 +488,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA55FE081BCE4463004BCD2F /* PatientEatingHabitsViewController.m in Sources */,
+				FA55FE101BCE8A79004BCD2F /* Question.m in Sources */,
 				3E43FA491BC40F6B0021AE81 /* ICSHTTPClient.m in Sources */,
 				FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */,
 				FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */,
@@ -492,6 +509,7 @@
 				FADA7C5F1BCBD42200CACD1D /* RatingView.m in Sources */,
 				FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */,
 				FADA7C621BCBD5CC00CACD1D /* DoctorInformationCell.m in Sources */,
+				FA55FE0D1BCE610D004BCD2F /* ICSCustomRowDescriptor.m in Sources */,
 				3EACD9CF1BA9D053003E4540 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

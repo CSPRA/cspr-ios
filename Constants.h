@@ -15,3 +15,6 @@
 #define kAnimationFactor 0.5
 #define kMinAlpha 0.0
 #define kMaxAlpha 1.0
+
+#define kPatientInforamtionVCIndentifier  @"PatientInforamtionVCIndentifier"
+#define kPatientHabitsVCIdentifier  @"PatientHabitsVCIdentifier"

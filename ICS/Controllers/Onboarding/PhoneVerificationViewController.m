@@ -8,6 +8,7 @@
 
 #import "PhoneVerificationViewController.h"
 #import "VolunteerSignUpViewController.h"
+#import "PatientInformationViewController.h"
 #import "ICSStyleGuide.h"
 #import <DigitsKit/DigitsKit.h>
 
@@ -60,6 +61,11 @@
     }];
     [alert addAction:okButton];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (IBAction)registerButtonTapped:(id)sender {
+  UIViewController *patientInfoVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientInforamtionVCIndentifier];
+  [self.navigationController pushViewController:patientInfoVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
