@@ -11,6 +11,6 @@
 @interface SharedModel : NSObject
 
 + (instancetype)shared;
-- (NSString*)filePathWithPatientID :(NSString*)patientId;
+- (NSString*)filePathWithPatientID :(NSInteger)patientId;
 
 @end

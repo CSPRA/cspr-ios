@@ -56,40 +56,32 @@ static NSString * const khidesection = @"tag1";
 #warning dummy data: remove when api integrated.
 - (void)initializeDummyData {
   Doctor *doc1 = [[Doctor alloc] init];
-  doc1.doctorId = @"doc1";
+  doc1.doctorId = 1;
   doc1.firstName= @"Arun";
   doc1.lastName = @"Jain";
-  doc1.location = @"Bangalore";
+  doc1.address = @"Bangalore";
   doc1.specialization = @"Cancer Specialist";
-  doc1.doctorRatingValue = @(3);
+  doc1.ratingValue = 3;
   
   Doctor *doc2 = [[Doctor alloc] init];
-  doc2.doctorId = @"doc2";
+  doc2.doctorId = 2;
   doc2.firstName= @"Biswas";
   doc2.lastName = @"Rao";
-  doc2.location = @"Delhi";
+  doc2.address = @"Delhi";
   doc2.specialization = @"Cancer Specialist";
-  doc2.doctorRatingValue = @(3);
+  doc2.ratingValue = 2;
 
   
   Doctor *doc3 = [[Doctor alloc] init];
-  doc3.doctorId = @"doc3";
+  doc3.doctorId = 3;
   doc3.firstName= @"Arun";
   doc3.lastName = @"Jain";
-  doc3.location = @"Bangalore";
+  doc3.address = @"Bangalore";
   doc3.specialization = @"Cancer Specialist";
-  doc3.doctorRatingValue = @(3);
+  doc3.ratingValue = 4;
 
-  
-  Doctor *doc4 = [[Doctor alloc] init];
-  doc4.doctorId = @"doc4";
-  doc4.firstName= @"Sunil";
-  doc4.lastName = @"Jain";
-  doc4.location = @"Bangalore";
-  doc4.specialization = @"Cancer Specialist";
-  doc1.doctorRatingValue = @(3);
 
-  NSMutableArray *doctorArray = [[NSMutableArray alloc] initWithObjects:doc1,doc2,doc3,doc4, nil];
+  NSMutableArray *doctorArray = [[NSMutableArray alloc] initWithObjects:doc1,doc2,doc3, nil];
   self.doctorList = doctorArray;
 }
 

@@ -54,7 +54,7 @@ FullImageContainerViewDelegate
   self.fullImageView.alpha = kMinAlpha;
   
   // dummy id for test.
-  self.patient.patientId = @"1234";
+  self.patient.patientId = 1234;
   [self retrieveImagesFromFile];
 }
 

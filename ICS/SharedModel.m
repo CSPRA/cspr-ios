@@ -29,12 +29,12 @@
 }
 
 
-- (NSString*)filePathWithPatientID :(NSString*)patientId {
+- (NSString*)filePathWithPatientID :(NSInteger)patientId {
   NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                       NSUserDomainMask,
                                                       YES);
   NSString *documentPath = [path firstObject];
-  NSString *destinationPath = [documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"patientsImages-%@",patientId]];
+  NSString *destinationPath = [documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"patientsImages-%ld",(long)patientId]];
   return [destinationPath stringByAppendingPathExtension:@"plist"];
 }
 

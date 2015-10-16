@@ -42,9 +42,9 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
   
   self.doctor = [self.rowDescriptor.value objectForKey:@"doctorInfo"];
   self.delegate = [self.rowDescriptor.value objectForKey:@"delegateInfo"];
-  self.ratingView.value = [self.doctor.doctorRatingValue intValue];
+  self.ratingView.value = self.doctor.ratingValue;
   self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",_doctor.firstName,_doctor.lastName];
-  self.docInfoLabel.text = [NSString stringWithFormat:@"%@, %@",_doctor.specialization,_doctor.location];
+  self.docInfoLabel.text = [NSString stringWithFormat:@"%@, %@",_doctor.specialization,_doctor.address];
   
   [self.ratingView setAlpha:((self.rowDescriptor.isDisabled) ? .6 : 1)];
 }
@@ -57,7 +57,7 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
 
 -(void)rateChanged:(RatingView *)ratingView
 {
-  _doctor.doctorRatingValue = [NSNumber numberWithInt:ratingView.value];
+  _doctor.ratingValue = [NSNumber numberWithInt:ratingView.value].floatValue;
 
 }
 
