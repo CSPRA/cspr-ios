@@ -252,6 +252,60 @@
             <point key="canvasLocation" x="2161" y="454"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="abN-Vu-KRJ">
+            <objects>
+                <navigationController id="JWs-SM-mJ8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cji-M1-cLF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Sag-ua-WxY" kind="relationship" relationship="rootViewController" id="uin-5J-y35"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ca4-az-tjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="441" y="1333"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="ezK-1z-qSE">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewControllerIdentifier" id="Sag-ua-WxY" customClass="ICSHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="La1-4Q-T0L"/>
+                        <viewControllerLayoutGuide type="bottom" id="8mE-0I-baz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="89Y-2u-hgM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mN8-OE-qsK">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sag-ua-WxY" id="Pjf-HX-HER"/>
+                                    <outlet property="delegate" destination="Sag-ua-WxY" id="HzO-yd-uRC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mN8-OE-qsK" firstAttribute="leading" secondItem="89Y-2u-hgM" secondAttribute="leading" id="2Zo-Mj-5mm"/>
+                            <constraint firstItem="8mE-0I-baz" firstAttribute="top" secondItem="mN8-OE-qsK" secondAttribute="bottom" id="fjD-nG-XTv"/>
+                            <constraint firstItem="mN8-OE-qsK" firstAttribute="top" secondItem="La1-4Q-T0L" secondAttribute="bottom" id="o4l-ZK-Zjz"/>
+                            <constraint firstAttribute="trailing" secondItem="mN8-OE-qsK" secondAttribute="trailing" id="ugh-CD-kqn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xoT-tl-x6W"/>
+                    <connections>
+                        <outlet property="tableView" destination="mN8-OE-qsK" id="eja-dX-kgi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwa-nf-ToE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1236" y="1333"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="lmA-Nw-XjR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8RV-T7-LQu" sceneMemberID="viewController">
@@ -267,7 +321,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eao-GX-h1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1372" y="454"/>
+            <point key="canvasLocation" x="1280" y="454"/>
         </scene>
     </scenes>
 </document>

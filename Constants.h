@@ -18,3 +18,4 @@
 
 #define kPatientInforamtionVCIndentifier  @"PatientInforamtionVCIndentifier"
 #define kPatientHabitsVCIdentifier  @"PatientHabitsVCIdentifier"
+#define kHomeVCIdentifier @"HomeViewControllerIdentifier"

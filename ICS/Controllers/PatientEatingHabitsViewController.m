@@ -38,31 +38,33 @@ static NSString * const kQuestionTypeNumber = @"number";
 }
 - (void)initializeDummyData {
   Question *q1= [[Question alloc] init];
-  q1.questionID = @"single choice";
+  q1.questionType = @"number";
   
   Question *q2= [[Question alloc] init];
-  q2.questionID = @"single choice";
+  q2.questionType = @"text";
   
   Question *q3= [[Question alloc] init];
-  q3.questionID = @"single choice";
+  q3.questionType = @"boolean";
   
   Question *q4= [[Question alloc] init];
-  q4.questionID = @"single choice";
+  q4.questionType = @"multiple choice";
   
   Question *q5= [[Question alloc] init];
-  q5.questionID = @"single choice";
+  q5.questionType = @"single choice";
   
   NSMutableArray *quesArray = [[NSMutableArray alloc] initWithObjects:q1,q2,q3,q4,q5, nil];
   self.sections = quesArray;
 }
 
 - (void)setupForm {
+  [self initializeDummyData];
+
   XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@""];
-  XLFormRowDescriptor *row;
+  __block XLFormRowDescriptor *row;
   XLFormDescriptor *form = [XLFormDescriptor formDescriptor];
   
   [self.sections enumerateObjectsUsingBlock:^(Question *question, NSUInteger idx, BOOL * _Nonnull stop) {
-    [self formRowDescriptor:row withQuestionType:question.questionType];
+    row = [self formRowDescriptor:row withQuestionType:question.questionType];
     [section addFormRow:row];
   }];
   

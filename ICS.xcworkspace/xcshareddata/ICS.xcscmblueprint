@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DDFF8246162C7A3DFA2CD48432FD20E3A7175646",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DDFF8246162C7A3DFA2CD48432FD20E3A7175646" : 0,
+    "AF7423C487C4B1B7082E587F3AB70804F6530E81" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "31500DFE-FD62-4031-9B99-460EBE962EA3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DDFF8246162C7A3DFA2CD48432FD20E3A7175646" : "cspr-ios\/",
+    "AF7423C487C4B1B7082E587F3AB70804F6530E81" : "cspr-ios\/Pods\/XLForm\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ICS",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ICS.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/xmartlabs\/XLForm.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AF7423C487C4B1B7082E587F3AB70804F6530E81"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:CSPRA\/cspr-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DDFF8246162C7A3DFA2CD48432FD20E3A7175646"
+    }
+  ]
+}
