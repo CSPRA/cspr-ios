@@ -10,6 +10,7 @@
 #import <Fabric/Fabric.h>
 #import <DigitsKit/DigitsKit.h>
 #import <Crashlytics/Crashlytics.h>
+#import <RestKit/RestKit.h>
 
 @interface AppDelegate ()
 

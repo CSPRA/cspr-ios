@@ -1,36 +1,14 @@
 PODS:
-  - AFNetworking (2.6.0):
-    - AFNetworking/NSURLConnection (= 2.6.0)
-    - AFNetworking/NSURLSession (= 2.6.0)
-    - AFNetworking/Reachability (= 2.6.0)
-    - AFNetworking/Security (= 2.6.0)
-    - AFNetworking/Serialization (= 2.6.0)
-    - AFNetworking/UIKit (= 2.6.0)
-  - AFNetworking/NSURLConnection (2.6.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.0)
-  - AFNetworking/Security (2.6.0)
-  - AFNetworking/Serialization (2.6.0)
-  - AFNetworking/UIKit (2.6.0):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-  - Crashlytics (3.3.1)
-  - Digits (1.10.1)
-  - Fabric (1.5.1):
-    - Fabric/Base (= 1.5.1)
-  - Fabric/Base (1.5.1)
+  - Crashlytics (3.3.4)
+  - Digits (1.11.4)
+  - Fabric (1.5.5):
+    - Fabric/Base (= 1.5.5)
+  - Fabric/Base (1.5.5)
   - IQKeyboardManager (3.3.2)
-  - TwitterCore (1.10.1)
+  - TwitterCore (1.11.4)
   - XLForm (3.0.2)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.0)
   - Crashlytics
   - Digits
   - Fabric
@@ -48,12 +26,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/xmartlabs/XLForm.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
-  Crashlytics: 0e61bdda9def51f1e99720f804eebe94865442b2
-  Digits: 8e4434813586758cf348b40291b36c5317fe9d2c
-  Fabric: 03c3b3fe77e11a2bc31421b989a9c7adaa4779a5
+  Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
+  Digits: 1a372fab25b58d1459adc6b8d95e2e155ae5b212
+  Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
   IQKeyboardManager: d863eb0bca424d1f6dad6bdd1f856af52664add8
-  TwitterCore: 632e809318be9ea2b6f38cc21611033367681adc
+  TwitterCore: 171dbd2f8d55707397f461af5158d987fb34aa36
   XLForm: 29b76283849dc70e987eaa5812783322465c2b98
 
 COCOAPODS: 0.35.0

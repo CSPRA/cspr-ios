@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E10E1C51BC448C4008B9296 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3E43FA491BC40F6B0021AE81 /* ICSHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA461BC40F6B0021AE81 /* ICSHTTPClient.m */; settings = {ASSET_TAGS = (); }; };
 		3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA481BC40F6B0021AE81 /* ICSStyleGuide.m */; settings = {ASSET_TAGS = (); }; };
 		3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA4C1BC410340021AE81 /* ICSDataManager.m */; settings = {ASSET_TAGS = (); }; };
 		3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA4F1BC410630021AE81 /* ICSUtilities.m */; settings = {ASSET_TAGS = (); }; };
@@ -24,6 +23,8 @@
 		FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB5F1BC526C100421EAA /* PhotoViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE6B61BC54123008729AE /* SharedModel.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACCEA1BD26D60001632BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1ACCE91BD26D60001632BC /* SystemConfiguration.framework */; };
+		FA1ACCEC1BD26D67001632BC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1ACCEB1BD26D67001632BC /* MobileCoreServices.framework */; };
 		FA55FE081BCE4463004BCD2F /* PatientEatingHabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FA55FE0D1BCE610D004BCD2F /* ICSCustomRowDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55FE0C1BCE610D004BCD2F /* ICSCustomRowDescriptor.m */; settings = {ASSET_TAGS = (); }; };
 		FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */; settings = {ASSET_TAGS = (); }; };
@@ -43,6 +44,10 @@
 		FADA7C5F1BCBD42200CACD1D /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA7C5E1BCBD42200CACD1D /* RatingView.m */; settings = {ASSET_TAGS = (); }; };
 		FADA7C621BCBD5CC00CACD1D /* DoctorInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA7C611BCBD5CC00CACD1D /* DoctorInformationCell.m */; settings = {ASSET_TAGS = (); }; };
 		FADA7C641BCBD5DD00CACD1D /* DoctorInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADA7C631BCBD5DD00CACD1D /* DoctorInformationCell.xib */; settings = {ASSET_TAGS = (); }; };
+		FAECE1161BD258B300A6BFED /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE10F1BD2588D00A6BFED /* libRestKit.a */; };
+		FAECE1181BD259A400A6BFED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE1171BD259A400A6BFED /* CoreData.framework */; };
+		FAECE11A1BD259AA00A6BFED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE1191BD259AA00A6BFED /* Security.framework */; };
+		FAECE11C1BD259AF00A6BFED /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE11B1BD259AF00A6BFED /* CFNetwork.framework */; };
 		FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEB61BC681A30053E659 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		FAFAAEBD1BC683210053E659 /* FullImageContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEBC1BC683210053E659 /* FullImageContainerView.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -55,14 +60,40 @@
 			remoteGlobalIDString = 3EACD9C81BA9D053003E4540;
 			remoteInfo = ICS;
 		};
+		FAECE10E1BD2588D00A6BFED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAECE1071BD2588D00A6BFED /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		FAECE1101BD2588D00A6BFED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAECE1071BD2588D00A6BFED /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		FAECE1121BD2588D00A6BFED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAECE1071BD2588D00A6BFED /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		FAECE1141BD2588D00A6BFED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAECE1071BD2588D00A6BFED /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3C4ED20F431993D569F26029 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3E10E1C41BC448C4008B9296 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		3E10E1C51BC448C4008B9296 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
-		3E43FA451BC40F6B0021AE81 /* ICSHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSHTTPClient.h; sourceTree = "<group>"; };
-		3E43FA461BC40F6B0021AE81 /* ICSHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSHTTPClient.m; sourceTree = "<group>"; };
 		3E43FA471BC40F6B0021AE81 /* ICSStyleGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSStyleGuide.h; sourceTree = "<group>"; };
 		3E43FA481BC40F6B0021AE81 /* ICSStyleGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSStyleGuide.m; sourceTree = "<group>"; };
 		3E43FA4B1BC410340021AE81 /* ICSDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSDataManager.h; sourceTree = "<group>"; };
@@ -93,6 +124,8 @@
 		FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoCollectionViewCell.m; path = Cells/PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		FA0FE6B51BC54123008729AE /* SharedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedModel.h; sourceTree = "<group>"; };
 		FA0FE6B61BC54123008729AE /* SharedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedModel.m; sourceTree = "<group>"; };
+		FA1ACCE91BD26D60001632BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FA1ACCEB1BD26D67001632BC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FA55FE061BCE4463004BCD2F /* PatientEatingHabitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientEatingHabitsViewController.h; sourceTree = "<group>"; };
 		FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientEatingHabitsViewController.m; sourceTree = "<group>"; };
 		FA55FE0B1BCE610D004BCD2F /* ICSCustomRowDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSCustomRowDescriptor.h; sourceTree = "<group>"; };
@@ -128,6 +161,10 @@
 		FADA7C601BCBD5CC00CACD1D /* DoctorInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorInformationCell.h; sourceTree = "<group>"; };
 		FADA7C611BCBD5CC00CACD1D /* DoctorInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorInformationCell.m; sourceTree = "<group>"; };
 		FADA7C631BCBD5DD00CACD1D /* DoctorInformationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorInformationCell.xib; sourceTree = "<group>"; };
+		FAECE1071BD2588D00A6BFED /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ICS/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		FAECE1171BD259A400A6BFED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FAECE1191BD259AA00A6BFED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FAECE11B1BD259AF00A6BFED /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FAFAAEB01BC67FC90053E659 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FAFAAEB51BC681A30053E659 /* ICS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ICS-Prefix.pch"; path = "ICS/Resources/ICS-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FAFAAEB61BC681A30053E659 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
@@ -139,6 +176,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1ACCEC1BD26D67001632BC /* MobileCoreServices.framework in Frameworks */,
+				FA1ACCEA1BD26D60001632BC /* SystemConfiguration.framework in Frameworks */,
+				FAECE11C1BD259AF00A6BFED /* CFNetwork.framework in Frameworks */,
+				FAECE11A1BD259AA00A6BFED /* Security.framework in Frameworks */,
+				FAECE1181BD259A400A6BFED /* CoreData.framework in Frameworks */,
+				FAECE1161BD258B300A6BFED /* libRestKit.a in Frameworks */,
 				DDE48E7F0DAE62D7C1126C6C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,8 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				3E10E1C31BC448C4008B9296 /* Categories */,
-				3E43FA451BC40F6B0021AE81 /* ICSHTTPClient.h */,
-				3E43FA461BC40F6B0021AE81 /* ICSHTTPClient.m */,
 				3E43FA4E1BC410630021AE81 /* ICSUtilities.h */,
 				3E43FA4F1BC410630021AE81 /* ICSUtilities.m */,
 				3E43FA471BC40F6B0021AE81 /* ICSStyleGuide.h */,
@@ -224,6 +265,7 @@
 		3EACD9C01BA9D053003E4540 = {
 			isa = PBXGroup;
 			children = (
+				FAECE1071BD2588D00A6BFED /* RestKit.xcodeproj */,
 				FAFAAEB01BC67FC90053E659 /* Constants.h */,
 				3EACD9CB1BA9D053003E4540 /* ICS */,
 				3EACD9E51BA9D053003E4540 /* ICSTests */,
@@ -297,6 +339,11 @@
 		ED88F5D689F13C356BA68E2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA1ACCEB1BD26D67001632BC /* MobileCoreServices.framework */,
+				FA1ACCE91BD26D60001632BC /* SystemConfiguration.framework */,
+				FAECE11B1BD259AF00A6BFED /* CFNetwork.framework */,
+				FAECE1191BD259AA00A6BFED /* Security.framework */,
+				FAECE1171BD259A400A6BFED /* CoreData.framework */,
 				994084B95641F268B490CD7C /* libPods.a */,
 			);
 			name = Frameworks;
@@ -372,6 +419,17 @@
 				FAD8E08E1BD16B040010E975 /* Event.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		FAECE1081BD2588D00A6BFED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAECE10F1BD2588D00A6BFED /* libRestKit.a */,
+				FAECE1111BD2588D00A6BFED /* RestKitTests.octest */,
+				FAECE1131BD2588D00A6BFED /* RestKit.framework */,
+				FAECE1151BD2588D00A6BFED /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		FAFAAEB31BC680FF0053E659 /* Resources */ = {
@@ -455,6 +513,12 @@
 			mainGroup = 3EACD9C01BA9D053003E4540;
 			productRefGroup = 3EACD9CA1BA9D053003E4540 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FAECE1081BD2588D00A6BFED /* Products */;
+					ProjectRef = FAECE1071BD2588D00A6BFED /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3EACD9C81BA9D053003E4540 /* ICS */,
@@ -462,6 +526,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FAECE10F1BD2588D00A6BFED /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = FAECE10E1BD2588D00A6BFED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FAECE1111BD2588D00A6BFED /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = FAECE1101BD2588D00A6BFED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FAECE1131BD2588D00A6BFED /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = FAECE1121BD2588D00A6BFED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FAECE1151BD2588D00A6BFED /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = FAECE1141BD2588D00A6BFED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3EACD9C71BA9D053003E4540 /* Resources */ = {
@@ -541,7 +636,6 @@
 				FA55FE081BCE4463004BCD2F /* PatientEatingHabitsViewController.m in Sources */,
 				FAD8E0831BD166D00010E975 /* ICSHomeViewController.m in Sources */,
 				FAD8E08F1BD16B040010E975 /* Event+CoreDataProperties.m in Sources */,
-				3E43FA491BC40F6B0021AE81 /* ICSHTTPClient.m in Sources */,
 				FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */,
 				FAD8E0A11BD16DC20010E975 /* Patient+CoreDataProperties.m in Sources */,
 				FA0FE6B71BC54123008729AE /* SharedModel.m in Sources */,
@@ -698,8 +792,60 @@
 			baseConfigurationReference = 793A7E32DFA657975E9804EB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"\"$(BUILT_PRODUCTS_DIR)/Headers\"/**",
+					"$(PROJECT_DIR)/RestKit/Build/Products/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Headers/**",
+					"$(PROJECT_DIR)/**",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Digits\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
+					"\"${PODS_ROOT}/Headers/Public/TwitterCore\"",
+					"\"${PODS_ROOT}/Headers/Public/XLForm\"",
+				);
 				INFOPLIST_FILE = ICS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"Pods-Crashlytics\"",
+					"-l\"Pods-Digits\"",
+					"-l\"Pods-Fabric\"",
+					"-l\"Pods-IQKeyboardManager\"",
+					"-l\"Pods-TwitterCore\"",
+					"-l\"Pods-XLForm\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accounts\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"DigitsKit\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"Social\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TwitterCore\"",
+					"-framework",
+					"\"UIKit\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "GHCI-CSPR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -710,8 +856,60 @@
 			baseConfigurationReference = 3C4ED20F431993D569F26029 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"\"$(BUILT_PRODUCTS_DIR)/Headers\"/**",
+					"$(PROJECT_DIR)/RestKit/Build/Products/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Headers/**",
+					"$(PROJECT_DIR)/**",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Digits\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
+					"\"${PODS_ROOT}/Headers/Public/TwitterCore\"",
+					"\"${PODS_ROOT}/Headers/Public/XLForm\"",
+				);
 				INFOPLIST_FILE = ICS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"Pods-Crashlytics\"",
+					"-l\"Pods-Digits\"",
+					"-l\"Pods-Fabric\"",
+					"-l\"Pods-IQKeyboardManager\"",
+					"-l\"Pods-TwitterCore\"",
+					"-l\"Pods-XLForm\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accounts\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"DigitsKit\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"Social\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TwitterCore\"",
+					"-framework",
+					"\"UIKit\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "GHCI-CSPR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
