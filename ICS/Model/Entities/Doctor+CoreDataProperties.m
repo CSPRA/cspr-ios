@@ -2,7 +2,7 @@
 //  Doctor+CoreDataProperties.m
 //  
 //
-//  Created by aam-fueled on 16/10/15.
+//  Created by aqsa-fueled on 16/10/15.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

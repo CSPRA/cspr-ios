@@ -47,6 +47,7 @@
 }
 
 #pragma mark - Core Data accessors
+
 - (NSManagedObjectContext *) managedObjectContext {
   if (_managedObjectContext != nil) {
     return _managedObjectContext;

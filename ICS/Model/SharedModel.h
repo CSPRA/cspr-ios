@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ICSDataSource.h"
 
 @interface SharedModel : NSObject
+@property (nonatomic, strong) NSManagedObjectContext  *managedObjectContext;
 
 + (instancetype)shared;
 - (NSString*)filePathWithPatientID :(NSInteger)patientId;
+- (ICSDataSource*)dataSource;
+- (NSManagedObject*)objectWithEntityName: (NSString*)entityName predicate: (NSPredicate*)predicate;
 
 @end
