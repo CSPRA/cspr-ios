@@ -16,28 +16,31 @@
   
 }
 
-- (void)fetchEventsWithCompletionBlock:(ICSApiInterfaceBlock)block {
+- (void)fetchEventsWithToken:(NSString*)token
+             completionBlock:(ICSApiInterfaceBlock)block {
+  NSString *path = [NSString stringWithFormat:@"http://cspr-web-dev.elasticbeanstalk.com/volunteer/myScreeningAssignments"];
+  
+  NSDictionary *parameters = @{
+                               @"token":token
+                               };
+  
+  [[RKObjectManager sharedManager] getObjectsAtPath:@"/volunteer/myScreeningAssignments" parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    
+    block(YES, [mappingResult array], nil);
+
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    block(NO, nil, error);
+
+  }];
+ 
+ 
+  
   
   }
 
 
-- (Patient*)patientWithId: (NSInteger)patientId {
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"patientId == %@", patientId];
-  return (Patient*)[[SharedModel shared] objectWithEntityName:kPatientEntityName predicate:predicate];
-}
 
-- (Event*)eventWithId:(NSInteger)eventId {
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"eventId == %u", eventId];
-  return (Event*)[[SharedModel shared] objectWithEntityName:kEventEntityName predicate:predicate];
-}
 
-- (Doctor*)doctorWithId:(NSInteger)doctorId {
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"doctorId == %@", doctorId];
-  return (Doctor*)[[SharedModel shared] objectWithEntityName:kDoctorEntityName predicate:predicate];
-}
 
-- (Question*)questionWithId:(NSInteger)questionId {
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"questionId == %@", questionId];
-  return (Question*)[[SharedModel shared] objectWithEntityName:kQuestionEntityName predicate:predicate];
-}
+
 @end

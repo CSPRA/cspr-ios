@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Patient : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
+- (Patient*)patientWithId: (NSInteger)patientId;
 
 @end
 

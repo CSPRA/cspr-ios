@@ -40,6 +40,10 @@
 		FA1ACD1B1BD2B3BB001632BC /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD1A1BD2B3BB001632BC /* RatingView.m */; settings = {ASSET_TAGS = (); }; };
 		FA1ACD1E1BD2BF26001632BC /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD1D1BD2BF26001632BC /* Event+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		FA55FE081BCE4463004BCD2F /* PatientEatingHabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FA5853331BD79FEF0037EEC5 /* Form+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58532C1BD79FEF0037EEC5 /* Form+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		FA5853341BD79FEF0037EEC5 /* Form.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58532E1BD79FEF0037EEC5 /* Form.m */; settings = {ASSET_TAGS = (); }; };
+		FA5853351BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5853301BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		FA5853361BD79FEF0037EEC5 /* Cancer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5853321BD79FEF0037EEC5 /* Cancer.m */; settings = {ASSET_TAGS = (); }; };
 		FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */; settings = {ASSET_TAGS = (); }; };
 		FAA5132E1BC7A8E2009A6D2E /* PatientInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FAD8E0831BD166D00010E975 /* ICSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0821BD166D00010E975 /* ICSHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -159,6 +163,15 @@
 		FA1ACD1D1BD2BF26001632BC /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Event+CoreDataProperties.m"; path = "Model/Entities/Event+CoreDataProperties.m"; sourceTree = "<group>"; };
 		FA55FE061BCE4463004BCD2F /* PatientEatingHabitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientEatingHabitsViewController.h; sourceTree = "<group>"; };
 		FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientEatingHabitsViewController.m; sourceTree = "<group>"; };
+		FA5853261BD7936D0037EEC5 /* RestKitAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestKitAddition.h; path = Model/API/RestKitAddition.h; sourceTree = "<group>"; };
+		FA58532B1BD79FEF0037EEC5 /* Form+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Form+CoreDataProperties.h"; path = "Model/Entities/Form+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FA58532C1BD79FEF0037EEC5 /* Form+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Form+CoreDataProperties.m"; path = "Model/Entities/Form+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FA58532D1BD79FEF0037EEC5 /* Form.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Form.h; path = Model/Entities/Form.h; sourceTree = "<group>"; };
+		FA58532E1BD79FEF0037EEC5 /* Form.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Form.m; path = Model/Entities/Form.m; sourceTree = "<group>"; };
+		FA58532F1BD79FEF0037EEC5 /* Cancer+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cancer+CoreDataProperties.h"; path = "Model/Entities/Cancer+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FA5853301BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cancer+CoreDataProperties.m"; path = "Model/Entities/Cancer+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FA5853311BD79FEF0037EEC5 /* Cancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cancer.h; path = Model/Entities/Cancer.h; sourceTree = "<group>"; };
+		FA5853321BD79FEF0037EEC5 /* Cancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cancer.m; path = Model/Entities/Cancer.m; sourceTree = "<group>"; };
 		FAA103F71BC64AEA00C6CEFC /* FullImageContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullImageContainerView.h; path = Views/FullImageContainerView.h; sourceTree = "<group>"; };
 		FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullImageContainerView.m; path = Views/FullImageContainerView.m; sourceTree = "<group>"; };
 		FAA5132C1BC7A8E2009A6D2E /* PatientInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientInformationViewController.h; sourceTree = "<group>"; };
@@ -410,6 +423,7 @@
 				FA1ACCEF1BD27064001632BC /* APIInterface.m */,
 				FA1ACCF41BD29F13001632BC /* ICSAPIError.h */,
 				FA1ACCF51BD29F13001632BC /* ICSAPIError.m */,
+				FA5853261BD7936D0037EEC5 /* RestKitAddition.h */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -447,6 +461,14 @@
 		FAD8E08A1BD16AF40010E975 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				FA58532B1BD79FEF0037EEC5 /* Form+CoreDataProperties.h */,
+				FA58532C1BD79FEF0037EEC5 /* Form+CoreDataProperties.m */,
+				FA58532D1BD79FEF0037EEC5 /* Form.h */,
+				FA58532E1BD79FEF0037EEC5 /* Form.m */,
+				FA58532F1BD79FEF0037EEC5 /* Cancer+CoreDataProperties.h */,
+				FA5853301BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m */,
+				FA5853311BD79FEF0037EEC5 /* Cancer.h */,
+				FA5853321BD79FEF0037EEC5 /* Cancer.m */,
 				FAD8E0971BD16DC20010E975 /* Doctor+CoreDataProperties.h */,
 				FAD8E0981BD16DC20010E975 /* Doctor+CoreDataProperties.m */,
 				FAD8E0991BD16DC20010E975 /* Doctor.h */,
@@ -687,8 +709,10 @@
 				FA1ACD091BD2B34E001632BC /* DoctorInformationCell.m in Sources */,
 				FAD8E0A11BD16DC20010E975 /* Patient+CoreDataProperties.m in Sources */,
 				3E43FA591BC413880021AE81 /* PhoneVerificationViewController.m in Sources */,
+				FA5853351BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m in Sources */,
 				3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */,
 				FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */,
+				FA5853331BD79FEF0037EEC5 /* Form+CoreDataProperties.m in Sources */,
 				FA1ACCF61BD29F13001632BC /* ICSAPIError.m in Sources */,
 				FAD8E0951BD16C190010E975 /* Question+CoreDataProperties.m in Sources */,
 				FAD8E0A21BD16DC20010E975 /* Patient.m in Sources */,
@@ -698,6 +722,7 @@
 				FA1ACD001BD2B245001632BC /* PatientsDetailTableViewCell.m in Sources */,
 				3E43FA551BC4108E0021AE81 /* Reachability.m in Sources */,
 				FA1ACD0A1BD2B34E001632BC /* ICSCustomRowDescriptor.m in Sources */,
+				FA5853361BD79FEF0037EEC5 /* Cancer.m in Sources */,
 				FA1ACD121BD2B3A0001632BC /* ICSDataSource.m in Sources */,
 				3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */,
 				FA1ACD181BD2B3AD001632BC /* SharedModel.m in Sources */,
@@ -713,6 +738,7 @@
 				FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */,
 				3EACD9CF1BA9D053003E4540 /* main.m in Sources */,
 				FA1ACD171BD2B3AD001632BC /* ICSModel.xcdatamodeld in Sources */,
+				FA5853341BD79FEF0037EEC5 /* Form.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

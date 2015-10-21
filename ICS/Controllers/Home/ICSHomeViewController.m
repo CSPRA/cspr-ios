@@ -8,7 +8,7 @@
 
 #import "ICSHomeViewController.h"
 #import "Event.h"
-#import "SharedModel.h"
+#import "EventDetailTableViewCell.h"
 
 @interface ICSHomeViewController ()<UITableViewDelegate,
 UITableViewDataSource>
@@ -34,18 +34,17 @@ UITableViewDataSource>
 }
 
 - (void)initializeData {
-  
-  Event *event1 = [kDataSource eventWithId:1];
-  event1.eventName = @"Registration";
-  event1.eventType = @"Throat Cancer";
-  
-  Event *event2 = [kDataSource eventWithId:2];
-  event1.eventType = @"Throat Cancer";
-  event2.eventName = @"Screening";
-  
-  self.eventArray = [NSArray arrayWithObjects:event1,event2, nil];
-
-}
+  NSString *token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2NzcHItd2ViLWRldi5lbGFzdGljYmVhbnN0YWxrLmNvbVwvdm9sdW50ZWVyXC9sb2dpbiIsImlhdCI6IjE0NDU0MjU2NDEiLCJleHAiOiIxNDQ1NDI5MjQxIiwibmJmIjoiMTQ0NTQyNTY0MSIsImp0aSI6ImQ3NmZjMDIzNTAxNWRmMDNhMDQ3NjE4YmE0YWFmOTRlIn0.GVLf_7YeWMXNQ-Qx5gThQ6QGWicWLkcQsBEETwRg1L4";
+  [kDataSource fetchEventsWithToken:token
+                    completionBlock:^(BOOL success, NSArray *result, NSError *error) {
+    if (success) {
+      self.eventArray = result;
+      [self.tableView reloadData];
+    }else if (error){
+      NSLog(@"%@",error);
+    }
+  }];
+  }
 
 #pragma mark - TableView Delegate and DataSource methods
 
@@ -59,8 +58,13 @@ UITableViewDataSource>
 
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  UITableViewCell *Cell = [self.tableView dequeueReusableCellWithIdentifier:kEventDetailCellIdentifier forIndexPath:indexPath];
-  return Cell;
+  EventDetailTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kEventDetailCellIdentifier forIndexPath:indexPath];
+  if(self.eventArray)
+  {
+    cell.eventNameLabel.text = [[self.eventArray objectAtIndex:indexPath.row] valueForKey:@"eventName"];
+    cell.eventTypeLabel.text = [[self.eventArray objectAtIndex:indexPath.row] valueForKey:@"eventType"];
+  }
+  return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

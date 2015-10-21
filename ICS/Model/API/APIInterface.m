@@ -16,7 +16,7 @@
   dispatch_once(&onceToken, ^{
     _instance = [[APIInterface alloc] init];
     // Do any other initialisation stuff here
-
+    
   });
   return _instance;
 }
@@ -25,6 +25,7 @@
   self = [super init];
   if (self) {
     [self setupRestkit];
+    [self setupMapping];
   }
   return self;
 }
@@ -52,7 +53,7 @@
                             };
   
   NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
-
+  
   // create a persistent SQLite store with a new sqlite db file
   [managedStore addSQLitePersistentStoreAtPath:storePath
                         fromSeedDatabaseAtPath:seedPath
@@ -64,16 +65,29 @@
     NSLog(@"unresolved error %@, %@", error, [error userInfo]);
     abort();
   }
-  
   // create a managed object context for the new store
   [managedStore createManagedObjectContexts];
   // set the shared manager store as the new store
   sharedManager.managedObjectStore = managedStore;
   // Set the shared manager
-  [RKObjectManager setSharedManager:sharedManager];
   
+  [RKObjectManager setSharedManager:sharedManager];
   // Configure a managed object cache to ensure we do not create duplicate objects
   managedStore.managedObjectCache = [[RKInMemoryManagedObjectCache alloc] initWithManagedObjectContext:managedStore.persistentStoreManagedObjectContext];
+}
+
+- (void)setupMapping {
+  NSIndexSet *successSet = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+  RKManagedObjectStore *store = [RKObjectManager sharedManager].managedObjectStore;
+  RKEntityMapping *eventMapping = [Event restkitObjectMappingForStore:store];
+  
+  RKResponseDescriptor *response =
+  [RKResponseDescriptor responseDescriptorWithMapping:eventMapping
+                                          pathPattern:@"/volunteer/myScreeningAssignments"
+                                              keyPath:@"results"
+                                          statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:response];
+
 }
 
 @end

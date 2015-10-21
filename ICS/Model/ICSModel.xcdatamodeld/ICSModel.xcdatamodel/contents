@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14E46" minimumToolsVersion="Xcode 7.0">
+    <entity name="Cancer" representedClassName="Cancer" syncable="YES">
+        <attribute name="cancerDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cancerId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="cancerName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Doctor" representedClassName="Doctor" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="doctorId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -16,6 +21,11 @@
         <attribute name="eventType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startingDate" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
+    <entity name="Form" representedClassName="Form" syncable="YES">
+        <attribute name="formDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Patient" representedClassName="Patient" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dob" optional="YES" attributeType="Date" syncable="YES"/>
@@ -30,9 +40,11 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="Question" positionX="-54" positionY="27" width="128" height="90"/>
-        <element name="Patient" positionX="-36" positionY="45" width="128" height="135"/>
         <element name="Doctor" positionX="-18" positionY="90" width="128" height="150"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Patient" positionX="-36" positionY="45" width="128" height="135"/>
+        <element name="Question" positionX="-54" positionY="27" width="128" height="90"/>
+        <element name="Form" positionX="-36" positionY="90" width="128" height="90"/>
+        <element name="Cancer" positionX="-27" positionY="99" width="128" height="90"/>
     </elements>
 </model>

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RestKit/RestKit.h>
+#import "RestKitAddition.h"
 
 @interface APIInterface : NSObject
 + (instancetype)sharedInterface;

@@ -10,6 +10,8 @@
 
 @implementation Question
 
-// Insert code here to add functionality to your managed object subclass
-
+- (Question*)questionWithId:(NSInteger)questionId {
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"questionId == %@", questionId];
+  return (Question*)[kSharedModel objectWithEntityName:kQuestionEntityName predicate:predicate];
+}
 @end

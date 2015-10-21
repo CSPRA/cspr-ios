@@ -16,7 +16,7 @@
 
 typedef void (^ICSApiInterfaceBlock)(BOOL success,
                                         NSArray *result,
-                                        ICSAPIError *error);
+                                        NSError *error);
 
 @interface ICSDataSource : NSObject
 
@@ -33,15 +33,8 @@ typedef void (^ICSApiInterfaceBlock)(BOOL success,
  @param block Completion block to be executed once call is completed
  */
 
-- (void)fetchEventsWithCompletionBlock: (ICSApiInterfaceBlock)block;
-
-
-- (Patient*)patientWithId: (NSInteger)patientId;
-- (Event*)eventWithId: (NSInteger)eventId;
-- (Doctor*)doctorWithId: (NSInteger)doctorId;
-- (Question*)questionWithId: (NSInteger)questionId;
-
-
+- (void)fetchEventsWithToken: (NSString*)token
+             completionBlock: (ICSApiInterfaceBlock)block;
 
 
 @end

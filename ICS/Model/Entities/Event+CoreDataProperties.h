@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.h
 //  
 //
-//  Created by aam-fueled on 16/10/15.
+//  Created by aqsa-fueled on 16/10/15.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int64_t eventId;
 @property (nullable, nonatomic, retain) NSString *eventName;
 @property (nullable, nonatomic, retain) NSString *eventType;
-@property (nonatomic) NSTimeInterval startingDate;
-@property (nonatomic) NSTimeInterval endingDate;
+@property (nonatomic) NSDate *startingDate;
+@property (nonatomic) NSDate *endingDate;
 
 @end
 

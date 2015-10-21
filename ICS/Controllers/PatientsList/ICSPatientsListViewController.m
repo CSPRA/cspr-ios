@@ -32,24 +32,24 @@ UITabBarDelegate>
 
 #pragma mark - Dummy data
 - (void)initializeDummyData {
-
-  Patient *p1 = [kDataSource patientWithId:123];
-  p1.firstName = @"aaa";
-  p1.lastName = @"bbbb";
-  
-  Patient *p2 = [kDataSource patientWithId:123];
-  p2.firstName = @"aaa";
-  p2.lastName = @"bbbb";
-
-  Patient *p3 = [kDataSource patientWithId:123];
-  p3.firstName = @"aaa";
-  p3.lastName = @"bbbb";
-
-  Patient *p4 = [kDataSource patientWithId:123];
-  p4.firstName = @"aaa";
-  p4.lastName = @"bbbb";
-
-  self.patientListArray = [NSArray arrayWithObjects:p1,p2,p3,p4, nil];
+//
+//  Patient *p1 = [kDataSource patientWithId:123];
+//  p1.firstName = @"aaa";
+//  p1.lastName = @"bbbb";
+//  
+//  Patient *p2 = [kDataSource patientWithId:123];
+//  p2.firstName = @"aaa";
+//  p2.lastName = @"bbbb";
+//
+//  Patient *p3 = [kDataSource patientWithId:123];
+//  p3.firstName = @"aaa";
+//  p3.lastName = @"bbbb";
+//
+//  Patient *p4 = [kDataSource patientWithId:123];
+//  p4.firstName = @"aaa";
+//  p4.lastName = @"bbbb";
+//
+//  self.patientListArray = [NSArray arrayWithObjects:p1,p2,p3,p4, nil];
 }
 
 #pragma mark - TableView Delegate and DataSource methods

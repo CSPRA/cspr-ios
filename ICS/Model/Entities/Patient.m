@@ -10,6 +10,9 @@
 
 @implementation Patient
 
-// Insert code here to add functionality to your managed object subclass
+- (Patient*)patientWithId: (NSInteger)patientId {
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"patientId == %@", patientId];
+  return (Patient*)[kSharedModel objectWithEntityName:kPatientEntityName predicate:predicate];
+}
 
 @end

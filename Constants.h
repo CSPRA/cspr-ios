@@ -14,6 +14,7 @@
 
 
 #define kDataSource [[SharedModel shared] dataSource]
+#define kSharedModel [SharedModel shared]
 
 #define kAnimationFactor 0.5
 #define kMinAlpha 0.0

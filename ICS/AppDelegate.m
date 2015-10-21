@@ -11,6 +11,7 @@
 #import <DigitsKit/DigitsKit.h>
 #import <Crashlytics/Crashlytics.h>
 #import <RestKit/RestKit.h>
+#import "APIInterface.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Fabric with:@[[Crashlytics class], [Digits class]]];
+  [APIInterface sharedInterface];
     return YES;
 }
 

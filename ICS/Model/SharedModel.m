@@ -34,7 +34,8 @@
                                                       NSUserDomainMask,
                                                       YES);
   NSString *documentPath = [path firstObject];
-  NSString *destinationPath = [documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"patientsImages-%ld",(long)patientId]];
+  NSString *destinationPath = [documentPath stringByAppendingPathComponent:
+              [NSString stringWithFormat:@"patientsImages-%ld",(long)patientId]];
   return [destinationPath stringByAppendingPathExtension:@"plist"];
 }
 
@@ -47,9 +48,10 @@
   NSFetchRequest *request = [[NSFetchRequest alloc] init];
   NSEntityDescription *entity = [NSEntityDescription entityForName:entityName
                                             inManagedObjectContext:self.managedObjectContext];
-    request.predicate = predicate;
+  request.predicate = predicate;
   [request setEntity:entity];
   NSError *error = nil;
+
   NSArray *objects = [self.managedObjectContext executeFetchRequest:request
                                                               error:&error];
   if (objects.count) {

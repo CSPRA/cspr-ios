@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Question : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
+- (Question*)questionWithId:(NSInteger)questionId;
 
 @end
 
