@@ -7,4 +7,5 @@ pod 'Digits'
 pod 'TwitterCore'
 pod 'IQKeyboardManager'
 pod 'XLForm', :git => 'https://github.com/xmartlabs/XLForm.git'
+pod 'MBProgressHUD', '~> 0.9.1'
 

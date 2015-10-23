@@ -18,28 +18,33 @@
 
 - (void)fetchEventsWithToken:(NSString*)token
              completionBlock:(ICSApiInterfaceBlock)block {
-  NSString *path = [NSString stringWithFormat:@"http://cspr-web-dev.elasticbeanstalk.com/volunteer/myScreeningAssignments"];
-  
   NSDictionary *parameters = @{
                                @"token":token
                                };
   
-  [[RKObjectManager sharedManager] getObjectsAtPath:@"/volunteer/myScreeningAssignments" parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-    
-    block(YES, [mappingResult array], nil);
-
-  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-    block(NO, nil, error);
-
-  }];
- 
- 
+  [[RKObjectManager sharedManager] getObjectsAtPath:@"/volunteer/myScreeningAssignments"
+                                         parameters:parameters
+                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                              block(YES, [mappingResult array], nil);
+                                            } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                              block(NO, nil, error);
+                                            }];
   
-  
-  }
+}
 
 
+- (void)registerPatientWithParameters:(NSDictionary *)paramenters
+                 completionBlock:(ICSApiInterfaceBlock)block {
 
+  [[RKObjectManager sharedManager] postObject:nil
+                                         path:@"/volunteer/registerPatient"
+                                   parameters:paramenters
+                                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                        block(YES, [mappingResult array], nil);
+                                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                        block(NO, nil, error);
+                                      }];
+}
 
 
 

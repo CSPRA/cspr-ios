@@ -15,4 +15,19 @@
   return (Patient*)[kSharedModel objectWithEntityName:kPatientEntityName predicate:predicate];
 }
 
++ (RKEntityMapping*)restkitObjectMappingForStore:(RKManagedObjectStore *)store {
+  RKEntityMapping *patientMapping = [RKEntityMapping mappingForEntityForName:kPatientEntityName
+                                                        inManagedObjectStore:store];
+  [patientMapping setIdentificationAttributes:@[@"patientId"]];
+  [patientMapping addAttributeMappingsFromDictionary:@{
+                                                     @"eventId": @"eventId",
+                                                     @"eventName": @"eventName",
+                                                     @"eventType": @"eventType",
+                                                     @"startingDate": @"startingDate",
+                                                     @"endingDate": @"endingDate"
+                                                     }];
+  return patientMapping;
+  
+}
+
 @end

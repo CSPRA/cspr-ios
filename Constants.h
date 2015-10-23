@@ -25,10 +25,14 @@
 #define kPatientHabitsVCIdentifier  @"PatientHabitsVCIdentifier"
 #define kHomeVCIdentifier @"HomeViewControllerIdentifier"
 #define kPatientsListVCIdentifier  @"PatientsListVCIdentifier"
+#define kRegisterVCIdentifier @"RegisterVCIdentifier"
 
 //UITableViewCell Identifiers
 #define kEventDetailCellIdentifier @"EventDetailCellIdentifier"
 #define kPatieltDetailsCellIdentifier @"PatieltDetailsCellIdentifier"
+
+//Segue Identifier
+#define kshowPatientRegisterFormIdentifier @"showPatientRegisterFormIdentifier"
 
 //Inlist API & Model Constants
 

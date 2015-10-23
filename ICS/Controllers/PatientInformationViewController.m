@@ -31,6 +31,7 @@ static NSString *const kAssignDoctor = @"Assign Doctor";
 static NSString * const kCustomRowFirstRatingTag = @"CustomRowFirstRatingTag";
 static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
 static NSString * const khidesection = @"tag1";
+static NSString * const token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2NzcHItd2ViLWRldi5lbGFzdGljYmVhbnN0YWxrLmNvbVwvdm9sdW50ZWVyXC9sb2dpbiIsImlhdCI6IjE0NDU0Mjk0NTgiLCJleHAiOiIxNDQ1NDMzMDU4IiwibmJmIjoiMTQ0NTQyOTQ1OCIsImp0aSI6IjdiOTE0MzJhY2E2OWRiNTdlN2M4YTU3MDI3YmI4OWY3In0.TYWBbzVOHG8EnLf0vHorTTkELKMVbRRavjwY6HXhCys";
 
 @interface PatientInformationViewController ()<DoctorInformationCellDelegate>
 @property (nonatomic, strong) NSArray *doctorList;
@@ -70,7 +71,7 @@ static NSString * const khidesection = @"tag1";
   doc2.address = @"Delhi";
   doc2.specialization = @"Cancer Specialist";
   doc2.ratingValue = 2;
-
+  
   
   Doctor *doc3 = [[Doctor alloc] init];
   doc3.doctorId = 3;
@@ -79,8 +80,8 @@ static NSString * const khidesection = @"tag1";
   doc3.address = @"Bangalore";
   doc3.specialization = @"Cancer Specialist";
   doc3.ratingValue = 4;
-
-
+  
+  
   NSMutableArray *doctorArray = [[NSMutableArray alloc] initWithObjects:doc1,doc2,doc3, nil];
   self.doctorList = doctorArray;
 }
@@ -171,7 +172,7 @@ static NSString * const khidesection = @"tag1";
               section:section];
   
   //phone number fields
- 
+  
   [self addRowWithTag:kPhoneNumber
               rowType:XLFormRowDescriptorTypePhone
                 title:kPhoneNumber
@@ -183,7 +184,7 @@ static NSString * const khidesection = @"tag1";
               section:section];
   
   //Email fields
-
+  
   [self addRowWithTag:kEmail
               rowType:XLFormRowDescriptorTypeEmail
                 title:kEmail
@@ -216,25 +217,25 @@ static NSString * const khidesection = @"tag1";
                 title:kConsumeAlcohal
               section:section];
   
- XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kAssignDoctor rowType:XLFormRowDescriptorTypeCustomButton title:kAssignDoctor];
+  XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kAssignDoctor rowType:XLFormRowDescriptorTypeCustomButton title:kAssignDoctor];
   row.value = kButtonTypeAssignDoctor;
   row.action.formSelector = @selector(didTappedAssignDoctor:);
   [section addFormRow:row];
-
+  
   self.form = form;
 }
 
 #pragma mark - Handling assign doctors section
 
 - (void)addDoctorInfoCell:(Doctor*)doctor section:(XLFormSectionDescriptor*)section {
-   XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Rating"];
+  XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Rating"];
   NSDictionary *value =[NSDictionary dictionaryWithObjects:@[doctor,self] forKeys:@[@"doctorInfo",@"delegateInfo"]];
   row.value = value;
   [section addFormRow:row];
 }
 
 - (void)addAssignDoctorSectionWithDoctorList:(NSArray*)doctorsArray {
- 
+  
   XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@"Assign Doctor From List"];
   section.hidden = [NSString stringWithFormat:@"$%@==0", khidesection];
   [self.form addFormSection:section];
@@ -245,17 +246,37 @@ static NSString * const khidesection = @"tag1";
 }
 
 - (void)didTappedAssignDoctor:(XLFormRowDescriptor*)sender {
-  if (!self.doctorList) {
-    [self initializeDummyData];
-    [self addAssignDoctorSectionWithDoctorList:self.doctorList];
-  }
-  else{
-    return;
-  }
+  NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+  [param setObject:token forKey:@"token"];
+  [param setObject:self.formValues forKey:@"formValues"];
+  
+  [kDataSource registerPatientWithParameters:param completionBlock:^(BOOL success, NSArray *result, NSError *error) {
+    if (success) {
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                      message:@"Patient Registered succesfully"
+                                                     delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil, nil];
+      [alert show];
+    }
+    else if (error){
+      NSLog(@"%@",error);
+    }
+  }];
+  
+  //  if (!self.doctorList) {
+  //    [self initializeDummyData];
+  //    [self addAssignDoctorSectionWithDoctorList:self.doctorList];
+  //  }
+  //  else{
+  //    return;
+  //  }
 }
 
 #pragma DoctorInformationCellDelegate
 - (void)didAssignedDoctor:(DoctorInformationCell *)cell {
   NSLog(@"doctor assigned %@",cell.nameLabel.text);
 }
+
+
 @end

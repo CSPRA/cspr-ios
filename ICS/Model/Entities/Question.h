@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "APIInterface.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Question : NSManagedObject
+@interface Question : NSManagedObject<RestKitAdditions>
 
 - (Question*)questionWithId:(NSInteger)questionId;
 

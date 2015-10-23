@@ -15,4 +15,16 @@
   return (Doctor*)[kSharedModel objectWithEntityName:kDoctorEntityName predicate:predicate];
 }
 
++ (RKEntityMapping*)restkitObjectMappingForStore:(RKManagedObjectStore *)store {
+  RKEntityMapping *doctorMapping = [RKEntityMapping mappingForEntityForName:kDoctorEntityName
+                                                        inManagedObjectStore:store];
+  [doctorMapping setIdentificationAttributes:@[@"doctorId"]];
+  [doctorMapping addAttributeMappingsFromDictionary:@{
+                                                       @"doctorId": @"doctorId",
+                                                       @"firstName": @"firstName",
+                                                       @"lastName": @"lastName",
+                                                       @"contactNumber": @"phoneNumber",
+                                                       }];
+  return doctorMapping;
+}
 @end

@@ -79,6 +79,8 @@
 - (void)setupMapping {
   NSIndexSet *successSet = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
   RKManagedObjectStore *store = [RKObjectManager sharedManager].managedObjectStore;
+  
+  //Mapping for event
   RKEntityMapping *eventMapping = [Event restkitObjectMappingForStore:store];
   
   RKResponseDescriptor *response =
@@ -87,6 +89,10 @@
                                               keyPath:@"results"
                                           statusCodes:successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:response];
+  
+  //Mapping for patient
+  
+  
 
 }
 

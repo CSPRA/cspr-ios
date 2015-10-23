@@ -1,11 +1,12 @@
 PODS:
   - Crashlytics (3.3.4)
-  - Digits (1.11.4)
+  - Digits (1.12.0)
   - Fabric (1.5.5):
     - Fabric/Base (= 1.5.5)
   - Fabric/Base (1.5.5)
   - IQKeyboardManager (3.3.2)
-  - TwitterCore (1.11.4)
+  - MBProgressHUD (0.9.1)
+  - TwitterCore (1.12.0)
   - XLForm (3.0.2)
 
 DEPENDENCIES:
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - Digits
   - Fabric
   - IQKeyboardManager
+  - MBProgressHUD (~> 0.9.1)
   - TwitterCore
   - XLForm (from `https://github.com/xmartlabs/XLForm.git`)
 
@@ -27,10 +29,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
-  Digits: 1a372fab25b58d1459adc6b8d95e2e155ae5b212
+  Digits: b443a43657c6cbaa6b31fedddc0e8c15133a978f
   Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
   IQKeyboardManager: d863eb0bca424d1f6dad6bdd1f856af52664add8
-  TwitterCore: 171dbd2f8d55707397f461af5158d987fb34aa36
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  TwitterCore: a1feadb793512962003ed2bad23e846c8daa4efd
   XLForm: 29b76283849dc70e987eaa5812783322465c2b98
 
 COCOAPODS: 0.35.0

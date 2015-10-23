@@ -9,6 +9,7 @@
 #import "ICSHomeViewController.h"
 #import "Event.h"
 #import "EventDetailTableViewCell.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface ICSHomeViewController ()<UITableViewDelegate,
 UITableViewDataSource>
@@ -22,29 +23,34 @@ UITableViewDataSource>
 @implementation ICSHomeViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-
-  [self initializeData];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  
+  if (!self.eventArray) {
+    [self initializeData];
+  }
+  
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 - (void)initializeData {
-  NSString *token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2NzcHItd2ViLWRldi5lbGFzdGljYmVhbnN0YWxrLmNvbVwvdm9sdW50ZWVyXC9sb2dpbiIsImlhdCI6IjE0NDU0MjU2NDEiLCJleHAiOiIxNDQ1NDI5MjQxIiwibmJmIjoiMTQ0NTQyNTY0MSIsImp0aSI6ImQ3NmZjMDIzNTAxNWRmMDNhMDQ3NjE4YmE0YWFmOTRlIn0.GVLf_7YeWMXNQ-Qx5gThQ6QGWicWLkcQsBEETwRg1L4";
+  NSString *token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2NzcHItd2ViLWRldi5lbGFzdGljYmVhbnN0YWxrLmNvbVwvdm9sdW50ZWVyXC9sb2dpbiIsImlhdCI6IjE0NDU0Mjk0NTgiLCJleHAiOiIxNDQ1NDMzMDU4IiwibmJmIjoiMTQ0NTQyOTQ1OCIsImp0aSI6IjdiOTE0MzJhY2E2OWRiNTdlN2M4YTU3MDI3YmI4OWY3In0.TYWBbzVOHG8EnLf0vHorTTkELKMVbRRavjwY6HXhCys";
+  
+  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
   [kDataSource fetchEventsWithToken:token
                     completionBlock:^(BOOL success, NSArray *result, NSError *error) {
-    if (success) {
-      self.eventArray = result;
-      [self.tableView reloadData];
-    }else if (error){
-      NSLog(@"%@",error);
-    }
-  }];
-  }
+                      if (success) {
+                        self.eventArray = result;
+                        [self.tableView reloadData];
+                      }else if (error){
+                        NSLog(@"%@",error);
+                      }
+                      [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    }];
+}
 
 #pragma mark - TableView Delegate and DataSource methods
 
