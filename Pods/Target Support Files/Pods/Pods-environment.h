@@ -30,11 +30,11 @@
 #define COCOAPODS_VERSION_MINOR_Fabric_Base 5
 #define COCOAPODS_VERSION_PATCH_Fabric_Base 5
 
-// IQKeyboardManager
-#define COCOAPODS_POD_AVAILABLE_IQKeyboardManager
-#define COCOAPODS_VERSION_MAJOR_IQKeyboardManager 3
-#define COCOAPODS_VERSION_MINOR_IQKeyboardManager 3
-#define COCOAPODS_VERSION_PATCH_IQKeyboardManager 2
+// JVFloatLabeledTextField
+#define COCOAPODS_POD_AVAILABLE_JVFloatLabeledTextField
+#define COCOAPODS_VERSION_MAJOR_JVFloatLabeledTextField 1
+#define COCOAPODS_VERSION_MINOR_JVFloatLabeledTextField 0
+#define COCOAPODS_VERSION_PATCH_JVFloatLabeledTextField 2
 
 // MBProgressHUD
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD

@@ -19,10 +19,8 @@
 		3EACD9D81BA9D053003E4540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9D61BA9D053003E4540 /* Main.storyboard */; };
 		3EACD9DD1BA9D053003E4540 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9DB1BA9D053003E4540 /* LaunchScreen.xib */; };
 		3EACD9E91BA9D053003E4540 /* ICSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9E81BA9D053003E4540 /* ICSTests.m */; };
-		4A6E55FB1BDCB6E100E72EBD /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E55F81BDCB6E100E72EBD /* JVFloatLabeledTextField.m */; settings = {ASSET_TAGS = (); }; };
-		4A6E55FC1BDCB6E100E72EBD /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E55FA1BDCB6E100E72EBD /* JVFloatLabeledTextView.m */; settings = {ASSET_TAGS = (); }; };
+		4A04605A1BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0460591BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a */; };
 		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
-		4A6E56071BDCB9E200E72EBD /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56061BDCB9E200E72EBD /* NSString+TextDirectionality.m */; settings = {ASSET_TAGS = (); }; };
 		4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DDE48E7F0DAE62D7C1126C6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994084B95641F268B490CD7C /* libPods.a */; };
 		FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB5F1BC526C100421EAA /* PhotoViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -133,14 +131,9 @@
 		3EACD9E21BA9D053003E4540 /* ICSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EACD9E71BA9D053003E4540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EACD9E81BA9D053003E4540 /* ICSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICSTests.m; sourceTree = "<group>"; };
-		4A6E55F71BDCB6E100E72EBD /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
-		4A6E55F81BDCB6E100E72EBD /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
-		4A6E55F91BDCB6E100E72EBD /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextView.h; sourceTree = "<group>"; };
-		4A6E55FA1BDCB6E100E72EBD /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextView.m; sourceTree = "<group>"; };
+		4A0460591BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-JVFloatLabeledTextField.a"; path = "Pods/build/Debug-iphoneos/libPods-JVFloatLabeledTextField.a"; sourceTree = "<group>"; };
 		4A6E56011BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSFloatLabeledTextFieldCell.h; path = Cells/ICSFloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
 		4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSFloatLabeledTextFieldCell.m; path = Cells/ICSFloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
-		4A6E56051BDCB9E200E72EBD /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextDirectionality.h"; sourceTree = "<group>"; };
-		4A6E56061BDCB9E200E72EBD /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextDirectionality.m"; sourceTree = "<group>"; };
 		4ACF7C701BDA371E00FFE3B3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = LoginRegister/RegisterViewController.h; sourceTree = "<group>"; };
 		4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = LoginRegister/RegisterViewController.m; sourceTree = "<group>"; };
 		793A7E32DFA657975E9804EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A04605A1BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a in Frameworks */,
 				FAC9C94D1BD7BB14003FFA44 /* libPods-MBProgressHUD.a in Frameworks */,
 				FA1ACCEC1BD26D67001632BC /* MobileCoreServices.framework in Frameworks */,
 				FA1ACCEA1BD26D60001632BC /* SystemConfiguration.framework in Frameworks */,
@@ -342,10 +336,6 @@
 			isa = PBXGroup;
 			children = (
 				4A6E56041BDCB9CC00E72EBD /* Categories */,
-				4A6E55F71BDCB6E100E72EBD /* JVFloatLabeledTextField.h */,
-				4A6E55F81BDCB6E100E72EBD /* JVFloatLabeledTextField.m */,
-				4A6E55F91BDCB6E100E72EBD /* JVFloatLabeledTextView.h */,
-				4A6E55FA1BDCB6E100E72EBD /* JVFloatLabeledTextView.m */,
 				FAA103F61BC64AB800C6CEFC /* Views */,
 				FA02CB651BC52E9000421EAA /* Model */,
 				3EACD9D01BA9D053003E4540 /* AppDelegate.h */,
@@ -398,8 +388,6 @@
 		4A6E56041BDCB9CC00E72EBD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				4A6E56051BDCB9E200E72EBD /* NSString+TextDirectionality.h */,
-				4A6E56061BDCB9E200E72EBD /* NSString+TextDirectionality.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -407,6 +395,7 @@
 		ED88F5D689F13C356BA68E2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A0460591BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a */,
 				FAC9C94C1BD7BB14003FFA44 /* libPods-MBProgressHUD.a */,
 				FA1ACCEB1BD26D67001632BC /* MobileCoreServices.framework */,
 				FA1ACCE91BD26D60001632BC /* SystemConfiguration.framework */,
@@ -755,7 +744,6 @@
 				FAD8E09F1BD16DC20010E975 /* Doctor+CoreDataProperties.m in Sources */,
 				FA55FE081BCE4463004BCD2F /* PatientEatingHabitsViewController.m in Sources */,
 				FA1ACD1B1BD2B3BB001632BC /* RatingView.m in Sources */,
-				4A6E55FC1BDCB6E100E72EBD /* JVFloatLabeledTextView.m in Sources */,
 				FAD8E0831BD166D00010E975 /* ICSHomeViewController.m in Sources */,
 				FAFFC9F51BDA20E6001DD25B /* LoginViewController.m in Sources */,
 				FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */,
@@ -770,7 +758,6 @@
 				FAD8E0951BD16C190010E975 /* Question+CoreDataProperties.m in Sources */,
 				FAD8E0A21BD16DC20010E975 /* Patient.m in Sources */,
 				FA1ACD0C1BD2B34E001632BC /* CustomFormButtonCell.m in Sources */,
-				4A6E55FB1BDCB6E100E72EBD /* JVFloatLabeledTextField.m in Sources */,
 				FAD8E0961BD16C190010E975 /* Question.m in Sources */,
 				3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */,
 				FA1ACD001BD2B245001632BC /* PatientsDetailTableViewCell.m in Sources */,
@@ -788,7 +775,6 @@
 				3E43FA5C1BC413AD0021AE81 /* VolunteerSignUpViewController.m in Sources */,
 				FAD8E0901BD16B040010E975 /* Event.m in Sources */,
 				3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */,
-				4A6E56071BDCB9E200E72EBD /* NSString+TextDirectionality.m in Sources */,
 				FA1ACCF91BD2AEDC001632BC /* EventDetailTableViewCell.m in Sources */,
 				FA1ACCF01BD27064001632BC /* APIInterface.m in Sources */,
 				FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */,

@@ -17,24 +17,25 @@ static NSString *const kPassword = @"Password";
 static NSString *const kPhoneNumber = @"Phone Number";
 static NSString *const kEmail = @"Email";
 static NSString *const kDoneButton = @"Done";
-
 static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
 @interface RegisterViewController ()
-
+@property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 @end
 
 @implementation RegisterViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+
+  [self addObservers];
+  
   [self.navigationController setNavigationBarHidden:NO animated:NO];
   UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
   self.navigationItem.backBarButtonItem = backItem;
   self.navigationItem.title = @"Volunteer Registration";
-//  [self initializeForm];
-  // Do any additional setup after loading the view.
 }
+
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
   self = [super initWithCoder:coder];
@@ -49,6 +50,32 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   // Dispose of any resources that can be recreated.
 }
 
+- (void)addObservers {
+  self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endViewEditing:)];
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(keyboardWillHide:)
+                                               name:UIKeyboardWillHideNotification
+                                             object:nil];
+  [[NSNotificationCenter defaultCenter]addObserver:self
+                                          selector:@selector(keyboardWillShow:)
+                                              name:UIKeyboardWillShowNotification
+                                            object:nil];
+  
+}
+- (void)keyboardWillHide: (NSNotification*)notification{
+  
+  [self.tableView setContentOffset:CGPointZero animated:YES];
+}
+
+- (void)keyboardWillShow: (NSNotification*)notification{
+  self.tableView.scrollEnabled = YES;
+  NSDictionary *userInfo = [notification userInfo];
+  CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+  CGSize size = self.tableView.contentSize;
+  size.height += kbSize.height;
+  self.tableView.contentSize = size;
+}
+
 
 - (void)addRowWithTag:(NSString *)tag rowType:(NSString *)rowType title:(NSString *)title section:(XLFormSectionDescriptor*)section {
   XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:tag
@@ -56,7 +83,10 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
                                                                      title:title];
   [section addFormRow:row];
 }
-
+- (void)endViewEditing:(UITapGestureRecognizer*)tap
+{
+  [self.view endEditing:YES];
+}
 #pragma mark - form intialization
 -(void)initializeForm
 {
@@ -84,9 +114,6 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   [row addValidator:[XLFormValidator emailValidator]];
   [section addFormRow:row];
   
-  
-  NSString *footerTitle = @"between 6 and 32 charachers, 1 alphanumeric and 1 numeric";
-  
   // Password
   row = [XLFormRowDescriptor formRowDescriptorWithTag:kPassword rowType:XLFormRowDescriptorTypePassword];
  
@@ -96,7 +123,13 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   row.required = YES;
   [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
   [section addFormRow:row];
-  
+  [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
+  [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
+  [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
+  [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
+  [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
+  [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
+  [section addFormRow:row];
   
   row = [XLFormRowDescriptor formRowDescriptorWithTag:kDoneButton rowType:XLFormRowDescriptorTypeButton title:kDoneButton];
   row.action.formSelector = @selector(didTappedDoneButton:);

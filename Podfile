@@ -5,7 +5,7 @@ pod 'Fabric'
 pod 'Crashlytics'
 pod 'Digits'
 pod 'TwitterCore'
-pod 'IQKeyboardManager'
 pod 'XLForm', :git => 'https://github.com/xmartlabs/XLForm.git'
 pod 'MBProgressHUD', '~> 0.9.1'
+pod 'JVFloatLabeledTextField', '1.0.2', :inhibit_warnings => true
 
