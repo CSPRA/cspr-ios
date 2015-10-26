@@ -20,6 +20,8 @@
 		3EACD9DD1BA9D053003E4540 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9DB1BA9D053003E4540 /* LaunchScreen.xib */; };
 		3EACD9E91BA9D053003E4540 /* ICSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9E81BA9D053003E4540 /* ICSTests.m */; };
 		4A04605A1BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0460591BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a */; };
+		4A04605F1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605C1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		4A0460601BDE3DBE005BCA2C /* Volunteer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605E1BDE3DBE005BCA2C /* Volunteer.m */; settings = {ASSET_TAGS = (); }; };
 		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
 		4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DDE48E7F0DAE62D7C1126C6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994084B95641F268B490CD7C /* libPods.a */; };
@@ -132,6 +134,10 @@
 		3EACD9E71BA9D053003E4540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EACD9E81BA9D053003E4540 /* ICSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICSTests.m; sourceTree = "<group>"; };
 		4A0460591BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-JVFloatLabeledTextField.a"; path = "Pods/build/Debug-iphoneos/libPods-JVFloatLabeledTextField.a"; sourceTree = "<group>"; };
+		4A04605B1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Volunteer+CoreDataProperties.h"; path = "Model/Entities/Volunteer+CoreDataProperties.h"; sourceTree = "<group>"; };
+		4A04605C1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Volunteer+CoreDataProperties.m"; path = "Model/Entities/Volunteer+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4A04605D1BDE3DBE005BCA2C /* Volunteer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Volunteer.h; path = Model/Entities/Volunteer.h; sourceTree = "<group>"; };
+		4A04605E1BDE3DBE005BCA2C /* Volunteer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Volunteer.m; path = Model/Entities/Volunteer.m; sourceTree = "<group>"; };
 		4A6E56011BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSFloatLabeledTextFieldCell.h; path = Cells/ICSFloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
 		4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSFloatLabeledTextFieldCell.m; path = Cells/ICSFloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
 		4ACF7C701BDA371E00FFE3B3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = LoginRegister/RegisterViewController.h; sourceTree = "<group>"; };
@@ -489,6 +495,10 @@
 		FAD8E08A1BD16AF40010E975 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				4A04605B1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.h */,
+				4A04605C1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m */,
+				4A04605D1BDE3DBE005BCA2C /* Volunteer.h */,
+				4A04605E1BDE3DBE005BCA2C /* Volunteer.m */,
 				FA58532B1BD79FEF0037EEC5 /* Form+CoreDataProperties.h */,
 				FA58532C1BD79FEF0037EEC5 /* Form+CoreDataProperties.m */,
 				FA58532D1BD79FEF0037EEC5 /* Form.h */,
@@ -744,6 +754,7 @@
 				FAD8E09F1BD16DC20010E975 /* Doctor+CoreDataProperties.m in Sources */,
 				FA55FE081BCE4463004BCD2F /* PatientEatingHabitsViewController.m in Sources */,
 				FA1ACD1B1BD2B3BB001632BC /* RatingView.m in Sources */,
+				4A04605F1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m in Sources */,
 				FAD8E0831BD166D00010E975 /* ICSHomeViewController.m in Sources */,
 				FAFFC9F51BDA20E6001DD25B /* LoginViewController.m in Sources */,
 				FA02CB641BC52B6500421EAA /* PhotoCollectionViewCell.m in Sources */,
@@ -776,6 +787,7 @@
 				FAD8E0901BD16B040010E975 /* Event.m in Sources */,
 				3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */,
 				FA1ACCF91BD2AEDC001632BC /* EventDetailTableViewCell.m in Sources */,
+				4A0460601BDE3DBE005BCA2C /* Volunteer.m in Sources */,
 				FA1ACCF01BD27064001632BC /* APIInterface.m in Sources */,
 				FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */,
 				3EACD9CF1BA9D053003E4540 /* main.m in Sources */,
@@ -920,7 +932,6 @@
 					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
 					"\"${PODS_ROOT}/Headers/Public/Digits\"",
 					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
-					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
 					"\"${PODS_ROOT}/Headers/Public/TwitterCore\"",
 					"\"${PODS_ROOT}/Headers/Public/XLForm\"",
 				);
@@ -935,7 +946,6 @@
 					"-l\"Pods-Crashlytics\"",
 					"-l\"Pods-Digits\"",
 					"-l\"Pods-Fabric\"",
-					"-l\"Pods-IQKeyboardManager\"",
 					"-l\"Pods-TwitterCore\"",
 					"-l\"Pods-XLForm\"",
 					"-l\"c++\"",
@@ -988,7 +998,6 @@
 					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
 					"\"${PODS_ROOT}/Headers/Public/Digits\"",
 					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
-					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
 					"\"${PODS_ROOT}/Headers/Public/TwitterCore\"",
 					"\"${PODS_ROOT}/Headers/Public/XLForm\"",
 				);
@@ -1003,7 +1012,6 @@
 					"-l\"Pods-Crashlytics\"",
 					"-l\"Pods-Digits\"",
 					"-l\"Pods-Fabric\"",
-					"-l\"Pods-IQKeyboardManager\"",
 					"-l\"Pods-TwitterCore\"",
 					"-l\"Pods-XLForm\"",
 					"-l\"c++\"",

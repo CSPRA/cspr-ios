@@ -83,17 +83,26 @@
   //Mapping for event
   RKEntityMapping *eventMapping = [Event restkitObjectMappingForStore:store];
   
-  RKResponseDescriptor *response =
+  RKResponseDescriptor *eventResponseDiscriptor =
   [RKResponseDescriptor responseDescriptorWithMapping:eventMapping
                                           pathPattern:@"/volunteer/myScreeningAssignments"
                                               keyPath:@"results"
                                           statusCodes:successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:response];
+  [[RKObjectManager sharedManager] addResponseDescriptor:eventResponseDiscriptor];
   
   //Mapping for patient
   
+  //Mapping for volunteer
+  RKEntityMapping *volunteerMapping = [Volunteer restkitObjectMappingForStore:store];
+  RKResponseDescriptor *volunteerResponseDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:volunteerMapping
+                                          pathPattern:@"/volunteer/register"
+                                              keyPath:@"result"
+                                          statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:volunteerResponseDescriptor];
   
-
+  
+  
 }
 
 @end

@@ -10,12 +10,12 @@
 #import <XLForm/XLForm.h>
 #import "ICSFloatLabeledTextFieldCell.h"
 
-static NSString *const kFirstName = @"First Name";
-static NSString *const kLastName = @"Last Name";
-static NSString *const kUsername = @"Username";
-static NSString *const kPassword = @"Password";
-static NSString *const kPhoneNumber = @"Phone Number";
-static NSString *const kEmail = @"Email";
+static NSString *const kFirstName = @"firstname";
+static NSString *const kLastName = @"lastname";
+static NSString *const kUsername = @"username";
+static NSString *const kPassword = @"password";
+static NSString *const kPhoneNumber = @"contactNumber";
+static NSString *const kEmail = @"email";
 static NSString *const kDoneButton = @"Done";
 static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
@@ -108,6 +108,11 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   row.required = YES;
   [section addFormRow:row];
   
+  //phone
+  row = [XLFormRowDescriptor formRowDescriptorWithTag:kPhoneNumber rowType:XLFormRowDescriptorTypePhone];
+  [row.cellConfigAtConfigure setObject:@"Phone Number" forKey:@"textField.placeholder"];
+  row.required = YES;
+  [section addFormRow:row];
   // Email
   row = [XLFormRowDescriptor formRowDescriptorWithTag:kEmail rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:kEmail];
   row.required = YES;
@@ -125,12 +130,7 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   [section addFormRow:row];
   [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
   [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
-  [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
-  [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
-  [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
-  [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
   [section addFormRow:row];
-  
   row = [XLFormRowDescriptor formRowDescriptorWithTag:kDoneButton rowType:XLFormRowDescriptorTypeButton title:kDoneButton];
   row.action.formSelector = @selector(didTappedDoneButton:);
   [section addFormRow:row];
@@ -142,11 +142,30 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 #pragma mark - actions
 - (void)didTappedDoneButton: (XLFormRowDescriptor*)row {
   NSLog(@"@form data %@", self.form.formValues);
-  [self validateForm];
+  if ([self validateForm]) {
+    [self processEntries];
+//    UIViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:kHomeVCIdentifier];
+//    [self presentViewController:homeViewController animated:YES completion:nil];
+  }
+//  [self validateForm];
   [self.tableView endEditing:YES];
 }
 
--(void)validateForm
+- (void)processEntries {
+  NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:self.formValues];
+  [params removeObjectForKey:@"Done"];
+  [kDataSource registerVolunteerWithParameters:params
+                              completeionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
+                                if (success) {
+                                  NSLog(@"Volunteer = %@",[result valueForKey:@"result"]);                                }
+                                else if (error){
+                                  NSLog(@"%@",error);
+                                }
+                                
+    
+  }];
+}
+- (BOOL)validateForm
 {
   NSArray * array = [self formValidationErrors];
   [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -173,11 +192,10 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
       [UIView animateWithDuration:0.3 animations:^{
         cell.backgroundColor = [UIColor whiteColor];
         [self animateCell:cell];
-
       }];
     }
-    
   }];
+  return array.count == 0;
 }
 
 

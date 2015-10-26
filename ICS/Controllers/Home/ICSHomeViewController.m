@@ -41,7 +41,7 @@ UITableViewDataSource>
   
   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
   [kDataSource fetchEventsWithToken:token
-                    completionBlock:^(BOOL success, NSArray *result, NSError *error) {
+                    completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
                       if (success) {
                         self.eventArray = result;
                         [self.tableView reloadData];

@@ -13,9 +13,10 @@
 #import "Event.h"
 #import "Question.h"
 #import "Doctor.h"
+#import "Volunteer.h"
 
 typedef void (^ICSApiInterfaceBlock)(BOOL success,
-                                        NSArray *result,
+                                        NSDictionary *result,
                                         NSError *error);
 
 @interface ICSDataSource : NSObject
@@ -42,5 +43,12 @@ typedef void (^ICSApiInterfaceBlock)(BOOL success,
  */
 - (void)registerPatientWithParameters:(NSDictionary*)paramenters
                  completionBlock:(ICSApiInterfaceBlock)block;
+
+/** Register a Volunteer 
+ @param parameneters dictionary of Volunteer details
+ @param block Completion block to be executed once call is completed
+ */
+- (void)registerVolunteerWithParameters: (NSDictionary*)parameters
+                       completeionBlock:(ICSApiInterfaceBlock)block;
 
 @end

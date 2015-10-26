@@ -250,7 +250,7 @@ static NSString * const token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiO
   [param setObject:token forKey:@"token"];
   [param setObject:self.formValues forKey:@"formValues"];
   
-  [kDataSource registerPatientWithParameters:param completionBlock:^(BOOL success, NSArray *result, NSError *error) {
+  [kDataSource registerPatientWithParameters:param completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
     if (success) {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
                                                       message:@"Patient Registered succesfully"
