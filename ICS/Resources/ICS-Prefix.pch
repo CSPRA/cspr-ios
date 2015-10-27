@@ -21,5 +21,6 @@
 #ifdef __OBJC__
 
 #import "Constants.h"
+#import "ICSDataManager.h"
 
 #endif

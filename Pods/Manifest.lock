@@ -22,10 +22,12 @@ PODS:
     - AFNetworking/NSURLSession
   - Crashlytics (3.3.1)
   - Digits (1.10.1)
+  - DZNEmptyDataSet (1.7.2)
   - Fabric (1.5.1):
     - Fabric/Base (= 1.5.1)
   - Fabric/Base (1.5.1)
   - IQKeyboardManager (3.3.2)
+  - TesseractOCRiOS (4.0.0)
   - TwitterCore (1.10.1)
   - XLForm (3.0.2)
 
@@ -33,8 +35,10 @@ DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Crashlytics
   - Digits
+  - DZNEmptyDataSet
   - Fabric
   - IQKeyboardManager
+  - TesseractOCRiOS (= 4.0.0)
   - TwitterCore
   - XLForm (from `https://github.com/xmartlabs/XLForm.git`)
 
@@ -51,9 +55,11 @@ SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   Crashlytics: 0e61bdda9def51f1e99720f804eebe94865442b2
   Digits: 8e4434813586758cf348b40291b36c5317fe9d2c
+  DZNEmptyDataSet: 0ec00bfc230d7450997b60c127afdd0b9f24f3b6
   Fabric: 03c3b3fe77e11a2bc31421b989a9c7adaa4779a5
   IQKeyboardManager: d863eb0bca424d1f6dad6bdd1f856af52664add8
+  TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
   TwitterCore: 632e809318be9ea2b6f38cc21611033367681adc
-  XLForm: 29b76283849dc70e987eaa5812783322465c2b98
+  XLForm: 7817ce29f3f259186e837bb7309ac7e5b7e9b883
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.39.0

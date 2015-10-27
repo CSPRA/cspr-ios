@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PhotoViewController : UIViewController
-
+@property (strong, nonatomic) IBOutlet UIButton *takePhotoButton;
+@property (strong, nonatomic) IBOutlet UIButton * markHealthyButton;
+@property (strong, nonatomic) IBOutlet UIButton * getMoreDetailsButton;
+@property (strong, nonatomic) IBOutlet UIView   * actionView;
 @end

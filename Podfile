@@ -8,4 +8,5 @@ pod 'Digits'
 pod 'TwitterCore'
 pod 'IQKeyboardManager'
 pod 'XLForm', :git => 'https://github.com/xmartlabs/XLForm.git'
-
+pod 'DZNEmptyDataSet'
+pod 'TesseractOCRiOS', '4.0.0'

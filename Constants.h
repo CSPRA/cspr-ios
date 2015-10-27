@@ -16,5 +16,19 @@
 #define kMinAlpha 0.0
 #define kMaxAlpha 1.0
 
-#define kPatientInforamtionVCIndentifier  @"PatientInforamtionVCIndentifier"
-#define kPatientHabitsVCIdentifier  @"PatientHabitsVCIdentifier"
+
+#define icsOCRTempImageKey @"icsOCRImageCaptured"
+
+//ICS BOOL Keys
+#define icsVolunteerRegisteredStatusKey  @"icsVolunteerRegisteredStatus"
+#define icsVolunteerWalkthroughStatusKey @"icsVolunteerWalkthroughStatus"
+
+//VCs
+#define kPatientInforamtionVCIndentifier    @"PatientInforamtionVCIndentifier"
+#define kPatientHabitsVCIdentifier          @"PatientHabitsVCIdentifier"
+#define kVolunteerSignUpVCIdentifier        @"VolunteerSignUpVCIdentifier"
+#define kPatientRegistrationVCIndentifier   @"PatientRegistrationVCIdentifier"
+#define kPhotoVCIdentifier                  @"PhotoVCIdentifier"
+#define kCameraVCIdentifier                 @"CamVCIdentifier"
+#define kScanIDProofVCIdentifier            @"ScanIDProofVCIdentifier"
+

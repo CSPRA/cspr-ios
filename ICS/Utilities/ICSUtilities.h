@@ -10,5 +10,6 @@
 
 @interface ICSUtilities : NSObject
 
-+ (BOOL) hasActiveConnection;
++ (BOOL)hasActiveConnection;
++ (BOOL)checkIfEmailIDIsValid:(NSString *)emailID ;
 @end
