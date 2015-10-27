@@ -26,6 +26,12 @@
 #define kHomeVCIdentifier @"HomeViewControllerIdentifier"
 #define kPatientsListVCIdentifier  @"PatientsListVCIdentifier"
 #define kRegisterVCIdentifier @"RegisterVCIdentifier"
+#define kPhotoViewControllerIdentifier @"PhotoViewControllerIdentifier"
+#define ktabBarViewControllerIdentifier @"tabBarViewControllerIdentifier"
+
+//Storyboard segue Identifier
+#define kshowRegisterViewSegue @"showRegisterViewSegue"
+#define kShowPhoneVaricationViewSegue @"ShowPhoneVaricationViewSegue"
 
 //UITableViewCell Identifiers
 #define kEventDetailCellIdentifier @"EventDetailCellIdentifier"
@@ -47,3 +53,5 @@
 #define kEventEntityName @"Event"
 #define kVolunteerEntityName  @"Volunteer"
 #define kQuestionEntityName @"Question"
+
+

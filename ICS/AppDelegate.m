@@ -23,6 +23,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Fabric with:@[[Crashlytics class], [Digits class]]];
   [APIInterface sharedInterface];
+  if (![self userLoggedIn]) {
+    [self instantiateLoginSignupFlow];
+  }
     return YES;
 }
 
@@ -46,6 +49,16 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)instantiateLoginSignupFlow {
+  UIStoryboard  *loginSignupStoryboard = [UIStoryboard storyboardWithName:@"LoginSignUp"
+                                                                  bundle:nil];
+  self.window.rootViewController = [loginSignupStoryboard instantiateInitialViewController];
+}
+
+- (BOOL)userLoggedIn {
+  return NO;
 }
 
 #pragma mark - Core Data accessors

@@ -7,16 +7,16 @@
 //
 
 #import "ICSHomeViewController.h"
-#import "Event.h"
 #import "EventDetailTableViewCell.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "Volunteer.h"
 
 @interface ICSHomeViewController ()<UITableViewDelegate,
 UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *eventArray;
-
+@property (nonatomic, strong) Volunteer *volunteer;
 
 @end
 
@@ -24,9 +24,9 @@ UITableViewDataSource>
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+  self.navigationItem.title = @"ICS Events";
   if (!self.eventArray) {
-    [self initializeData];
+    [self offlineData];
   }
   
 }
@@ -36,14 +36,50 @@ UITableViewDataSource>
   // Dispose of any resources that can be recreated.
 }
 
+- (void)offlineData{
+  NSDictionary *cancer1 = @{
+                            @"cancerId":@(1),
+                            @"cancerName":@"Throat Cancer",
+                            @"description":@"Throat cancer refers to cancerous tumors that develop in your throat (pharynx), voice box (larynx) or tonsils."
+                            };
+  NSDictionary *form1 = @{
+                          @"formId":@(1),
+                          @"formName":@"Throat Cancer Detection Form",
+                          @"formDescription":@"This form contains ragarding diagnosis of Throat Cancer"
+                          };
+  
+  NSDictionary *event1 = @{
+    @"eventId": @(1),
+    @"eventName":@"Spot Registration For Throat Cancer",
+    @"eventType":@"register",
+    @"startingDate":@"0000-00-00",
+    @"endingDate":@"0000-00-00",
+    @"form": @{},
+    @"cancerType":cancer1
+    };
+  
+  NSDictionary *event2 = @{
+                           @"eventId":@(4),
+                           @"eventName":@"Registration cum Screening camp for Throat Cancer",
+                           @"eventType":@"register_screen",
+                           @"startingDate":@"2015-12-01",
+                           @"endingDate":@"2015-12-10",
+                           @"form":form1,
+                           @"cancerType":cancer1
+                           };
+  
+  NSArray *results = @[event1, event2];
+  self.eventArray = results;
+ }
+
 - (void)initializeData {
-  NSString *token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2NzcHItd2ViLWRldi5lbGFzdGljYmVhbnN0YWxrLmNvbVwvdm9sdW50ZWVyXC9sb2dpbiIsImlhdCI6IjE0NDU0Mjk0NTgiLCJleHAiOiIxNDQ1NDMzMDU4IiwibmJmIjoiMTQ0NTQyOTQ1OCIsImp0aSI6IjdiOTE0MzJhY2E2OWRiNTdlN2M4YTU3MDI3YmI4OWY3In0.TYWBbzVOHG8EnLf0vHorTTkELKMVbRRavjwY6HXhCys";
+  NSString *token = self.volunteer.token;
   
   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
   [kDataSource fetchEventsWithToken:token
                     completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
                       if (success) {
-                        self.eventArray = result;
+                        self.eventArray = [NSArray arrayWithObject:result];
                         [self.tableView reloadData];
                       }else if (error){
                         NSLog(@"%@",error);

@@ -33,9 +33,7 @@
 - (IBAction)forgotPassword:(UIButton *)sender {
 }
 - (IBAction)registerButtonTapped:(id)sender {
-  
-  UIViewController *registerVC = [self.storyboard instantiateViewControllerWithIdentifier:kRegisterVCIdentifier];
-  [self.navigationController pushViewController:registerVC animated:YES];
+ 
 }
 
 

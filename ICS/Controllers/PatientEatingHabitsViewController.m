@@ -8,7 +8,6 @@
 
 #import "PatientEatingHabitsViewController.h"
 #import "ICSCustomRowDescriptor.h"
-#import "Question.h"
 #import "XLForm.h"
 
 static NSString * const kQuestionTypeSingleChoice = @"single choice";
@@ -28,6 +27,7 @@ static NSString * const kQuestionTypeNumber = @"number";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  self.navigationItem.title = @"Questions";
   [self setupForm];
     // Do any additional setup after loading the view.
 }
@@ -57,7 +57,7 @@ static NSString * const kQuestionTypeNumber = @"number";
 }
 
 - (void)setupForm {
-  [self initializeDummyData];
+//  [self initializeDummyData];
 
   XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@""];
   __block XLFormRowDescriptor *row;

@@ -24,7 +24,7 @@ UIAlertViewDelegate>
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self initializeDummyData];
+  [self offlineData];
 }
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
@@ -35,6 +35,32 @@ UIAlertViewDelegate>
   // Dispose of any resources that can be recreated.
 }
 
+- (void)offlineData {
+  
+    NSDictionary *patient1 = @{
+    @"name":@"Patient 1",
+    @"dob":@"1985-10-01",
+    @"gender":@"male",
+    @"maritalStatus":@"married",
+    @"address":@"Lorem ipsum",
+    @"homePhoneNumber":@(12334335),
+    @"mobileNumber":@(12345678),
+    @"email":@"abc@gmail.com",
+    @"annualIncome":@(300000),
+    @"occupation":@"bussiness",
+    @"education":@"Secondary School",
+    @"religion":@"Hindu",
+    @"aliveChildrenCount":@(0),
+    @"deceasedChildrenCount":@(0),
+    @"voterId":@"1234A59",
+    @"adharId":@"12343545",
+    @"updated_at":@"2015-10-13 12:19:11",
+    @"created_at":@"2015-10-13 12:19:11",
+    @"id":@(1)
+    };
+  self.patientListArray = [NSArray arrayWithObjects:patient1, nil];
+}
+  
 - (void)initialSetup {
   if (!self.patientListArray) {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"oops!!"
@@ -44,27 +70,6 @@ UIAlertViewDelegate>
                                           otherButtonTitles:@"Register", nil];
     [alert show];
   }
-}
-#pragma mark - Dummy data
-- (void)initializeDummyData {
-  //
-  //  Patient *p1 = [kDataSource patientWithId:123];
-  //  p1.firstName = @"aaa";
-  //  p1.lastName = @"bbbb";
-  //
-  //  Patient *p2 = [kDataSource patientWithId:123];
-  //  p2.firstName = @"aaa";
-  //  p2.lastName = @"bbbb";
-  //
-  //  Patient *p3 = [kDataSource patientWithId:123];
-  //  p3.firstName = @"aaa";
-  //  p3.lastName = @"bbbb";
-  //
-  //  Patient *p4 = [kDataSource patientWithId:123];
-  //  p4.firstName = @"aaa";
-  //  p4.lastName = @"bbbb";
-  //
-  //  self.patientListArray = [NSArray arrayWithObjects:p1,p2,p3,p4, nil];
 }
 
 #pragma mark - TableView Delegate and DataSource methods
@@ -84,8 +89,11 @@ UIAlertViewDelegate>
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  UIViewController *patientInfoVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientInforamtionVCIndentifier];
-  [self.navigationController pushViewController:patientInfoVC animated:YES];
+  UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+  UITabBarController *tabBarController = [mainStoryboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
+//  [tabBarController setModalTransitionStyle:UIModalTransitionStylePartialCurl];
+  [self.navigationController pushViewController:tabBarController animated:YES];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -95,7 +103,8 @@ UIAlertViewDelegate>
       [self.navigationController popViewControllerAnimated:YES];
       break;
     case 1:{
-      UIViewController *registerPatientVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientInforamtionVCIndentifier];
+      UIViewController *registerPatientVC = [self.storyboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
+      
       [self.navigationController pushViewController:registerPatientVC animated:YES];
     }
       break;

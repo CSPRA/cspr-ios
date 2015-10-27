@@ -22,6 +22,7 @@
 		4A04605A1BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0460591BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a */; };
 		4A04605F1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605C1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		4A0460601BDE3DBE005BCA2C /* Volunteer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605E1BDE3DBE005BCA2C /* Volunteer.m */; settings = {ASSET_TAGS = (); }; };
+		4A0460631BDE9E32005BCA2C /* LoginSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0460611BDE9E32005BCA2C /* LoginSignUp.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
 		4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DDE48E7F0DAE62D7C1126C6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994084B95641F268B490CD7C /* libPods.a */; };
@@ -138,6 +139,7 @@
 		4A04605C1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Volunteer+CoreDataProperties.m"; path = "Model/Entities/Volunteer+CoreDataProperties.m"; sourceTree = "<group>"; };
 		4A04605D1BDE3DBE005BCA2C /* Volunteer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Volunteer.h; path = Model/Entities/Volunteer.h; sourceTree = "<group>"; };
 		4A04605E1BDE3DBE005BCA2C /* Volunteer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Volunteer.m; path = Model/Entities/Volunteer.m; sourceTree = "<group>"; };
+		4A0460621BDE9E32005BCA2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginSignUp.storyboard; sourceTree = "<group>"; };
 		4A6E56011BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSFloatLabeledTextFieldCell.h; path = Cells/ICSFloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
 		4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSFloatLabeledTextFieldCell.m; path = Cells/ICSFloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
 		4ACF7C701BDA371E00FFE3B3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = LoginRegister/RegisterViewController.h; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 				FAFAAEB61BC681A30053E659 /* Images.xcassets */,
 				3EACD9D61BA9D053003E4540 /* Main.storyboard */,
 				3EACD9DB1BA9D053003E4540 /* LaunchScreen.xib */,
+				4A0460611BDE9E32005BCA2C /* LoginSignUp.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1ACD0B1BD2B34E001632BC /* CustomFormButtonCell.xib in Resources */,
+				4A0460631BDE9E32005BCA2C /* LoginSignUp.storyboard in Resources */,
 				3EACD9D81BA9D053003E4540 /* Main.storyboard in Resources */,
 				FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */,
 				FA1ACD0D1BD2B34E001632BC /* DoctorInformationCell.xib in Resources */,
@@ -829,6 +833,14 @@
 				3EACD9DC1BA9D053003E4540 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		4A0460611BDE9E32005BCA2C /* LoginSignUp.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A0460621BDE9E32005BCA2C /* Base */,
+			);
+			name = LoginSignUp.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

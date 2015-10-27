@@ -18,6 +18,7 @@ static NSString *const kPhoneNumber = @"contactNumber";
 static NSString *const kEmail = @"email";
 static NSString *const kDoneButton = @"Done";
 static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
+#define kFactor 50
 
 @interface RegisterViewController ()
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
@@ -31,7 +32,7 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   [self addObservers];
   
   [self.navigationController setNavigationBarHidden:NO animated:NO];
-  UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
+  UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:nil];
   self.navigationItem.backBarButtonItem = backItem;
   self.navigationItem.title = @"Volunteer Registration";
 }
@@ -72,7 +73,7 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   NSDictionary *userInfo = [notification userInfo];
   CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
   CGSize size = self.tableView.contentSize;
-  size.height += kbSize.height;
+  size.height = kFactor + kbSize.height;
   self.tableView.contentSize = size;
 }
 
@@ -98,23 +99,20 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   [form addFormSection:section];
   
   //First Name field
-  row = [XLFormRowDescriptor formRowDescriptorWithTag:kFirstName rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:kFirstName];
+  row = [XLFormRowDescriptor formRowDescriptorWithTag:kFirstName rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"First Name"];
   [section addFormRow:row];
   
-  row = [XLFormRowDescriptor formRowDescriptorWithTag:kLastName rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:kLastName];
+  row = [XLFormRowDescriptor formRowDescriptorWithTag:kLastName rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Last Name"];
   [section addFormRow:row];
   
-  row = [XLFormRowDescriptor formRowDescriptorWithTag:kUsername rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:kUsername];
+  row = [XLFormRowDescriptor formRowDescriptorWithTag:kUsername rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Username"];
   row.required = YES;
   [section addFormRow:row];
   
-  //phone
-  row = [XLFormRowDescriptor formRowDescriptorWithTag:kPhoneNumber rowType:XLFormRowDescriptorTypePhone];
-  [row.cellConfigAtConfigure setObject:@"Phone Number" forKey:@"textField.placeholder"];
-  row.required = YES;
-  [section addFormRow:row];
   // Email
-  row = [XLFormRowDescriptor formRowDescriptorWithTag:kEmail rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:kEmail];
+  row = [XLFormRowDescriptor formRowDescriptorWithTag:kEmail rowType:XLFormRowDescriptorTypeEmail];
+  [row.cellConfigAtConfigure setObject:@"Email" forKey:@"textField.placeholder"];
+  [row.cellConfigAtConfigure setObject:@(NSTextAlignmentLeft) forKey:@"textField.textAlignment"];
   row.required = YES;
   [row addValidator:[XLFormValidator emailValidator]];
   [section addFormRow:row];
@@ -128,9 +126,7 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   row.required = YES;
   [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
   [section addFormRow:row];
-  [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
-  [section addFormRow:row];[row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:kPasswordRegx]];
-  [section addFormRow:row];
+  
   row = [XLFormRowDescriptor formRowDescriptorWithTag:kDoneButton rowType:XLFormRowDescriptorTypeButton title:kDoneButton];
   row.action.formSelector = @selector(didTappedDoneButton:);
   [section addFormRow:row];
@@ -142,18 +138,20 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 #pragma mark - actions
 - (void)didTappedDoneButton: (XLFormRowDescriptor*)row {
   NSLog(@"@form data %@", self.form.formValues);
-  if ([self validateForm]) {
+//  if ([self validateForm]) {
     [self processEntries];
-//    UIViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:kHomeVCIdentifier];
-//    [self presentViewController:homeViewController animated:YES completion:nil];
-  }
-//  [self validateForm];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *navController = [mainStoryboard instantiateInitialViewController];
+    [self presentViewController:navController animated:YES completion:nil];
+//  }
   [self.tableView endEditing:YES];
 }
 
 - (void)processEntries {
   NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:self.formValues];
   [params removeObjectForKey:@"Done"];
+  [params setObject:self.phoneNumber forKey:kPhoneNumber];
+  NSLog(@"parameters = %@",params);
   [kDataSource registerVolunteerWithParameters:params
                               completeionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
                                 if (success) {

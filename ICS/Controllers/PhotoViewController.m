@@ -28,6 +28,7 @@ FullImageContainerViewDelegate
 @property (nonatomic, strong) NSMutableArray *imageDataArray;
 @property (nonatomic, strong) NSMutableArray *images;
 @property (nonatomic, strong) FullImageContainerView *fullImageView;
+@property (nonatomic, assign) NSInteger patientId;
 
 @end
 
@@ -37,14 +38,14 @@ FullImageContainerViewDelegate
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+  self.navigationItem.title = @"Diagnosis Photos";
   [self initialSetup];
 }
 
 #pragma mark - Private Methdos
 
 - (void)initialSetup {
-  self.patient = [[Patient alloc] init];
+//  self.patient = [[Patient alloc] init];
   self.images = [[NSMutableArray alloc] init];
   
   
@@ -54,7 +55,8 @@ FullImageContainerViewDelegate
   self.fullImageView.alpha = kMinAlpha;
   
   // dummy id for test.
-  self.patient.patientId = 1234;
+//  self.patient.patientId = 1234;
+  self.patientId = 1234;
   [self retrieveImagesFromFile];
 }
 
@@ -123,7 +125,7 @@ FullImageContainerViewDelegate
 #pragma mark - Saving and Retrieving images from Documents directory.
 
 - (void)saveImagesToFile {
-  NSString *fileName = [[SharedModel shared] filePathWithPatientID:self.patient.patientId];
+  NSString *fileName = [[SharedModel shared] filePathWithPatientID:self.patientId];
   [self.imageDataArray writeToFile:fileName atomically:YES];
 }
 
@@ -135,7 +137,7 @@ FullImageContainerViewDelegate
   
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
     
-    NSString *fileName = [[SharedModel shared] filePathWithPatientID:self.patient.patientId];
+    NSString *fileName = [[SharedModel shared] filePathWithPatientID:self.patientId];
     self.imageDataArray = [[NSMutableArray alloc] initWithContentsOfFile:fileName];
     
     dispatch_async(dispatch_get_main_queue(), ^{

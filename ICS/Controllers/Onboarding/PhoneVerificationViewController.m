@@ -7,7 +7,7 @@
 //
 
 #import "PhoneVerificationViewController.h"
-#import "VolunteerSignUpViewController.h"
+#import "RegisterViewController.h"
 #import "PatientInformationViewController.h"
 #import "ICSStyleGuide.h"
 #import <DigitsKit/DigitsKit.h>
@@ -40,9 +40,9 @@
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self createAlertForTitle:@"Success" withMessage:[NSString stringWithFormat:@"%@ verified successfully", session.phoneNumber]];
             });
-            VolunteerSignUpViewController * vs = [self.storyboard instantiateViewControllerWithIdentifier:@"VolunteerSignUp"];
-            vs.verifiedPhoneNumber = session.phoneNumber;
-            [self.navigationController pushViewController:vs animated:YES];
+            RegisterViewController * registerVolunteerVC = [self.storyboard instantiateViewControllerWithIdentifier:kRegisterVCIdentifier];
+            registerVolunteerVC.phoneNumber = session.phoneNumber;
+            [self.navigationController pushViewController:registerVolunteerVC animated:YES];
         }
         else {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

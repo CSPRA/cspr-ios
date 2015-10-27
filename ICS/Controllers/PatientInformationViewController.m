@@ -47,11 +47,12 @@ static NSString * const token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiO
   return self;
 }
 - (void)setupNavigationBar {
+  self.navigationItem.title = @"Patient Info";
   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextTapped:)];
 }
 - (void)nextTapped:(UIBarButtonItem*)sender {
-  UIViewController *patientHabitsVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientHabitsVCIdentifier];
-  [self.navigationController pushViewController:patientHabitsVC animated:YES];
+//  UIViewController *patientHabitsVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientHabitsVCIdentifier];
+//  [self.navigationController pushViewController:patientHabitsVC animated:YES];
 }
 
 #warning dummy data: remove when api integrated.
@@ -264,13 +265,6 @@ static NSString * const token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiO
     }
   }];
   
-  //  if (!self.doctorList) {
-  //    [self initializeDummyData];
-  //    [self addAssignDoctorSectionWithDoctorList:self.doctorList];
-  //  }
-  //  else{
-  //    return;
-  //  }
 }
 
 #pragma DoctorInformationCellDelegate
