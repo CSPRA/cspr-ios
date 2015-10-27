@@ -7,19 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DiagnosisPhoto.h"
 @protocol FullImageContainerViewDelegate;
 
 @interface FullImageContainerView : UIView
-
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) id<FullImageContainerViewDelegate>delegate;
+@property (assign, nonatomic) NSInteger containerTag;
 + (FullImageContainerView *)newView;
-
+-(void)setupFullImageContainerWithDiagnosisPicture:(DiagnosisPhoto*)photo;
 @end
 
 @protocol FullImageContainerViewDelegate <NSObject>
-
-- (void)didTappedCrossButton: (FullImageContainerView*)fullView;
-
+- (void)fullView:(FullImageContainerView *)fullContainerView didCloseWithSuspectStatus:(BOOL)suspectStatus;
+- (void)fullView:(FullImageContainerView *)fullContainerView didDeletePhotoWithAnimation:(BOOL)deleteAnimation;
 @end

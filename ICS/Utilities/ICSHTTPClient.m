@@ -7,7 +7,6 @@
 //
 
 #import "ICSHTTPClient.h"
-#import "ICSDataManager.h"
 #define IHCEnableUrlLogging NO
 #define IHCNoInternetMessage @"No internet found"
 #define IHCInvalidDataError  @"Data invalid"
@@ -118,6 +117,7 @@
           }
           
           if (responseObject) {
+
               NSError *error;
               
               NSDictionary * jsonData = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
@@ -129,7 +129,6 @@
               else {
                   NSDictionary * responseData = [jsonData objectForKey:@""];
                   completion(responseData, YES);
-                  
               }
           }
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

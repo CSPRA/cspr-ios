@@ -55,3 +55,16 @@
 #define kQuestionEntityName @"Question"
 
 
+#define icsOCRTempImageKey @"icsOCRImageCaptured"
+
+//ICS BOOL Keys
+#define icsVolunteerRegisteredStatusKey  @"icsVolunteerRegisteredStatus"
+#define icsVolunteerWalkthroughStatusKey @"icsVolunteerWalkthroughStatus"
+
+//VCs
+#define kVolunteerSignUpVCIdentifier        @"VolunteerSignUpVCIdentifier"
+#define kPatientRegistrationVCIndentifier   @"PatientRegistrationVCIdentifier"
+#define kPhotoVCIdentifier                  @"PhotoVCIdentifier"
+#define kCameraVCIdentifier                 @"CamVCIdentifier"
+#define kScanIDProofVCIdentifier            @"ScanIDProofVCIdentifier"
+
