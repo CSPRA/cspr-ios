@@ -25,7 +25,7 @@
     self.welcomeLabel.alpha = kMinAlpha;
     
     [super viewDidLoad];
-    
+  [self setupNavigationBar];
     if([ICSDataManager isVolunteerRegistered]) {
         [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:kPatientRegistrationVCIndentifier] animated:NO];
     }
@@ -37,21 +37,27 @@
         
     }
 }
-
+- (void)setupNavigationBar {
+  [self.navigationController setNavigationBarHidden:NO animated:NO];
+  [self.navigationController setTitle:@"SignUp"];
+  UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:nil];
+  [self.navigationController.navigationItem setBackBarButtonItem:backItem];
+}
 -(void)addDigitsView{
     
     DGTAppearance *digitsAppearance  = [[DGTAppearance alloc] init];
     digitsAppearance.backgroundColor = self.view.backgroundColor;
-    digitsAppearance.accentColor = [ICSStyleGuide ICSRed];
-    
+//    digitsAppearance.accentColor = [ICSStyleGuide ICSRed];
+  digitsAppearance.accentColor = [UIColor orangeColor];
     
     DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
+      
         if(!error) {
 
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self createAlertForTitle:@"Success" withMessage:[NSString stringWithFormat:@"%@ verified successfully", session.phoneNumber]];
             });
-            RegisterViewController * registerVolunteerVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientRegistrationVCIndentifier];
+            RegisterViewController * registerVolunteerVC = [self.storyboard instantiateViewControllerWithIdentifier:kRegisterVCIdentifier];
             registerVolunteerVC.phoneNumber = session.phoneNumber;
             [self.navigationController pushViewController:registerVolunteerVC animated:YES];
         }

@@ -22,20 +22,16 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self initializeForm];
 
   [self addObservers];
-  
-  [self.navigationController setNavigationBarHidden:NO animated:NO];
-  UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:nil];
-  self.navigationItem.backBarButtonItem = backItem;
-  self.navigationItem.title = @"Volunteer Registration";
+  [self setupNavigationBar];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
   self = [super initWithCoder:coder];
   if (self) {
-    [self initializeForm];
   }
   return self;
 }
@@ -44,6 +40,14 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
+
+- (void)setupNavigationBar {
+  [self.navigationController setNavigationBarHidden:NO animated:NO];
+  [self.navigationController setTitle:@"Volunteer Registration"];
+  UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:nil];
+  [self.navigationController.navigationItem setBackBarButtonItem:backItem];
+}
+
 
 - (void)addObservers {
   self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endViewEditing:)];
@@ -93,7 +97,7 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   [form addFormSection:section];
   //Phone Name field
   row = [XLFormRowDescriptor formRowDescriptorWithTag:kPhoneNumber rowType:XLFormRowDescriptorTypePhone];
-  row.disabled = @(YES);
+//  row.disabled = @(YES);
   row.value = self.phoneNumber;
   [section addFormRow:row];
   
@@ -149,7 +153,6 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 - (void)processEntries {
   NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:self.formValues];
   [params removeObjectForKey:@"Done"];
-  [params setObject:self.phoneNumber forKey:kPhoneNumber];
   NSLog(@"parameters = %@",params);
   [kDataSource registerVolunteerWithParameters:params
                               completeionBlock:^(BOOL success, NSDictionary *result, NSError *error) {

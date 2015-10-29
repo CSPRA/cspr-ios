@@ -82,7 +82,7 @@
                                          path:kVolunteerLoginPath
                                    parameters:params
                                       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                        [self saveIntoKeychain:email password:password];
+//                                        [self saveIntoKeychain:email password:password];
                                         block(YES, [mappingResult dictionary], nil);
                                       } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                         block(NO, nil, error);

@@ -102,7 +102,13 @@
   [[RKObjectManager sharedManager] addResponseDescriptor:volunteerResponseDescriptor];
   
   
-  
+  //Mapping for volunteer Login
+  RKResponseDescriptor *loginDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:volunteerMapping
+                                          pathPattern:kVolunteerLoginPath
+                                              keyPath:@"result"
+                                          statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:loginDescriptor];
 }
 
 @end

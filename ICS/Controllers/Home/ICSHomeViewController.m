@@ -73,19 +73,21 @@ UITableViewDataSource>
  }
 
 - (void)initializeData {
-  NSString *token = self.volunteer.token;
+  if (self.token) {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [kDataSource fetchEventsWithToken:self.token
+                      completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
+                        if (success) {
+                          self.eventArray = [NSArray arrayWithObject:result];
+                          [self.tableView reloadData];
+                        }else if (error){
+                          NSLog(@"%@",error);
+                        }
+                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+                      }];
+  }
   
-  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-  [kDataSource fetchEventsWithToken:token
-                    completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
-                      if (success) {
-                        self.eventArray = [NSArray arrayWithObject:result];
-                        [self.tableView reloadData];
-                      }else if (error){
-                        NSLog(@"%@",error);
-                      }
-                      [MBProgressHUD hideHUDForView:self.view animated:YES];
-                    }];
+  
 }
 
 #pragma mark - TableView Delegate and DataSource methods

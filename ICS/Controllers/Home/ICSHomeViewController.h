@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ICSHomeViewController : UIViewController
-
+@property (nonatomic, strong) NSString *token;
 @end
