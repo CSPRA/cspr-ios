@@ -9,9 +9,16 @@
 #import "ICSDataSource.h"
 #import "SharedModel.h"
 #import "AppDelegate.h"
+#import "KeychainWrapper.h"
+
+#define kUsernameKey @"usernameKey"
+#define kPasswordKey @"passwordkey"
+
+@interface ICSDataSource()
+
+@end
 
 @implementation ICSDataSource
-
 
 - (void)signinUserWithUsername:(NSString *)username password:(NSString *)password withCompletionBlock:(ICSApiInterfaceBlock)block {
   
@@ -75,14 +82,32 @@
                                          path:kVolunteerLoginPath
                                    parameters:params
                                       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                        
+                                        [self saveIntoKeychain:email password:password];
+                                        block(YES, [mappingResult dictionary], nil);
                                       } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                        
+                                        block(NO, nil, error);
                                       }];
 }
 
 - (NSError*)saveContext {
   AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
   return [appDelegate saveContext];
+}
+
+- (void)saveIntoKeychain: (NSString*)username password: (NSString*)password {
+  BOOL loginKey = [[NSUserDefaults standardUserDefaults] boolForKey:kSession];
+  if (!loginKey) {
+    [[NSUserDefaults standardUserDefaults] setValue:username forKey:kUsernameKey];
+  }
+  
+  KeychainWrapper *keychainWrapper = [[KeychainWrapper alloc] init];
+  [keychainWrapper mySetObject:password forKey:kPasswordKey];
+  [keychainWrapper writeToKeychain];
+  [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kSession];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+  
+}
+- (void)logoutVolunteer {
+  [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kSession];
 }
 @end

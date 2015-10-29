@@ -58,7 +58,7 @@
 }
 
 - (BOOL)userLoggedIn {
-  return NO;
+  return [[[NSUserDefaults standardUserDefaults] valueForKey:kSession] boolValue];
 }
 
 #pragma mark - Core Data accessors

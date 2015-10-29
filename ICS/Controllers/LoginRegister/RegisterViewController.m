@@ -10,17 +10,11 @@
 #import <XLForm/XLForm.h>
 #import "ICSFloatLabeledTextFieldCell.h"
 
-static NSString *const kFirstName = @"firstname";
-static NSString *const kLastName = @"lastname";
-static NSString *const kUsername = @"username";
-static NSString *const kPassword = @"password";
-static NSString *const kPhoneNumber = @"contactNumber";
-static NSString *const kEmail = @"email";
 static NSString *const kDoneButton = @"Done";
 static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 #define kFactor 50
 
-@interface RegisterViewController ()
+@interface RegisterViewController()
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 @end
 

@@ -12,6 +12,7 @@
 
 #endif /* Constants_h */
 
+#define kSession @"VolunteerSession"
 
 #define kDataSource [[SharedModel shared] dataSource]
 #define kSharedModel [SharedModel shared]

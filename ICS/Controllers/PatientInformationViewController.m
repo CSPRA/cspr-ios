@@ -13,13 +13,8 @@
 #import "CustomFormButtonCell.h"
 
 static NSString *const kFullName = @"Full Name";
-static NSString *const kGender = @"Gender";
-static NSString *const kDOB = @"Date of birth";
-static NSString *const kPhoneNumber = @"Phone Number";
 static NSString *const kAddPhone = @"Add Phone Number";
-static NSString *const kEmail = @"Email";
 static NSString *const kAddEmail = @"Add Email";
-static NSString *const kAddress = @"Address";
 static NSString *const kEatingHabits = @"Eating Habits";
 static NSString *const kConsumeCigarettes = @"Consume Cigarettes";
 static NSString *const kConsumeAlcohal = @"ConsumeAlcohal";

@@ -32,6 +32,7 @@
 		4A0460601BDE3DBE005BCA2C /* Volunteer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605E1BDE3DBE005BCA2C /* Volunteer.m */; settings = {ASSET_TAGS = (); }; };
 		4A0460631BDE9E32005BCA2C /* LoginSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0460611BDE9E32005BCA2C /* LoginSignUp.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
+		4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF71171BE207AA00D9868F /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
 		4AC6E2D31BE0F5C6007D9F1D /* ICSMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4AC6E2E11BE140F3007D9F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2E01BE140F3007D9F1D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -165,6 +166,8 @@
 		4A0460621BDE9E32005BCA2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginSignUp.storyboard; sourceTree = "<group>"; };
 		4A6E56011BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSFloatLabeledTextFieldCell.h; path = Cells/ICSFloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
 		4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSFloatLabeledTextFieldCell.m; path = Cells/ICSFloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
+		4AAF71161BE207AA00D9868F /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainWrapper.h; path = KeychainWrapper/KeychainWrapper.h; sourceTree = "<group>"; };
+		4AAF71171BE207AA00D9868F /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = KeychainWrapper/KeychainWrapper.m; sourceTree = "<group>"; };
 		4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ICSMain.storyboard; sourceTree = "<group>"; };
 		4AC6E2E01BE140F3007D9F1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4ACF7C701BDA371E00FFE3B3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = LoginRegister/RegisterViewController.h; sourceTree = "<group>"; };
@@ -378,6 +381,7 @@
 		3EACD9CB1BA9D053003E4540 /* ICS */ = {
 			isa = PBXGroup;
 			children = (
+				4AAF71191BE207C900D9868F /* Helpers */,
 				4A6E56041BDCB9CC00E72EBD /* Categories */,
 				3EBFA33F1BDF5359005B6AF4 /* tessdata */,
 				3EACD9D01BA9D053003E4540 /* AppDelegate.h */,
@@ -445,6 +449,16 @@
 			children = (
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		4AAF71191BE207C900D9868F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4AAF71161BE207AA00D9868F /* KeychainWrapper.h */,
+				4AAF71171BE207AA00D9868F /* KeychainWrapper.m */,
+			);
+			name = Helpers;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		ED88F5D689F13C356BA68E2E /* Frameworks */ = {
@@ -843,6 +857,7 @@
 				FA1ACCF61BD29F13001632BC /* ICSAPIError.m in Sources */,
 				FAD8E0951BD16C190010E975 /* Question+CoreDataProperties.m in Sources */,
 				FAD8E0A21BD16DC20010E975 /* Patient.m in Sources */,
+				4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */,
 				FA1ACD0C1BD2B34E001632BC /* CustomFormButtonCell.m in Sources */,
 				FAD8E0961BD16C190010E975 /* Question.m in Sources */,
 				3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */,
