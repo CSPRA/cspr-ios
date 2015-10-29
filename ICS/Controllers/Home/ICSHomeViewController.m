@@ -11,6 +11,8 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "Volunteer.h"
 
+static NSInteger const kEstimatedCellHieght = 200;
+
 @interface ICSHomeViewController ()<UITableViewDelegate,
 UITableViewDataSource>
 
@@ -40,7 +42,7 @@ UITableViewDataSource>
   NSDictionary *cancer1 = @{
                             @"cancerId":@(1),
                             @"cancerName":@"Throat Cancer",
-                            @"description":@"Throat cancer refers to cancerous tumors that develop in your throat (pharynx), voice box (larynx) or tonsils."
+                            @"description":@"Throat cancer refers to cancerous tumors that develop in your throat (pharynx), voice box (larynx) or tonsils.hroat cancer refers to cancerous tumors that develop in your throat (pharynx), voice box (larynx) or tonsils.hroat cancer refers to cancerous tumors that develop in your throat (pharynx), voice box (larynx) or tonsils.hroat cancer refers to cancerous tumors that develop in your throat (pharynx), voice box (larynx) or tonsils."
                             };
   NSDictionary *form1 = @{
                           @"formId":@(1),
@@ -86,8 +88,12 @@ UITableViewDataSource>
                         [MBProgressHUD hideHUDForView:self.view animated:YES];
                       }];
   }
-  
-  
+}
+
+#pragma mark - tableView setup
+- (void)setupTableView {
+  self.tableView.rowHeight = UITableViewAutomaticDimension;
+//  self.tableView.estimatedRowHeight = kEstimatedCellHieght;
 }
 
 #pragma mark - TableView Delegate and DataSource methods
@@ -105,7 +111,7 @@ UITableViewDataSource>
   EventDetailTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kEventDetailCellIdentifier forIndexPath:indexPath];
   if(self.eventArray)
   {
-    cell.event = [self.eventArray objectAtIndex:indexPath.row];
+    cell.eventDict = [self.eventArray objectAtIndex:indexPath.row];
 //    cell.eventNameLabel.text = [[self.eventArray objectAtIndex:indexPath.row] valueForKey:@"eventName"];
 //    cell.eventTypeLabel.text = [[self.eventArray objectAtIndex:indexPath.row] valueForKey:@"eventType"];
   }
@@ -116,5 +122,7 @@ UITableViewDataSource>
   UIViewController *patientListVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
   [self.navigationController pushViewController:patientListVC animated:YES];
 }
-
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return 300;
+}
 @end

@@ -103,3 +103,14 @@
 #define kVoterId                @"voterId"
 #define kAdharId                @"adharId"
 #define kName                   @"name"
+#define kCancerType             @"cancerType"
+#define kCancerName             @"cancerName"
+#define kCancerDescription      @"description"
+#define kFormName               @"formName"
+#define kFormDescription        @"formDescription"
+#define kEventID                @"eventId"
+#define kFormID                 @"formId"
+#define kCancerID               @"cancerId"
+
+
+

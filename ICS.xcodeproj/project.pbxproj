@@ -34,6 +34,7 @@
 		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
 		4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF71171BE207AA00D9868F /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
 		4AAF711C1BE237B700D9868F /* ICSEntranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF711B1BE237B700D9868F /* ICSEntranceViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4AAF711F1BE28B1400D9868F /* UIView+ICSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF711E1BE28B1400D9868F /* UIView+ICSAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		4AC6E2D31BE0F5C6007D9F1D /* ICSMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4AC6E2E11BE140F3007D9F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2E01BE140F3007D9F1D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -171,6 +172,8 @@
 		4AAF71171BE207AA00D9868F /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = KeychainWrapper/KeychainWrapper.m; sourceTree = "<group>"; };
 		4AAF711A1BE237B700D9868F /* ICSEntranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSEntranceViewController.h; path = LoginRegister/ICSEntranceViewController.h; sourceTree = "<group>"; };
 		4AAF711B1BE237B700D9868F /* ICSEntranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSEntranceViewController.m; path = LoginRegister/ICSEntranceViewController.m; sourceTree = "<group>"; };
+		4AAF711D1BE28B1400D9868F /* UIView+ICSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ICSAdditions.h"; sourceTree = "<group>"; };
+		4AAF711E1BE28B1400D9868F /* UIView+ICSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ICSAdditions.m"; sourceTree = "<group>"; };
 		4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ICSMain.storyboard; sourceTree = "<group>"; };
 		4AC6E2E01BE140F3007D9F1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4ACF7C701BDA371E00FFE3B3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = LoginRegister/RegisterViewController.h; sourceTree = "<group>"; };
@@ -287,6 +290,8 @@
 			children = (
 				3E10E1C41BC448C4008B9296 /* NSString+MD5.h */,
 				3E10E1C51BC448C4008B9296 /* NSString+MD5.m */,
+				4AAF711D1BE28B1400D9868F /* UIView+ICSAdditions.h */,
+				4AAF711E1BE28B1400D9868F /* UIView+ICSAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -385,7 +390,6 @@
 			isa = PBXGroup;
 			children = (
 				4AAF71191BE207C900D9868F /* Helpers */,
-				4A6E56041BDCB9CC00E72EBD /* Categories */,
 				3EBFA33F1BDF5359005B6AF4 /* tessdata */,
 				3EACD9D01BA9D053003E4540 /* AppDelegate.h */,
 				3EACD9D11BA9D053003E4540 /* AppDelegate.m */,
@@ -445,13 +449,6 @@
 				3C4ED20F431993D569F26029 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		4A6E56041BDCB9CC00E72EBD /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Categories;
 			sourceTree = "<group>";
 		};
 		4AAF71191BE207C900D9868F /* Helpers */ = {
@@ -860,6 +857,7 @@
 				FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */,
 				FA5853331BD79FEF0037EEC5 /* Form+CoreDataProperties.m in Sources */,
 				FA1ACCF61BD29F13001632BC /* ICSAPIError.m in Sources */,
+				4AAF711F1BE28B1400D9868F /* UIView+ICSAdditions.m in Sources */,
 				FAD8E0951BD16C190010E975 /* Question+CoreDataProperties.m in Sources */,
 				FAD8E0A21BD16DC20010E975 /* Patient.m in Sources */,
 				4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */,

@@ -337,7 +337,7 @@ FullImageContainerViewDelegate
 #pragma mark - 
 
 - (IBAction)endDiagnosisButtonTapped:(id)sender {
-  NSString *patientID = [NSString stringWithFormat:@"%i",self.patientId];
+  NSString *patientID = [NSString stringWithFormat:@"%li",(long)self.patientId];
     [[ICSDataManager sharedManager] endDiagnosisForPatientID:patientID withData:@{} withCompletion:^(id response, BOOL success) {
         [self.navigationController popViewControllerAnimated:YES];
     }];

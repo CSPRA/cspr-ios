@@ -11,9 +11,7 @@
 @class Event;
 
 @interface EventDetailTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *eventTypeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *eventNameLabel;
 
 @property (nonatomic,strong) Event * event;
-
+@property (nonatomic, strong) NSDictionary *eventDict;
 @end

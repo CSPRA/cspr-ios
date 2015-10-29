@@ -50,12 +50,12 @@
         <attribute name="volunteerId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Cancer" positionX="-27" positionY="99" width="128" height="90"/>
-        <element name="Doctor" positionX="-18" positionY="90" width="128" height="150"/>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="Form" positionX="-36" positionY="90" width="128" height="90"/>
-        <element name="Patient" positionX="-36" positionY="45" width="128" height="135"/>
-        <element name="Question" positionX="-54" positionY="27" width="128" height="90"/>
-        <element name="Volunteer" positionX="-36" positionY="90" width="128" height="165"/>
+        <element name="Cancer" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Doctor" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Form" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Patient" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Question" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Volunteer" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
