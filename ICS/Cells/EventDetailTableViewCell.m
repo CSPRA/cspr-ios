@@ -19,5 +19,16 @@
 
     // Configure the view for the selected state
 }
+- (void)initialSetup {
+  
+}
+- (void)setViewForEvent:(Event *)event{
 
+}
+
+- (void)setEvent:(Event *)event{
+  _event = event;
+  [self initialSetup];
+  [self setViewForEvent:event];
+}
 @end

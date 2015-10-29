@@ -33,7 +33,7 @@
 		4A0460631BDE9E32005BCA2C /* LoginSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0460611BDE9E32005BCA2C /* LoginSignUp.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
 		4AC6E2D31BE0F5C6007D9F1D /* ICSMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */; settings = {ASSET_TAGS = (); }; };
-		4AC6E2DF1BE0FE94007D9F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2DE1BE0FE94007D9F1D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		4AC6E2E11BE140F3007D9F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2E01BE140F3007D9F1D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DDE48E7F0DAE62D7C1126C6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994084B95641F268B490CD7C /* libPods.a */; };
 		FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB5F1BC526C100421EAA /* PhotoViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -166,7 +166,7 @@
 		4A6E56011BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSFloatLabeledTextFieldCell.h; path = Cells/ICSFloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
 		4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSFloatLabeledTextFieldCell.m; path = Cells/ICSFloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
 		4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ICSMain.storyboard; sourceTree = "<group>"; };
-		4AC6E2DE1BE0FE94007D9F1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4AC6E2E01BE140F3007D9F1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4ACF7C701BDA371E00FFE3B3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = LoginRegister/RegisterViewController.h; sourceTree = "<group>"; };
 		4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = LoginRegister/RegisterViewController.m; sourceTree = "<group>"; };
 		793A7E32DFA657975E9804EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -593,7 +593,7 @@
 		FAFAAEB31BC680FF0053E659 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4AC6E2DE1BE0FE94007D9F1D /* Main.storyboard */,
+				4AC6E2E01BE140F3007D9F1D /* Main.storyboard */,
 				4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */,
 				FAFAAEB51BC681A30053E659 /* ICS-Prefix.pch */,
 				FAFAAEB61BC681A30053E659 /* Images.xcassets */,
@@ -667,7 +667,7 @@
 				TargetAttributes = {
 					3EACD9C81BA9D053003E4540 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 3DKT46FL7P;
+						DevelopmentTeam = GF6Z8EAEK2;
 					};
 					3EACD9E11BA9D053003E4540 = {
 						CreatedOnToolsVersion = 6.4;
@@ -739,7 +739,7 @@
 				FA1ACD0B1BD2B34E001632BC /* CustomFormButtonCell.xib in Resources */,
 				4A0460631BDE9E32005BCA2C /* LoginSignUp.storyboard in Resources */,
 				4AC6E2D31BE0F5C6007D9F1D /* ICSMain.storyboard in Resources */,
-				4AC6E2DF1BE0FE94007D9F1D /* Main.storyboard in Resources */,
+				4AC6E2E11BE140F3007D9F1D /* Main.storyboard in Resources */,
 				FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */,
 				3EBFA3401BDF5359005B6AF4 /* tessdata in Resources */,
 				3EACD9DD1BA9D053003E4540 /* LaunchScreen.xib in Resources */,

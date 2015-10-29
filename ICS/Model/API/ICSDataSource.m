@@ -23,7 +23,7 @@
                                @"token":token
                                };
   
-  [[RKObjectManager sharedManager] getObjectsAtPath:@"/volunteer/myScreeningAssignments"
+  [[RKObjectManager sharedManager] getObjectsAtPath:kFetchEventsPath
                                          parameters:parameters
                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                               block(YES, [mappingResult dictionary], nil);
@@ -38,7 +38,7 @@
                       completionBlock:(ICSApiInterfaceBlock)block {
   
   [[RKObjectManager sharedManager] postObject:nil
-                                         path:@"/volunteer/registerPatient"
+                                         path:kPatientRegisterPath
                                    parameters:paramenters
                                       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                         block(YES, [mappingResult dictionary], nil);
@@ -49,7 +49,8 @@
 
 - (void)registerVolunteerWithParameters:(NSDictionary *)parameters
                        completeionBlock:(ICSApiInterfaceBlock)block {
-  [[RKObjectManager sharedManager] postObject:nil path:@"/volunteer/register" parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+  [[RKObjectManager sharedManager] postObject:nil path:kVolunteerRegisterPath
+                                   parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
     Volunteer *volunteer = [[mappingResult dictionary] valueForKey:@"result"];
     volunteer.firstName = parameters[@"firstname"];
     volunteer.lastName = parameters[@"lastname"];
@@ -61,6 +62,23 @@
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     block(NO, nil, error);
   }];
+}
+
+- (void)loginVolunteerWithEmail:(NSString *)email
+                       password:(NSString *)password
+                completionBlock:(ICSApiInterfaceBlock)block {
+  NSDictionary *params = @{
+                           kEmail: email,
+                           kPassword: password
+                           };
+  [[RKObjectManager sharedManager] postObject:nil
+                                         path:kVolunteerLoginPath
+                                   parameters:params
+                                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                        
+                                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                        
+                                      }];
 }
 
 - (NSError*)saveContext {

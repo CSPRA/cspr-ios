@@ -51,4 +51,12 @@ typedef void (^ICSApiInterfaceBlock)(BOOL success,
 - (void)registerVolunteerWithParameters: (NSDictionary*)parameters
                        completeionBlock:(ICSApiInterfaceBlock)block;
 
+/** Login Volunteer
+ @param email Registered email of volunteer
+ @param password valid password of volunteer
+ @param block Completion block to be executed once call is completed
+ */
+- (void)loginVolunteerWithEmail:(NSString*)email password:(NSString*)password completionBlock:(ICSApiInterfaceBlock)block;
+
+
 @end

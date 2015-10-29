@@ -51,7 +51,7 @@
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self createAlertForTitle:@"Success" withMessage:[NSString stringWithFormat:@"%@ verified successfully", session.phoneNumber]];
             });
-            RegisterViewController * registerVolunteerVC = [self.storyboard instantiateViewControllerWithIdentifier:kRegisterVCIdentifier];
+            RegisterViewController * registerVolunteerVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientRegistrationVCIndentifier];
             registerVolunteerVC.phoneNumber = session.phoneNumber;
             [self.navigationController pushViewController:registerVolunteerVC animated:YES];
         }
