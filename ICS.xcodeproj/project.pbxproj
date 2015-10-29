@@ -33,6 +33,7 @@
 		4A0460631BDE9E32005BCA2C /* LoginSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0460611BDE9E32005BCA2C /* LoginSignUp.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
 		4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF71171BE207AA00D9868F /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
+		4AAF711C1BE237B700D9868F /* ICSEntranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF711B1BE237B700D9868F /* ICSEntranceViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4AC6E2D31BE0F5C6007D9F1D /* ICSMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4AC6E2E11BE140F3007D9F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2E01BE140F3007D9F1D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -168,6 +169,8 @@
 		4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSFloatLabeledTextFieldCell.m; path = Cells/ICSFloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
 		4AAF71161BE207AA00D9868F /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainWrapper.h; path = KeychainWrapper/KeychainWrapper.h; sourceTree = "<group>"; };
 		4AAF71171BE207AA00D9868F /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = KeychainWrapper/KeychainWrapper.m; sourceTree = "<group>"; };
+		4AAF711A1BE237B700D9868F /* ICSEntranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSEntranceViewController.h; path = LoginRegister/ICSEntranceViewController.h; sourceTree = "<group>"; };
+		4AAF711B1BE237B700D9868F /* ICSEntranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSEntranceViewController.m; path = LoginRegister/ICSEntranceViewController.m; sourceTree = "<group>"; };
 		4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ICSMain.storyboard; sourceTree = "<group>"; };
 		4AC6E2E01BE140F3007D9F1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4ACF7C701BDA371E00FFE3B3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = LoginRegister/RegisterViewController.h; sourceTree = "<group>"; };
@@ -298,9 +301,9 @@
 				FA02CB5E1BC526C100421EAA /* PhotoViewController.h */,
 				FA02CB5F1BC526C100421EAA /* PhotoViewController.m */,
 				FAA5132C1BC7A8E2009A6D2E /* PatientInformationViewController.h */,
+				FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */,
 				3EBFA32E1BDEB626005B6AF4 /* DiagnosePictureViewController.h */,
 				3EBFA32F1BDEB626005B6AF4 /* DiagnosePictureViewController.m */,
-				FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */,
 				FA55FE061BCE4463004BCD2F /* PatientEatingHabitsViewController.h */,
 				FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */,
 				3E64A5791BDEA9160008FFD5 /* PatientRegistrationViewController.h */,
@@ -624,6 +627,8 @@
 				FAFFC9F41BDA20E6001DD25B /* LoginViewController.m */,
 				4ACF7C701BDA371E00FFE3B3 /* RegisterViewController.h */,
 				4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */,
+				4AAF711A1BE237B700D9868F /* ICSEntranceViewController.h */,
+				4AAF711B1BE237B700D9868F /* ICSEntranceViewController.m */,
 			);
 			name = LoginRegister;
 			sourceTree = "<group>";
@@ -880,6 +885,7 @@
 				3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */,
 				FA1ACCF91BD2AEDC001632BC /* EventDetailTableViewCell.m in Sources */,
 				4A0460601BDE3DBE005BCA2C /* Volunteer.m in Sources */,
+				4AAF711C1BE237B700D9868F /* ICSEntranceViewController.m in Sources */,
 				FA1ACCF01BD27064001632BC /* APIInterface.m in Sources */,
 				FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */,
 				3EACD9CF1BA9D053003E4540 /* main.m in Sources */,

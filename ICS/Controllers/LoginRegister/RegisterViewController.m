@@ -91,6 +91,11 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   
   section = [XLFormSectionDescriptor formSection];
   [form addFormSection:section];
+  //Phone Name field
+  row = [XLFormRowDescriptor formRowDescriptorWithTag:kPhoneNumber rowType:XLFormRowDescriptorTypePhone];
+  row.disabled = @(YES);
+  row.value = self.phoneNumber;
+  [section addFormRow:row];
   
   //First Name field
   row = [XLFormRowDescriptor formRowDescriptorWithTag:kFirstName rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"First Name"];
