@@ -72,9 +72,14 @@
 
 // API Paths
 #define kVolunteerRegisterPath              @"/volunteer/register"
-#define kPatientRegisterPath                @"/volunteer/registerPatient"
+#define kPatientRegisterPath                @"/patient"
 #define kVolunteerLoginPath                 @"/volunteer/login"
 #define kFetchEventsPath                    @"/volunteer/myScreeningAssignments"
+#define kFetchPatientsListPath              @"/volunteer/patients/"
+#define kFetchDoctorsListPath               @"/doctors"
+#define kFetchDoctorPath                    @"/doctor/3"
+#define kPostDoctorRatingPath               @"/doctor/rating"
+#define kPostDiagnosisResponsePath          @"/diagnosisResponses"
 
 //Mapping keys
 #define kEmail                  @"email"

@@ -141,12 +141,9 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 #pragma mark - actions
 - (void)didTappedDoneButton: (XLFormRowDescriptor*)row {
   NSLog(@"@form data %@", self.form.formValues);
-//  if ([self validateForm]) {
+  if ([self validateForm]) {
     [self processEntries];
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *navController = [mainStoryboard instantiateInitialViewController];
-    [self presentViewController:navController animated:YES completion:nil];
-//  }
+  }
   [self.tableView endEditing:YES];
 }
 
@@ -154,14 +151,21 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:self.formValues];
   [params removeObjectForKey:@"Done"];
   NSLog(@"parameters = %@",params);
+  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
   [kDataSource registerVolunteerWithParameters:params
                               completeionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
                                 if (success) {
-                                  NSLog(@"Volunteer = %@",[result valueForKey:@"result"]);                                }
+                                  NSLog(@"Volunteer = %@",[result valueForKey:@"result"]);
+                                  UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                  UINavigationController *navController = [mainStoryboard instantiateInitialViewController];
+                                  [self presentViewController:navController animated:YES completion:nil];
+
+                                  
+                                }
                                 else if (error){
                                   NSLog(@"%@",error);
                                 }
-                                
+                                [MBProgressHUD hideHUDForView:self.view animated:YES];
     
   }];
 }

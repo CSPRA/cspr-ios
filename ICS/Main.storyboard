@@ -51,6 +51,7 @@
         <scene sceneID="D8K-dl-QDg">
             <objects>
                 <tabBarController storyboardIdentifier="tabBarViewControllerIdentifier" id="ydi-0x-3kb" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="hln-QO-9QM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

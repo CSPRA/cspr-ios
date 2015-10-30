@@ -40,6 +40,40 @@
   
 }
 
+- (void)fetchPatientsWithToken:(NSString *)token
+                       eventId:(NSNumber *)eventId
+               completionBlock:(ICSApiInterfaceBlock)block {
+  
+  NSString *path = [NSString stringWithFormat:@"%@,%@",kFetchPatientsListPath,eventId];
+  NSDictionary *param = @{
+                          kToken: token
+                          };
+  [[RKObjectManager sharedManager] getObjectsAtPath:path
+                                         parameters:param
+                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                              block(YES, [mappingResult dictionary], nil);
+                                            } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                              block(NO, nil, error);
+                                            }];
+}
+
+
+- (void)fetchPatientPersonalInfoWith:(NSString *)token
+                          patienttId:(NSNumber *)patientId
+                     completionBlock:(ICSApiInterfaceBlock)block {
+  NSString *path = [NSString stringWithFormat:@"%@,%@",kFetchPatientsListPath,patientId];
+
+  NSDictionary *param = @{
+                          kToken: token
+                          };
+  [[RKObjectManager sharedManager] getObjectsAtPath:path parameters:param success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    block(YES, [mappingResult dictionary], nil);
+
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    block(NO, nil, error);
+
+  }];
+}
 
 - (void)registerPatientWithParameters:(NSDictionary *)paramenters
                       completionBlock:(ICSApiInterfaceBlock)block {

@@ -26,10 +26,10 @@ static NSString *const kAssignDoctor = @"Assign Doctor";
 static NSString * const kCustomRowFirstRatingTag = @"CustomRowFirstRatingTag";
 static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
 static NSString * const khidesection = @"tag1";
-static NSString * const token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2NzcHItd2ViLWRldi5lbGFzdGljYmVhbnN0YWxrLmNvbVwvdm9sdW50ZWVyXC9sb2dpbiIsImlhdCI6IjE0NDU0Mjk0NTgiLCJleHAiOiIxNDQ1NDMzMDU4IiwibmJmIjoiMTQ0NTQyOTQ1OCIsImp0aSI6IjdiOTE0MzJhY2E2OWRiNTdlN2M4YTU3MDI3YmI4OWY3In0.TYWBbzVOHG8EnLf0vHorTTkELKMVbRRavjwY6HXhCys";
 
 @interface PatientInformationViewController ()<DoctorInformationCellDelegate>
 @property (nonatomic, strong) NSArray *doctorList;
+@property (nonatomic, strong) NSDictionary *personalInfoDict;
 @end
 
 @implementation PatientInformationViewController
@@ -37,8 +37,8 @@ static NSString * const token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiO
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     [self setupNavigationBar];
-    [self setupForm];
-    
+  [self fetchPatientPersonalInfo];
+  
     return self;
 }
 - (void)setupNavigationBar {
@@ -49,7 +49,13 @@ static NSString * const token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiO
 //  UIViewController *patientHabitsVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientHabitsVCIdentifier];
 //  [self.navigationController pushViewController:patientHabitsVC animated:YES];
 }
-
+- (void)fetchPatientPersonalInfo {
+  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+  [kDataSource fetchPatientPersonalInfoWith:_token patienttId:_pId completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
+    self.personalInfoDict = result;
+    [self setupForm];
+  }];
+}
 #warning dummy data: remove when api integrated.
 - (void)initializeDummyData {
 
@@ -139,7 +145,7 @@ static NSString * const token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiO
     [section addFormRow:row beforeRow:beforeRow];
 }
 
-- (void)addRowWithTag:(NSString *)tag rowType:(NSString *)rowType title:(NSString *)title section:(XLFormSectionDescriptor*)section {
+- (XLFormRowDescriptor*)addRowWithTag:(NSString *)tag rowType:(NSString *)rowType title:(NSString *)title {
     XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:tag
                                                                      rowType:rowType
                                                                        title:title];
@@ -148,88 +154,91 @@ static NSString * const token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiO
         row.action.formSelector = @selector(didTappedButtonRow:);
     }
     
-    [section addFormRow:row];
+  return row;
 }
 
 #pragma mark - form intialization
 - (void)setupForm {
     XLFormDescriptor *form = [XLFormDescriptor formDescriptorWithTitle:@"Patient Information"];
     XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@""];
-    
+    XLFormRowDescriptor *row;
     [form addFormSection:section];
     
     //name field
-    [self addRowWithTag:kFullName
+    row = [self addRowWithTag:kFirstName
                 rowType:XLFormRowDescriptorTypeName
-                  title:kFullName
-                section:section];
+                  title:kFullName];
+//  row.value = [self.parentViewController valueForKey:kFirstName];
+  [section addFormRow:row];
+  row = [self addRowWithTag:kLastName
+                    rowType:XLFormRowDescriptorTypeName
+                      title:kLastName];
+  //  row.value = [self.parentViewController valueForKey:kFirstName];
+  [section addFormRow:row];
+
     
     //gender field
-    [self addRowWithTag:kGender
+   row = [self addRowWithTag:kGender
                 rowType:XLFormRowDescriptorTypeText
-                  title:kGender
-                section:section];
+                  title:kGender];
+//  row.value = [self.parentViewController valueForKey:kGender];
+  [section addFormRow:row];
+
     
     //date of birth field
-    [self addRowWithTag:kDOB
+   row = [self addRowWithTag:kDOB
                 rowType:XLFormRowDescriptorTypeDate
-                  title:kDOB
-                section:section];
+                  title:kDOB];
+//  row.value = [self.parentViewController valueForKey:kDOB];
+  [section addFormRow:row];
+
     
     //phone number fields
     
-    [self addRowWithTag:kPhoneNumber
+   row = [self addRowWithTag:kPhoneNumber
                 rowType:XLFormRowDescriptorTypePhone
-                  title:kPhoneNumber
-                section:section];
-    
-    [self addRowWithTag:kAddPhone
-                rowType:XLFormRowDescriptorTypeButton
-                  title:kAddPhone
-                section:section];
-    
+                  title:kPhoneNumber];
+//  row.value = [self.parentViewController valueForKey:kPhoneNumber];
+  [section addFormRow:row];
+  
     //Email fields
     
-    [self addRowWithTag:kEmail
+  row =  [self addRowWithTag:kEmail
                 rowType:XLFormRowDescriptorTypeEmail
-                  title:kEmail
-                section:section];
-    
-    [self addRowWithTag:kAddEmail
-                rowType:XLFormRowDescriptorTypeButton
-                  title:kAddEmail
-                section:section];
+                  title:kEmail];
+//   row.value = [self.parentViewController valueForKey:kEmail];
+  [section addFormRow:row];
+
     
     //address field
-    [self addRowWithTag:kAddress
+   row = [self addRowWithTag:kAddress
                 rowType:XLFormRowDescriptorTypeTextView
-                  title:kAddress
-                section:section];
-    
-    //Eating habits field
-    [self addRowWithTag:kEatingHabits
-                rowType:XLFormRowDescriptorTypeText
-                  title:kEatingHabits
-                section:section];
-    
-    [self addRowWithTag:kConsumeCigarettes
-                rowType:XLFormRowDescriptorTypeBooleanSwitch
-                  title:kConsumeCigarettes
-                section:section];
-    
-    [self addRowWithTag:kConsumeAlcohal
-                rowType:XLFormRowDescriptorTypeBooleanSwitch
-                  title:kConsumeAlcohal
-                section:section];
-    
-    XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kAssignDoctor rowType:XLFormRowDescriptorTypeCustomButton title:kAssignDoctor];
-    row.value = kButtonTypeAssignDoctor;
-    row.action.formSelector = @selector(didTappedAssignDoctor:);
-    [section addFormRow:row];
-    
+                  title:kAddress];
+//  row.value = [self.parentViewController valueForKey:kAddress];
+  [section addFormRow:row];
+
+ 
+  row = [XLFormRowDescriptor formRowDescriptorWithTag:@"Done" rowType:XLFormRowDescriptorTypeButton title:@"Done"];
+      row.action.formSelector = @selector(didTappedDone:);
+
+  [section addFormRow:row];
+  
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kAssignDoctor rowType:XLFormRowDescriptorTypeCustomButton title:kAssignDoctor];
+//    row.value = kButtonTypeAssignDoctor;
+//    row.action.formSelector = @selector(didTappedAssignDoctor:);
+//    [section addFormRow:row];
+  
     self.form = form;
 }
 
+- (void)didTappedDone: (XLFormRowDescriptor*)row {
+  NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:self.formValues];
+  [params removeObjectForKey:@"Done"];
+  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+  [kDataSource registerPatientWithParameters:params completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
+    
+  }];
+}
 #pragma mark - Handling assign doctors section
 
 - (void)addDoctorInfoCell:(Doctor*)doctor section:(XLFormSectionDescriptor*)section {
@@ -252,7 +261,7 @@ static NSString * const token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiO
 
 - (void)didTappedAssignDoctor:(XLFormRowDescriptor*)sender {
   NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-  [param setObject:token forKey:@"token"];
+  [param setObject:_token forKey:@"token"];
   [param setObject:self.formValues forKey:@"formValues"];
   
   [kDataSource registerPatientWithParameters:param completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {

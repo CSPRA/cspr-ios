@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ICSPatientsListViewController : UIViewController
-
+@property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSNumber *eventId;
 @end

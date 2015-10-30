@@ -37,6 +37,22 @@ typedef void (^ICSApiInterfaceBlock)(BOOL success,
 - (void)fetchEventsWithToken: (NSString*)token
              completionBlock: (ICSApiInterfaceBlock)block;
 
+/** Fetches registered patient list from the server
+ @param block Completion block to be executed once call is completed
+ */
+- (void)fetchPatientsWithToken: (NSString *)token
+                       eventId: (NSNumber *)patientId
+               completionBlock: (ICSApiInterfaceBlock)block;
+
+
+/** Fetches registered patient's personal info from the server
+ @param token Token of current user
+ @param patientId registered patient's id
+ @param block Completion block to be executed once call is completed
+ */
+- (void)fetchPatientPersonalInfoWith: (NSString *)token
+                       patienttId: (NSNumber *)eventId
+               completionBlock: (ICSApiInterfaceBlock)block;
 
 /** Register a patient with volunteer token number
  @param block Completion block to be executed once call is completed

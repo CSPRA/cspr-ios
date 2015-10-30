@@ -9,5 +9,6 @@
 #import "XLFormViewController.h"
 
 @interface PatientInformationViewController : XLFormViewController
-
+@property (nonatomic, strong) NSNumber *pId;
+@property (nonatomic, strong) NSString *token;
 @end
