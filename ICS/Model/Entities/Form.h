@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Form : NSManagedObject
+@interface Form : NSManagedObject<RestKitAdditions>
 
 // Insert code here to declare functionality of your managed object subclass
 

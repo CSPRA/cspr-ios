@@ -10,6 +10,18 @@
 
 @implementation Cancer
 
-// Insert code here to add functionality to your managed object subclass
++ (RKEntityMapping*)restkitObjectMappingForStore:(RKManagedObjectStore *)store {
+  
+  RKEntityMapping *cancerMapping = [RKEntityMapping mappingForEntityForName:kCancerEntityName
+                                                      inManagedObjectStore:store];
+  [cancerMapping setIdentificationAttributes:@[kCancerID]];
+  [cancerMapping addAttributeMappingsFromDictionary:@{
+                                                     kCancerID: @"cancerId",
+                                                     kCancerName: @"cancerName",
+                                                     kCancerDescription: @"cancerDescription"
+                                                     }];
+  
+  return cancerMapping;
+}
 
 @end

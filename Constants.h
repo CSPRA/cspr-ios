@@ -54,7 +54,8 @@
 #define kEventEntityName @"Event"
 #define kVolunteerEntityName  @"Volunteer"
 #define kQuestionEntityName @"Question"
-
+#define kCancerEntityName @"Cancer"
+#define kFormEntityName @"Form"
 
 #define icsOCRTempImageKey @"icsOCRImageCaptured"
 

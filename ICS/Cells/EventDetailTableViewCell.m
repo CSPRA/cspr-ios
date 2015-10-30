@@ -42,6 +42,9 @@
   self.startDate.text = [NSString stringWithFormat:@"%@",_event.startingDate];
   self.endDate.text = [NSString stringWithFormat:@"%@",_event.endingDate];
   
+  Cancer *cancerType = _event.cancer;
+  self.cancerName.text = cancerType.cancerName;
+  self.textView.text = cancerType.cancerDescription;
   
 //  NSDictionary *cancerDict = [self.eventDict valueForKey:kCancerType];
 //  NSDictionary *formDict = [self.eventDict valueForKey:@"form"];

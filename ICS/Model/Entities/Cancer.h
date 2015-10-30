@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Cancer : NSManagedObject
+@interface Cancer : NSManagedObject<RestKitAdditions>
 
 // Insert code here to declare functionality of your managed object subclass
 

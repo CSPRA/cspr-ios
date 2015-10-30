@@ -10,6 +10,17 @@
 
 @implementation Form
 
-// Insert code here to add functionality to your managed object subclass
-
++ (RKEntityMapping*)restkitObjectMappingForStore:(RKManagedObjectStore *)store {
+  
+  RKEntityMapping *cancerMapping = [RKEntityMapping mappingForEntityForName:kFormEntityName
+                                                       inManagedObjectStore:store];
+  [cancerMapping setIdentificationAttributes:@[kFormID]];
+  [cancerMapping addAttributeMappingsFromDictionary:@{
+                                                      kFormID: @"formId",
+                                                      kFormName: @"formName",
+                                                      kFormDescription: @"formDescription"
+                                                      }];
+  
+  return cancerMapping;
+}
 @end

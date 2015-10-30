@@ -32,6 +32,7 @@
   [[RKObjectManager sharedManager] getObjectsAtPath:kFetchEventsPath
                                          parameters:parameters
                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                              
                                               block(YES, [mappingResult dictionary], nil);
                                             } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                               block(NO, nil, error);
