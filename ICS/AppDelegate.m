@@ -52,7 +52,7 @@
 }
 
 - (void)instantiateLoginSignupFlow {
-  UIStoryboard  *loginSignupStoryboard = [UIStoryboard storyboardWithName:@"Main"
+  UIStoryboard  *loginSignupStoryboard = [UIStoryboard storyboardWithName:@"LoginSignUp"
                                                                   bundle:nil];
   self.window.rootViewController = [loginSignupStoryboard instantiateInitialViewController];
 }

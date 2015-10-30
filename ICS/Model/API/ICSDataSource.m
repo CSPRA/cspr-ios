@@ -82,7 +82,7 @@
                                          path:kVolunteerLoginPath
                                    parameters:params
                                       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-//                                        [self saveIntoKeychain:email password:password];
+                                        [self saveIntoKeychain:email password:password];
                                         block(YES, [mappingResult dictionary], nil);
                                       } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                         block(NO, nil, error);
@@ -101,7 +101,7 @@
   }
   
   KeychainWrapper *keychainWrapper = [[KeychainWrapper alloc] init];
-  [keychainWrapper mySetObject:password forKey:kPasswordKey];
+  [keychainWrapper mySetObject:password forKey:(id)kSecAttrService];
   [keychainWrapper writeToKeychain];
   [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kSession];
   [[NSUserDefaults standardUserDefaults] synchronize];

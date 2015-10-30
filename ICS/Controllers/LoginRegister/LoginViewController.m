@@ -72,8 +72,7 @@
   
   [kDataSource loginVolunteerWithEmail:self.usernameField.text password:self.passwordField.text completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
     if (success) {
-      Volunteer *volunteer = [Volunteer init];
-      
+      Volunteer *volunteer = [result objectForKey:@"result"];
       UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
       ICSHomeViewController *homeVC = [mainStoryboard instantiateViewControllerWithIdentifier:kHomeVCIdentifier];
       [self presentViewController:homeVC animated:YES completion:^{

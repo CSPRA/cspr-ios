@@ -44,7 +44,6 @@
   NSDictionary *cancerDict = [self.eventDict valueForKey:kCancerType];
   NSDictionary *formDict = [self.eventDict valueForKey:@"form"];
   self.eventNameLabel.text = [self.eventDict valueForKey:kEventName];
-  self.eventType.text = [self.eventDict valueForKey:kEventType];
   self.startDate.text = [self.eventDict valueForKey:kStartingDate];
   self.endDate.text = [self.eventDict valueForKey:kEndingDate];
   self.cancerName.text = [cancerDict valueForKey:kCancerName];
@@ -54,5 +53,6 @@
 
 - (void)prepareForReuse {
   [super prepareForReuse];
+  
 }
 @end

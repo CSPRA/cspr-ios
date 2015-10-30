@@ -109,6 +109,9 @@
                                               keyPath:@"result"
                                           statusCodes:successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:loginDescriptor];
+  RKResponseDescriptor *loginError =
+  [RKResponseDescriptor responseDescriptorWithMapping:volunteerMapping pathPattern:kVolunteerLoginPath keyPath:@"Error" statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:loginError];
 }
 
 @end

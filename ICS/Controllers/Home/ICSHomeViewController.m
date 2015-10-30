@@ -28,9 +28,9 @@ UITableViewDataSource>
   [super viewDidLoad];
   self.navigationItem.title = @"ICS Events";
   if (!self.eventArray) {
-    [self offlineData];
+    [self initializeData];
+    [self.tableView reloadData];
   }
-  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,7 +119,8 @@ UITableViewDataSource>
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  UIViewController *patientListVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
+  
+  UIViewController *patientListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
   [self.navigationController pushViewController:patientListVC animated:YES];
 }
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {

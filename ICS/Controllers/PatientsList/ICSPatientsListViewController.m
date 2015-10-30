@@ -72,6 +72,10 @@ UIAlertViewDelegate>
   }
 }
 
+- (void)fetchPAtientList {
+  
+}
+
 #pragma mark - TableView Delegate and DataSource methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
