@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.m
 //  
 //
-//  Created by aam-fueled on 16/10/15.
+//  Created by Aqsa on 30/10/15.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,10 +13,12 @@
 
 @implementation Event (CoreDataProperties)
 
+@dynamic endingDate;
 @dynamic eventId;
 @dynamic eventName;
 @dynamic eventType;
 @dynamic startingDate;
-@dynamic endingDate;
+@dynamic form;
+@dynamic cancer;
 
 @end

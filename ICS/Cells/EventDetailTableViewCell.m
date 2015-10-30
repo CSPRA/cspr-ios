@@ -37,17 +37,19 @@
   [self initialSetup];
 }
 - (void)initialSetup {
-//  self.eventType.text = _event.eventType;
-//  self.eventNameLabel.text = _event.eventName;
-//  self.startDate.text = [NSString stringWithFormat:@"%@",_event.startingDate];
-//  self.endDate.text = [NSString stringWithFormat:@"%@",_event.endingDate];
-  NSDictionary *cancerDict = [self.eventDict valueForKey:kCancerType];
-  NSDictionary *formDict = [self.eventDict valueForKey:@"form"];
-  self.eventNameLabel.text = [self.eventDict valueForKey:kEventName];
-  self.startDate.text = [self.eventDict valueForKey:kStartingDate];
-  self.endDate.text = [self.eventDict valueForKey:kEndingDate];
-  self.cancerName.text = [cancerDict valueForKey:kCancerName];
-  self.textView.text = [cancerDict valueForKey:kCancerDescription];
+  self.eventType.text = _event.eventType;
+  self.eventNameLabel.text = _event.eventName;
+  self.startDate.text = [NSString stringWithFormat:@"%@",_event.startingDate];
+  self.endDate.text = [NSString stringWithFormat:@"%@",_event.endingDate];
+  
+  
+//  NSDictionary *cancerDict = [self.eventDict valueForKey:kCancerType];
+//  NSDictionary *formDict = [self.eventDict valueForKey:@"form"];
+//  self.eventNameLabel.text = [self.eventDict valueForKey:kEventName];
+//  self.startDate.text = [self.eventDict valueForKey:kStartingDate];
+//  self.endDate.text = [self.eventDict valueForKey:kEndingDate];
+//  self.cancerName.text = [cancerDict valueForKey:kCancerName];
+//  self.textView.text = [cancerDict valueForKey:kCancerDescription];
 
 }
 

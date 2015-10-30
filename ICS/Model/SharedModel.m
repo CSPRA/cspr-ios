@@ -24,7 +24,7 @@
 - (id)init {
   self = [super init];
   if(self) {
-    self.managedObjectContext = [(AppDelegate*)[UIApplication sharedApplication].delegate managedObjectContext];
+   
   }
   return self;
 }
@@ -44,20 +44,15 @@
   return dataSource;
 }
 
-- (NSManagedObject*)objectWithEntityName: (NSString*)entityName predicate: (NSPredicate*)predicate {
-  NSFetchRequest *request = [[NSFetchRequest alloc] init];
-  NSEntityDescription *entity = [NSEntityDescription entityForName:entityName
-                                            inManagedObjectContext:self.managedObjectContext];
-  request.predicate = predicate;
-  [request setEntity:entity];
+- (NSManagedObject*)fetchManagedObjectWithEntityName:(NSString*)entityName {
+  NSManagedObjectContext *context = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
+  
   NSError *error = nil;
-
-  NSArray *objects = [self.managedObjectContext executeFetchRequest:request
-                                                              error:&error];
-  if (objects.count) {
-    return [objects firstObject];
-  }
-  return nil;
+  NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+  
+  NSManagedObject *fetchedObject = [fetchedObjects firstObject];
+  return fetchedObject;
 }
 
 @end

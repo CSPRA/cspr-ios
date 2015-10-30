@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "ICSHomeViewController.h"
 
 @interface LoginViewController ()<UITextFieldDelegate, UIAlertViewDelegate>
 
@@ -58,7 +57,7 @@
   NSDictionary *userInfo = [notification userInfo];
   CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
   CGSize size = self.scrollView.contentSize;
-  size.height = 150+kbSize.height;
+  size.height = 100+kbSize.height;
   self.scrollView.contentSize = size;
 }
 
@@ -72,12 +71,10 @@
   
   [kDataSource loginVolunteerWithEmail:self.usernameField.text password:self.passwordField.text completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
     if (success) {
-      Volunteer *volunteer = [result objectForKey:@"result"];
       UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-      ICSHomeViewController *homeVC = [mainStoryboard instantiateViewControllerWithIdentifier:kHomeVCIdentifier];
-      [self presentViewController:homeVC animated:YES completion:^{
-        homeVC.token = volunteer.token;
-      }];
+      [self presentViewController:[mainStoryboard instantiateInitialViewController]
+                         animated:YES
+                       completion:nil] ;
     }
     else if (error){
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"

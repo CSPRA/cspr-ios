@@ -10,9 +10,8 @@
 
 @implementation Volunteer
 
-- (Volunteer*)volunteerWithId:(NSInteger)volunteerId {
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"volunteerId == %@", volunteerId];
-  return (Volunteer*)[kSharedModel objectWithEntityName:kVolunteerEntityName predicate:predicate];
++ (Volunteer*)fetchVolunteer {
+  return (Volunteer*)[kSharedModel fetchManagedObjectWithEntityName:kVolunteerEntityName];
 }
 
 + (RKEntityMapping*)restkitObjectMappingForStore:(RKManagedObjectStore *)store {

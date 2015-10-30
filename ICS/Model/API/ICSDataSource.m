@@ -11,7 +11,6 @@
 #import "AppDelegate.h"
 #import "KeychainWrapper.h"
 
-#define kUsernameKey @"usernameKey"
 #define kPasswordKey @"passwordkey"
 
 @interface ICSDataSource()
@@ -59,12 +58,11 @@
   [[RKObjectManager sharedManager] postObject:nil path:kVolunteerRegisterPath
                                    parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
     Volunteer *volunteer = [[mappingResult dictionary] valueForKey:@"result"];
-    volunteer.firstName = parameters[@"firstname"];
-    volunteer.lastName = parameters[@"lastname"];
-    volunteer.username = parameters[@"username"];
-    volunteer.contactNumber = parameters[@"contactNumber"];
-    volunteer.email = parameters[@"email"];
-    [self saveContext];
+    volunteer.firstName = parameters[kFirstName];
+    volunteer.lastName = parameters[kLastName];
+    volunteer.username = parameters[kUsername];
+    volunteer.contactNumber = parameters[kPhoneNumber];
+    volunteer.email = parameters[kEmail];
     block(YES, [mappingResult dictionary], nil);
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     block(NO, nil, error);
@@ -89,15 +87,12 @@
                                       }];
 }
 
-- (NSError*)saveContext {
-  AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-  return [appDelegate saveContext];
-}
+
 
 - (void)saveIntoKeychain: (NSString*)username password: (NSString*)password {
   BOOL loginKey = [[NSUserDefaults standardUserDefaults] boolForKey:kSession];
   if (!loginKey) {
-    [[NSUserDefaults standardUserDefaults] setValue:username forKey:kUsernameKey];
+    [[NSUserDefaults standardUserDefaults] setValue:username forKey:kUsername];
   }
   
   KeychainWrapper *keychainWrapper = [[KeychainWrapper alloc] init];
@@ -110,4 +105,6 @@
 - (void)logoutVolunteer {
   [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kSession];
 }
+
+
 @end

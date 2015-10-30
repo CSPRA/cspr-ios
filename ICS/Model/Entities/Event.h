@@ -14,8 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Event : NSManagedObject<RestKitAdditions>
 
-+ (Event*)eventWithId:(NSInteger)eventId;
-
+- (void)fetchEventFromManagedContext;
 @end
 
 NS_ASSUME_NONNULL_END

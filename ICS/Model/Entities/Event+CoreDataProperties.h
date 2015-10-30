@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.h
 //  
 //
-//  Created by aqsa-fueled on 16/10/15.
+//  Created by Aqsa on 30/10/15.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -10,16 +10,19 @@
 //
 
 #import "Event.h"
+@class Cancer, Form;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Event (CoreDataProperties)
 
-@property (nonatomic) int64_t eventId;
+@property (nullable, nonatomic, retain) NSDate *endingDate;
+@property (nullable, nonatomic, retain) NSNumber *eventId;
 @property (nullable, nonatomic, retain) NSString *eventName;
 @property (nullable, nonatomic, retain) NSString *eventType;
-@property (nonatomic) NSDate *startingDate;
-@property (nonatomic) NSDate *endingDate;
+@property (nullable, nonatomic, retain) NSDate *startingDate;
+@property (nullable, nonatomic, retain) Form *form;
+@property (nullable, nonatomic, retain) Cancer *cancer;
 
 @end
 

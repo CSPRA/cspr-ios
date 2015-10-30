@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Question : NSManagedObject<RestKitAdditions>
 
-- (Question*)questionWithId:(NSInteger)questionId;
+- (Question*)fetchQuestion;
 
 @end
 

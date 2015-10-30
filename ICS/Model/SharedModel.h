@@ -15,6 +15,9 @@
 + (instancetype)shared;
 - (NSString*)filePathWithPatientID :(NSInteger)patientId;
 - (ICSDataSource*)dataSource;
-- (NSManagedObject*)objectWithEntityName: (NSString*)entityName predicate: (NSPredicate*)predicate;
 
+/** Fetching Managed object
+ @param entityName entity name of object
+ */
+- (NSManagedObject*)fetchManagedObjectWithEntityName:(NSString*)entityName;
 @end

@@ -13,9 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Volunteer : NSManagedObject<RestKitAdditions>
-
-- (Volunteer*)volunteerWithId:(NSInteger)volunteer;
-
++ (Volunteer*)fetchVolunteer;
 @end
 
 NS_ASSUME_NONNULL_END

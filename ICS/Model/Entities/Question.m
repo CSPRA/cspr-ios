@@ -10,9 +10,8 @@
 
 @implementation Question
 
-- (Question*)questionWithId:(NSInteger)questionId {
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"questionId == %@", questionId];
-  return (Question*)[kSharedModel objectWithEntityName:kQuestionEntityName predicate:predicate];
+- (Question*)fetchQuestion {
+  return (Question*)[kSharedModel fetchManagedObjectWithEntityName:kQuestionEntityName];
 }
 
 + (RKEntityMapping*)restkitObjectMappingForStore:(RKManagedObjectStore *)store {

@@ -11,14 +11,12 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "Volunteer.h"
 
-static NSInteger const kEstimatedCellHieght = 200;
 
 @interface ICSHomeViewController ()<UITableViewDelegate,
 UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *eventArray;
-@property (nonatomic, strong) Volunteer *volunteer;
 
 @end
 
@@ -27,8 +25,12 @@ UITableViewDataSource>
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.navigationItem.title = @"ICS Events";
+  
   if (!self.eventArray) {
-    [self initializeData];
+  
+    Volunteer *volunteer = [Volunteer fetchVolunteer];
+    self.token = volunteer.token;
+    [self fetchData];
     [self.tableView reloadData];
   }
 }
@@ -74,13 +76,13 @@ UITableViewDataSource>
   self.eventArray = results;
  }
 
-- (void)initializeData {
+- (void)fetchData {
   if (self.token) {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [kDataSource fetchEventsWithToken:self.token
                       completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
                         if (success) {
-                          self.eventArray = [NSArray arrayWithObject:result];
+                          self.eventArray = [result objectForKey:@"results"];
                           [self.tableView reloadData];
                         }else if (error){
                           NSLog(@"%@",error);
@@ -90,11 +92,6 @@ UITableViewDataSource>
   }
 }
 
-#pragma mark - tableView setup
-- (void)setupTableView {
-  self.tableView.rowHeight = UITableViewAutomaticDimension;
-//  self.tableView.estimatedRowHeight = kEstimatedCellHieght;
-}
 
 #pragma mark - TableView Delegate and DataSource methods
 
@@ -111,9 +108,7 @@ UITableViewDataSource>
   EventDetailTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kEventDetailCellIdentifier forIndexPath:indexPath];
   if(self.eventArray)
   {
-    cell.eventDict = [self.eventArray objectAtIndex:indexPath.row];
-//    cell.eventNameLabel.text = [[self.eventArray objectAtIndex:indexPath.row] valueForKey:@"eventName"];
-//    cell.eventTypeLabel.text = [[self.eventArray objectAtIndex:indexPath.row] valueForKey:@"eventType"];
+    cell.event = [self.eventArray objectAtIndex:indexPath.row];
   }
   return cell;
 }
@@ -123,7 +118,5 @@ UITableViewDataSource>
   UIViewController *patientListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
   [self.navigationController pushViewController:patientListVC animated:YES];
 }
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return 300;
-}
+
 @end

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Doctor : NSManagedObject<RestKitAdditions>
 
-- (Doctor*)doctorWithId:(NSInteger)doctorId;
+- (Doctor*)fetchDoctor;
 
 @end
 

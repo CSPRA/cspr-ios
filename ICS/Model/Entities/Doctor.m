@@ -10,9 +10,8 @@
 
 @implementation Doctor
 
-- (Doctor*)doctorWithId:(NSInteger)doctorId {
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"doctorId == %@", doctorId];
-  return (Doctor*)[kSharedModel objectWithEntityName:kDoctorEntityName predicate:predicate];
+- (Doctor*)fetchDoctor {
+  return (Doctor*)[kSharedModel fetchManagedObjectWithEntityName:kDoctorEntityName];
 }
 
 + (RKEntityMapping*)restkitObjectMappingForStore:(RKManagedObjectStore *)store {

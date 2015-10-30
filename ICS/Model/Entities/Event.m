@@ -10,10 +10,6 @@
 
 @implementation Event
 
-+ (Event*)eventWithId:(NSInteger)eventId {
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"eventId == %i", eventId];
-  return (Event*)[kSharedModel objectWithEntityName:kEventEntityName predicate:predicate];
-}
 
 + (RKEntityMapping*)restkitObjectMappingForStore:(RKManagedObjectStore *)store {
   

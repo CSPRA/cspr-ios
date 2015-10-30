@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Patient : NSManagedObject<RestKitAdditions>
 
-- (Patient*)patientWithId: (NSInteger)patientId;
+- (Patient*)fetchPatient;
 
 @end
 
