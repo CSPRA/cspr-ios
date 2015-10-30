@@ -10,6 +10,7 @@
 #import "Patient.h"
 #import "SharedModel.h"
 #import "PatientInformationViewController.h"
+#import "PatientRegistrationViewController.h"
 
 @interface ICSPatientsListViewController ()<UITableViewDataSource,
 UITabBarDelegate,
@@ -24,7 +25,7 @@ UIAlertViewDelegate>
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self offlineData];
+  [self fetchPatientList];
 }
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
@@ -35,32 +36,33 @@ UIAlertViewDelegate>
   // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - initialization methods
 - (void)offlineData {
   
-    NSDictionary *patient1 = @{
-    @"name":@"Patient 1",
-    @"dob":@"1985-10-01",
-    @"gender":@"male",
-    @"maritalStatus":@"married",
-    @"address":@"Lorem ipsum",
-    @"homePhoneNumber":@(12334335),
-    @"mobileNumber":@(12345678),
-    @"email":@"abc@gmail.com",
-    @"annualIncome":@(300000),
-    @"occupation":@"bussiness",
-    @"education":@"Secondary School",
-    @"religion":@"Hindu",
-    @"aliveChildrenCount":@(0),
-    @"deceasedChildrenCount":@(0),
-    @"voterId":@"1234A59",
-    @"adharId":@"12343545",
-    @"updated_at":@"2015-10-13 12:19:11",
-    @"created_at":@"2015-10-13 12:19:11",
-    @"id":@(1)
-    };
+  NSDictionary *patient1 = @{
+                             @"name":@"Patient 1",
+                             @"dob":@"1985-10-01",
+                             @"gender":@"male",
+                             @"maritalStatus":@"married",
+                             @"address":@"Lorem ipsum",
+                             @"homePhoneNumber":@(12334335),
+                             @"mobileNumber":@(12345678),
+                             @"email":@"abc@gmail.com",
+                             @"annualIncome":@(300000),
+                             @"occupation":@"bussiness",
+                             @"education":@"Secondary School",
+                             @"religion":@"Hindu",
+                             @"aliveChildrenCount":@(0),
+                             @"deceasedChildrenCount":@(0),
+                             @"voterId":@"1234A59",
+                             @"adharId":@"12343545",
+                             @"updated_at":@"2015-10-13 12:19:11",
+                             @"created_at":@"2015-10-13 12:19:11",
+                             @"id":@(1)
+                             };
   self.patientListArray = [NSArray arrayWithObjects:patient1, nil];
 }
-  
+
 - (void)initialSetup {
   if (!self.patientListArray) {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"oops!!"
@@ -72,8 +74,23 @@ UIAlertViewDelegate>
   }
 }
 
-- (void)fetchPAtientList {
-  
+- (void)fetchPatientList {
+
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [kDataSource fetchPatientsWithToken:_token eventId:_eventId completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
+      if (success) {
+        self.patientListArray = [NSArray arrayWithObject:result];
+      }else if (error){
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+//                                                        message:@"No registered patients"
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil, nil];
+//        [alert show];
+      }
+      [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
 }
 
 #pragma mark - TableView Delegate and DataSource methods
@@ -93,10 +110,18 @@ UIAlertViewDelegate>
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [self showPatientInfoViewControllerAtIndexPath:indexPath];
+ 
+}
+- (void)showPatientInfoViewControllerAtIndexPath:(NSIndexPath *)indexPath {
   UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-
   UITabBarController *tabBarController = [mainStoryboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
-//  [tabBarController setModalTransitionStyle:UIModalTransitionStylePartialCurl];
+  PatientInformationViewController *patientRegisterationVC = [[tabBarController childViewControllers] objectAtIndex:1];
+  Patient *patient = [self.patientListArray objectAtIndex:indexPath.row];
+  if (patient) {
+    patientRegisterationVC.pId = [NSNumber numberWithLongLong:patient.patientId];
+  }
+  patientRegisterationVC.token = _token;
   [self.navigationController pushViewController:tabBarController animated:YES];
 }
 
@@ -107,9 +132,10 @@ UIAlertViewDelegate>
       [self.navigationController popViewControllerAnimated:YES];
       break;
     case 1:{
-      UIViewController *registerPatientVC = [self.storyboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
-      
-      [self.navigationController pushViewController:registerPatientVC animated:YES];
+      [self showPatientInfoViewControllerAtIndexPath:nil];
+//      UIViewController *registerPatientVC = [self.storyboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
+//      
+//      [self.navigationController pushViewController:registerPatientVC animated:YES];
     }
       break;
     default:

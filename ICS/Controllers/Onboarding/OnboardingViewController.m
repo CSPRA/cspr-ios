@@ -7,7 +7,7 @@
 //
 
 //#import "PhoneVerificationViewController.h"
-#import "RegisterViewController.h"
+#import "RegisterVolunteerViewController.h"
 #import "OnboardingViewController.h"
 #import "PatientInformationViewController.h"
 #import "ICSStyleGuide.h"
@@ -57,7 +57,7 @@
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self createAlertForTitle:@"Success" withMessage:[NSString stringWithFormat:@"%@ verified successfully", session.phoneNumber]];
             });
-            RegisterViewController * registerVolunteerVC = [self.storyboard instantiateViewControllerWithIdentifier:kRegisterVCIdentifier];
+            RegisterVolunteerViewController * registerVolunteerVC = [self.storyboard instantiateViewControllerWithIdentifier:kRegisterVCIdentifier];
             registerVolunteerVC.phoneNumber = session.phoneNumber;
             [self.navigationController pushViewController:registerVolunteerVC animated:YES];
         }

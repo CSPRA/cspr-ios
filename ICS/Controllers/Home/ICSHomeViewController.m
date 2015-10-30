@@ -10,7 +10,7 @@
 #import "EventDetailTableViewCell.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "Volunteer.h"
-
+#import "ICSPatientsListViewController.h"
 
 @interface ICSHomeViewController ()<UITableViewDelegate,
 UITableViewDataSource>
@@ -115,7 +115,11 @@ UITableViewDataSource>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  UIViewController *patientListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
+  ICSPatientsListViewController *patientListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
+  patientListVC.token = _token;
+  EventDetailTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+  patientListVC.eventId = cell.event.eventId;
+  
   [self.navigationController pushViewController:patientListVC animated:YES];
 }
 
