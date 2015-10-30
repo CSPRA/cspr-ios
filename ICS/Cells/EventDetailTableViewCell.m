@@ -9,6 +9,7 @@
 #import "EventDetailTableViewCell.h"
 #import "UIView+ICSAdditions.h"
 #import "Cancer.h"
+#import "NSDate+ICSFormattedString.h"
 
 @interface EventDetailTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *eventType;
@@ -39,8 +40,8 @@
 - (void)initialSetup {
   self.eventType.text = _event.eventType;
   self.eventNameLabel.text = _event.eventName;
-  self.startDate.text = [NSString stringWithFormat:@"%@",_event.startingDate];
-  self.endDate.text = [NSString stringWithFormat:@"%@",_event.endingDate];
+  self.startDate.text = [NSString stringWithFormat:@"%@",[_event.startingDate formattedDateString]];
+  self.endDate.text = [NSString stringWithFormat:@"%@",[_event.endingDate formattedDateString]];
   
   Cancer *cancerType = _event.cancer;
   self.cancerName.text = cancerType.cancerName;
