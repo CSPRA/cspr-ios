@@ -190,38 +190,42 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wju-jY-q9j">
                                                             <rect key="frame" x="10" y="2" width="580" height="40"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3Z-Ve-FbW">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="40"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="7bv-KR-c3y"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1H-ca-OOQ">
-                                                                    <rect key="frame" x="55" y="0.0" width="525" height="40"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1H-ca-OOQ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="540" height="40"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="nWh-5l-CT6"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
+                                                                    <color key="textColor" red="1" green="0.62745098040000002" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="List-Arrow 4" translatesAutoresizingMaskIntoConstraints="NO" id="c7m-hW-WHx">
+                                                                    <rect key="frame" x="562" y="12" width="9" height="17"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="17" id="9Y1-3c-NoF"/>
+                                                                        <constraint firstAttribute="width" constant="9" id="dca-Fs-cLl"/>
+                                                                    </constraints>
+                                                                </imageView>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="1" green="0.62745098040000002" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="r3Z-Ve-FbW" firstAttribute="top" secondItem="Wju-jY-q9j" secondAttribute="top" id="3Sx-23-qMx"/>
-                                                                <constraint firstAttribute="bottom" secondItem="r3Z-Ve-FbW" secondAttribute="bottom" id="3cQ-Al-hZB"/>
                                                                 <constraint firstAttribute="height" constant="40" id="6mD-RG-IWU"/>
                                                                 <constraint firstItem="g1H-ca-OOQ" firstAttribute="top" secondItem="Wju-jY-q9j" secondAttribute="top" id="7JM-zt-4UT"/>
-                                                                <constraint firstItem="r3Z-Ve-FbW" firstAttribute="leading" secondItem="Wju-jY-q9j" secondAttribute="leading" id="a3I-oU-HtA"/>
-                                                                <constraint firstItem="g1H-ca-OOQ" firstAttribute="leading" secondItem="r3Z-Ve-FbW" secondAttribute="trailing" constant="10" id="cvU-Ml-O4J"/>
-                                                                <constraint firstAttribute="trailing" secondItem="g1H-ca-OOQ" secondAttribute="trailing" id="mCi-L0-nHB"/>
+                                                                <constraint firstItem="c7m-hW-WHx" firstAttribute="centerY" secondItem="Wju-jY-q9j" secondAttribute="centerY" id="fi2-bw-L2e"/>
+                                                                <constraint firstAttribute="trailing" secondItem="c7m-hW-WHx" secondAttribute="trailing" constant="9" id="hQG-2G-81Y"/>
+                                                                <constraint firstAttribute="trailing" secondItem="g1H-ca-OOQ" secondAttribute="trailing" constant="40" id="mCi-L0-nHB"/>
                                                                 <constraint firstAttribute="bottom" secondItem="g1H-ca-OOQ" secondAttribute="bottom" id="q6I-ZG-8Nb"/>
+                                                                <constraint firstItem="c7m-hW-WHx" firstAttribute="top" secondItem="Wju-jY-q9j" secondAttribute="top" id="vd0-Ow-w6D"/>
+                                                                <constraint firstItem="g1H-ca-OOQ" firstAttribute="leading" secondItem="Wju-jY-q9j" secondAttribute="leading" id="w1q-MB-tlX"/>
+                                                                <constraint firstAttribute="bottom" secondItem="c7m-hW-WHx" secondAttribute="bottom" constant="7" id="xLb-5u-ZId"/>
                                                             </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="vd0-Ow-w6D"/>
+                                                                    <exclude reference="xLb-5u-ZId"/>
+                                                                </mask>
+                                                            </variation>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75K-RU-nTf">
                                                             <rect key="frame" x="10" y="52" width="580" height="25"/>
@@ -342,7 +346,6 @@
                                             <outlet property="cancerName" destination="75K-RU-nTf" id="qlk-oJ-2Hs"/>
                                             <outlet property="endDate" destination="gc1-0Z-1Ou" id="6eR-g9-Kde"/>
                                             <outlet property="eventNameLabel" destination="g1H-ca-OOQ" id="leP-DE-eyp"/>
-                                            <outlet property="eventType" destination="r3Z-Ve-FbW" id="RaO-3o-xEG"/>
                                             <outlet property="startDate" destination="att-Si-ydo" id="0gC-7p-R1J"/>
                                             <outlet property="textView" destination="xg2-Jz-9UD" id="ogA-iI-1Lj"/>
                                         </connections>
@@ -478,4 +481,7 @@
             <point key="canvasLocation" x="2384" y="1333"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="List-Arrow 4" width="9" height="17"/>
+    </resources>
 </document>

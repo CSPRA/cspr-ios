@@ -25,14 +25,14 @@ UITableViewDataSource>
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.navigationItem.title = @"ICS Events";
-  
-  if (!self.eventArray) {
-  
-    Volunteer *volunteer = [Volunteer fetchVolunteer];
-    self.token = volunteer.token;
-    [self fetchData];
-    [self.tableView reloadData];
-  }
+  [self offlineData];
+//  if (!self.eventArray) {
+//  
+//    Volunteer *volunteer = [Volunteer fetchVolunteer];
+//    self.token = volunteer.token;
+//    [self fetchData];
+//    [self.tableView reloadData];
+//  }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -108,7 +108,8 @@ UITableViewDataSource>
   EventDetailTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kEventDetailCellIdentifier forIndexPath:indexPath];
   if(self.eventArray)
   {
-    cell.event = [self.eventArray objectAtIndex:indexPath.row];
+//    cell.event = [self.eventArray objectAtIndex:indexPath.row];
+    cell.eventDict = [self.eventArray objectAtIndexedSubscript:indexPath.row];
   }
   return cell;
 }
