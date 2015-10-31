@@ -8,7 +8,14 @@
 
 #import "XLFormViewController.h"
 
+typedef enum {
+  kRegisteredPatientFormType,
+  kPatientRegistratinFormType
+}kPatientInfoFormType;
+
 @interface PatientInformationViewController : XLFormViewController
+
+@property (nonatomic, assign) kPatientInfoFormType formType;
 @property (nonatomic, strong) NSNumber *pId;
 @property (nonatomic, strong) NSString *token;
 @end

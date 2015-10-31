@@ -8,36 +8,55 @@
 
 #import "ICSHomeViewController.h"
 #import "EventDetailTableViewCell.h"
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "PatientInformationViewController.h"
 #import "Volunteer.h"
 #import "ICSPatientsListViewController.h"
+#import "ICSUtilities.h"
+
+static NSString *const RegisterEvent = @"register";
+static NSString *const RegisterScreeningEvent = @"register_screen";
 
 @interface ICSHomeViewController ()<UITableViewDelegate,
 UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *eventArray;
+@property (nonatomic, strong) NSMutableArray *eventArray;
 
 @end
 
 @implementation ICSHomeViewController
 
+#pragma mark - View cycle
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.navigationItem.title = @"ICS Events";
-  [self offlineData];
-//  if (!self.eventArray) {
-//  
-//    Volunteer *volunteer = [Volunteer fetchVolunteer];
-//    self.token = volunteer.token;
-//    [self fetchData];
-//    [self.tableView reloadData];
-//  }
+  
+  [self setupNavigationBar];
+  [self loadEvents];
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Initalization
+- (void)loadEvents {
+  Volunteer *volunteer = [Volunteer fetchVolunteer];
+  self.token = volunteer.token;
+  self.eventArray = [[NSMutableArray alloc] init];
+  NSArray *savedEventList = [kSharedModel fetchObjectWithEntityName:kEventEntityName];
+
+  if ([ICSUtilities hasActiveConnection]) {
+    [self.eventArray addObjectsFromArray: [self fetchLatestEvents]];
+    [self.tableView reloadData];
+  }else if(savedEventList){
+    [self.eventArray addObjectsFromArray:savedEventList];
+  }
+}
+
+- (void)setupNavigationBar {
+  self.navigationItem.title = @"ICS Events";
+
 }
 
 - (void)offlineData{
@@ -73,23 +92,22 @@ UITableViewDataSource>
                            };
   
   NSArray *results = @[event1, event2];
-  self.eventArray = results;
+  [self.eventArray addObject:results];
  }
 
-- (void)fetchData {
-  if (self.token) {
+- (NSArray*)fetchLatestEvents {
+   __block NSArray *fetchedEvents;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [kDataSource fetchEventsWithToken:self.token
                       completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
                         if (success) {
-                          self.eventArray = [result objectForKey:@"results"];
-                          [self.tableView reloadData];
+                          fetchedEvents = [result objectForKey:@"results"];
                         }else if (error){
                           NSLog(@"%@",error);
                         }
                         [MBProgressHUD hideHUDForView:self.view animated:YES];
                       }];
-  }
+  return fetchedEvents;
 }
 
 
@@ -108,20 +126,36 @@ UITableViewDataSource>
   EventDetailTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kEventDetailCellIdentifier forIndexPath:indexPath];
   if(self.eventArray)
   {
-//    cell.event = [self.eventArray objectAtIndex:indexPath.row];
-    cell.eventDict = [self.eventArray objectAtIndexedSubscript:indexPath.row];
+    cell.event = [self.eventArray objectAtIndex:indexPath.row];
+//    cell.eventDict = [self.eventArray objectAtIndexedSubscript:indexPath.row];
   }
   return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-  ICSPatientsListViewController *patientListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
-  patientListVC.token = _token;
   EventDetailTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+  NSString *eventType = cell.event.eventType;
+  if ([eventType isEqualToString:RegisterEvent]) {
+    [self showRegisterPatientVCAtCell:cell];
+  }
+  else if ([eventType isEqualToString:RegisterScreeningEvent]){
+    [self showPatientListVCAtCell:cell];
+  }
+}
+
+- (void)showRegisterPatientVCAtCell: (EventDetailTableViewCell*)cell {
+  PatientInformationViewController *patientInfoVC = [kMainStoryBoard instantiateViewControllerWithIdentifier:kPatientInfoVCIndetifier];
+  patientInfoVC.token = _token;
+  patientInfoVC.formType = kPatientRegistratinFormType;
+  [self.navigationController pushViewController:patientInfoVC animated:YES];
+}
+
+- (void)showPatientListVCAtCell: (EventDetailTableViewCell*)cell {
+  ICSPatientsListViewController *patientListVC = [kMainStoryBoard
+            instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
+  patientListVC.token = _token;
   patientListVC.eventId = cell.event.eventId;
   
   [self.navigationController pushViewController:patientListVC animated:YES];
 }
-
 @end

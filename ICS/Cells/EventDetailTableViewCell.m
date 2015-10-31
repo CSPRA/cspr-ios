@@ -35,8 +35,8 @@
 - (void)layoutSubviews {
   [super layoutSubviews];
   [self.contentView ICSViewBackgroungColor];
-//  [self initialSetup];
-  [self offlineSetup];
+  [self initialSetup];
+//  [self offlineSetup];
 }
 - (void)initialSetup {
   self.eventType.text = _event.eventType;

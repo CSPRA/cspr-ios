@@ -114,15 +114,15 @@ UIAlertViewDelegate>
  
 }
 - (void)showPatientInfoViewControllerAtIndexPath:(NSIndexPath *)indexPath {
-  UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-  UITabBarController *tabBarController = [mainStoryboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
-  PatientInformationViewController *patientRegisterationVC = [[tabBarController childViewControllers] objectAtIndex:1];
-  Patient *patient = [self.patientListArray objectAtIndex:indexPath.row];
-  if (patient) {
-    patientRegisterationVC.pId = [NSNumber numberWithLongLong:patient.patientId];
-  }
-  patientRegisterationVC.token = _token;
-  [self.navigationController pushViewController:tabBarController animated:YES];
+//  UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//  UITabBarController *tabBarController = [mainStoryboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
+//  PatientInformationViewController *patientRegisterationVC = [[tabBarController childViewControllers] objectAtIndex:1];
+//  Patient *patient = [self.patientListArray objectAtIndex:indexPath.row];
+//  if (patient) {
+//    patientRegisterationVC.pId = [NSNumber numberWithLongLong:patient.patientId];
+//  }
+//  patientRegisterationVC.token = _token;
+//  [self.navigationController pushViewController:tabBarController animated:YES];
 }
 
 #pragma mark - UIAlertViewDelegate

@@ -8,6 +8,6 @@
 
 #import "XLFormViewController.h"
 
-@interface PatientEatingHabitsViewController : XLFormViewController
+@interface DiagnosisFormViewController : XLFormViewController
 
 @end

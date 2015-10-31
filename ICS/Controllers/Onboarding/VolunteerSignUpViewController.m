@@ -94,7 +94,7 @@
 }
 
 -(void)moveToPatientRegistration {
-    [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:kPatientRegistrationVCIndentifier] animated:YES];
+//    [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:kPatientRegistrationVCIndentifier] animated:YES];
 }
 
 

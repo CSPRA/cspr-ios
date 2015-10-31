@@ -22,17 +22,17 @@
 #define kMaxAlpha 1.0
 
 //ViewController's Storyboard Identifier
-#define kPatientInforamtionVCIndentifier  @"PatientInforamtionVCIndentifier"
-#define kPatientHabitsVCIdentifier  @"PatientHabitsVCIdentifier"
-#define kHomeVCIdentifier @"HomeViewControllerIdentifier"
-#define kPatientsListVCIdentifier  @"PatientsListVCIdentifier"
-#define kRegisterVCIdentifier @"RegisterVCIdentifier"
-#define kPhotoViewControllerIdentifier @"PhotoViewControllerIdentifier"
-#define ktabBarViewControllerIdentifier @"tabBarViewControllerIdentifier"
+#define kPatientInfoVCIndetifier        @"PatientInfoVCIndetifier"
+#define kDiagnosisFormVCIdentifier      @"DiagnosisFormVCIdentifier"
+#define kHomeVCIdentifier               @"HomeViewControllerIdentifier"
+#define kPatientsListVCIdentifier       @"PatientsListVCIdentifier"
+#define kRegisterVCIdentifier           @"RegisterVCIdentifier"
+#define kPhotoViewControllerIdentifier  @"PhotoViewControllerIdentifier"
 
 //Storyboard segue Identifier
-#define kshowRegisterViewSegue @"showRegisterViewSegue"
+#define kshowRegisterViewSegue        @"showRegisterViewSegue"
 #define kShowPhoneVaricationViewSegue @"ShowPhoneVaricationViewSegue"
+#define kshowTabControllerSegue       @"showTabControllerSegue"
 
 //UITableViewCell Identifiers
 #define kEventDetailCellIdentifier @"EventDetailCellIdentifier"
@@ -46,7 +46,8 @@
 #define kModelURL [[NSBundle mainBundle] URLForResource:@"ICSModel" withExtension:@"momd"]
 #define kICSAPIBaseURL [NSURL URLWithString:@"http://cspr-web-dev.elasticbeanstalk.com"]
 #define kDataStoreFileName @"ICSDB.sqlite"
-
+#define kMainStoryBoard [UIStoryboard storyboardWithName:@"Main" bundle:nil]
+#define kLoginSignUpStoryboard [UIStoryboard storyboardWithName:@"LoginSignUp" bundle:nil]
 
 //NSManagedObject Entities
 #define kPatientEntityName @"Patient"
@@ -65,7 +66,6 @@
 
 //VCs
 #define kVolunteerSignUpVCIdentifier        @"VolunteerSignUpVCIdentifier"
-#define kPatientRegistrationVCIndentifier   @"PatientRegistrationVCIdentifier"
 #define kPhotoVCIdentifier                  @"PhotoVCIdentifier"
 #define kCameraVCIdentifier                 @"CamVCIdentifier"
 #define kScanIDProofVCIdentifier            @"ScanIDProofVCIdentifier"
@@ -117,6 +117,13 @@
 #define kEventID                @"eventId"
 #define kFormID                 @"formId"
 #define kCancerID               @"cancerId"
-
+#define kCreatedAt              @"created_at"
+#define kUpdatedAt              @"updated_at"
+#define kQueryId                @"quesryId"
+#define kQuestionsId            @"questionId"
+#define kQuestionTitle          @"title"
+#define kQuestionType           @"type"
+#define kQuestionOrder          @"order"
+#define kUnits                  @"units"
 
 

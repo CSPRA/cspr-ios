@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8RV-T7-LQu">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Patient Info-->
-        <scene sceneID="hbI-FW-fyh">
-            <objects>
-                <viewController storyboardIdentifier="PatientInforamtionVCIndentifier" title="Patient Info" id="srI-hb-x7w" customClass="PatientInformationViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="txS-Ii-uaS"/>
-                        <viewControllerLayoutGuide type="bottom" id="o1o-Ic-1XB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Aue-Z0-Zo4">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Patient Info" id="FCe-0j-aU6">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cNx-6u-Odf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5799" y="1100"/>
-        </scene>
         <!--Questions-->
         <scene sceneID="Hlg-gc-ald">
             <objects>
-                <viewController storyboardIdentifier="PatientHabitsVCIdentifier" title="Questions" id="QOI-Pv-xIX" customClass="PatientEatingHabitsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiagnosisFormVCIdentifier" title="Questions" id="QOI-Pv-xIX" customClass="DiagnosisFormViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2MP-hm-yTV"/>
                         <viewControllerLayoutGuide type="bottom" id="R52-7b-VeT"/>
@@ -41,15 +18,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" tag="1" title="Questions" id="K1T-Pk-Zkg">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Diagnosis" id="BJj-eW-wcP">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
                     </tabBarItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4f-7D-av7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5799" y="387"/>
+            <point key="canvasLocation" x="5479" y="843"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="D8K-dl-QDg">
@@ -63,7 +40,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="srI-hb-x7w" kind="relationship" relationship="viewControllers" id="wCp-MU-Ggp"/>
                         <segue destination="QOI-Pv-xIX" kind="relationship" relationship="viewControllers" id="qh9-pY-RS0"/>
                         <segue destination="Kg7-WW-hlA" kind="relationship" relationship="viewControllers" id="Td7-8k-oBE"/>
                     </connections>
@@ -85,7 +61,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cVo-GP-XsC" userLabel="UICollectionView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x2T-OP-duv">
@@ -127,13 +103,15 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paN-qV-X9b">
-                                <rect key="frame" x="246" y="521" width="109" height="30"/>
-                                <color key="backgroundColor" red="0.30431134259259257" green="0.078790509259259262" blue="0.10732060185185184" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="457" width="600" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.62745098040000002" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Qi5-RC-kMy"/>
-                                    <constraint firstAttribute="width" constant="109" id="zDU-yD-66d"/>
                                 </constraints>
-                                <state key="normal" title="Take Photo"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="takePhotoTapped:" destination="Kg7-WW-hlA" eventType="touchUpInside" id="Nde-ol-1J6"/>
                                 </connections>
@@ -141,17 +119,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="85a-AC-jGg" firstAttribute="top" secondItem="paN-qV-X9b" secondAttribute="bottom" constant="-64" id="HNj-ky-Jsf"/>
                             <constraint firstItem="paN-qV-X9b" firstAttribute="centerX" secondItem="8Ce-NA-tmW" secondAttribute="centerX" id="HoH-7m-QV4"/>
                             <constraint firstAttribute="trailing" secondItem="cVo-GP-XsC" secondAttribute="trailing" id="Nsk-NC-4Qn"/>
+                            <constraint firstItem="85a-AC-jGg" firstAttribute="top" secondItem="paN-qV-X9b" secondAttribute="bottom" id="Nu9-ZV-50a"/>
+                            <constraint firstItem="paN-qV-X9b" firstAttribute="leading" secondItem="8Ce-NA-tmW" secondAttribute="leading" id="Row-aj-OcP"/>
                             <constraint firstItem="cVo-GP-XsC" firstAttribute="top" secondItem="8Ce-NA-tmW" secondAttribute="top" id="V5g-Ko-6NP"/>
-                            <constraint firstItem="85a-AC-jGg" firstAttribute="top" secondItem="cVo-GP-XsC" secondAttribute="bottom" constant="-63" id="jF4-he-rdS"/>
+                            <constraint firstAttribute="trailing" secondItem="paN-qV-X9b" secondAttribute="trailing" id="g9G-9R-aQ4"/>
+                            <constraint firstItem="85a-AC-jGg" firstAttribute="top" secondItem="cVo-GP-XsC" secondAttribute="bottom" id="jF4-he-rdS"/>
                             <constraint firstItem="cVo-GP-XsC" firstAttribute="leading" secondItem="8Ce-NA-tmW" secondAttribute="leading" id="ter-Of-knA"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" tag="2" title="Photo" id="6KR-f0-PeT">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="photoCollectionView" destination="cVo-GP-XsC" id="f5m-az-fEX"/>
@@ -159,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaA-tn-ja7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5799" y="1816"/>
+            <point key="canvasLocation" x="5467" y="1700"/>
         </scene>
         <!--ICS Event-->
         <scene sceneID="ezK-1z-qSE">
@@ -374,6 +354,62 @@
             </objects>
             <point key="canvasLocation" x="3078" y="1333"/>
         </scene>
+        <!--Patient Information View Controller-->
+        <scene sceneID="qeu-qr-8jZ">
+            <objects>
+                <viewController storyboardIdentifier="PatientInfoVCIndetifier" id="aKg-bc-ECI" customClass="PatientInformationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h8E-1i-n9n"/>
+                        <viewControllerLayoutGuide type="bottom" id="av7-Df-VGs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W8n-2o-YeV">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wVN-hR-PHg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="491"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aKg-bc-ECI" id="7hR-7T-fqZ"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anx-ej-MPI">
+                                <rect key="frame" x="0.0" y="491" width="600" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.62745098040000002" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dGC-73-ojO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="SUBMIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitTapped:" destination="aKg-bc-ECI" eventType="touchUpInside" id="C4E-iv-b1u"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wVN-hR-PHg" firstAttribute="top" secondItem="h8E-1i-n9n" secondAttribute="bottom" id="6zF-o2-YuY"/>
+                            <constraint firstItem="anx-ej-MPI" firstAttribute="leading" secondItem="W8n-2o-YeV" secondAttribute="leading" id="796-6I-bdd"/>
+                            <constraint firstAttribute="trailing" secondItem="wVN-hR-PHg" secondAttribute="trailing" id="GKb-D8-IOv"/>
+                            <constraint firstItem="av7-Df-VGs" firstAttribute="top" secondItem="anx-ej-MPI" secondAttribute="bottom" id="Mgi-5Q-JwV"/>
+                            <constraint firstAttribute="trailing" secondItem="anx-ej-MPI" secondAttribute="trailing" id="WIL-cp-W1O"/>
+                            <constraint firstItem="anx-ej-MPI" firstAttribute="top" secondItem="wVN-hR-PHg" secondAttribute="bottom" id="ecZ-aZ-N3O"/>
+                            <constraint firstItem="wVN-hR-PHg" firstAttribute="leading" secondItem="W8n-2o-YeV" secondAttribute="leading" id="hl3-kR-wS4"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="wVN-hR-PHg" id="OcC-iB-duH"/>
+                        <segue destination="ydi-0x-3kb" kind="show" identifier="showTabControllerSegue" id="npI-8Q-DcN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tv9-qh-h6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3777" y="926"/>
+        </scene>
         <!--Patients List View Controller-->
         <scene sceneID="BnF-Fu-LS1">
             <objects>
@@ -460,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOU-Bg-Ey8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3761" y="1333"/>
+            <point key="canvasLocation" x="3777" y="1783"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lmA-Nw-XjR">

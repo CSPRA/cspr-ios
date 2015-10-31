@@ -27,7 +27,7 @@
     [super viewDidLoad];
   [self setupNavigationBar];
     if([ICSDataManager isVolunteerRegistered]) {
-        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:kPatientRegistrationVCIndentifier] animated:NO];
+//        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:kPatientRegistrationVCIndentifier] animated:NO];
     }
     else {
         [self addDigitsView];
