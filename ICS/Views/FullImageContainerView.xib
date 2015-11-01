@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
@@ -44,12 +44,12 @@
                     <color key="backgroundColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQp-tB-M7x">
-                    <rect key="frame" x="485" y="21" width="85" height="50"/>
+                    <rect key="frame" x="535" y="29" width="27" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Fgb-Rl-csN"/>
-                        <constraint firstAttribute="width" constant="85" id="gUq-oJ-s2H"/>
+                        <constraint firstAttribute="height" constant="32" id="Fgb-Rl-csN"/>
+                        <constraint firstAttribute="width" constant="27" id="gUq-oJ-s2H"/>
                     </constraints>
-                    <state key="normal" title="Delete">
+                    <state key="normal" image="delete">
                         <color key="titleColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -63,12 +63,12 @@
                 <constraint firstItem="Iih-yx-9be" firstAttribute="trailing" secondItem="qeQ-r6-oOU" secondAttribute="trailing" id="5AE-8r-sVH"/>
                 <constraint firstItem="mk8-6u-IOh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="KgA-mC-2FN"/>
                 <constraint firstAttribute="trailing" secondItem="qeQ-r6-oOU" secondAttribute="trailing" id="NHD-eL-iwx"/>
-                <constraint firstItem="YQp-tB-M7x" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="21" id="ZmL-N5-Sh3"/>
+                <constraint firstItem="YQp-tB-M7x" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="29" id="ZmL-N5-Sh3"/>
                 <constraint firstItem="mk8-6u-IOh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="aVk-fp-1tH"/>
                 <constraint firstItem="qeQ-r6-oOU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cZK-C5-x58"/>
                 <constraint firstAttribute="trailing" secondItem="Iih-yx-9be" secondAttribute="trailing" id="dx9-tR-Gcl"/>
-                <constraint firstItem="YQp-tB-M7x" firstAttribute="baseline" secondItem="mk8-6u-IOh" secondAttribute="baseline" id="fMv-IT-HIG"/>
-                <constraint firstAttribute="trailing" secondItem="YQp-tB-M7x" secondAttribute="trailing" constant="30" id="g5G-Ud-O7r"/>
+                <constraint firstItem="YQp-tB-M7x" firstAttribute="baseline" secondItem="mk8-6u-IOh" secondAttribute="baseline" constant="8.5" id="fMv-IT-HIG"/>
+                <constraint firstAttribute="trailing" secondItem="YQp-tB-M7x" secondAttribute="trailing" constant="38" id="g5G-Ud-O7r"/>
                 <constraint firstItem="Iih-yx-9be" firstAttribute="leading" secondItem="qeQ-r6-oOU" secondAttribute="leading" id="gwX-69-9mC"/>
                 <constraint firstAttribute="bottom" secondItem="Iih-yx-9be" secondAttribute="bottom" id="h77-cT-oIr"/>
                 <constraint firstItem="Iih-yx-9be" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hkl-A3-qSf"/>
@@ -84,6 +84,7 @@
         </view>
     </objects>
     <resources>
+        <image name="delete" width="27" height="32"/>
         <image name="redCrossButton" width="15" height="15"/>
     </resources>
 </document>

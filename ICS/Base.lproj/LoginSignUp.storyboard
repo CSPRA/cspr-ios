@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vV5-i1-hO3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vV5-i1-hO3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -68,7 +68,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="Jho-Kh-9l2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICANFront" translatesAutoresizingMaskIntoConstraints="NO" id="Jho-Kh-9l2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xV5-xe-1Gr">
@@ -97,7 +97,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="YWv-d4-Xvb" secondAttribute="bottom" constant="1" id="LEf-B0-8T3"/>
                                     <constraint firstAttribute="bottom" secondItem="Sya-oB-IOv" secondAttribute="bottom" constant="1" id="SUL-TD-IyH"/>
@@ -167,7 +167,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgb-Vf-LaW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICS-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="VTs-wJ-7Oj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICAN" translatesAutoresizingMaskIntoConstraints="NO" id="VTs-wJ-7Oj">
                                         <rect key="frame" x="225" y="10" width="150" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="lnj-Uz-I7r"/>
@@ -278,7 +278,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icsLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ov4-nM-jCo">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="ICAN" translatesAutoresizingMaskIntoConstraints="NO" id="Ov4-nM-jCo">
                                 <rect key="frame" x="184" y="92" width="232" height="173"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="173" id="Lt2-gP-aI4"/>
@@ -368,8 +368,7 @@ Verify your phone number to proceed to the initiation steps.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="ICS-Logo" width="112" height="113"/>
-        <image name="Splash" width="160" height="284"/>
-        <image name="icsLogo" width="232" height="173"/>
+        <image name="ICAN" width="205" height="205"/>
+        <image name="ICANFront" width="414" height="736"/>
     </resources>
 </document>

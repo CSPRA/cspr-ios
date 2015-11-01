@@ -38,9 +38,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [ICSStyleGuide backgroundGrey];
-    
+
     [self prefillVolunteerDetails];
     [self addSuccessOverlay];
     [self addSaveButton];

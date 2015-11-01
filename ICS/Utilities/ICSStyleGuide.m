@@ -110,6 +110,10 @@
 
 #pragma mark - Colors
 
++ (UIColor *) ICSOrange {
+    return [UIColor colorWithRed:0.96 green:0.44 blue:0.02 alpha:1];
+}
+
 + (UIColor *) ICSBackground {
     return [UIColor colorWithRed:233/255.0f green:234/255.0f blue:237/255.0f alpha:1.0f];
 }

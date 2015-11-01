@@ -5,6 +5,7 @@ PODS:
   - Fabric (1.5.5):
     - Fabric/Base (= 1.5.5)
   - Fabric/Base (1.5.5)
+  - IQKeyboardManager (3.3.4)
   - JVFloatLabeledTextField (1.0.2)
   - MBProgressHUD (0.9.1)
   - TesseractOCRiOS (4.0.0)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - Digits
   - DZNEmptyDataSet
   - Fabric
+  - IQKeyboardManager
   - JVFloatLabeledTextField (= 1.0.2)
   - MBProgressHUD (~> 0.9.1)
   - TesseractOCRiOS (= 4.0.0)
@@ -36,10 +38,11 @@ SPEC CHECKSUMS:
   Digits: b443a43657c6cbaa6b31fedddc0e8c15133a978f
   DZNEmptyDataSet: 0ec00bfc230d7450997b60c127afdd0b9f24f3b6
   Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
+  IQKeyboardManager: ac803e61e5b50efae6b3aeedd95a02c7c7d3b2b3
   JVFloatLabeledTextField: 58a3a32cfb800e5b224f676987e7c13abf50a14d
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
   TwitterCore: a1feadb793512962003ed2bad23e846c8daa4efd
-  XLForm: 29b76283849dc70e987eaa5812783322465c2b98
+  XLForm: 7817ce29f3f259186e837bb7309ac7e5b7e9b883
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.39.0

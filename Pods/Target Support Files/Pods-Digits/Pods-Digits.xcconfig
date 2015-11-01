@@ -1,2 +1,0 @@
-PODS_DIGITS_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Digits"
-PODS_DIGITS_OTHER_LDFLAGS = -framework "AddressBook" -framework "DigitsKit"

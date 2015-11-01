@@ -22,10 +22,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Fabric with:@[[Crashlytics class], [Digits class]]];
-  [APIInterface sharedInterface];
-  if (![self userLoggedIn]) {
-    [self instantiateLoginSignupFlow];
-  }
+    [APIInterface sharedInterface];
+    if (![self userLoggedIn]) {
+        [self instantiateLoginSignupFlow];
+    }
     return YES;
 }
 
@@ -52,9 +52,8 @@
 }
 
 - (void)instantiateLoginSignupFlow {
-  UIStoryboard  *loginSignupStoryboard = [UIStoryboard storyboardWithName:@"LoginSignUp"
-                                                                  bundle:nil];
-  self.window.rootViewController = [loginSignupStoryboard instantiateInitialViewController];
+    UIStoryboard  *loginSignupStoryboard = [UIStoryboard storyboardWithName:@"LoginSignUp" bundle:nil];
+    self.window.rootViewController = [loginSignupStoryboard instantiateInitialViewController];
 }
 
 - (BOOL)userLoggedIn {

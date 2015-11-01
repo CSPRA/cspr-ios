@@ -47,6 +47,7 @@
 + (UIColor *)ICSBackground;
 + (UIColor *)ICSRed;
 + (UIColor *)ICSBlue;
++ (UIColor *)ICSOrange;
 
 + (UIColor *) backgroundGrey;
 

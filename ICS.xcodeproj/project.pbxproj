@@ -8,78 +8,79 @@
 
 /* Begin PBXBuildFile section */
 		3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E10E1C51BC448C4008B9296 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA481BC40F6B0021AE81 /* ICSStyleGuide.m */; settings = {ASSET_TAGS = (); }; };
-		3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA4C1BC410340021AE81 /* ICSDataManager.m */; settings = {ASSET_TAGS = (); }; };
-		3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA4F1BC410630021AE81 /* ICSUtilities.m */; settings = {ASSET_TAGS = (); }; };
+		3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA481BC40F6B0021AE81 /* ICSStyleGuide.m */; };
+		3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA4C1BC410340021AE81 /* ICSDataManager.m */; };
+		3E43FA501BC410630021AE81 /* ICSUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA4F1BC410630021AE81 /* ICSUtilities.m */; };
 		3E43FA551BC4108E0021AE81 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA541BC4108E0021AE81 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3E43FA5C1BC413AD0021AE81 /* VolunteerSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA5B1BC413AD0021AE81 /* VolunteerSignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3E64A5781BDEA67C0008FFD5 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A5771BDEA67C0008FFD5 /* OnboardingViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3E64A57B1BDEA9160008FFD5 /* PatientRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A57A1BDEA9160008FFD5 /* PatientRegistrationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3E43FA5C1BC413AD0021AE81 /* VolunteerSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA5B1BC413AD0021AE81 /* VolunteerSignUpViewController.m */; };
+		3E61D82D1BE60FB1005A5B3C /* AllowAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E61D82C1BE60FB1005A5B3C /* AllowAccessViewController.m */; };
+		3E64A5781BDEA67C0008FFD5 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A5771BDEA67C0008FFD5 /* OnboardingViewController.m */; };
+		3E64A57B1BDEA9160008FFD5 /* PatientRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A57A1BDEA9160008FFD5 /* PatientRegistrationViewController.m */; };
 		3EACD9CF1BA9D053003E4540 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9CE1BA9D053003E4540 /* main.m */; };
 		3EACD9D21BA9D053003E4540 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9D11BA9D053003E4540 /* AppDelegate.m */; };
 		3EACD9DD1BA9D053003E4540 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EACD9DB1BA9D053003E4540 /* LaunchScreen.xib */; };
 		3EACD9E91BA9D053003E4540 /* ICSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EACD9E81BA9D053003E4540 /* ICSTests.m */; };
-		3EBFA3301BDEB626005B6AF4 /* DiagnosePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA32F1BDEB626005B6AF4 /* DiagnosePictureViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3EBFA3351BDEBD2B005B6AF4 /* DiagnosisPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA3341BDEBD2B005B6AF4 /* DiagnosisPhoto.m */; settings = {ASSET_TAGS = (); }; };
+		3EBFA3301BDEB626005B6AF4 /* DiagnosePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA32F1BDEB626005B6AF4 /* DiagnosePictureViewController.m */; };
+		3EBFA3351BDEBD2B005B6AF4 /* DiagnosisPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA3341BDEBD2B005B6AF4 /* DiagnosisPhoto.m */; };
 		3EBFA33E1BDF530C005B6AF4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBFA33D1BDF530C005B6AF4 /* libz.tbd */; };
-		3EBFA3401BDF5359005B6AF4 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFA33F1BDF5359005B6AF4 /* tessdata */; settings = {ASSET_TAGS = (); }; };
-		3EBFA3431BDF53B3005B6AF4 /* ScanIDProofViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA3421BDF53B3005B6AF4 /* ScanIDProofViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3EBFA34B1BDF576D005B6AF4 /* AAPLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA3481BDF576D005B6AF4 /* AAPLCameraViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3EBFA34C1BDF576D005B6AF4 /* AAPLPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA34A1BDF576D005B6AF4 /* AAPLPreviewView.m */; settings = {ASSET_TAGS = (); }; };
-		3EBFA34F1BDF6DEC005B6AF4 /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA34E1BDF6DEC005B6AF4 /* WalkthroughViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3EBFA3401BDF5359005B6AF4 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFA33F1BDF5359005B6AF4 /* tessdata */; };
+		3EBFA3431BDF53B3005B6AF4 /* ScanIDProofViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA3421BDF53B3005B6AF4 /* ScanIDProofViewController.m */; };
+		3EBFA34B1BDF576D005B6AF4 /* AAPLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA3481BDF576D005B6AF4 /* AAPLCameraViewController.m */; };
+		3EBFA34C1BDF576D005B6AF4 /* AAPLPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA34A1BDF576D005B6AF4 /* AAPLPreviewView.m */; };
+		3EBFA34F1BDF6DEC005B6AF4 /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFA34E1BDF6DEC005B6AF4 /* WalkthroughViewController.m */; };
 		4A04605A1BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0460591BDE2C57005BCA2C /* libPods-JVFloatLabeledTextField.a */; };
-		4A04605F1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605C1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		4A0460601BDE3DBE005BCA2C /* Volunteer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605E1BDE3DBE005BCA2C /* Volunteer.m */; settings = {ASSET_TAGS = (); }; };
-		4A0460631BDE9E32005BCA2C /* LoginSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0460611BDE9E32005BCA2C /* LoginSignUp.storyboard */; settings = {ASSET_TAGS = (); }; };
-		4A07C9991BE3824500E1CB5F /* NSDate+ICSFormattedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C9981BE3824500E1CB5F /* NSDate+ICSFormattedString.m */; settings = {ASSET_TAGS = (); }; };
-		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
-		4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF71171BE207AA00D9868F /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
-		4AAF711C1BE237B700D9868F /* ICSEntranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF711B1BE237B700D9868F /* ICSEntranceViewController.m */; settings = {ASSET_TAGS = (); }; };
-		4AAF711F1BE28B1400D9868F /* UIView+ICSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF711E1BE28B1400D9868F /* UIView+ICSAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		4AC6E2D31BE0F5C6007D9F1D /* ICSMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */; settings = {ASSET_TAGS = (); }; };
-		4AC6E2E11BE140F3007D9F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2E01BE140F3007D9F1D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4A04605F1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605C1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m */; };
+		4A0460601BDE3DBE005BCA2C /* Volunteer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605E1BDE3DBE005BCA2C /* Volunteer.m */; };
+		4A0460631BDE9E32005BCA2C /* LoginSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0460611BDE9E32005BCA2C /* LoginSignUp.storyboard */; };
+		4A07C9991BE3824500E1CB5F /* NSDate+ICSFormattedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C9981BE3824500E1CB5F /* NSDate+ICSFormattedString.m */; };
+		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; };
+		4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF71171BE207AA00D9868F /* KeychainWrapper.m */; };
+		4AAF711C1BE237B700D9868F /* ICSEntranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF711B1BE237B700D9868F /* ICSEntranceViewController.m */; };
+		4AAF711F1BE28B1400D9868F /* UIView+ICSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF711E1BE28B1400D9868F /* UIView+ICSAdditions.m */; };
+		4AC6E2D31BE0F5C6007D9F1D /* ICSMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */; };
+		4AC6E2E11BE140F3007D9F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2E01BE140F3007D9F1D /* Main.storyboard */; };
+		4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */; };
 		DDE48E7F0DAE62D7C1126C6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994084B95641F268B490CD7C /* libPods.a */; };
-		FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB5F1BC526C100421EAA /* PhotoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB5F1BC526C100421EAA /* PhotoViewController.m */; };
 		FA1ACCEA1BD26D60001632BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1ACCE91BD26D60001632BC /* SystemConfiguration.framework */; };
 		FA1ACCEC1BD26D67001632BC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1ACCEB1BD26D67001632BC /* MobileCoreServices.framework */; };
-		FA1ACCF01BD27064001632BC /* APIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCEF1BD27064001632BC /* APIInterface.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACCF61BD29F13001632BC /* ICSAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCF51BD29F13001632BC /* ICSAPIError.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACCF91BD2AEDC001632BC /* EventDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCF81BD2AEDC001632BC /* EventDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACCFD1BD2B12F001632BC /* ICSPatientsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCFC1BD2B12F001632BC /* ICSPatientsListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACD001BD2B245001632BC /* PatientsDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCFF1BD2B245001632BC /* PatientsDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACD091BD2B34E001632BC /* DoctorInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD011BD2B34E001632BC /* DoctorInformationCell.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACD0A1BD2B34E001632BC /* ICSCustomRowDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD021BD2B34E001632BC /* ICSCustomRowDescriptor.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACD0B1BD2B34E001632BC /* CustomFormButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1ACD051BD2B34E001632BC /* CustomFormButtonCell.xib */; settings = {ASSET_TAGS = (); }; };
-		FA1ACD0C1BD2B34E001632BC /* CustomFormButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD061BD2B34E001632BC /* CustomFormButtonCell.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACD121BD2B3A0001632BC /* ICSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD111BD2B3A0001632BC /* ICSDataSource.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACD171BD2B3AD001632BC /* ICSModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD131BD2B3AD001632BC /* ICSModel.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
-		FA1ACD181BD2B3AD001632BC /* SharedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD161BD2B3AD001632BC /* SharedModel.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACD1B1BD2B3BB001632BC /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD1A1BD2B3BB001632BC /* RatingView.m */; settings = {ASSET_TAGS = (); }; };
-		FA1ACD1E1BD2BF26001632BC /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD1D1BD2BF26001632BC /* Event+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		FA55FE081BCE4463004BCD2F /* PatientEatingHabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		FA5853331BD79FEF0037EEC5 /* Form+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58532C1BD79FEF0037EEC5 /* Form+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		FA5853341BD79FEF0037EEC5 /* Form.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58532E1BD79FEF0037EEC5 /* Form.m */; settings = {ASSET_TAGS = (); }; };
-		FA5853351BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5853301BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		FA5853361BD79FEF0037EEC5 /* Cancer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5853321BD79FEF0037EEC5 /* Cancer.m */; settings = {ASSET_TAGS = (); }; };
-		FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */; settings = {ASSET_TAGS = (); }; };
-		FAA5132E1BC7A8E2009A6D2E /* PatientInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACCF01BD27064001632BC /* APIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCEF1BD27064001632BC /* APIInterface.m */; };
+		FA1ACCF61BD29F13001632BC /* ICSAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCF51BD29F13001632BC /* ICSAPIError.m */; };
+		FA1ACCF91BD2AEDC001632BC /* EventDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCF81BD2AEDC001632BC /* EventDetailTableViewCell.m */; };
+		FA1ACCFD1BD2B12F001632BC /* ICSPatientsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCFC1BD2B12F001632BC /* ICSPatientsListViewController.m */; };
+		FA1ACD001BD2B245001632BC /* PatientsDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCFF1BD2B245001632BC /* PatientsDetailTableViewCell.m */; };
+		FA1ACD091BD2B34E001632BC /* DoctorInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD011BD2B34E001632BC /* DoctorInformationCell.m */; };
+		FA1ACD0A1BD2B34E001632BC /* ICSCustomRowDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD021BD2B34E001632BC /* ICSCustomRowDescriptor.m */; };
+		FA1ACD0B1BD2B34E001632BC /* CustomFormButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1ACD051BD2B34E001632BC /* CustomFormButtonCell.xib */; };
+		FA1ACD0C1BD2B34E001632BC /* CustomFormButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD061BD2B34E001632BC /* CustomFormButtonCell.m */; };
+		FA1ACD121BD2B3A0001632BC /* ICSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD111BD2B3A0001632BC /* ICSDataSource.m */; };
+		FA1ACD171BD2B3AD001632BC /* ICSModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD131BD2B3AD001632BC /* ICSModel.xcdatamodeld */; };
+		FA1ACD181BD2B3AD001632BC /* SharedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD161BD2B3AD001632BC /* SharedModel.m */; };
+		FA1ACD1B1BD2B3BB001632BC /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD1A1BD2B3BB001632BC /* RatingView.m */; };
+		FA1ACD1E1BD2BF26001632BC /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD1D1BD2BF26001632BC /* Event+CoreDataProperties.m */; };
+		FA55FE081BCE4463004BCD2F /* PatientEatingHabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */; };
+		FA5853331BD79FEF0037EEC5 /* Form+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58532C1BD79FEF0037EEC5 /* Form+CoreDataProperties.m */; };
+		FA5853341BD79FEF0037EEC5 /* Form.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58532E1BD79FEF0037EEC5 /* Form.m */; };
+		FA5853351BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5853301BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m */; };
+		FA5853361BD79FEF0037EEC5 /* Cancer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5853321BD79FEF0037EEC5 /* Cancer.m */; };
+		FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */; };
+		FAA5132E1BC7A8E2009A6D2E /* PatientInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */; };
 		FAC9C94D1BD7BB14003FFA44 /* libPods-MBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC9C94C1BD7BB14003FFA44 /* libPods-MBProgressHUD.a */; };
-		FAD8E0831BD166D00010E975 /* ICSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0821BD166D00010E975 /* ICSHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		FAD8E0901BD16B040010E975 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E08E1BD16B040010E975 /* Event.m */; settings = {ASSET_TAGS = (); }; };
-		FAD8E0951BD16C190010E975 /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0921BD16C190010E975 /* Question+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		FAD8E0961BD16C190010E975 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0941BD16C190010E975 /* Question.m */; settings = {ASSET_TAGS = (); }; };
-		FAD8E09F1BD16DC20010E975 /* Doctor+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0981BD16DC20010E975 /* Doctor+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		FAD8E0A01BD16DC20010E975 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09A1BD16DC20010E975 /* Doctor.m */; settings = {ASSET_TAGS = (); }; };
-		FAD8E0A11BD16DC20010E975 /* Patient+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09C1BD16DC20010E975 /* Patient+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		FAD8E0A21BD16DC20010E975 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09E1BD16DC20010E975 /* Patient.m */; settings = {ASSET_TAGS = (); }; };
+		FAD8E0831BD166D00010E975 /* ICSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0821BD166D00010E975 /* ICSHomeViewController.m */; };
+		FAD8E0901BD16B040010E975 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E08E1BD16B040010E975 /* Event.m */; };
+		FAD8E0951BD16C190010E975 /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0921BD16C190010E975 /* Question+CoreDataProperties.m */; };
+		FAD8E0961BD16C190010E975 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0941BD16C190010E975 /* Question.m */; };
+		FAD8E09F1BD16DC20010E975 /* Doctor+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0981BD16DC20010E975 /* Doctor+CoreDataProperties.m */; };
+		FAD8E0A01BD16DC20010E975 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09A1BD16DC20010E975 /* Doctor.m */; };
+		FAD8E0A11BD16DC20010E975 /* Patient+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09C1BD16DC20010E975 /* Patient+CoreDataProperties.m */; };
+		FAD8E0A21BD16DC20010E975 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09E1BD16DC20010E975 /* Patient.m */; };
 		FAECE1161BD258B300A6BFED /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE10F1BD2588D00A6BFED /* libRestKit.a */; };
 		FAECE1181BD259A400A6BFED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE1171BD259A400A6BFED /* CoreData.framework */; };
 		FAECE11A1BD259AA00A6BFED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE1191BD259AA00A6BFED /* Security.framework */; };
 		FAECE11C1BD259AF00A6BFED /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE11B1BD259AF00A6BFED /* CFNetwork.framework */; };
-		FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEB61BC681A30053E659 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
-		FAFAAEBD1BC683210053E659 /* FullImageContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEBC1BC683210053E659 /* FullImageContainerView.xib */; settings = {ASSET_TAGS = (); }; };
-		FAFFC9F51BDA20E6001DD25B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFFC9F41BDA20E6001DD25B /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEB61BC681A30053E659 /* Images.xcassets */; };
+		FAFAAEBD1BC683210053E659 /* FullImageContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFAAEBC1BC683210053E659 /* FullImageContainerView.xib */; };
+		FAFFC9F51BDA20E6001DD25B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFFC9F41BDA20E6001DD25B /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,8 @@
 		3E43FA541BC4108E0021AE81 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3E43FA5A1BC413AD0021AE81 /* VolunteerSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolunteerSignUpViewController.h; sourceTree = "<group>"; };
 		3E43FA5B1BC413AD0021AE81 /* VolunteerSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolunteerSignUpViewController.m; sourceTree = "<group>"; };
+		3E61D82B1BE60FB1005A5B3C /* AllowAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllowAccessViewController.h; sourceTree = "<group>"; };
+		3E61D82C1BE60FB1005A5B3C /* AllowAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllowAccessViewController.m; sourceTree = "<group>"; };
 		3E64A5761BDEA67C0008FFD5 /* OnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
 		3E64A5771BDEA67C0008FFD5 /* OnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingViewController.m; sourceTree = "<group>"; };
 		3E64A5791BDEA9160008FFD5 /* PatientRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientRegistrationViewController.h; sourceTree = "<group>"; };
@@ -365,6 +368,8 @@
 				3E43FA5B1BC413AD0021AE81 /* VolunteerSignUpViewController.m */,
 				3EBFA34D1BDF6DEC005B6AF4 /* WalkthroughViewController.h */,
 				3EBFA34E1BDF6DEC005B6AF4 /* WalkthroughViewController.m */,
+				3E61D82B1BE60FB1005A5B3C /* AllowAccessViewController.h */,
+				3E61D82C1BE60FB1005A5B3C /* AllowAccessViewController.m */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -688,7 +693,7 @@
 				TargetAttributes = {
 					3EACD9C81BA9D053003E4540 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = GF6Z8EAEK2;
+						DevelopmentTeam = 3DKT46FL7P;
 					};
 					3EACD9E11BA9D053003E4540 = {
 						CreatedOnToolsVersion = 6.4;
@@ -857,6 +862,7 @@
 				FA5853351BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m in Sources */,
 				3EBFA3301BDEB626005B6AF4 /* DiagnosePictureViewController.m in Sources */,
 				3EBFA34F1BDF6DEC005B6AF4 /* WalkthroughViewController.m in Sources */,
+				3E61D82D1BE60FB1005A5B3C /* AllowAccessViewController.m in Sources */,
 				3EBFA3431BDF53B3005B6AF4 /* ScanIDProofViewController.m in Sources */,
 				3EBFA34C1BDF576D005B6AF4 /* AAPLPreviewView.m in Sources */,
 				3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */,

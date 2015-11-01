@@ -7,8 +7,11 @@
 //
 
 #import "WalkthroughViewController.h"
+#import "ICSStyleGuide.h"
 
-@interface WalkthroughViewController ()
+@interface WalkthroughViewController () {
+    NSArray * wtTextArray;
+}
 @property (nonatomic, strong) UIScrollView * wtScrollView;
 @property (nonatomic, strong) UIButton * gotItButton;
 @end
@@ -19,18 +22,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    wtTextArray = @[
+                  @"The sign up process is now complete. You can start using this app to register and diagnose patients",
+                  @"Whenever you're assigned a patient, proceed to start diagnosis",
+                  @"Fill patient information, personal and/or Medical history",
+                  @"Click images of patient, mark the image if it could be a possible suspect",
+                  @"After marking images, app will help you to decide if diagnosis should end or not",
+                  @"In detailed disgnosis, ensure all details are captured.",
+                  @"When data has been recorded, assign the patient a doctor.",
+                  @"On home screen, Quick Registration is linked to OCR. It helps you to quickly take first-level information of the patient with help of government ID Cards.",
+                  ];
+
+    self.view.backgroundColor = [ICSStyleGuide ICSOrange];
     
-    NSArray * wtTextArray = @[
-                      @"Add photos and click to enlarge and inspect. If it is suspected, mark as so.",
-                      @"View will help you determine if user should be assigned to doctor or not.",
-                      @"Detailed disgnosis consists of eating habits.",
-                      @"When all is done, assign a doctor.",
-                      @"Click on Quick Registration to open OCR.",
-                      @"OCR helps you quickly take first level information of patient.",
-                      ];
+    UIImageView * wtMainScreen = [[UIImageView alloc] initWithFrame:self.view.frame];
+    wtMainScreen.image = [UIImage imageNamed:@"bgCloud"];
+    wtMainScreen.contentMode = UIViewContentModeScaleAspectFit;
+    wtMainScreen.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:wtMainScreen];
     
     wtScrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    wtScrollView.backgroundColor = [UIColor whiteColor];
+    wtScrollView.backgroundColor = [UIColor clearColor];
     wtScrollView.showsHorizontalScrollIndicator = NO;
     wtScrollView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:wtScrollView];
@@ -39,13 +51,14 @@
     
     for(int i = 0; i < wtTextArray.count; i++ ) {
         UIView * wtView = [[UIView alloc] initWithFrame:CGRectMake(x_point, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
-        UIImageView * wtScreen = [[UIImageView alloc] initWithFrame:CGRectInset(self.view.frame, 0, -20)];
-        wtScreen.image = [UIImage imageNamed:[NSString stringWithFormat:@"wtscreen%d", i+1]];
-        wtScreen.contentMode = UIViewContentModeScaleAspectFill;
+        UIImageView * wtScreen = [[UIImageView alloc] initWithFrame:CGRectInset(self.view.frame, 60, 20)];
+        wtScreen.image = [UIImage imageNamed:[NSString stringWithFormat:@"wt%d", i+1]];
+        wtScreen.contentMode = UIViewContentModeScaleAspectFit;
         wtScreen.backgroundColor = [UIColor clearColor];
         
         UILabel * wtTitle = [[UILabel alloc] initWithFrame:CGRectMake(20, 50, CGRectGetWidth(self.view.bounds)-40, 120)];
         wtTitle.text = wtTextArray[i];
+        wtTitle.textColor = [UIColor whiteColor];
         wtTitle.numberOfLines = 0;
         wtTitle.textAlignment = NSTextAlignmentCenter;
         [wtView addSubview:wtScreen];
@@ -61,13 +74,14 @@
     wtScrollView.pagingEnabled = YES;
     
     gotItButton = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds)-50, CGRectGetWidth(self.view.frame), 50)];
-    [gotItButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [gotItButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    [gotItButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [gotItButton setTitleColor:[ICSStyleGuide ICSRed] forState:UIControlStateHighlighted];
     [gotItButton setTitle:@"Got It" forState:UIControlStateNormal];
     [gotItButton addTarget:self action:@selector(dismissWalkthrough) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:gotItButton];
-    
+
 }
+
 
 -(void)dismissWalkthrough {
     [self dismissViewControllerAnimated:YES completion:NULL];
