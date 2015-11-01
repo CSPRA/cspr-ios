@@ -93,7 +93,19 @@
   [[RKObjectManager sharedManager] addResponseDescriptor:eventResponseDiscriptor];
   
   //Mapping for patient
+  RKEntityMapping *patientMapping = [Patient restkitObjectMappingForStore:store];
+  RKResponseDescriptor *patientDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:patientMapping pathPattern:kPatientRegisterPath
+                                              keyPath:@"result"
+                                          statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:patientDescriptor];
   
+  patientDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:patientMapping
+                                                               pathPattern:kPatientRegisterPath
+                                                                   keyPath:@"error"
+                                                               statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:patientDescriptor];
+
   //Mapping for volunteer
   RKEntityMapping *volunteerMapping = [Volunteer restkitObjectMappingForStore:store];
   RKResponseDescriptor *volunteerResponseDescriptor =

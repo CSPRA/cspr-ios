@@ -141,45 +141,6 @@ static NSString *const kAddEmail          = @"Add Email";
   return dict;
 }
 
-- (void)initializeDummyData {
-  
-  //    Doctor *doc1 = [[Doctor alloc] init];
-  //    doc1.doctorId = @"doc1";
-  //    doc1.firstName= @"Arun";
-  //    doc1.lastName = @"Jain";
-  //    doc1.location = @"Bangalore";
-  //    doc1.specialization = @"Cancer Specialist";
-  //    doc1.doctorRatingValue = @(3);
-  //
-  //    Doctor *doc2 = [[Doctor alloc] init];
-  //    doc2.doctorId = @"doc2";
-  //    doc2.firstName= @"Biswas";
-  //    doc2.lastName = @"Rao";
-  //    doc2.location = @"Delhi";
-  //    doc2.specialization = @"Cancer Specialist";
-  //    doc2.doctorRatingValue = @(3);
-  //
-  //
-  //    Doctor *doc3 = [[Doctor alloc] init];
-  //    doc3.doctorId = @"doc3";
-  //    doc3.firstName= @"Arun";
-  //    doc3.lastName = @"Jain";
-  //    doc3.location = @"Bangalore";
-  //    doc3.specialization = @"Cancer Specialist";
-  //    doc3.doctorRatingValue = @(3);
-  //
-  //
-  //    Doctor *doc4 = [[Doctor alloc] init];
-  //    doc4.doctorId = @"doc4";
-  //    doc4.firstName= @"Sunil";
-  //    doc4.lastName = @"Jain";
-  //    doc4.location = @"Bangalore";
-  //    doc4.specialization = @"Cancer Specialist";
-  //    doc1.doctorRatingValue = @(3);
-  //
-  //    NSMutableArray *doctorArray = [[NSMutableArray alloc] initWithObjects:doc1,doc2,doc3,doc4, nil];
-  //    self.doctorList = doctorArray;
-}
 
 #pragma mark - row configuration
 - (void)didTappedButtonRow:(XLFormRowDescriptor*)sender {
@@ -395,20 +356,6 @@ static NSString *const kAddEmail          = @"Add Email";
   [param setObject:_token forKey:@"token"];
   [param setObject:self.formValues forKey:@"formValues"];
   
-  [kDataSource registerPatientWithParameters:param
-                             completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
-                               if (success) {
-                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
-                                                                                 message:@"Patient Registered succesfully"
-                                                                                delegate:self
-                                                                       cancelButtonTitle:@"OK"
-                                                                       otherButtonTitles:nil, nil];
-                                 [alert show];
-                               }
-                               else if (error){
-                                 NSLog(@"%@",error);
-                               }
-                             }];
 }
 
 #pragma DoctorInformationCellDelegate
@@ -419,18 +366,21 @@ static NSString *const kAddEmail          = @"Add Email";
 #pragma mark - IBAction Methods
 - (IBAction)submitTapped:(id)sender {
   NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:self.formValues];
-  [params setObject:_token forKey:kToken];
   [params removeObjectsForKeys:@[kAddEmail, kAddPhone, kCreatedAtTag, kUpdatedAtTag, kPatientIdTag]];
   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-  [kDataSource registerPatientWithParameters:params completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
+  [kDataSource registerPatientWithParameters:params token:_token completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
     if (success) {
-      
-    }else if (error){
-      
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Patient information saved successfully." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+      [alert show];
     }
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
+    else if (error ) {
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Patient information not saved." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+      [alert show];
+
+    }
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
   }];
+  
 }
 
 @end

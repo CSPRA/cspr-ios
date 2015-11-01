@@ -58,6 +58,7 @@ typedef void (^ICSApiInterfaceBlock)(BOOL success,
  @param block Completion block to be executed once call is completed
  */
 - (void)registerPatientWithParameters:(NSDictionary*)paramenters
+                                token:(NSString*)token
                  completionBlock:(ICSApiInterfaceBlock)block;
 
 /** Register a Volunteer 

@@ -19,4 +19,6 @@ typedef enum {
 @property (nonatomic, strong) NSNumber *pId;
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSNumber *formId;
+@property (nonatomic, strong) Event *event;
+
 @end

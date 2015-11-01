@@ -160,7 +160,6 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
                                   UINavigationController *navController = [mainStoryboard instantiateInitialViewController];
                                   [self presentViewController:navController animated:YES completion:nil];
 
-                                  
                                 }
                                 else if (error){
                                   NSLog(@"%@",error);

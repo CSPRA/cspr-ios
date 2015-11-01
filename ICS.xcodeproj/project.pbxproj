@@ -35,6 +35,8 @@
 		4A23A3941BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A38F1BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		4A23A3951BE5DA2A00620BD9 /* QuestionOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A3911BE5DA2A00620BD9 /* QuestionOptions.m */; settings = {ASSET_TAGS = (); }; };
 		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
+		4A71C4DD1BE628BF003C8BE9 /* Patient+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71C4DB1BE628BF003C8BE9 /* Patient+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		4A71C4E11BE62994003C8BE9 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71C4E01BE62994003C8BE9 /* Patient.m */; settings = {ASSET_TAGS = (); }; };
 		4AA604C21BE53CD300E501D8 /* QuestionsJasonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AA604C11BE53CD300E501D8 /* QuestionsJasonData.json */; settings = {ASSET_TAGS = (); }; };
 		4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF71171BE207AA00D9868F /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
 		4AAF711C1BE237B700D9868F /* ICSEntranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF711B1BE237B700D9868F /* ICSEntranceViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -74,8 +76,6 @@
 		FAD8E0961BD16C190010E975 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0941BD16C190010E975 /* Question.m */; settings = {ASSET_TAGS = (); }; };
 		FAD8E09F1BD16DC20010E975 /* Doctor+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0981BD16DC20010E975 /* Doctor+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		FAD8E0A01BD16DC20010E975 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09A1BD16DC20010E975 /* Doctor.m */; settings = {ASSET_TAGS = (); }; };
-		FAD8E0A11BD16DC20010E975 /* Patient+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09C1BD16DC20010E975 /* Patient+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		FAD8E0A21BD16DC20010E975 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09E1BD16DC20010E975 /* Patient.m */; settings = {ASSET_TAGS = (); }; };
 		FAECE1161BD258B300A6BFED /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE10F1BD2588D00A6BFED /* libRestKit.a */; };
 		FAECE1181BD259A400A6BFED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE1171BD259A400A6BFED /* CoreData.framework */; };
 		FAECE11A1BD259AA00A6BFED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE1191BD259AA00A6BFED /* Security.framework */; };
@@ -178,6 +178,9 @@
 		4A23A3911BE5DA2A00620BD9 /* QuestionOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionOptions.m; path = Model/Entities/QuestionOptions.m; sourceTree = "<group>"; };
 		4A6E56011BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSFloatLabeledTextFieldCell.h; path = Cells/ICSFloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
 		4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSFloatLabeledTextFieldCell.m; path = Cells/ICSFloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
+		4A71C4DA1BE628BF003C8BE9 /* Patient+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Patient+CoreDataProperties.h"; path = "Model/Entities/Patient+CoreDataProperties.h"; sourceTree = "<group>"; };
+		4A71C4DB1BE628BF003C8BE9 /* Patient+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Patient+CoreDataProperties.m"; path = "Model/Entities/Patient+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4A71C4E01BE62994003C8BE9 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Entities/Patient.m; sourceTree = "<group>"; };
 		4AA604C11BE53CD300E501D8 /* QuestionsJasonData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionsJasonData.json; sourceTree = "<group>"; };
 		4AAF71161BE207AA00D9868F /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainWrapper.h; path = KeychainWrapper/KeychainWrapper.h; sourceTree = "<group>"; };
 		4AAF71171BE207AA00D9868F /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = KeychainWrapper/KeychainWrapper.m; sourceTree = "<group>"; };
@@ -252,10 +255,7 @@
 		FAD8E0981BD16DC20010E975 /* Doctor+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Doctor+CoreDataProperties.m"; path = "Model/Entities/Doctor+CoreDataProperties.m"; sourceTree = "<group>"; };
 		FAD8E0991BD16DC20010E975 /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Doctor.h; path = Model/Entities/Doctor.h; sourceTree = "<group>"; };
 		FAD8E09A1BD16DC20010E975 /* Doctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Doctor.m; path = Model/Entities/Doctor.m; sourceTree = "<group>"; };
-		FAD8E09B1BD16DC20010E975 /* Patient+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Patient+CoreDataProperties.h"; path = "Model/Entities/Patient+CoreDataProperties.h"; sourceTree = "<group>"; };
-		FAD8E09C1BD16DC20010E975 /* Patient+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Patient+CoreDataProperties.m"; path = "Model/Entities/Patient+CoreDataProperties.m"; sourceTree = "<group>"; };
 		FAD8E09D1BD16DC20010E975 /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = Model/Entities/Patient.h; sourceTree = "<group>"; };
-		FAD8E09E1BD16DC20010E975 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Entities/Patient.m; sourceTree = "<group>"; };
 		FAECE1071BD2588D00A6BFED /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ICS/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		FAECE1171BD259A400A6BFED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FAECE1191BD259AA00A6BFED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -575,6 +575,10 @@
 		FAD8E08A1BD16AF40010E975 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				4A71C4E01BE62994003C8BE9 /* Patient.m */,
+				FAD8E09D1BD16DC20010E975 /* Patient.h */,
+				4A71C4DA1BE628BF003C8BE9 /* Patient+CoreDataProperties.h */,
+				4A71C4DB1BE628BF003C8BE9 /* Patient+CoreDataProperties.m */,
 				4A23A38E1BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.h */,
 				4A23A38F1BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.m */,
 				4A23A3901BE5DA2A00620BD9 /* QuestionOptions.h */,
@@ -595,10 +599,6 @@
 				FAD8E0981BD16DC20010E975 /* Doctor+CoreDataProperties.m */,
 				FAD8E0991BD16DC20010E975 /* Doctor.h */,
 				FAD8E09A1BD16DC20010E975 /* Doctor.m */,
-				FAD8E09B1BD16DC20010E975 /* Patient+CoreDataProperties.h */,
-				FAD8E09C1BD16DC20010E975 /* Patient+CoreDataProperties.m */,
-				FAD8E09D1BD16DC20010E975 /* Patient.h */,
-				FAD8E09E1BD16DC20010E975 /* Patient.m */,
 				FAD8E0911BD16C190010E975 /* Question+CoreDataProperties.h */,
 				FAD8E0921BD16C190010E975 /* Question+CoreDataProperties.m */,
 				FAD8E0931BD16C190010E975 /* Question.h */,
@@ -866,8 +866,8 @@
 				4A04605F1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m in Sources */,
 				FAD8E0831BD166D00010E975 /* ICSHomeViewController.m in Sources */,
 				FAFFC9F51BDA20E6001DD25B /* LoginViewController.m in Sources */,
+				4A71C4E11BE62994003C8BE9 /* Patient.m in Sources */,
 				FA1ACD091BD2B34E001632BC /* DoctorInformationCell.m in Sources */,
-				FAD8E0A11BD16DC20010E975 /* Patient+CoreDataProperties.m in Sources */,
 				4AFB6ACF1BE4D413008AE13A /* PatientInformationViewController.m in Sources */,
 				FA5853351BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m in Sources */,
 				3EBFA3301BDEB626005B6AF4 /* DiagnosePictureViewController.m in Sources */,
@@ -880,8 +880,8 @@
 				FA1ACCF61BD29F13001632BC /* ICSAPIError.m in Sources */,
 				4AAF711F1BE28B1400D9868F /* UIView+ICSAdditions.m in Sources */,
 				FAD8E0951BD16C190010E975 /* Question+CoreDataProperties.m in Sources */,
-				FAD8E0A21BD16DC20010E975 /* Patient.m in Sources */,
 				4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */,
+				4A71C4DD1BE628BF003C8BE9 /* Patient+CoreDataProperties.m in Sources */,
 				FA1ACD0C1BD2B34E001632BC /* CustomFormButtonCell.m in Sources */,
 				FAD8E0961BD16C190010E975 /* Question.m in Sources */,
 				3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */,

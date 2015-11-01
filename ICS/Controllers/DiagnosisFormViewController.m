@@ -51,8 +51,8 @@ NSString *const ktext = @"tag3";
     NSLog(@"id=%@",obj.title);
   }];
   self.sectionsArray = savedQuestionstList;
- [self fetchDiagnosisQuestions];
-  
+// [self fetchDiagnosisQuestions];
+  [self fetchingDataFromJsonFile];
   self.navigationItem.title = @"Questions";
 }
 
@@ -61,6 +61,7 @@ NSString *const ktext = @"tag3";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -API call
 - (void)fetchDiagnosisQuestions {
   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
   [kDataSource fetchDiagnosisQuestions:_formId
@@ -104,13 +105,6 @@ NSString *const ktext = @"tag3";
     s1Extend.hidden = [NSString stringWithFormat:@"$%@==0", kPred];
     [form addFormSection:s1Extend afterSection:s1];
     
-//    
-//    row = [XLFormRowDescriptor formRowDescriptorWithTag:khidesection rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"s2 section"];
-//    row.value = @0;
-//    [smokingSection addFormRow:row];
-   
-    
-    
     XLFormSectionDescriptor *s2 = [XLFormSectionDescriptor formSection];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tagi" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"s2"];
@@ -118,33 +112,15 @@ NSString *const ktext = @"tag3";
     [s2 addFormRow:row];
     [form addFormSection:s2 afterSection:s1Extend];
 
-    
-//    section = [XLFormSectionDescriptor formSectionWithTitle:@"B Section"];
-//    section.footerTitle = @"BasicPredicateViewController";
-//    section.hidden = [NSString stringWithFormat:@"$%@==0", khidesection];
-//    [form addFormSection:section];
-//    
-//    row = [XLFormRowDescriptor formRowDescriptorWithTag:ktext rowType:XLFormRowDescriptorTypeText title:@""];
-//    [row.cellConfigAtConfigure setObject:@"Gonna disappear soon!!" forKey:@"textField.placeholder"];
-//    [section addFormRow:row];
     return form;
   }
 
 
 
-- (void)initializeForm {
-  XLFormDescriptor *form = [[XLFormDescriptor alloc] init];
-  NSMutableArray *questionsArray = [[NSMutableArray alloc] init];
-  [self.sections enumerateObjectsUsingBlock:^(NSArray *questions, NSUInteger idx, BOOL * _Nonnull stop) {
-    XLFormSectionDescriptor *section = [[XLFormSectionDescriptor alloc] init];
-    section.title = kConsumeCigarettes;
-  }];
-  
-}
 
 #pragma mark - OfflineData
 - (void)fetchingDataFromJsonFile {
-  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"QuestionsJasonData" ofType:@"json"];
+//  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"QuestionsJasonData" ofType:@"json"];
 //  NSData *data = [NSData dataWithContentsOfFile:filePath];
 //  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 //  return [json valueForKey:@"sections"];
@@ -152,35 +128,21 @@ NSString *const ktext = @"tag3";
 
   NSManagedObjectModel *objectModel = [[NSManagedObjectModel alloc]
                                        initWithContentsOfURL:kModelURL];
-  RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:objectModel];
-
-  NSString *storePath = [RKObjectManager sharedManager].managedObjectStore;
+  NSString *storePath = [NSString stringWithFormat:@"%@",[RKObjectManager sharedManager].managedObjectStore];
   
-  NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
-
-  [self offlineData:seedPath objectModel:objectModel store:managedObjectStore];
-  
-
-}
-- (void)offlineData:(NSString*)seedPath objectModel:(NSManagedObjectModel*)model store:(RKManagedObjectStore*)store {
+//  NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
 
   NSString *filePath = [[NSBundle mainBundle] pathForResource:@"QuestionsJasonData" ofType:@"json"];
   NSError *error;
   RKEntityMapping *mapping = [Question restkitObjectMappingForStore:[RKObjectManager sharedManager].managedObjectStore];
   
   RKManagedObjectImporter *importer =
-  [[RKManagedObjectImporter alloc] initWithManagedObjectModel:model
-                                                    storePath:[RKObjectManager sharedManager].managedObjectStore];
+  [[RKManagedObjectImporter alloc] initWithManagedObjectModel:objectModel
+                                                    storePath:storePath];
   
   [importer importObjectsFromItemAtPath:filePath withMapping:mapping keyPath:nil error:&error];
-  
-  BOOL success = [importer finishImporting:&error];
-  if (success) {
-    [kSharedModel saveContext];
-    [importer logSeedingInfo];
-  } else {
-    RKLogError(@"Failed to finish import and save seed database due to error: %@", error);
-  }
+//  [kSharedModel saveContext];
+
 }
 
 - (void)setupForm {

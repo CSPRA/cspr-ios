@@ -132,5 +132,6 @@
 #define kOptionId               @"id"
 #define kOptionName             @"name"
 #define kOptionGroupId          @"groupId"
-
+#define kPatientId              @"patientId"
+#define kRegisteredBy           @"registeredBy"
 

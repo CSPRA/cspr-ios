@@ -113,6 +113,7 @@ UITableViewDataSource>
   patientInfoVC.formType = kPatientRegistratinFormType;
   Form *form = cell.event.form;
   patientInfoVC.formId = form.formId;
+  patientInfoVC.event = cell.event;
   [self.navigationController pushViewController:patientInfoVC animated:YES];
 }
 

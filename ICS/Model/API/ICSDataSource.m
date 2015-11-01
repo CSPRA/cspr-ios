@@ -93,10 +93,22 @@
 }
 
 - (void)registerPatientWithParameters:(NSDictionary *)paramenters
+                                token:(NSString*)token
                       completionBlock:(ICSApiInterfaceBlock)block {
+   NSString *path = [NSString stringWithFormat:@"%@?token=%@",kPatientRegisterPath,token];
+//   RKManagedObjectRequestOperation *operation = [[RKObjectManager sharedManager] appropriateObjectRequestOperationWithObject:nil method:RKRequestMethodPOST path:path parameters:paramenters];
+//  [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+//    block(YES, [mappingResult dictionary], nil);
+//
+//  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+//    block(NO, nil, error);
+//
+//  }];
+//  [RKObjectManager.sharedManager enqueueObjectRequestOperation:operation];
+
   
   [[RKObjectManager sharedManager] postObject:nil
-                                         path:kPatientRegisterPath
+                                         path:path
                                    parameters:paramenters
                                       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                         block(YES, [mappingResult dictionary], nil);
@@ -109,12 +121,12 @@
                        completeionBlock:(ICSApiInterfaceBlock)block {
   [[RKObjectManager sharedManager] postObject:nil path:kVolunteerRegisterPath
                                    parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-    Volunteer *volunteer = [[mappingResult dictionary] valueForKey:@"result"];
-    volunteer.firstName = parameters[kFirstName];
-    volunteer.lastName = parameters[kLastName];
-    volunteer.username = parameters[kUsername];
-    volunteer.contactNumber = parameters[kPhoneNumber];
-    volunteer.email = parameters[kEmail];
+//    Volunteer *volunteer = [[mappingResult dictionary] valueForKey:@"result"];
+//    volunteer.firstName = parameters[kFirstName];
+//    volunteer.lastName = parameters[kLastName];
+//    volunteer.username = parameters[kUsername];
+//    volunteer.contactNumber = parameters[kPhoneNumber];
+//    volunteer.email = parameters[kEmail];
     block(YES, [mappingResult dictionary], nil);
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     block(NO, nil, error);
