@@ -46,11 +46,14 @@ NSString *const ktext = @"tag3";
     [super viewDidLoad];
   [self.view ICSViewBackgroungColor];
   self.tableView.backgroundColor = [UIColor clearColor];
- [self fetchingDataFromJsonFile];
+  NSArray *savedQuestionstList = [kSharedModel fetchObjectsWithEntityName:kQuestionEntityName];
+  [savedQuestionstList enumerateObjectsUsingBlock:^(Question *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSLog(@"id=%@",obj.title);
+  }];
+  self.sectionsArray = savedQuestionstList;
+ [self fetchDiagnosisQuestions];
   
-//  [self initialSetup];
   self.navigationItem.title = @"Questions";
-  [self setupForm];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,14 +61,20 @@ NSString *const ktext = @"tag3";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)initialSetup {
-  [self.sectionsArray enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-    Question *question = [Question new];
-    question.questionId = obj[kQuestionsId];
-//    
-  }];
-  NSArray *sections = [kSharedModel fetchObjectsWithEntityName:kQuestionEntityName];
-  
+- (void)fetchDiagnosisQuestions {
+  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+  [kDataSource fetchDiagnosisQuestions:_formId
+                                 token:_token
+                       completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
+                         if (success) {
+                           self.sectionsArray = [result objectForKey:@"sections"];
+                           [self setupForm];
+
+                         }else if (error){
+                           
+                         }
+                         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                       }];
 }
 
 #pragma mark - initialization
@@ -140,30 +149,31 @@ NSString *const ktext = @"tag3";
 //  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 //  return [json valueForKey:@"sections"];
   
-  NSString *seedStorePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"RKSeedDatabase.sqlite"];
+
   NSManagedObjectModel *objectModel = [[NSManagedObjectModel alloc]
                                        initWithContentsOfURL:kModelURL];
   RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:objectModel];
 
-//  NSString *storePath = [RKApplicationDataDirectory()
-//                         stringByAppendingPathComponent:kDataStoreFileName];
+  NSString *storePath = [RKObjectManager sharedManager].managedObjectStore;
   
-  [self offlineData:filePath objectModel:objectModel store:managedObjectStore];
+  NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
+
+  [self offlineData:seedPath objectModel:objectModel store:managedObjectStore];
   
 
 }
 - (void)offlineData:(NSString*)seedPath objectModel:(NSManagedObjectModel*)model store:(RKManagedObjectStore*)store {
+
   NSString *filePath = [[NSBundle mainBundle] pathForResource:@"QuestionsJasonData" ofType:@"json"];
   NSError *error;
-  RKEntityMapping *mapping = [Question restkitObjectMappingForStore:store];
+  RKEntityMapping *mapping = [Question restkitObjectMappingForStore:[RKObjectManager sharedManager].managedObjectStore];
   
   RKManagedObjectImporter *importer =
   [[RKManagedObjectImporter alloc] initWithManagedObjectModel:model
-                                                    storePath:seedPath];
-  [importer importObjectsFromItemAtPath:filePath
-                            withMapping:mapping
-                                keyPath:nil
-                                  error:&error];
+                                                    storePath:[RKObjectManager sharedManager].managedObjectStore];
+  
+  [importer importObjectsFromItemAtPath:filePath withMapping:mapping keyPath:nil error:&error];
+  
   BOOL success = [importer finishImporting:&error];
   if (success) {
     [kSharedModel saveContext];
@@ -177,8 +187,7 @@ NSString *const ktext = @"tag3";
   __block XLFormDescriptor *form = [XLFormDescriptor formDescriptor];
   NSArray *sectionTitle = @[kConsumeCigarettes, kConsumePanMasala, kConsumeAlcohal, kConsumePanMasala];
   NSDictionary *obj = [self.sectionsArray objectAtIndex:0];
-  NSArray *questions = [obj valueForKey:@"questions"];
-  form = [self initializeFormSection:[sectionTitle objectAtIndex:0] withQuestions:questions inForm:form];
+//  form = [self initializeFormSection:[sectionTitle objectAtIndex:0] withQuestions:questions inForm:form];
 //
 //  
 //  

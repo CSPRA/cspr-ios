@@ -81,7 +81,7 @@
 #define kFetchDoctorPath                    @"/doctor/3"
 #define kPostDoctorRatingPath               @"/doctor/rating"
 #define kPostDiagnosisResponsePath          @"/diagnosisResponses"
-#define kFetchQuestionsPath                 @"/"
+#define kFetchQuestionsPath                 @"/queries"
 
 
 //Mapping keys

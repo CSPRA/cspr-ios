@@ -75,6 +75,23 @@
   }];
 }
 
+- (void)fetchDiagnosisQuestions:(NSNumber *)formId
+                          token:(NSString *)token
+                completionBlock:(ICSApiInterfaceBlock)block {
+  
+  NSString *path = [NSString stringWithFormat:@"%@/%@",kFetchQuestionsPath,formId];
+  [self setupMappingWithPath:path];
+  [[RKObjectManager sharedManager] getObjectsAtPath:path parameters:@{@"token": token}
+                                            success:^(RKObjectRequestOperation *operation,
+                                                      RKMappingResult *mappingResult) {
+    block(YES, [mappingResult dictionary], nil);
+
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    block(NO, nil, error);
+
+  }];
+}
+
 - (void)registerPatientWithParameters:(NSDictionary *)paramenters
                       completionBlock:(ICSApiInterfaceBlock)block {
   
@@ -137,9 +154,13 @@
   [[NSUserDefaults standardUserDefaults] synchronize];
   
 }
+
 - (void)logoutVolunteer {
   [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kSession];
 }
 
+- (void)setupMappingWithPath:(NSString*)path {
+  [[APIInterface sharedInterface] setupMappingWithPath:path];
+}
 
 @end

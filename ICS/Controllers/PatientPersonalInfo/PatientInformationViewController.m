@@ -13,6 +13,7 @@
 #import "CustomFormButtonCell.h"
 #import "UIView+ICSAdditions.h"
 #import <XLForm/XLFormTextFieldCell.h>
+#import "DiagnosisFormViewController.h"
 
 static NSString *const kFullNameTag       = @"Full Name";
 static NSString *const kDOBTag            = @"Date of birth";
@@ -56,7 +57,7 @@ static NSString *const kAddEmail          = @"Add Email";
   _section = [[XLFormSectionDescriptor alloc] init];
   self.tableView.backgroundColor = [UIColor clearColor];
   [self.view ICSViewBackgroungColor];
-
+  
   switch (_formType) {
     case kRegisteredPatientFormType:{
       self.navigationItem.title = @"Patient Information";
@@ -91,9 +92,9 @@ static NSString *const kAddEmail          = @"Add Email";
 }
 - (void)nextTapped:(UIBarButtonItem*)sender {
   [self performSegueWithIdentifier:kshowTabControllerSegue sender:self];
-  //  UIViewController *patientHabitsVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientHabitsVCIdentifier];
-  //  [self.navigationController pushViewController:patientHabitsVC animated:YES];
 }
+
+
 - (void)fetchPatientPersonalInfo {
   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
   [kDataSource fetchPatientPersonalInfoWith:_token patienttId:_pId completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
@@ -103,6 +104,13 @@ static NSString *const kAddEmail          = @"Add Email";
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  UITabBarController * vc = [segue destinationViewController];
+  if ([[vc.childViewControllers objectAtIndex:0] isKindOfClass:([DiagnosisFormViewController class])]) {
+    DiagnosisFormViewController *diagnosisFormVC = [vc.childViewControllers objectAtIndex:0];
+    diagnosisFormVC.formId = _formId;
+    diagnosisFormVC.token = _token;
+  }
   
 }
 

@@ -18,4 +18,5 @@ typedef enum {
 @property (nonatomic, assign) kPatientInfoFormType formType;
 @property (nonatomic, strong) NSNumber *pId;
 @property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSNumber *formId;
 @end

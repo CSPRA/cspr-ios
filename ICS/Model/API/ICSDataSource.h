@@ -74,5 +74,7 @@ typedef void (^ICSApiInterfaceBlock)(BOOL success,
  */
 - (void)loginVolunteerWithEmail:(NSString*)email password:(NSString*)password completionBlock:(ICSApiInterfaceBlock)block;
 
-
+- (void)fetchDiagnosisQuestions: (NSNumber*)formId
+                          token: (NSString*)token
+                completionBlock: (ICSApiInterfaceBlock)block;
 @end

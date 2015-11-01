@@ -12,4 +12,5 @@
 @interface APIInterface : NSObject
 + (instancetype)sharedInterface;
 - (NSError*)saveContext;
+- (void)setupMappingWithPath:(NSString*)path;
 @end

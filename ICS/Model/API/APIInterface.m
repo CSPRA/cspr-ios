@@ -54,8 +54,6 @@
                             NSInferMappingModelAutomaticallyOption: @(YES)
                             };
   
-  NSString *seedStorePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"RKSeedDatabase.sqlite"];
-
   NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
   
   // create a persistent SQLite store with a new sqlite db file
@@ -120,15 +118,33 @@
   //Mapping for questions
   RKEntityMapping *questionsMapping = [Question restkitObjectMappingForStore:store];
   RKResponseDescriptor *questionDescriptor =
-  [RKResponseDescriptor responseDescriptorWithMapping:questionsMapping pathPattern:kFetchQuestionsPath keyPath:@"sections" statusCodes:successSet];
+  [RKResponseDescriptor responseDescriptorWithMapping:questionsMapping pathPattern:kFetchQuestionsPath
+                                              keyPath:@"sections"
+                                          statusCodes:successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
   
-  questionsMapping = [Question restkitObjectMappingForStore:store];
-  questionDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:questionsMapping
+  RKEntityMapping *questionsError = [Question restkitObjectMappingForStore:store];
+  questionDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:questionsError
                                                                pathPattern:kFetchQuestionsPath keyPath:@"error"
                                                                statusCodes:successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
   
+}
+
+- (void)setupMappingWithPath:(NSString*)path {
+  //Mapping for questions
+  RKEntityMapping *questionsMapping = [Question restkitObjectMappingForStore:[RKObjectManager sharedManager].managedObjectStore];
+  RKResponseDescriptor *questionDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:questionsMapping pathPattern:path
+                                              keyPath:@"sections"
+                                          statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+  [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
+  
+  RKEntityMapping *questionsError = [Question restkitObjectMappingForStore:[RKObjectManager sharedManager].managedObjectStore];
+  questionDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:questionsError
+                                                               pathPattern:path keyPath:@"error"
+                                                               statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+  [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
 }
 
 - (NSError*)saveContext {
