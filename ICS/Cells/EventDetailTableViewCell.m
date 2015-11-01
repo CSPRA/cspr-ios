@@ -36,6 +36,7 @@
   [super layoutSubviews];
   [self.contentView ICSViewBackgroungColor];
   [self initialSetup];
+//  [self offlineSetup];
 }
 - (void)initialSetup {
   self.eventType.text = _event.eventType;
@@ -46,17 +47,18 @@
   Cancer *cancerType = _event.cancer;
   self.cancerName.text = cancerType.cancerName;
   self.textView.text = cancerType.cancerDescription;
-  
-//  NSDictionary *cancerDict = [self.eventDict valueForKey:kCancerType];
-//  NSDictionary *formDict = [self.eventDict valueForKey:@"form"];
-//  self.eventNameLabel.text = [self.eventDict valueForKey:kEventName];
-//  self.startDate.text = [self.eventDict valueForKey:kStartingDate];
-//  self.endDate.text = [self.eventDict valueForKey:kEndingDate];
-//  self.cancerName.text = [cancerDict valueForKey:kCancerName];
-//  self.textView.text = [cancerDict valueForKey:kCancerDescription];
 
 }
 
+- (void)offlineSetup {
+    NSDictionary *cancerDict = [self.eventDict valueForKey:kCancerType];
+    NSDictionary *formDict = [self.eventDict valueForKey:@"form"];
+    self.eventNameLabel.text = [self.eventDict valueForKey:kEventName];
+    self.startDate.text = [self.eventDict valueForKey:kStartingDate];
+    self.endDate.text = [self.eventDict valueForKey:kEndingDate];
+    self.cancerName.text = [cancerDict valueForKey:kCancerName];
+    self.textView.text = [cancerDict valueForKey:kCancerDescription];
+}
 - (void)prepareForReuse {
   [super prepareForReuse];
   

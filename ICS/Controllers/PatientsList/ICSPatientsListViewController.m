@@ -81,12 +81,12 @@ UIAlertViewDelegate>
       if (success) {
         self.patientListArray = [NSArray arrayWithObject:result];
       }else if (error){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:@"No registered patients"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+//                                                        message:@"No registered patients"
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil, nil];
+//        [alert show];
       }
       [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
@@ -114,15 +114,15 @@ UIAlertViewDelegate>
  
 }
 - (void)showPatientInfoViewControllerAtIndexPath:(NSIndexPath *)indexPath {
-  UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-  UITabBarController *tabBarController = [mainStoryboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
-  PatientInformationViewController *patientRegisterationVC = [[tabBarController childViewControllers] objectAtIndex:1];
-  Patient *patient = [self.patientListArray objectAtIndex:indexPath.row];
-  if (patient) {
-    patientRegisterationVC.pId = [NSNumber numberWithLongLong:patient.patientId];
-  }
-  patientRegisterationVC.token = _token;
-  [self.navigationController pushViewController:tabBarController animated:YES];
+//  UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//  UITabBarController *tabBarController = [mainStoryboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
+//  PatientInformationViewController *patientRegisterationVC = [[tabBarController childViewControllers] objectAtIndex:1];
+//  Patient *patient = [self.patientListArray objectAtIndex:indexPath.row];
+//  if (patient) {
+//    patientRegisterationVC.pId = [NSNumber numberWithLongLong:patient.patientId];
+//  }
+//  patientRegisterationVC.token = _token;
+//  [self.navigationController pushViewController:tabBarController animated:YES];
 }
 
 #pragma mark - UIAlertViewDelegate

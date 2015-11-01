@@ -8,31 +8,31 @@
 
 #import "ICSHomeViewController.h"
 #import "EventDetailTableViewCell.h"
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "PatientInformationViewController.h"
 #import "Volunteer.h"
 #import "ICSPatientsListViewController.h"
+#import "ICSUtilities.h"
+#import "Form.h"
+
+static NSString *const RegisterEvent = @"register";
+static NSString *const RegisterScreeningEvent = @"register_screen";
 
 @interface ICSHomeViewController ()<UITableViewDelegate,
 UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *eventArray;
+@property (nonatomic, strong) NSMutableArray *eventArray;
 
 @end
 
 @implementation ICSHomeViewController
 
+#pragma mark - View cycle
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.navigationItem.title = @"ICS Events";
   
-  if (!self.eventArray) {
-  
-    Volunteer *volunteer = [Volunteer fetchVolunteer];
-    self.token = volunteer.token;
-    [self fetchData];
-    [self.tableView reloadData];
-  }
+  [self setupNavigationBar];
+  [self loadEvents];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,56 +40,37 @@ UITableViewDataSource>
   // Dispose of any resources that can be recreated.
 }
 
-- (void)offlineData{
-  NSDictionary *cancer1 = @{
-                            @"cancerId":@(1),
-                            @"cancerName":@"Throat Cancer",
-                            @"description":@"Throat cancer refers to cancerous tumors that develop in your throat (pharynx), voice box (larynx) or tonsils.hroat cancer refers to cancerous tumors that develop in your throat (pharynx), voice box (larynx) or tonsils.hroat cancer refers to cancerous tumors that develop in your throat (pharynx), voice box (larynx) or tonsils.hroat cancer refers to cancerous tumors that develop in your throat (pharynx), voice box (larynx) or tonsils."
-                            };
-  NSDictionary *form1 = @{
-                          @"formId":@(1),
-                          @"formName":@"Throat Cancer Detection Form",
-                          @"formDescription":@"This form contains ragarding diagnosis of Throat Cancer"
-                          };
-  
-  NSDictionary *event1 = @{
-    @"eventId": @(1),
-    @"eventName":@"Spot Registration For Throat Cancer",
-    @"eventType":@"register",
-    @"startingDate":@"0000-00-00",
-    @"endingDate":@"0000-00-00",
-    @"form": @{},
-    @"cancerType":cancer1
-    };
-  
-  NSDictionary *event2 = @{
-                           @"eventId":@(4),
-                           @"eventName":@"Registration cum Screening camp for Throat Cancer",
-                           @"eventType":@"register_screen",
-                           @"startingDate":@"2015-12-01",
-                           @"endingDate":@"2015-12-10",
-                           @"form":form1,
-                           @"cancerType":cancer1
-                           };
-  
-  NSArray *results = @[event1, event2];
-  self.eventArray = results;
- }
+#pragma mark - Initalization
+- (void)loadEvents {
+  Volunteer *volunteer = [Volunteer fetchVolunteer];
+  self.token = volunteer.token;
+  NSLog(@"%@",volunteer.volunteerId);
+  self.eventArray = [[NSMutableArray alloc] init];
+  NSArray *savedEventList = [kSharedModel fetchObjectsWithEntityName:kEventEntityName];
+  if ([ICSUtilities hasActiveConnection]) {
+    [self fetchLatestEvents];
+  }else if(savedEventList){
+    [self.eventArray addObjectsFromArray:savedEventList];
+  }
+}
 
-- (void)fetchData {
-  if (self.token) {
+- (void)setupNavigationBar {
+  self.navigationItem.title = @"ICS Events";
+
+}
+
+- (void)fetchLatestEvents {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [kDataSource fetchEventsWithToken:self.token
                       completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
                         if (success) {
-                          self.eventArray = [result objectForKey:@"results"];
+                          [self.eventArray addObjectsFromArray:[result objectForKey:@"results"]];
                           [self.tableView reloadData];
                         }else if (error){
                           NSLog(@"%@",error);
                         }
                         [MBProgressHUD hideHUDForView:self.view animated:YES];
                       }];
-  }
 }
 
 
@@ -109,18 +90,47 @@ UITableViewDataSource>
   if(self.eventArray)
   {
     cell.event = [self.eventArray objectAtIndex:indexPath.row];
+//    cell.eventDict = [self.eventArray objectAtIndexedSubscript:indexPath.row];
   }
   return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
   ICSPatientsListViewController *patientListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
   patientListVC.token = _token;
   EventDetailTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
   patientListVC.eventId = cell.event.eventId;
   
   [self.navigationController pushViewController:patientListVC animated:YES];
+/*
+    EventDetailTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+  NSString *eventType = cell.event.eventType;
+//  if ([eventType isEqualToString:RegisterEvent]) {
+//    [self showRegisterPatientVCAtCell:cell];
+//  }
+//  else if ([eventType isEqualToString:RegisterScreeningEvent]){
+//    [self showPatientListVCAtCell:cell];
+//  }
+  [self showRegisterPatientVCAtCell:cell];
+ */
 }
 
+- (void)showRegisterPatientVCAtCell: (EventDetailTableViewCell*)cell {
+  PatientInformationViewController *patientInfoVC = [kMainStoryBoard instantiateViewControllerWithIdentifier:kPatientInfoVCIndetifier];
+  patientInfoVC.token = _token;
+  patientInfoVC.formType = kPatientRegistratinFormType;
+  Form *form = cell.event.form;
+  patientInfoVC.formId = form.formId;
+  patientInfoVC.event = cell.event;
+  [self.navigationController pushViewController:patientInfoVC animated:YES];
+}
+
+- (void)showPatientListVCAtCell: (EventDetailTableViewCell*)cell {
+  ICSPatientsListViewController *patientListVC = [kMainStoryBoard
+            instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
+  patientListVC.token = _token;
+  patientListVC.eventId = cell.event.eventId;
+  [self.navigationController pushViewController:patientListVC animated:YES];
+}
 @end
+

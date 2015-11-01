@@ -8,6 +8,7 @@
 
 #import "XLFormViewController.h"
 
-@interface PatientEatingHabitsViewController : XLFormViewController
-
+@interface DiagnosisFormViewController : XLFormViewController
+@property (nonatomic, strong) NSNumber *formId;
+@property (nonatomic, strong) NSString *token;
 @end

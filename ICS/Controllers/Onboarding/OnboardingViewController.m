@@ -7,7 +7,7 @@
 //
 
 //#import "PhoneVerificationViewController.h"
-#import "RegisterViewController.h"
+#import "RegisterVolunteerViewController.h"
 #import "OnboardingViewController.h"
 #import "PatientInformationViewController.h"
 #import "ICSStyleGuide.h"
@@ -27,7 +27,7 @@
     [super viewDidLoad];
   [self setupNavigationBar];
     if([ICSDataManager isVolunteerRegistered]) {
-        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:kPatientRegistrationVCIndentifier] animated:NO];
+//        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:kPatientRegistrationVCIndentifier] animated:NO];
     }
     else {
         [self addDigitsView];

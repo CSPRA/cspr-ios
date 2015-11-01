@@ -22,17 +22,17 @@
 #define kMaxAlpha 1.0
 
 //ViewController's Storyboard Identifier
-#define kPatientInforamtionVCIndentifier  @"PatientInforamtionVCIndentifier"
-#define kPatientHabitsVCIdentifier  @"PatientHabitsVCIdentifier"
-#define kHomeVCIdentifier @"HomeViewControllerIdentifier"
-#define kPatientsListVCIdentifier  @"PatientsListVCIdentifier"
-#define kRegisterVCIdentifier @"RegisterVCIdentifier"
-#define kPhotoViewControllerIdentifier @"PhotoViewControllerIdentifier"
-#define ktabBarViewControllerIdentifier @"tabBarViewControllerIdentifier"
+#define kPatientInfoVCIndetifier        @"PatientInfoVCIndetifier"
+#define kDiagnosisFormVCIdentifier      @"DiagnosisFormVCIdentifier"
+#define kHomeVCIdentifier               @"HomeViewControllerIdentifier"
+#define kPatientsListVCIdentifier       @"PatientsListVCIdentifier"
+#define kRegisterVCIdentifier           @"RegisterVCIdentifier"
+#define kPhotoViewControllerIdentifier  @"PhotoViewControllerIdentifier"
 
 //Storyboard segue Identifier
-#define kshowRegisterViewSegue @"showRegisterViewSegue"
+#define kshowRegisterViewSegue        @"showRegisterViewSegue"
 #define kShowPhoneVaricationViewSegue @"ShowPhoneVaricationViewSegue"
+#define kshowTabControllerSegue       @"showTabControllerSegue"
 
 //UITableViewCell Identifiers
 #define kEventDetailCellIdentifier @"EventDetailCellIdentifier"
@@ -46,7 +46,8 @@
 #define kModelURL [[NSBundle mainBundle] URLForResource:@"ICSModel" withExtension:@"momd"]
 #define kICSAPIBaseURL [NSURL URLWithString:@"http://cspr-web-dev.elasticbeanstalk.com"]
 #define kDataStoreFileName @"ICSDB.sqlite"
-
+#define kMainStoryBoard [UIStoryboard storyboardWithName:@"Main" bundle:nil]
+#define kLoginSignUpStoryboard [UIStoryboard storyboardWithName:@"LoginSignUp" bundle:nil]
 
 //NSManagedObject Entities
 #define kPatientEntityName @"Patient"
@@ -56,6 +57,7 @@
 #define kQuestionEntityName @"Question"
 #define kCancerEntityName @"Cancer"
 #define kFormEntityName @"Form"
+#define kQuestionOptionsEntitiyName @"QuestionOptions"
 
 #define icsOCRTempImageKey @"icsOCRImageCaptured"
 
@@ -65,7 +67,6 @@
 
 //VCs
 #define kVolunteerSignUpVCIdentifier        @"VolunteerSignUpVCIdentifier"
-#define kPatientRegistrationVCIndentifier   @"PatientRegistrationVCIdentifier"
 #define kPhotoVCIdentifier                  @"PhotoVCIdentifier"
 #define kCameraVCIdentifier                 @"CamVCIdentifier"
 #define kScanIDProofVCIdentifier            @"ScanIDProofVCIdentifier"
@@ -80,6 +81,7 @@
 #define kFetchDoctorPath                    @"/doctor/3"
 #define kPostDoctorRatingPath               @"/doctor/rating"
 #define kPostDiagnosisResponsePath          @"/diagnosisResponses"
+#define kFetchQuestionsPath                 @"/queries"
 
 //Mapping keys
 #define kEmail                  @"email"
@@ -117,6 +119,18 @@
 #define kEventID                @"eventId"
 #define kFormID                 @"formId"
 #define kCancerID               @"cancerId"
-
-
+#define kCreatedAt              @"created_at"
+#define kUpdatedAt              @"updated_at"
+#define kQueryId                @"quesryId"
+#define kQuestionsId            @"questionId"
+#define kQuestionOptions        @"options"
+#define kQuestionTitle          @"title"
+#define kQuestionType           @"type"
+#define kOrder                  @"order"
+#define kUnits                  @"units"
+#define kOptionId               @"id"
+#define kOptionName             @"name"
+#define kOptionGroupId          @"groupId"
+#define kPatientId              @"patientId"
+#define kRegisteredBy           @"registeredBy"
 

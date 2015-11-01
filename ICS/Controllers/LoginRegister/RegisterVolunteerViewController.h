@@ -8,6 +8,6 @@
 
 #import "XLFormViewController.h"
 
-@interface RegisterViewController : XLFormViewController
+@interface RegisterVolunteerViewController : XLFormViewController
 @property (nonatomic, strong) NSString *phoneNumber;
 @end

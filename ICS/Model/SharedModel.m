@@ -55,4 +55,17 @@
   return fetchedObject;
 }
 
+- (NSArray*)fetchObjectsWithEntityName: (NSString*)entityName {
+  NSManagedObjectContext *context = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
+  
+  NSError *error = nil;
+  NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+  return fetchedObjects;
+}
+
+- (NSError*)saveContext {
+  return  [[APIInterface sharedInterface] saveContext];
+}
+
 @end

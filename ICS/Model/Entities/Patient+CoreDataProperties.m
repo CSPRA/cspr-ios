@@ -1,9 +1,9 @@
 //
 //  Patient+CoreDataProperties.m
-//  
+//  ICS
 //
-//  Created by aam-fueled on 16/10/15.
-//
+//  Created by Aqsa on 01/11/15.
+//  Copyright © 2015 Meraki. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -13,11 +13,25 @@
 
 @implementation Patient (CoreDataProperties)
 
-@dynamic patientId;
-@dynamic firstName;
-@dynamic lastName;
 @dynamic address;
-@dynamic phoneNumber;
 @dynamic dob;
+@dynamic patientId;
+@dynamic phoneNumber;
+@dynamic name;
+@dynamic occuption;
+@dynamic aliveChildCount;
+@dynamic deceasedChildCount;
+@dynamic maritalStatus;
+@dynamic education;
+@dynamic annualIncome;
+@dynamic email;
+@dynamic religion;
+@dynamic voterId;
+@dynamic adharId;
+@dynamic homePhoneNumber;
+@dynamic gender;
+@dynamic createdAt;
+@dynamic updatedAt;
+@dynamic registeredBy;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Meraki. All rights reserved.
 //
 
-#import "RegisterViewController.h"
+#import "RegisterVolunteerViewController.h"
 #import <XLForm/XLForm.h>
 #import "ICSFloatLabeledTextFieldCell.h"
 
@@ -14,11 +14,11 @@ static NSString *const kDoneButton = @"Done";
 static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 #define kFactor 50
 
-@interface RegisterViewController()
+@interface RegisterVolunteerViewController()
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 @end
 
-@implementation RegisterViewController
+@implementation RegisterVolunteerViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -160,7 +160,6 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
                                   UINavigationController *navController = [mainStoryboard instantiateInitialViewController];
                                   [self presentViewController:navController animated:YES completion:nil];
 
-                                  
                                 }
                                 else if (error){
                                   NSLog(@"%@",error);

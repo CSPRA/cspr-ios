@@ -28,8 +28,8 @@
 }
 
 - (IBAction)registerButtonTapped:(id)sender {
-    UIViewController *patientInfoVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientInforamtionVCIndentifier];
-    [self.navigationController pushViewController:patientInfoVC animated:YES];
+//    UIViewController *patientInfoVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientInforamtionVCIndentifier];
+//    [self.navigationController pushViewController:patientInfoVC animated:YES];
 }
 
 #pragma mark - 

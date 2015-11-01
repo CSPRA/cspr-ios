@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Patient : NSManagedObject<RestKitAdditions>
 
 - (Patient*)fetchPatient;
++ (void)setupPatientMapping:(NSString*)path;
 
 @end
 
