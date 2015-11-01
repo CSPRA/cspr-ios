@@ -61,17 +61,6 @@
             [self.navigationController pushViewController:registerVolunteerVC animated:YES];
         }
         else {
-            if(error.code == 1) {
-            
-                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-
-                VolunteerSignUpViewController * vs = [mainStoryboard instantiateViewControllerWithIdentifier:kVolunteerSignUpVCIdentifier];
-                vs.verifiedPhoneNumber = @"9654489706";
-                [self.navigationController pushViewController:vs animated:YES];
-            
-                return ;
-            } ;
-            
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self createAlertForTitle:@"Error" withMessage:error.localizedDescription];
             });
