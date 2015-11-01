@@ -10,3 +10,4 @@ Following icons have been modified and used in the project:
 * Lightning Bolt by Muneer A.Safiah from the Noun Project
 * Stethoscope by Cris Dobbins from the Noun Project
 * Pencil by Erin Standley from the Noun Project
+* Info by Geovani Almeida from the Noun Project
