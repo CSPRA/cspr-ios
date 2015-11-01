@@ -16,6 +16,7 @@
 
 static NSString *const RegisterEvent = @"register";
 static NSString *const RegisterScreeningEvent = @"register_screen";
+static NSString *const ScreenEvents = @"screen";
 
 @interface ICSHomeViewController ()<UITableViewDelegate,
 UITableViewDataSource>
@@ -30,7 +31,6 @@ UITableViewDataSource>
 #pragma mark - View cycle
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
   [self setupNavigationBar];
   [self loadEvents];
 }
@@ -96,23 +96,18 @@ UITableViewDataSource>
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  ICSPatientsListViewController *patientListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:kPatientsListVCIdentifier];
-  patientListVC.token = _token;
   EventDetailTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-  patientListVC.eventId = cell.event.eventId;
-  
-  [self.navigationController pushViewController:patientListVC animated:YES];
-/*
-    EventDetailTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
   NSString *eventType = cell.event.eventType;
-//  if ([eventType isEqualToString:RegisterEvent]) {
-//    [self showRegisterPatientVCAtCell:cell];
-//  }
-//  else if ([eventType isEqualToString:RegisterScreeningEvent]){
-//    [self showPatientListVCAtCell:cell];
-//  }
-  [self showRegisterPatientVCAtCell:cell];
- */
+  if ([eventType isEqualToString:RegisterEvent]) {
+    [self showRegisterPatientVCAtCell:cell];
+  }
+  else if ([eventType isEqualToString:RegisterScreeningEvent]){
+    [self showRegisterPatientVCAtCell:cell];
+  }
+  else if ([eventType isEqualToString:ScreenEvents]){
+    [self showPatientListVCAtCell:cell];
+  }
+
 }
 
 - (void)showRegisterPatientVCAtCell: (EventDetailTableViewCell*)cell {

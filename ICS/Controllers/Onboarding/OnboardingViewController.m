@@ -29,13 +29,13 @@
     if([ICSDataManager isVolunteerRegistered]) {
 //        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:kPatientRegistrationVCIndentifier] animated:NO];
     }
-    else {
+//    else {
         [self addDigitsView];
         [UIView animateWithDuration:0.3 animations:^{
             self.welcomeLabel.alpha = kMaxAlpha;
         }];
         
-    }
+//    }
 }
 - (void)setupNavigationBar {
   [self.navigationController setNavigationBarHidden:NO animated:NO];
@@ -47,8 +47,7 @@
     
     DGTAppearance *digitsAppearance  = [[DGTAppearance alloc] init];
     digitsAppearance.backgroundColor = self.view.backgroundColor;
-//    digitsAppearance.accentColor = [ICSStyleGuide ICSRed];
-  digitsAppearance.accentColor = [UIColor orangeColor];
+    digitsAppearance.accentColor = [UIColor orangeColor];
     
     DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
       
@@ -57,9 +56,8 @@
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self createAlertForTitle:@"Success" withMessage:[NSString stringWithFormat:@"%@ verified successfully", session.phoneNumber]];
             });
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            VolunteerSignUpViewController * registerVolunteerVC = [mainStoryboard instantiateViewControllerWithIdentifier:kVolunteerSignUpVCIdentifier];
-            registerVolunteerVC.verifiedPhoneNumber = session.phoneNumber;
+            RegisterVolunteerViewController * registerVolunteerVC = [kLoginSignUpStoryboard instantiateViewControllerWithIdentifier:kRegisterVCIdentifier];
+            registerVolunteerVC.phoneNumber = session.phoneNumber;
             [self.navigationController pushViewController:registerVolunteerVC animated:YES];
         }
         else {

@@ -121,12 +121,12 @@
                        completeionBlock:(ICSApiInterfaceBlock)block {
   [[RKObjectManager sharedManager] postObject:nil path:kVolunteerRegisterPath
                                    parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-//    Volunteer *volunteer = [[mappingResult dictionary] valueForKey:@"result"];
-//    volunteer.firstName = parameters[kFirstName];
-//    volunteer.lastName = parameters[kLastName];
-//    volunteer.username = parameters[kUsername];
-//    volunteer.contactNumber = parameters[kPhoneNumber];
-//    volunteer.email = parameters[kEmail];
+    Volunteer *volunteer = [[mappingResult dictionary] valueForKey:@"result"];
+    volunteer.firstName = parameters[kFirstName];
+    volunteer.lastName = parameters[kLastName];
+    volunteer.username = parameters[kUsername];
+    volunteer.contactNumber = parameters[kPhoneNumber];
+    volunteer.email = parameters[kEmail];
     block(YES, [mappingResult dictionary], nil);
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     block(NO, nil, error);

@@ -1069,7 +1069,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
 					"\"${PODS_ROOT}/Headers/Public/TwitterCore\"",
 					"\"${PODS_ROOT}/Headers/Public/XLForm\"",
-					"\"${PODS_ROOT}/Headers/Public/TesseractOCRiOS” ",
+					"\"${PODS_ROOT}/Headers/Public/TesseractOCRiOS”  $(inherited)",
 				);
 				INFOPLIST_FILE = ICS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1078,6 +1078,7 @@
 					"\"${PODS_ROOT}/TesseractOCRiOS/TesseractOCR/lib” $(inherited) \"${PODS_ROOT}/TesseractOCRiOS/TesseractOCR/lib”",
 				);
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-l\"Pods-TesseractOCRiOS\"",
 					"-l\"Pods-DZNEmptyDataSet\"",
@@ -1153,7 +1154,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
 					"\"${PODS_ROOT}/Headers/Public/TwitterCore\"",
 					"\"${PODS_ROOT}/Headers/Public/XLForm\"",
-					"\"${PODS_ROOT}/Headers/Public/TesseractOCRiOS” ",
+					"\"${PODS_ROOT}/Headers/Public/TesseractOCRiOS”  $(inherited)",
 				);
 				INFOPLIST_FILE = ICS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1162,6 +1163,7 @@
 					"\"${PODS_ROOT}/TesseractOCRiOS/TesseractOCR/lib” $(inherited) \"${PODS_ROOT}/TesseractOCRiOS/TesseractOCR/lib”",
 				);
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-l\"Pods-TesseractOCRiOS\"",
 					"-l\"Pods-DZNEmptyDataSet\"",

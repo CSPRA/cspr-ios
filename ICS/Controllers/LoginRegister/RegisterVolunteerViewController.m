@@ -9,6 +9,7 @@
 #import "RegisterVolunteerViewController.h"
 #import <XLForm/XLForm.h>
 #import "ICSFloatLabeledTextFieldCell.h"
+#import "UIView+ICSAdditions.h"
 
 static NSString *const kDoneButton = @"Done";
 static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
@@ -23,17 +24,10 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self initializeForm];
-
+  [self.view ICSViewBackgroungColor];
+  self.tableView.backgroundColor = [UIColor clearColor];
   [self addObservers];
   [self setupNavigationBar];
-}
-
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-  self = [super initWithCoder:coder];
-  if (self) {
-  }
-  return self;
 }
 
 - (void)didReceiveMemoryWarning {
