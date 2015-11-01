@@ -120,28 +120,28 @@ NSString *const ktext = @"tag3";
 
 #pragma mark - OfflineData
 - (void)fetchingDataFromJsonFile {
-//  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"QuestionsJasonData" ofType:@"json"];
-//  NSData *data = [NSData dataWithContentsOfFile:filePath];
-//  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-//  return [json valueForKey:@"sections"];
-  
-
-  NSManagedObjectModel *objectModel = [[NSManagedObjectModel alloc]
-                                       initWithContentsOfURL:kModelURL];
-  NSString *storePath = [NSString stringWithFormat:@"%@",[RKObjectManager sharedManager].managedObjectStore];
-  
-//  NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
-
   NSString *filePath = [[NSBundle mainBundle] pathForResource:@"QuestionsJasonData" ofType:@"json"];
-  NSError *error;
-  RKEntityMapping *mapping = [Question restkitObjectMappingForStore:[RKObjectManager sharedManager].managedObjectStore];
-  
-  RKManagedObjectImporter *importer =
-  [[RKManagedObjectImporter alloc] initWithManagedObjectModel:objectModel
-                                                    storePath:storePath];
-  
-  [importer importObjectsFromItemAtPath:filePath withMapping:mapping keyPath:nil error:&error];
-//  [kSharedModel saveContext];
+  NSData *data = [NSData dataWithContentsOfFile:filePath];
+  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+  self.sectionsArray = [json valueForKey:@"sections"];
+//
+//
+//  NSManagedObjectModel *objectModel = [[NSManagedObjectModel alloc]
+//                                       initWithContentsOfURL:kModelURL];
+//  NSString *storePath = [NSString stringWithFormat:@"%@",[RKObjectManager sharedManager].managedObjectStore];
+//  
+////  NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
+//
+//  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"QuestionsJasonData" ofType:@"json"];
+//  NSError *error;
+//  RKEntityMapping *mapping = [Question restkitObjectMappingForStore:[RKObjectManager sharedManager].managedObjectStore];
+//  
+//  RKManagedObjectImporter *importer =
+//  [[RKManagedObjectImporter alloc] initWithManagedObjectModel:objectModel
+//                                                    storePath:storePath];
+//  
+//  [importer importObjectsFromItemAtPath:filePath withMapping:mapping keyPath:nil error:&error];
+////  [kSharedModel saveContext];
 
 }
 
