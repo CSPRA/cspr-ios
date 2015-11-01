@@ -23,14 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     wtTextArray = @[
-                  @"The sign up process is now complete. You can start using this app to register and diagnose patients",
-                  @"Whenever you're assigned a patient, proceed to start diagnosis",
-                  @"Fill patient information, personal and/or Medical history",
+                  @"You can use this app to register and diagnose patients",
+                  @"Once inside an event, you can check your assigned patients. Once assigned, proceed to start diagnosis",
+                  @"Fill in patient information, personal and/or Medical history",
                   @"Click images of patient, mark the image if it could be a possible suspect",
-                  @"After marking images, app will help you to decide if diagnosis should end or not",
-                  @"In detailed disgnosis, ensure all details are captured.",
-                  @"When data has been recorded, assign the patient a doctor.",
-                  @"On home screen, Quick Registration is linked to OCR. It helps you to quickly take first-level information of the patient with help of government ID Cards.",
+//                  @"After marking images, app will help you to decide if diagnosis should end or not",
+                  @"Tabs will help you fill in required details of a patient.",
+                  @"When data has been recorded, assign the patient to a doctor.",
+                  @"On the home screen, Quick Registration is linked to OCR. It helps you to quickly take first-level information of the patient with help of government ID Cards.",
                   ];
 
     self.view.backgroundColor = [ICSStyleGuide ICSOrange];

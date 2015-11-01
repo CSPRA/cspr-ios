@@ -33,6 +33,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)forgotPwdClicked:(id)sender {
+    
+    NSString * alertMessage = @"Please contact IT admin with your email address.";
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:alertMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+}
 
 #pragma mark Observer and keyborad notification handling
 - (void)addObservers {

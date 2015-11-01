@@ -17,10 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if(![ICSDataManager hasWalkthroughBeenShown]) {
-        [self showVolunteerWalkthrough:nil];
-        [ICSDataManager disableAutomaticWalkthroughPreview];
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,11 +36,5 @@
 }
 
 #pragma mark - Walkthrough
-
--(IBAction)showVolunteerWalkthrough:(id)sender {
-    WalkthroughViewController * wtVC = [[WalkthroughViewController alloc] init];
-    [self presentViewController:wtVC animated:YES completion:NULL];
-}
-
 
 @end

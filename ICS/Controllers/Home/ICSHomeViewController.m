@@ -13,6 +13,7 @@
 #import "ICSPatientsListViewController.h"
 #import "ICSUtilities.h"
 #import "Form.h"
+#import "WalkthroughViewController.h"
 
 static NSString *const RegisterEvent = @"register";
 static NSString *const RegisterScreeningEvent = @"register_screen";
@@ -33,7 +34,18 @@ UITableViewDataSource>
   [super viewDidLoad];
   [self setupNavigationBar];
   [self loadEvents];
+    if(![ICSDataManager hasWalkthroughBeenShown]) {
+        [self showVolunteerWalkthrough:nil];
+        [ICSDataManager disableAutomaticWalkthroughPreview];
+    }
+    
 }
+
+-(IBAction)showVolunteerWalkthrough:(id)sender {
+    WalkthroughViewController * wtVC = [[WalkthroughViewController alloc] init];
+    [self presentViewController:wtVC animated:YES completion:NULL];
+}
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];

@@ -117,7 +117,7 @@ static NSString *const kPasswordRegx = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   // Password
   row = [XLFormRowDescriptor formRowDescriptorWithTag:kPassword rowType:XLFormRowDescriptorTypePassword];
  
-  [row.cellConfigAtConfigure setObject:@"Password" forKey:@"textField.placeholder"];
+  [row.cellConfigAtConfigure setObject:@"Password (8 chars, min one chatacter & number)" forKey:@"textField.placeholder"];
   [row.cellConfigAtConfigure setObject:@(NSTextAlignmentLeft) forKey:@"textField.textAlignment"];
   
   row.required = YES;
