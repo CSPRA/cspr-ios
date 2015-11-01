@@ -57,6 +57,7 @@
 #define kQuestionEntityName @"Question"
 #define kCancerEntityName @"Cancer"
 #define kFormEntityName @"Form"
+#define kQuestionOptionsEntitiyName @"QuestionOptions"
 
 #define icsOCRTempImageKey @"icsOCRImageCaptured"
 
@@ -80,6 +81,8 @@
 #define kFetchDoctorPath                    @"/doctor/3"
 #define kPostDoctorRatingPath               @"/doctor/rating"
 #define kPostDiagnosisResponsePath          @"/diagnosisResponses"
+#define kFetchQuestionsPath                 @"/"
+
 
 //Mapping keys
 #define kEmail                  @"email"
@@ -121,9 +124,13 @@
 #define kUpdatedAt              @"updated_at"
 #define kQueryId                @"quesryId"
 #define kQuestionsId            @"questionId"
+#define kQuestionOptions        @"options"
 #define kQuestionTitle          @"title"
 #define kQuestionType           @"type"
-#define kQuestionOrder          @"order"
+#define kOrder                  @"order"
 #define kUnits                  @"units"
+#define kOptionId               @"id"
+#define kOptionName             @"name"
+#define kOptionGroupId          @"groupId"
 
 

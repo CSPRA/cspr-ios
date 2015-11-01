@@ -9,6 +9,8 @@
 #import "DiagnosisFormViewController.h"
 #import "ICSCustomRowDescriptor.h"
 #import "XLForm.h"
+#import "UIView+ICSAdditions.h"
+#import "Question.h"
 
 static NSString * const kQuestionTypeSingleChoice = @"single choice";
 static NSString * const kQuestionTypeText = @"text";
@@ -42,7 +44,9 @@ NSString *const ktext = @"tag3";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  self.sectionsArray = [self fetchingDataFromJsonFile];
+  [self.view ICSViewBackgroungColor];
+  self.tableView.backgroundColor = [UIColor clearColor];
+ [self fetchingDataFromJsonFile];
   
 //  [self initialSetup];
   self.navigationItem.title = @"Questions";
@@ -52,6 +56,16 @@ NSString *const ktext = @"tag3";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initialSetup {
+  [self.sectionsArray enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    Question *question = [Question new];
+    question.questionId = obj[kQuestionsId];
+//    
+  }];
+  NSArray *sections = [kSharedModel fetchObjectsWithEntityName:kQuestionEntityName];
+  
 }
 
 #pragma mark - initialization
@@ -73,23 +87,24 @@ NSString *const ktext = @"tag3";
     [form addFormSection:smokingQuestionsSection afterSection:smokingSection];
     
     XLFormSectionDescriptor *s1 = [XLFormSectionDescriptor formSection];
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tago" rowType:XLFormRowDescriptorTypeBooleanSwitch title:title];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kPred rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"s1 section"];
     row.value = @0;
     [s1 addFormRow:row];
     [form addFormSection:s1 afterSection:smokingQuestionsSection];
-    XLFormSectionDescriptor *s1Extend = [XLFormSectionDescriptor formSection];
-    s1Extend.hidden = [NSString stringWithFormat:@"$%@==0", @"tag0"];
+    XLFormSectionDescriptor *s1Extend = [self initializeSmokingQuestionSection:questions];
+    s1Extend.hidden = [NSString stringWithFormat:@"$%@==0", kPred];
     [form addFormSection:s1Extend afterSection:s1];
     
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:khidesection rowType:XLFormRowDescriptorTypeBooleanSwitch title:title];
-    row.value = @0;
-    [smokingSection addFormRow:row];
+//    
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:khidesection rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"s2 section"];
+//    row.value = @0;
+//    [smokingSection addFormRow:row];
    
     
     
     XLFormSectionDescriptor *s2 = [XLFormSectionDescriptor formSection];
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tagi" rowType:XLFormRowDescriptorTypeBooleanSwitch title:title];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tagi" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"s2"];
     row.value = @0;
     [s2 addFormRow:row];
     [form addFormSection:s2 afterSection:s1Extend];
@@ -119,13 +134,44 @@ NSString *const ktext = @"tag3";
 }
 
 #pragma mark - OfflineData
-- (id)fetchingDataFromJsonFile {
+- (void)fetchingDataFromJsonFile {
   NSString *filePath = [[NSBundle mainBundle] pathForResource:@"QuestionsJasonData" ofType:@"json"];
-  NSData *data = [NSData dataWithContentsOfFile:filePath];
-  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-  return [json valueForKey:@"sections"];
-}
+//  NSData *data = [NSData dataWithContentsOfFile:filePath];
+//  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+//  return [json valueForKey:@"sections"];
+  
+  NSString *seedStorePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"RKSeedDatabase.sqlite"];
+  NSManagedObjectModel *objectModel = [[NSManagedObjectModel alloc]
+                                       initWithContentsOfURL:kModelURL];
+  RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:objectModel];
 
+//  NSString *storePath = [RKApplicationDataDirectory()
+//                         stringByAppendingPathComponent:kDataStoreFileName];
+  
+  [self offlineData:filePath objectModel:objectModel store:managedObjectStore];
+  
+
+}
+- (void)offlineData:(NSString*)seedPath objectModel:(NSManagedObjectModel*)model store:(RKManagedObjectStore*)store {
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"QuestionsJasonData" ofType:@"json"];
+  NSError *error;
+  RKEntityMapping *mapping = [Question restkitObjectMappingForStore:store];
+  
+  RKManagedObjectImporter *importer =
+  [[RKManagedObjectImporter alloc] initWithManagedObjectModel:model
+                                                    storePath:seedPath];
+  [importer importObjectsFromItemAtPath:filePath
+                            withMapping:mapping
+                                keyPath:nil
+                                  error:&error];
+  BOOL success = [importer finishImporting:&error];
+  if (success) {
+    [kSharedModel saveContext];
+    [importer logSeedingInfo];
+  } else {
+    RKLogError(@"Failed to finish import and save seed database due to error: %@", error);
+  }
+}
 
 - (void)setupForm {
   __block XLFormDescriptor *form = [XLFormDescriptor formDescriptor];

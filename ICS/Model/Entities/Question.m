@@ -7,6 +7,7 @@
 //
 
 #import "Question.h"
+#import "QuestionOptions.h"
 
 @implementation Question
 
@@ -19,10 +20,18 @@
                                                         inManagedObjectStore:store];
   [questionMapping setIdentificationAttributes:@[@"questionId"]];
   [questionMapping addAttributeMappingsFromDictionary:@{
-                                                       @"questionId": @"questionId",
-                                                       @"type": @"questionType",
-                                                       @"title": @"title",
+                                                       kQuestionsId: @"questionId",
+                                                       kQuestionType: @"questionType",
+                                                       kQuestionTitle: @"title",
+                                                       kQueryId : @"queryId",
+                                                       kUnits : @"units",
+                                                       kOrder : @"order"
                                                        }];
+  
+  RKEntityMapping *optionsMapping = [QuestionOptions restkitObjectMappingForStore:store];
+  [questionMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:kQuestionOptions
+                                                                               toKeyPath:@"options"
+                                                                             withMapping:optionsMapping]];
   return questionMapping;
 }
 @end

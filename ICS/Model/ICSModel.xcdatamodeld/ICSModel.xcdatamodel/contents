@@ -37,9 +37,19 @@
         <attribute name="phoneNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="Question" representedClassName="Question" syncable="YES">
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="queryId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="questionId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="questionType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="units" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="options" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QuestionOptions" syncable="YES"/>
+    </entity>
+    <entity name="QuestionOptions" representedClassName="QuestionOptions" syncable="YES">
+        <attribute name="groupId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="optionId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="Volunteer" representedClassName="Volunteer" syncable="YES">
         <attribute name="contactNumber" optional="YES" attributeType="String" syncable="YES"/>
@@ -57,7 +67,8 @@
         <element name="Event" positionX="0" positionY="0" width="128" height="150"/>
         <element name="Form" positionX="0" positionY="0" width="128" height="90"/>
         <element name="Patient" positionX="0" positionY="0" width="128" height="135"/>
-        <element name="Question" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Question" positionX="0" positionY="0" width="128" height="148"/>
         <element name="Volunteer" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="QuestionOptions" positionX="9" positionY="63" width="128" height="105"/>
     </elements>
 </model>

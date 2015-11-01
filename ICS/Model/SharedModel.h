@@ -16,10 +16,12 @@
 - (NSString*)filePathWithPatientID :(NSInteger)patientId;
 - (ICSDataSource*)dataSource;
 
-- (NSArray*)fetchObjectWithEntityName: (NSString*)entityName;
+- (NSArray*)fetchObjectsWithEntityName: (NSString*)entityName;
 
 /** Fetching Managed object
  @param entityName entity name of object
  */
 - (NSManagedObject*)fetchManagedObjectWithEntityName:(NSString*)entityName;
+
+- (NSError*)saveContext;
 @end

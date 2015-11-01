@@ -11,5 +11,5 @@
 
 @interface APIInterface : NSObject
 + (instancetype)sharedInterface;
-
+- (NSError*)saveContext;
 @end

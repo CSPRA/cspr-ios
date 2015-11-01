@@ -44,7 +44,7 @@ UITableViewDataSource>
   Volunteer *volunteer = [Volunteer fetchVolunteer];
   self.token = volunteer.token;
   self.eventArray = [[NSMutableArray alloc] init];
-  NSArray *savedEventList = [kSharedModel fetchObjectWithEntityName:kEventEntityName];
+  NSArray *savedEventList = [kSharedModel fetchObjectsWithEntityName:kEventEntityName];
 
   if ([ICSUtilities hasActiveConnection]) {
     [self.eventArray addObjectsFromArray: [self fetchLatestEvents]];

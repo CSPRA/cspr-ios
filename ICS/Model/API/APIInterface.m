@@ -34,6 +34,8 @@
   // Enable Restkit Logs
   //RKLogConfigureByName("*", RKLogLevelTrace);
   // Create a new model using the coredata model file
+  [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+
   NSManagedObjectModel *objectModel = [[NSManagedObjectModel alloc]
                                        initWithContentsOfURL:kModelURL];
   // Create a new shared model using the API Base URL
@@ -52,6 +54,8 @@
                             NSInferMappingModelAutomaticallyOption: @(YES)
                             };
   
+  NSString *seedStorePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"RKSeedDatabase.sqlite"];
+
   NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
   
   // create a persistent SQLite store with a new sqlite db file
@@ -112,6 +116,29 @@
   RKResponseDescriptor *loginError =
   [RKResponseDescriptor responseDescriptorWithMapping:volunteerMapping pathPattern:kVolunteerLoginPath keyPath:@"Error" statusCodes:successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:loginError];
+  
+  //Mapping for questions
+  RKEntityMapping *questionsMapping = [Question restkitObjectMappingForStore:store];
+  RKResponseDescriptor *questionDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:questionsMapping pathPattern:kFetchQuestionsPath keyPath:@"sections" statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
+  
+  questionsMapping = [Question restkitObjectMappingForStore:store];
+  questionDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:questionsMapping
+                                                               pathPattern:kFetchQuestionsPath keyPath:@"error"
+                                                               statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
+  
+}
+
+- (NSError*)saveContext {
+  NSManagedObjectContext *managedObjCtx = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
+  NSError *executeError = nil;
+  if(![managedObjCtx saveToPersistentStore:&executeError]) {
+    NSLog(@"Failed to save to data store");
+    return executeError;
+  }
+  return nil;
 }
 
 @end
