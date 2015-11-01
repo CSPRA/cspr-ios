@@ -40,6 +40,23 @@
 		4AC6E2D31BE0F5C6007D9F1D /* ICSMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */; };
 		4AC6E2E11BE140F3007D9F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2E01BE140F3007D9F1D /* Main.storyboard */; };
 		4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */; };
+		4A04605F1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605C1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		4A0460601BDE3DBE005BCA2C /* Volunteer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04605E1BDE3DBE005BCA2C /* Volunteer.m */; settings = {ASSET_TAGS = (); }; };
+		4A0460631BDE9E32005BCA2C /* LoginSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0460611BDE9E32005BCA2C /* LoginSignUp.storyboard */; settings = {ASSET_TAGS = (); }; };
+		4A07C9991BE3824500E1CB5F /* NSDate+ICSFormattedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C9981BE3824500E1CB5F /* NSDate+ICSFormattedString.m */; settings = {ASSET_TAGS = (); }; };
+		4A23A3941BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A38F1BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		4A23A3951BE5DA2A00620BD9 /* QuestionOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A3911BE5DA2A00620BD9 /* QuestionOptions.m */; settings = {ASSET_TAGS = (); }; };
+		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
+		4A71C4DD1BE628BF003C8BE9 /* Patient+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71C4DB1BE628BF003C8BE9 /* Patient+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		4A71C4E11BE62994003C8BE9 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71C4E01BE62994003C8BE9 /* Patient.m */; settings = {ASSET_TAGS = (); }; };
+		4AA604C21BE53CD300E501D8 /* QuestionsJasonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AA604C11BE53CD300E501D8 /* QuestionsJasonData.json */; settings = {ASSET_TAGS = (); }; };
+		4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF71171BE207AA00D9868F /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
+		4AAF711C1BE237B700D9868F /* ICSEntranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF711B1BE237B700D9868F /* ICSEntranceViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4AAF711F1BE28B1400D9868F /* UIView+ICSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF711E1BE28B1400D9868F /* UIView+ICSAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		4AC6E2D31BE0F5C6007D9F1D /* ICSMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */; settings = {ASSET_TAGS = (); }; };
+		4AC6E2E11BE140F3007D9F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E2E01BE140F3007D9F1D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		4ACF7C721BDA371E00FFE3B3 /* RegisterVolunteerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF7C711BDA371E00FFE3B3 /* RegisterVolunteerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4AFB6ACF1BE4D413008AE13A /* PatientInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFB6ACE1BE4D413008AE13A /* PatientInformationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DDE48E7F0DAE62D7C1126C6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994084B95641F268B490CD7C /* libPods.a */; };
 		FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB5F1BC526C100421EAA /* PhotoViewController.m */; };
 		FA1ACCEA1BD26D60001632BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1ACCE91BD26D60001632BC /* SystemConfiguration.framework */; };
@@ -74,6 +91,33 @@
 		FAD8E0A01BD16DC20010E975 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09A1BD16DC20010E975 /* Doctor.m */; };
 		FAD8E0A11BD16DC20010E975 /* Patient+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09C1BD16DC20010E975 /* Patient+CoreDataProperties.m */; };
 		FAD8E0A21BD16DC20010E975 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09E1BD16DC20010E975 /* Patient.m */; };
+		FA1ACCF01BD27064001632BC /* APIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCEF1BD27064001632BC /* APIInterface.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACCF61BD29F13001632BC /* ICSAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCF51BD29F13001632BC /* ICSAPIError.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACCF91BD2AEDC001632BC /* EventDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCF81BD2AEDC001632BC /* EventDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACCFD1BD2B12F001632BC /* ICSPatientsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCFC1BD2B12F001632BC /* ICSPatientsListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACD001BD2B245001632BC /* PatientsDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACCFF1BD2B245001632BC /* PatientsDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACD091BD2B34E001632BC /* DoctorInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD011BD2B34E001632BC /* DoctorInformationCell.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACD0A1BD2B34E001632BC /* ICSCustomRowDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD021BD2B34E001632BC /* ICSCustomRowDescriptor.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACD0B1BD2B34E001632BC /* CustomFormButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1ACD051BD2B34E001632BC /* CustomFormButtonCell.xib */; settings = {ASSET_TAGS = (); }; };
+		FA1ACD0C1BD2B34E001632BC /* CustomFormButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD061BD2B34E001632BC /* CustomFormButtonCell.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACD121BD2B3A0001632BC /* ICSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD111BD2B3A0001632BC /* ICSDataSource.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACD171BD2B3AD001632BC /* ICSModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD131BD2B3AD001632BC /* ICSModel.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		FA1ACD181BD2B3AD001632BC /* SharedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD161BD2B3AD001632BC /* SharedModel.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACD1B1BD2B3BB001632BC /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD1A1BD2B3BB001632BC /* RatingView.m */; settings = {ASSET_TAGS = (); }; };
+		FA1ACD1E1BD2BF26001632BC /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1ACD1D1BD2BF26001632BC /* Event+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		FA55FE081BCE4463004BCD2F /* DiagnosisFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55FE071BCE4463004BCD2F /* DiagnosisFormViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FA5853331BD79FEF0037EEC5 /* Form+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58532C1BD79FEF0037EEC5 /* Form+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		FA5853341BD79FEF0037EEC5 /* Form.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58532E1BD79FEF0037EEC5 /* Form.m */; settings = {ASSET_TAGS = (); }; };
+		FA5853351BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5853301BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		FA5853361BD79FEF0037EEC5 /* Cancer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5853321BD79FEF0037EEC5 /* Cancer.m */; settings = {ASSET_TAGS = (); }; };
+		FAA103F91BC64AEA00C6CEFC /* FullImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */; settings = {ASSET_TAGS = (); }; };
+		FAC9C94D1BD7BB14003FFA44 /* libPods-MBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC9C94C1BD7BB14003FFA44 /* libPods-MBProgressHUD.a */; };
+		FAD8E0831BD166D00010E975 /* ICSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0821BD166D00010E975 /* ICSHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FAD8E0901BD16B040010E975 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E08E1BD16B040010E975 /* Event.m */; settings = {ASSET_TAGS = (); }; };
+		FAD8E0951BD16C190010E975 /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0921BD16C190010E975 /* Question+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		FAD8E0961BD16C190010E975 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0941BD16C190010E975 /* Question.m */; settings = {ASSET_TAGS = (); }; };
+		FAD8E09F1BD16DC20010E975 /* Doctor+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E0981BD16DC20010E975 /* Doctor+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		FAD8E0A01BD16DC20010E975 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8E09A1BD16DC20010E975 /* Doctor.m */; settings = {ASSET_TAGS = (); }; };
 		FAECE1161BD258B300A6BFED /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE10F1BD2588D00A6BFED /* libRestKit.a */; };
 		FAECE1181BD259A400A6BFED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE1171BD259A400A6BFED /* CoreData.framework */; };
 		FAECE11A1BD259AA00A6BFED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECE1191BD259AA00A6BFED /* Security.framework */; };
@@ -172,8 +216,16 @@
 		4A0460621BDE9E32005BCA2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginSignUp.storyboard; sourceTree = "<group>"; };
 		4A07C9971BE3824500E1CB5F /* NSDate+ICSFormattedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ICSFormattedString.h"; sourceTree = "<group>"; };
 		4A07C9981BE3824500E1CB5F /* NSDate+ICSFormattedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ICSFormattedString.m"; sourceTree = "<group>"; };
+		4A23A38E1BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "QuestionOptions+CoreDataProperties.h"; path = "Model/Entities/QuestionOptions+CoreDataProperties.h"; sourceTree = "<group>"; };
+		4A23A38F1BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "QuestionOptions+CoreDataProperties.m"; path = "Model/Entities/QuestionOptions+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4A23A3901BE5DA2A00620BD9 /* QuestionOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionOptions.h; path = Model/Entities/QuestionOptions.h; sourceTree = "<group>"; };
+		4A23A3911BE5DA2A00620BD9 /* QuestionOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionOptions.m; path = Model/Entities/QuestionOptions.m; sourceTree = "<group>"; };
 		4A6E56011BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSFloatLabeledTextFieldCell.h; path = Cells/ICSFloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
 		4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSFloatLabeledTextFieldCell.m; path = Cells/ICSFloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
+		4A71C4DA1BE628BF003C8BE9 /* Patient+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Patient+CoreDataProperties.h"; path = "Model/Entities/Patient+CoreDataProperties.h"; sourceTree = "<group>"; };
+		4A71C4DB1BE628BF003C8BE9 /* Patient+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Patient+CoreDataProperties.m"; path = "Model/Entities/Patient+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4A71C4E01BE62994003C8BE9 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Entities/Patient.m; sourceTree = "<group>"; };
+		4AA604C11BE53CD300E501D8 /* QuestionsJasonData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionsJasonData.json; sourceTree = "<group>"; };
 		4AAF71161BE207AA00D9868F /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainWrapper.h; path = KeychainWrapper/KeychainWrapper.h; sourceTree = "<group>"; };
 		4AAF71171BE207AA00D9868F /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = KeychainWrapper/KeychainWrapper.m; sourceTree = "<group>"; };
 		4AAF711A1BE237B700D9868F /* ICSEntranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSEntranceViewController.h; path = LoginRegister/ICSEntranceViewController.h; sourceTree = "<group>"; };
@@ -182,8 +234,10 @@
 		4AAF711E1BE28B1400D9868F /* UIView+ICSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ICSAdditions.m"; sourceTree = "<group>"; };
 		4AC6E2D11BE0F5C6007D9F1D /* ICSMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ICSMain.storyboard; sourceTree = "<group>"; };
 		4AC6E2E01BE140F3007D9F1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		4ACF7C701BDA371E00FFE3B3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = LoginRegister/RegisterViewController.h; sourceTree = "<group>"; };
-		4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = LoginRegister/RegisterViewController.m; sourceTree = "<group>"; };
+		4ACF7C701BDA371E00FFE3B3 /* RegisterVolunteerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterVolunteerViewController.h; path = LoginRegister/RegisterVolunteerViewController.h; sourceTree = "<group>"; };
+		4ACF7C711BDA371E00FFE3B3 /* RegisterVolunteerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterVolunteerViewController.m; path = LoginRegister/RegisterVolunteerViewController.m; sourceTree = "<group>"; };
+		4AFB6ACD1BE4D413008AE13A /* PatientInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatientInformationViewController.h; path = PatientPersonalInfo/PatientInformationViewController.h; sourceTree = "<group>"; };
+		4AFB6ACE1BE4D413008AE13A /* PatientInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PatientInformationViewController.m; path = PatientPersonalInfo/PatientInformationViewController.m; sourceTree = "<group>"; };
 		793A7E32DFA657975E9804EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		994084B95641F268B490CD7C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA02CB5E1BC526C100421EAA /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
@@ -219,8 +273,8 @@
 		FA1ACD1A1BD2B3BB001632BC /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatingView.m; path = Views/RatingView.m; sourceTree = "<group>"; };
 		FA1ACD1C1BD2BF26001632BC /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Event+CoreDataProperties.h"; path = "Model/Entities/Event+CoreDataProperties.h"; sourceTree = "<group>"; };
 		FA1ACD1D1BD2BF26001632BC /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Event+CoreDataProperties.m"; path = "Model/Entities/Event+CoreDataProperties.m"; sourceTree = "<group>"; };
-		FA55FE061BCE4463004BCD2F /* PatientEatingHabitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientEatingHabitsViewController.h; sourceTree = "<group>"; };
-		FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientEatingHabitsViewController.m; sourceTree = "<group>"; };
+		FA55FE061BCE4463004BCD2F /* DiagnosisFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosisFormViewController.h; sourceTree = "<group>"; };
+		FA55FE071BCE4463004BCD2F /* DiagnosisFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosisFormViewController.m; sourceTree = "<group>"; };
 		FA5853261BD7936D0037EEC5 /* RestKitAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestKitAddition.h; path = Model/API/RestKitAddition.h; sourceTree = "<group>"; };
 		FA58532B1BD79FEF0037EEC5 /* Form+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Form+CoreDataProperties.h"; path = "Model/Entities/Form+CoreDataProperties.h"; sourceTree = "<group>"; };
 		FA58532C1BD79FEF0037EEC5 /* Form+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Form+CoreDataProperties.m"; path = "Model/Entities/Form+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -232,8 +286,6 @@
 		FA5853321BD79FEF0037EEC5 /* Cancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cancer.m; path = Model/Entities/Cancer.m; sourceTree = "<group>"; };
 		FAA103F71BC64AEA00C6CEFC /* FullImageContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullImageContainerView.h; path = Views/FullImageContainerView.h; sourceTree = "<group>"; };
 		FAA103F81BC64AEA00C6CEFC /* FullImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullImageContainerView.m; path = Views/FullImageContainerView.m; sourceTree = "<group>"; };
-		FAA5132C1BC7A8E2009A6D2E /* PatientInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientInformationViewController.h; sourceTree = "<group>"; };
-		FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientInformationViewController.m; sourceTree = "<group>"; };
 		FAC9C94C1BD7BB14003FFA44 /* libPods-MBProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-MBProgressHUD.a"; path = "Pods/build/Debug-iphoneos/libPods-MBProgressHUD.a"; sourceTree = "<group>"; };
 		FAD8E0811BD166D00010E975 /* ICSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSHomeViewController.h; path = Home/ICSHomeViewController.h; sourceTree = "<group>"; };
 		FAD8E0821BD166D00010E975 /* ICSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSHomeViewController.m; path = Home/ICSHomeViewController.m; sourceTree = "<group>"; };
@@ -247,10 +299,7 @@
 		FAD8E0981BD16DC20010E975 /* Doctor+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Doctor+CoreDataProperties.m"; path = "Model/Entities/Doctor+CoreDataProperties.m"; sourceTree = "<group>"; };
 		FAD8E0991BD16DC20010E975 /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Doctor.h; path = Model/Entities/Doctor.h; sourceTree = "<group>"; };
 		FAD8E09A1BD16DC20010E975 /* Doctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Doctor.m; path = Model/Entities/Doctor.m; sourceTree = "<group>"; };
-		FAD8E09B1BD16DC20010E975 /* Patient+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Patient+CoreDataProperties.h"; path = "Model/Entities/Patient+CoreDataProperties.h"; sourceTree = "<group>"; };
-		FAD8E09C1BD16DC20010E975 /* Patient+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Patient+CoreDataProperties.m"; path = "Model/Entities/Patient+CoreDataProperties.m"; sourceTree = "<group>"; };
 		FAD8E09D1BD16DC20010E975 /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = Model/Entities/Patient.h; sourceTree = "<group>"; };
-		FAD8E09E1BD16DC20010E975 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Entities/Patient.m; sourceTree = "<group>"; };
 		FAECE1071BD2588D00A6BFED /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ICS/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		FAECE1171BD259A400A6BFED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FAECE1191BD259AA00A6BFED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -307,18 +356,18 @@
 		3E43FA391BC40EA70021AE81 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4AFB6ACD1BE4D413008AE13A /* PatientInformationViewController.h */,
+				4AFB6ACE1BE4D413008AE13A /* PatientInformationViewController.m */,
 				FAFFC9E81BDA1DD3001DD25B /* LoginRegister */,
 				FA1ACCFA1BD2B0FC001632BC /* PatientsList */,
 				FAD8E0801BD166950010E975 /* Home */,
 				3E43FA561BC413880021AE81 /* Onboarding */,
 				FA02CB5E1BC526C100421EAA /* PhotoViewController.h */,
 				FA02CB5F1BC526C100421EAA /* PhotoViewController.m */,
-				FAA5132C1BC7A8E2009A6D2E /* PatientInformationViewController.h */,
-				FAA5132D1BC7A8E2009A6D2E /* PatientInformationViewController.m */,
 				3EBFA32E1BDEB626005B6AF4 /* DiagnosePictureViewController.h */,
 				3EBFA32F1BDEB626005B6AF4 /* DiagnosePictureViewController.m */,
-				FA55FE061BCE4463004BCD2F /* PatientEatingHabitsViewController.h */,
-				FA55FE071BCE4463004BCD2F /* PatientEatingHabitsViewController.m */,
+				FA55FE061BCE4463004BCD2F /* DiagnosisFormViewController.h */,
+				FA55FE071BCE4463004BCD2F /* DiagnosisFormViewController.m */,
 				3E64A5791BDEA9160008FFD5 /* PatientRegistrationViewController.h */,
 				3E64A57A1BDEA9160008FFD5 /* PatientRegistrationViewController.m */,
 				3EBFA3411BDF53B3005B6AF4 /* ScanIDProofViewController.h */,
@@ -411,6 +460,7 @@
 				3E43FA391BC40EA70021AE81 /* Controllers */,
 				FAFAAEB31BC680FF0053E659 /* Resources */,
 				3EACD9CC1BA9D053003E4540 /* Supporting Files */,
+				4AA604C11BE53CD300E501D8 /* QuestionsJasonData.json */,
 			);
 			path = ICS;
 			sourceTree = "<group>";
@@ -571,6 +621,14 @@
 		FAD8E08A1BD16AF40010E975 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				4A71C4E01BE62994003C8BE9 /* Patient.m */,
+				FAD8E09D1BD16DC20010E975 /* Patient.h */,
+				4A71C4DA1BE628BF003C8BE9 /* Patient+CoreDataProperties.h */,
+				4A71C4DB1BE628BF003C8BE9 /* Patient+CoreDataProperties.m */,
+				4A23A38E1BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.h */,
+				4A23A38F1BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.m */,
+				4A23A3901BE5DA2A00620BD9 /* QuestionOptions.h */,
+				4A23A3911BE5DA2A00620BD9 /* QuestionOptions.m */,
 				4A04605B1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.h */,
 				4A04605C1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m */,
 				4A04605D1BDE3DBE005BCA2C /* Volunteer.h */,
@@ -587,10 +645,6 @@
 				FAD8E0981BD16DC20010E975 /* Doctor+CoreDataProperties.m */,
 				FAD8E0991BD16DC20010E975 /* Doctor.h */,
 				FAD8E09A1BD16DC20010E975 /* Doctor.m */,
-				FAD8E09B1BD16DC20010E975 /* Patient+CoreDataProperties.h */,
-				FAD8E09C1BD16DC20010E975 /* Patient+CoreDataProperties.m */,
-				FAD8E09D1BD16DC20010E975 /* Patient.h */,
-				FAD8E09E1BD16DC20010E975 /* Patient.m */,
 				FAD8E0911BD16C190010E975 /* Question+CoreDataProperties.h */,
 				FAD8E0921BD16C190010E975 /* Question+CoreDataProperties.m */,
 				FAD8E0931BD16C190010E975 /* Question.h */,
@@ -632,8 +686,8 @@
 			children = (
 				FAFFC9F31BDA20E6001DD25B /* LoginViewController.h */,
 				FAFFC9F41BDA20E6001DD25B /* LoginViewController.m */,
-				4ACF7C701BDA371E00FFE3B3 /* RegisterViewController.h */,
-				4ACF7C711BDA371E00FFE3B3 /* RegisterViewController.m */,
+				4ACF7C701BDA371E00FFE3B3 /* RegisterVolunteerViewController.h */,
+				4ACF7C711BDA371E00FFE3B3 /* RegisterVolunteerViewController.m */,
 				4AAF711A1BE237B700D9868F /* ICSEntranceViewController.h */,
 				4AAF711B1BE237B700D9868F /* ICSEntranceViewController.m */,
 			);
@@ -764,6 +818,7 @@
 			files = (
 				FA1ACD0B1BD2B34E001632BC /* CustomFormButtonCell.xib in Resources */,
 				4A0460631BDE9E32005BCA2C /* LoginSignUp.storyboard in Resources */,
+				4AA604C21BE53CD300E501D8 /* QuestionsJasonData.json in Resources */,
 				4AC6E2D31BE0F5C6007D9F1D /* ICSMain.storyboard in Resources */,
 				4AC6E2E11BE140F3007D9F1D /* Main.storyboard in Resources */,
 				FAFAAEB71BC681A30053E659 /* Images.xcassets in Resources */,
@@ -852,13 +907,14 @@
 				4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */,
 				FA1ACCFD1BD2B12F001632BC /* ICSPatientsListViewController.m in Sources */,
 				FAD8E09F1BD16DC20010E975 /* Doctor+CoreDataProperties.m in Sources */,
-				FA55FE081BCE4463004BCD2F /* PatientEatingHabitsViewController.m in Sources */,
+				FA55FE081BCE4463004BCD2F /* DiagnosisFormViewController.m in Sources */,
 				FA1ACD1B1BD2B3BB001632BC /* RatingView.m in Sources */,
 				4A04605F1BDE3DBE005BCA2C /* Volunteer+CoreDataProperties.m in Sources */,
 				FAD8E0831BD166D00010E975 /* ICSHomeViewController.m in Sources */,
 				FAFFC9F51BDA20E6001DD25B /* LoginViewController.m in Sources */,
+				4A71C4E11BE62994003C8BE9 /* Patient.m in Sources */,
 				FA1ACD091BD2B34E001632BC /* DoctorInformationCell.m in Sources */,
-				FAD8E0A11BD16DC20010E975 /* Patient+CoreDataProperties.m in Sources */,
+				4AFB6ACF1BE4D413008AE13A /* PatientInformationViewController.m in Sources */,
 				FA5853351BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m in Sources */,
 				3EBFA3301BDEB626005B6AF4 /* DiagnosePictureViewController.m in Sources */,
 				3EBFA34F1BDF6DEC005B6AF4 /* WalkthroughViewController.m in Sources */,
@@ -871,21 +927,21 @@
 				FA1ACCF61BD29F13001632BC /* ICSAPIError.m in Sources */,
 				4AAF711F1BE28B1400D9868F /* UIView+ICSAdditions.m in Sources */,
 				FAD8E0951BD16C190010E975 /* Question+CoreDataProperties.m in Sources */,
-				FAD8E0A21BD16DC20010E975 /* Patient.m in Sources */,
 				4AAF71181BE207AA00D9868F /* KeychainWrapper.m in Sources */,
+				4A71C4DD1BE628BF003C8BE9 /* Patient+CoreDataProperties.m in Sources */,
 				FA1ACD0C1BD2B34E001632BC /* CustomFormButtonCell.m in Sources */,
 				FAD8E0961BD16C190010E975 /* Question.m in Sources */,
 				3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */,
 				FA1ACD001BD2B245001632BC /* PatientsDetailTableViewCell.m in Sources */,
 				3E43FA551BC4108E0021AE81 /* Reachability.m in Sources */,
 				FA1ACD0A1BD2B34E001632BC /* ICSCustomRowDescriptor.m in Sources */,
-				4ACF7C721BDA371E00FFE3B3 /* RegisterViewController.m in Sources */,
+				4ACF7C721BDA371E00FFE3B3 /* RegisterVolunteerViewController.m in Sources */,
 				FA5853361BD79FEF0037EEC5 /* Cancer.m in Sources */,
 				FA1ACD121BD2B3A0001632BC /* ICSDataSource.m in Sources */,
 				3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */,
 				FA1ACD181BD2B3AD001632BC /* SharedModel.m in Sources */,
-				FAA5132E1BC7A8E2009A6D2E /* PatientInformationViewController.m in Sources */,
 				FA1ACD1E1BD2BF26001632BC /* Event+CoreDataProperties.m in Sources */,
+				4A23A3941BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.m in Sources */,
 				FAD8E0A01BD16DC20010E975 /* Doctor.m in Sources */,
 				3EACD9D21BA9D053003E4540 /* AppDelegate.m in Sources */,
 				3E43FA5C1BC413AD0021AE81 /* VolunteerSignUpViewController.m in Sources */,
@@ -896,6 +952,7 @@
 				FA1ACCF91BD2AEDC001632BC /* EventDetailTableViewCell.m in Sources */,
 				4A0460601BDE3DBE005BCA2C /* Volunteer.m in Sources */,
 				4AAF711C1BE237B700D9868F /* ICSEntranceViewController.m in Sources */,
+				4A23A3951BE5DA2A00620BD9 /* QuestionOptions.m in Sources */,
 				FA1ACCF01BD27064001632BC /* APIInterface.m in Sources */,
 				FA02CB601BC526C100421EAA /* PhotoViewController.m in Sources */,
 				3EACD9CF1BA9D053003E4540 /* main.m in Sources */,

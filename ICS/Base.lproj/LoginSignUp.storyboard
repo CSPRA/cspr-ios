@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Register View Controller-->
+        <!--Register Volunteer View Controller-->
         <scene sceneID="8IH-Oe-OfY">
             <objects>
-                <viewController storyboardIdentifier="RegisterVCIdentifier" id="XeE-lG-CVa" customClass="RegisterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterVCIdentifier" id="XeE-lG-CVa" customClass="RegisterVolunteerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YVK-6q-Mnk"/>
                         <viewControllerLayoutGuide type="bottom" id="rnF-pP-Sb9"/>

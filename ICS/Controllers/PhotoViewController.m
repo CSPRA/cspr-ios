@@ -345,7 +345,7 @@ FullImageContainerViewDelegate
 }
 
 - (IBAction)extendDiagnosisButtonTapped:(id)sender {
-    UIViewController *patientHabitsVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientHabitsVCIdentifier];
+    UIViewController *patientHabitsVC = [self.storyboard instantiateViewControllerWithIdentifier:kDiagnosisFormVCIdentifier];
     [self.navigationController pushViewController:patientHabitsVC animated:YES];
 }
 

@@ -34,6 +34,8 @@
   // Enable Restkit Logs
   //RKLogConfigureByName("*", RKLogLevelTrace);
   // Create a new model using the coredata model file
+  [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+
   NSManagedObjectModel *objectModel = [[NSManagedObjectModel alloc]
                                        initWithContentsOfURL:kModelURL];
   // Create a new shared model using the API Base URL
@@ -91,7 +93,19 @@
   [[RKObjectManager sharedManager] addResponseDescriptor:eventResponseDiscriptor];
   
   //Mapping for patient
+  RKEntityMapping *patientMapping = [Patient restkitObjectMappingForStore:store];
+  RKResponseDescriptor *patientDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:patientMapping pathPattern:kPatientRegisterPath
+                                              keyPath:@"result"
+                                          statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:patientDescriptor];
   
+  patientDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:patientMapping
+                                                               pathPattern:kPatientRegisterPath
+                                                                   keyPath:@"error"
+                                                               statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:patientDescriptor];
+
   //Mapping for volunteer
   RKEntityMapping *volunteerMapping = [Volunteer restkitObjectMappingForStore:store];
   RKResponseDescriptor *volunteerResponseDescriptor =
@@ -112,6 +126,47 @@
   RKResponseDescriptor *loginError =
   [RKResponseDescriptor responseDescriptorWithMapping:volunteerMapping pathPattern:kVolunteerLoginPath keyPath:@"Error" statusCodes:successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:loginError];
+  
+  //Mapping for questions
+  RKEntityMapping *questionsMapping = [Question restkitObjectMappingForStore:store];
+  RKResponseDescriptor *questionDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:questionsMapping pathPattern:kFetchQuestionsPath
+                                              keyPath:@"sections"
+                                          statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
+  
+  RKEntityMapping *questionsError = [Question restkitObjectMappingForStore:store];
+  questionDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:questionsError
+                                                               pathPattern:kFetchQuestionsPath keyPath:@"error"
+                                                               statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
+  
+}
+
+- (void)setupMappingWithPath:(NSString*)path {
+  //Mapping for questions
+  RKEntityMapping *questionsMapping = [Question restkitObjectMappingForStore:[RKObjectManager sharedManager].managedObjectStore];
+  RKResponseDescriptor *questionDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:questionsMapping pathPattern:path
+                                              keyPath:@"sections"
+                                          statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+  [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
+  
+  RKEntityMapping *questionsError = [Question restkitObjectMappingForStore:[RKObjectManager sharedManager].managedObjectStore];
+  questionDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:questionsError
+                                                               pathPattern:path keyPath:@"error"
+                                                               statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+  [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
+}
+
+- (NSError*)saveContext {
+  NSManagedObjectContext *managedObjCtx = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
+  NSError *executeError = nil;
+  if(![managedObjCtx saveToPersistentStore:&executeError]) {
+    NSLog(@"Failed to save to data store");
+    return executeError;
+  }
+  return nil;
 }
 
 @end
