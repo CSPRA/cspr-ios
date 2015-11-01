@@ -70,6 +70,7 @@
 #define kPhotoVCIdentifier                  @"PhotoVCIdentifier"
 #define kCameraVCIdentifier                 @"CamVCIdentifier"
 #define kScanIDProofVCIdentifier            @"ScanIDProofVCIdentifier"
+#define kassignDoctorVCIdentifier           @"assignDoctorVCIdentifier"
 
 // API Paths
 #define kVolunteerRegisterPath              @"/volunteer/register"

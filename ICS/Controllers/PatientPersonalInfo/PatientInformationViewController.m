@@ -321,47 +321,9 @@ static NSString *const kAddEmail          = @"Add Email";
    row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
  
-  
-  //    row = [XLFormRowDescriptor formRowDescriptorWithTag:kAssignDoctor rowType:XLFormRowDescriptorTypeCustomButton title:kAssignDoctor];
-  //    row.value = kButtonTypeAssignDoctor;
-  //    row.action.formSelector = @selector(didTappedAssignDoctor:);
-  //    [section addFormRow:row];
-  
   self.form = _PatientInfoForm;
 }
 
-
-#pragma mark - Handling assign doctors section
-
-- (void)addDoctorInfoCell:(Doctor*)doctor section:(XLFormSectionDescriptor*)section {
-//  XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Rating"];
-//  NSDictionary *value =[NSDictionary dictionaryWithObjects:@[doctor,self] forKeys:@[@"doctorInfo",@"delegateInfo"]];
-//  row.value = value;
-//  [section addFormRow:row];
-}
-
-- (void)addAssignDoctorSectionWithDoctorList:(NSArray*)doctorsArray {
-  
-  XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@"Assign Doctor From List"];
-//  section.hidden = [NSString stringWithFormat:@"$%@==0", khidesection];
-  [self.form addFormSection:section];
-  [doctorsArray enumerateObjectsUsingBlock:^(Doctor *doctor, NSUInteger idx, BOOL * _Nonnull stop) {
-    [self addDoctorInfoCell:doctor section:section];
-  }];
-  
-}
-
-- (void)didTappedAssignDoctor:(XLFormRowDescriptor*)sender {
-  NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-  [param setObject:_token forKey:@"token"];
-  [param setObject:self.formValues forKey:@"formValues"];
-  
-}
-
-#pragma DoctorInformationCellDelegate
-- (void)didAssignedDoctor:(DoctorInformationCell *)cell {
-  NSLog(@"doctor assigned %@",cell.nameLabel.text);
-}
 
 #pragma mark - IBAction Methods
 - (IBAction)submitTapped:(id)sender {

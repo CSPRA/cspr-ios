@@ -23,10 +23,7 @@ static NSString *const kConsumeAlcohal = @"ConsumeAlcohal";
 static NSString *const kConsumePanMasala = @"Consume Pan Masala";
 static NSString *const kAddOtherAdiction = @"Add Other Adiction";
 static NSString *const kMedicalHistory = @"Medical History";
-static NSString *const kDoctorBasicInfo = @"Doctor Basic Info";
-static NSString *const kAssignDoctor = @"Assign Doctor";
-static NSString * const kCustomRowFirstRatingTag = @"CustomRowFirstRatingTag";
-static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
+
 
 NSString *const kTag1 = @"tag1";
 NSString *const kTag2 = @"tag2";
@@ -102,23 +99,6 @@ NSString *const kTag3 = @"tag3";
     row.value = @0;
     [eatingHabitSection addFormRow:row];
     [form addFormSection:eatingHabitSection afterSection:smokingQuestionsSection];
-    
-//    XLFormSectionDescriptor *eatingHabitQues = [self initializeSmokingQuestionSection:[self.questionsArray objectAtIndex:1]];
-//    eatingHabitSection.hidden = [NSString stringWithFormat:@"$%@==0", kTag2];
-//    [form addFormSection:eatingHabitQues afterSection:eatingHabitSection];
-//    
-//    
-//    XLFormSectionDescriptor *medicalHistory = [XLFormSectionDescriptor formSection];
-//    [form addFormSection:medicalHistory];
-//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTag3 rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"Medical History"];
-//    row.value = @0;
-//    [medicalHistory addFormRow:row];
-//    [form addFormSection:medicalHistory afterSection:eatingHabitQues];
-//    
-//    XLFormSectionDescriptor *medicalHistoryQues = [self initializeSmokingQuestionSection:[self.questionsArray objectAtIndex:1]];
-//    medicalHistoryQues.hidden = [NSString stringWithFormat:@"$%@==0", kTag3];
-//    [form addFormSection:medicalHistoryQues afterSection:medicalHistory];
-    
     return form;
   }
 
