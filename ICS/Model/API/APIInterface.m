@@ -141,6 +141,22 @@
                                                                statusCodes:successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:questionDescriptor];
   
+  //Mapping for fetching doctor's list
+  RKEntityMapping *doctorMapping = [Doctor restkitObjectMappingForStore:store];
+  RKResponseDescriptor *doctorDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:doctorMapping
+                                          pathPattern:kFetchDoctorsListPath
+                                              keyPath:@"result"
+                                          statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:doctorDescriptor];
+  
+  RKEntityMapping *doctorError = [Doctor restkitObjectMappingForStore:store];
+  doctorDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:doctorError
+                                                               pathPattern:kFetchDoctorsListPath
+                                                                 keyPath:@"error"
+                                                               statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:doctorDescriptor];
+  
 }
 
 - (void)setupMappingWithPath:(NSString*)path {

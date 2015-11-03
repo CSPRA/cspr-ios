@@ -35,6 +35,7 @@
 		4A07C9991BE3824500E1CB5F /* NSDate+ICSFormattedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C9981BE3824500E1CB5F /* NSDate+ICSFormattedString.m */; settings = {ASSET_TAGS = (); }; };
 		4A23A3941BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A38F1BE5DA2A00620BD9 /* QuestionOptions+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		4A23A3951BE5DA2A00620BD9 /* QuestionOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A3911BE5DA2A00620BD9 /* QuestionOptions.m */; settings = {ASSET_TAGS = (); }; };
+		4A28DBA51BE8BEF400A5D245 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02CB631BC52B6500421EAA /* PhotoCollectionViewCell.m */; };
 		4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E56021BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m */; settings = {ASSET_TAGS = (); }; };
 		4A71C4DD1BE628BF003C8BE9 /* Patient+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71C4DB1BE628BF003C8BE9 /* Patient+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		4A71C4E11BE62994003C8BE9 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71C4E01BE62994003C8BE9 /* Patient.m */; settings = {ASSET_TAGS = (); }; };
@@ -867,6 +868,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A28DBA51BE8BEF400A5D245 /* PhotoCollectionViewCell.m in Sources */,
 				4A07C9991BE3824500E1CB5F /* NSDate+ICSFormattedString.m in Sources */,
 				4A6E56031BDCB94800E72EBD /* ICSFloatLabeledTextFieldCell.m in Sources */,
 				FA1ACCFD1BD2B12F001632BC /* ICSPatientsListViewController.m in Sources */,

@@ -14,42 +14,60 @@ static NSString * const kCustomRowFirstRatingTag = @"CustomRowFirstRatingTag";
 static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
 
 @interface DoctorsListViewController ()
-
+@property (nonatomic,strong) NSArray *doctorsList;
 @end
 
 @implementation DoctorsListViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-//  [self initialSetup];
+  [self initialSetup];
 }
+
+
 -(void)initializeForm
 {
   XLFormDescriptor * form = [XLFormDescriptor formDescriptorWithTitle:@"Doctors"];
-  XLFormSectionDescriptor * section;
-  XLFormRowDescriptor * row;
-  
-  // Section Ratings
-  section = [XLFormSectionDescriptor formSectionWithTitle:@"Ratings"];
+  XLFormSectionDescriptor * section = [XLFormSectionDescriptor formSection];
+  [self.doctorsList enumerateObjectsUsingBlock:^(Doctor *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self addDoctorInfoCell:obj section:section];
+  }];
   [form addFormSection:section];
-  
-  row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"First Rating"];
-  row.value = @(3);
-  [section addFormRow:row];
-  
-  row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowSecondRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Second Rating"];
-  row.value = @(1);
-  [section addFormRow:row];
-  
-   self.form = form;
+  self.form = form;
+//  // Section Ratings
+//  section = [XLFormSectionDescriptor formSectionWithTitle:@"Ratings"];
+//  [form addFormSection:section];
+//  
+//  row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"First Rating"];
+//  row.value = @(3);
+//  [section addFormRow:row];
+//  
+//  row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowSecondRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Second Rating"];
+//  row.value = @(1);
+//  [section addFormRow:row];
+//  
+//   self.form = form;
 }
-
 
 
 - (void)initialSetup {
-  [self initializeForm];
+  [self fetchDoctorsList];
 }
-
+- (void)fetchDoctorsList {
+  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+  [kDataSource fetchDoctorsWithToken:_token completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
+    if (success) {
+      self.doctorsList = [result objectForKey:@"result"];
+    }else if (error){
+//      NSString *message = [NSString stringWithUTF8String:@"%@",&error];
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+      [alert show];
+    }
+    [self initializeForm];
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+  }];
+  
+}
 #pragma mark - Handling assign doctors section
 
 - (void)addDoctorInfoCell:(Doctor*)doctor section:(XLFormSectionDescriptor*)section {

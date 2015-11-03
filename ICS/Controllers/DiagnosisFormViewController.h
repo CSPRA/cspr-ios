@@ -9,6 +9,6 @@
 #import "XLFormViewController.h"
 
 @interface DiagnosisFormViewController : XLFormViewController
-@property (nonatomic, strong) NSNumber *formId;
+@property (nonatomic, strong) Form *icsForm;
 @property (nonatomic, strong) NSString *token;
 @end

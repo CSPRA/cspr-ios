@@ -14,6 +14,7 @@
 #import "UIView+ICSAdditions.h"
 #import <XLForm/XLFormTextFieldCell.h>
 #import "DiagnosisFormViewController.h"
+#import "DoctorsListViewController.h"
 
 static NSString *const kFullNameTag       = @"Full Name";
 static NSString *const kDOBTag            = @"Date of birth";
@@ -106,12 +107,16 @@ static NSString *const kAddEmail          = @"Add Email";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   
   UITabBarController * vc = [segue destinationViewController];
-  if ([[vc.childViewControllers objectAtIndex:0] isKindOfClass:([DiagnosisFormViewController class])]) {
-    DiagnosisFormViewController *diagnosisFormVC = [vc.childViewControllers objectAtIndex:0];
-    diagnosisFormVC.formId = _formId;
-    diagnosisFormVC.token = _token;
-  }
-  
+  [vc.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    if ([obj isKindOfClass:[DiagnosisFormViewController class]]) {
+      DiagnosisFormViewController *vc = obj;
+      vc.icsForm = _event.form;
+    }
+    else if ([obj isKindOfClass:[DoctorsListViewController class]]) {
+      DoctorsListViewController *vc = obj;
+      vc.token = _token;
+    }
+  }];
 }
 
 #warning dummy data: remove when api integrated.
@@ -196,8 +201,8 @@ static NSString *const kAddEmail          = @"Add Email";
   XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:tag
                                                                    rowType:rowType
                                                                      title:title];
- 
-   row = [self customizationOFRow:row];
+  
+  row = [self customizationOFRow:row];
   if ([rowType isEqualToString:XLFormRowDescriptorTypeButton]) {
     row.action.formSelector = @selector(didTappedButtonRow:);
   }
@@ -209,7 +214,7 @@ static NSString *const kAddEmail          = @"Add Email";
 
 #pragma mark - form intialization
 - (void)setupForm {
- 
+  
   XLFormRowDescriptor *row;
   [_PatientInfoForm addFormSection:_section];
   
@@ -237,7 +242,7 @@ static NSString *const kAddEmail          = @"Add Email";
   row = [self addRowWithTag:kPhoneNumber
                     rowType:XLFormRowDescriptorTypePhone
                       title:kPhoneNumberTag];
-   row = [self layoutTextFieldCell:row];
+  row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
   
   row = [self addRowWithTag:kAddPhone
@@ -250,7 +255,7 @@ static NSString *const kAddEmail          = @"Add Email";
   row =  [self addRowWithTag:kEmail
                      rowType:XLFormRowDescriptorTypeEmail
                        title:kEmailTag];
-   row = [self layoutTextFieldCell:row];
+  row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
   
   row = [self addRowWithTag:kAddEmail
@@ -275,52 +280,52 @@ static NSString *const kAddEmail          = @"Add Email";
   row =  [self addRowWithTag:kAliveChildrenCount
                      rowType:XLFormRowDescriptorTypeNumber
                        title:kAliveChildTag];
-   row = [self layoutTextFieldCell:row];
+  row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
   
   row =  [self addRowWithTag:kDeceasedChildrenCount
                      rowType:XLFormRowDescriptorTypeNumber
                        title:kDeceasedChildTag];
-   row = [self layoutTextFieldCell:row];
+  row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
   
   row =  [self addRowWithTag:kOccupation
                      rowType:XLFormRowDescriptorTypeText
                        title:kOccuptionTag];
-   row = [self layoutTextFieldCell:row];
+  row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
   
   row =  [self addRowWithTag:kAnnualIncome
                      rowType:XLFormRowDescriptorTypeNumber
                        title:kAnnualIncomeTag];
-   row = [self layoutTextFieldCell:row];
+  row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
   
   row =  [self addRowWithTag:kEducation
                      rowType:XLFormRowDescriptorTypeText
                        title:kEducationTag];
-   row = [self layoutTextFieldCell:row];
+  row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
   
   
   row =  [self addRowWithTag:kReligion
                      rowType:XLFormRowDescriptorTypeText
                        title:kReligionTag];
-   row = [self layoutTextFieldCell:row];
+  row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
   
   row = [self addRowWithTag:kVoterId
                     rowType:XLFormRowDescriptorTypeText
                       title:kVoterIdTag];
-   row = [self layoutTextFieldCell:row];
+  row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
   
   row = [self addRowWithTag:kAdharId
                     rowType:XLFormRowDescriptorTypeText
                       title:kAdharIdTag];
-   row = [self layoutTextFieldCell:row];
+  row = [self layoutTextFieldCell:row];
   [_section addFormRow:row];
- 
+  
   self.form = _PatientInfoForm;
 }
 
@@ -338,7 +343,7 @@ static NSString *const kAddEmail          = @"Add Email";
     else if (error ) {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Patient information not saved." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
       [alert show];
-
+      
     }
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
   }];

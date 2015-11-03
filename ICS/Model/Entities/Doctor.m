@@ -19,11 +19,14 @@
                                                         inManagedObjectStore:store];
   [doctorMapping setIdentificationAttributes:@[@"doctorId"]];
   [doctorMapping addAttributeMappingsFromDictionary:@{
-                                                       @"doctorId": @"doctorId",
-                                                       @"firstName": @"firstName",
-                                                       @"lastName": @"lastName",
-                                                       @"contactNumber": @"phoneNumber",
-                                                       }];
+                                                      kDoctorID: @"doctorId",
+                                                      kFirstName: @"firstName",
+                                                      kLastName: @"lastName",
+                                                      kPhoneNumber: @"phoneNumber",
+                                                      kRating: @"ratingValue",
+                                                      kSpecialization: @"specialization",
+                                                      kLocation: @"address"
+                                                      }];
   return doctorMapping;
 }
 @end

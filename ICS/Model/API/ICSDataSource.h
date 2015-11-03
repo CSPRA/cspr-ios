@@ -78,4 +78,7 @@ typedef void (^ICSApiInterfaceBlock)(BOOL success,
 - (void)fetchDiagnosisQuestions: (NSNumber*)formId
                           token: (NSString*)token
                 completionBlock: (ICSApiInterfaceBlock)block;
+
+- (void)fetchDoctorsWithToken: (NSString*)token
+              completionBlock: (ICSApiInterfaceBlock)block;
 @end

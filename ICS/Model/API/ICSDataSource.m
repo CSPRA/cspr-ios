@@ -92,6 +92,17 @@
   }];
 }
 
+- (void)fetchDoctorsWithToken:(NSString *)token completionBlock:(ICSApiInterfaceBlock)block {
+  NSDictionary *params = @{
+                           @"token": token
+                           };
+  [[RKObjectManager sharedManager] getObjectsAtPath:kFetchDoctorsListPath parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    block(YES, [mappingResult dictionary], nil);
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    block(NO, nil, error);
+  }];
+}
+
 - (void)registerPatientWithParameters:(NSDictionary *)paramenters
                                 token:(NSString*)token
                       completionBlock:(ICSApiInterfaceBlock)block {

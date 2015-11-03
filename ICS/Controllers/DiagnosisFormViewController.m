@@ -11,6 +11,7 @@
 #import "XLForm.h"
 #import "UIView+ICSAdditions.h"
 #import "Question.h"
+#import "Form.h"
 
 static NSString * const kQuestionTypeSingleChoice = @"single choice";
 static NSString * const kQuestionTypeText = @"text";
@@ -62,8 +63,8 @@ NSString *const kTag3 = @"tag3";
 #pragma mark -API call
 - (void)fetchDiagnosisQuestions {
   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-  [kDataSource fetchDiagnosisQuestions:_formId
-                                 token:_token
+  [kDataSource fetchDiagnosisQuestions: _icsForm.formId
+                                 token: _token
                        completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
                          if (success) {
                            self.sectionsArray = [result objectForKey:@"sections"];

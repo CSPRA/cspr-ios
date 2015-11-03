@@ -134,4 +134,9 @@
 #define kOptionGroupId          @"groupId"
 #define kPatientId              @"patientId"
 #define kRegisteredBy           @"registeredBy"
+#define kDoctorID               @"id"
+#define kSpecialization         @"specialization"
+#define kLocation               @"location"
+#define kRating                 @"rating"
+
 
