@@ -8,10 +8,15 @@
 
 #import "DoctorsListViewController.h"
 #import "DoctorInformationCell.h"
+#import <XLForm/XLForm.h>
+#import "ICSUtilities.h"
+#import "UIView+ICSAdditions.h"
+
 static NSString *const kDoctorBasicInfo = @"Doctor Basic Info";
 static NSString *const kAssignDoctor = @"Assign Doctor";
 static NSString * const kCustomRowFirstRatingTag = @"CustomRowFirstRatingTag";
 static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
+static NSInteger const kCellHieght = 140.0;
 
 @interface DoctorsListViewController ()
 @property (nonatomic,strong) NSArray *doctorsList;
@@ -34,24 +39,20 @@ static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
   }];
   [form addFormSection:section];
   self.form = form;
-//  // Section Ratings
-//  section = [XLFormSectionDescriptor formSectionWithTitle:@"Ratings"];
-//  [form addFormSection:section];
-//  
-//  row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"First Rating"];
-//  row.value = @(3);
-//  [section addFormRow:row];
-//  
-//  row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowSecondRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Second Rating"];
-//  row.value = @(1);
-//  [section addFormRow:row];
-//  
-//   self.form = form;
 }
 
 
 - (void)initialSetup {
-  [self fetchDoctorsList];
+  [self.view ICSViewBackgroungColor];
+  self.tableView.backgroundColor = [UIColor clearColor];
+  self.tableView.allowsSelection = NO;
+  self.doctorsList = [kSharedModel fetchObjectsWithEntityName:kDoctorEntityName];
+  if(self.doctorsList){
+    [self initializeForm];
+  }
+  if (![ICSUtilities hasActiveConnection]) {
+    [self fetchDoctorsList];
+  }
 }
 - (void)fetchDoctorsList {
   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -59,7 +60,6 @@ static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
     if (success) {
       self.doctorsList = [result objectForKey:@"result"];
     }else if (error){
-//      NSString *message = [NSString stringWithUTF8String:@"%@",&error];
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
       [alert show];
     }
@@ -71,16 +71,15 @@ static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
 #pragma mark - Handling assign doctors section
 
 - (void)addDoctorInfoCell:(Doctor*)doctor section:(XLFormSectionDescriptor*)section {
-    XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Rating"];
-    NSDictionary *value =[NSDictionary dictionaryWithObjects:@[doctor,self] forKeys:@[@"doctorInfo",@"delegateInfo"]];
-    row.value = value;
-    [section addFormRow:row];
+  XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Rating"];
+  NSDictionary *value =[NSDictionary dictionaryWithObjects:@[doctor,self] forKeys:@[@"doctorInfo",@"delegateInfo"]];
+  row.value = value;
+  [section addFormRow:row];
 }
 
 - (void)addAssignDoctorSectionWithDoctorList:(NSArray*)doctorsArray {
   
   XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@"Assign Doctor From List"];
-  //  section.hidden = [NSString stringWithFormat:@"$%@==0", khidesection];
   [self.form addFormSection:section];
   [doctorsArray enumerateObjectsUsingBlock:^(Doctor *doctor, NSUInteger idx, BOOL * _Nonnull stop) {
     [self addDoctorInfoCell:doctor section:section];
@@ -94,9 +93,24 @@ static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
   
 }
 
+#pragma mark - UITableViewCell delegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return kCellHieght;
+}
+
+
+
 #pragma DoctorInformationCellDelegate
 - (void)didAssignedDoctor:(DoctorInformationCell *)cell {
-  NSLog(@"doctor assigned %@",cell.nameLabel.text);
+    NSLog(@"doctor assigned %@",cell.doctor.firstName);
+  NSArray *visibleCells = [self.tableView visibleCells];
+  
+  [visibleCells enumerateObjectsUsingBlock:^(DoctorInformationCell *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [obj setSelected:NO];
+  }];
+  [cell setSelected:YES];
+  
 }
 
 

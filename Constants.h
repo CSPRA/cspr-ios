@@ -83,6 +83,7 @@
 #define kPostDoctorRatingPath               @"/doctor/rating"
 #define kPostDiagnosisResponsePath          @"/diagnosisResponses"
 #define kFetchQuestionsPath                 @"/queries"
+#define kGiveRatingPath                     @"/doctor/rating"
 
 //Mapping keys
 #define kEmail                  @"email"
@@ -138,5 +139,6 @@
 #define kSpecialization         @"specialization"
 #define kLocation               @"location"
 #define kRating                 @"rating"
-
+#define kRatingValue            @"ratingValue"
+#define kUserId                 @"userId"
 

@@ -14,6 +14,20 @@
   return (Doctor*)[kSharedModel fetchManagedObjectWithEntityName:kDoctorEntityName];
 }
 
++ (void)setupDoctorMapping:(NSString*)path {
+  RKEntityMapping *doctorMapping = [Doctor restkitObjectMappingForStore:[RKObjectManager sharedManager].managedObjectStore];
+  RKResponseDescriptor *doctorDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:doctorMapping pathPattern:path
+                                              keyPath:@"result"
+                                          statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+  [[RKObjectManager sharedManager] addResponseDescriptor:doctorDescriptor];
+  
+  doctorDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:doctorMapping
+                                                              pathPattern:path
+                                                                 keyPath:@"error"
+                                                              statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+  [[RKObjectManager sharedManager] addResponseDescriptor:doctorDescriptor];
+}
 + (RKEntityMapping*)restkitObjectMappingForStore:(RKManagedObjectStore *)store {
   RKEntityMapping *doctorMapping = [RKEntityMapping mappingForEntityForName:kDoctorEntityName
                                                         inManagedObjectStore:store];

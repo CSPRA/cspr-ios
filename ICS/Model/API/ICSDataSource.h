@@ -81,4 +81,8 @@ typedef void (^ICSApiInterfaceBlock)(BOOL success,
 
 - (void)fetchDoctorsWithToken: (NSString*)token
               completionBlock: (ICSApiInterfaceBlock)block;
+
+- (void)giveDoctorRating: (NSString*)token
+              parameters: (NSDictionary*)parameters
+         completionBlock: (ICSApiInterfaceBlock)block;
 @end

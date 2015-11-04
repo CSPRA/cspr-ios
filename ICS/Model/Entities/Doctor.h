@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Doctor : NSManagedObject<RestKitAdditions>
 
 - (Doctor*)fetchDoctor;
-
++ (void)setupDoctorMapping:(NSString*)path;
 @end
 
 NS_ASSUME_NONNULL_END

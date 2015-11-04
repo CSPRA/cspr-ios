@@ -15,11 +15,10 @@ extern NSString * const XLFormRowDescriptorTypeRate;
 
 @interface DoctorInformationCell : XLFormBaseCell
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *docInfoLabel;
-@property (weak, nonatomic) IBOutlet RatingView *ratingView;
 @property (weak, nonatomic) IBOutlet UIButton *assignButton;
+@property (strong, nonatomic) Doctor *doctor;
 @property (weak, nonatomic) id<DoctorInformationCellDelegate>delegate;
+
 @end
 
 

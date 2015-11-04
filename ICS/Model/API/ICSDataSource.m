@@ -97,6 +97,7 @@
                            @"token": token
                            };
   [[RKObjectManager sharedManager] getObjectsAtPath:kFetchDoctorsListPath parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [kSharedModel saveContext];
     block(YES, [mappingResult dictionary], nil);
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     block(NO, nil, error);
@@ -144,6 +145,21 @@
   }];
 }
 
+- (void)giveDoctorRating:(NSString *)token
+              parameters:(NSDictionary *)parameters
+         completionBlock:(ICSApiInterfaceBlock)block {
+  NSString *path = [NSString stringWithFormat:@"%@?token=%@",kGiveRatingPath,token];
+  [Doctor setupDoctorMapping:path];
+  [[RKObjectManager sharedManager] postObject:nil
+                                         path:path
+                                   parameters:parameters
+                                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                        block(YES, [mappingResult dictionary], nil);
+                                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                        block(NO, nil, error);
+                                      }];
+  
+}
 - (void)loginVolunteerWithEmail:(NSString *)email
                        password:(NSString *)password
                 completionBlock:(ICSApiInterfaceBlock)block {

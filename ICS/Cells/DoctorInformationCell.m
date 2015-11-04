@@ -13,7 +13,10 @@
 NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
 
 @interface DoctorInformationCell ()
-@property (nonatomic, strong) Doctor *doctor;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *docInfoLabel;
+@property (weak, nonatomic) IBOutlet RatingView *ratingView;
+
 @end
 
 @implementation DoctorInformationCell
@@ -39,7 +42,6 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
 - (void)update
 {
   [super update];
-  
   self.doctor = [self.rowDescriptor.value objectForKey:@"doctorInfo"];
   self.delegate = [self.rowDescriptor.value objectForKey:@"delegateInfo"];
   self.ratingView.value = self.doctor.ratingValue;
@@ -57,7 +59,25 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
 
 -(void)rateChanged:(RatingView *)ratingView
 {
-  _doctor.ratingValue = [NSNumber numberWithInt:ratingView.value].floatValue;
+//  _doctor.ratingValue = [NSNumber numberWithInt:ratingView.value].floatValue;
+  float ratingValue = [NSNumber numberWithInt:ratingView.value].floatValue;
+  Volunteer *volunteer = [Volunteer fetchVolunteer];
+  NSDictionary *params = @{
+                           kUserId      : volunteer.volunteerId,
+                           kRatingValue : @(ratingValue)
+                           };
+  [kDataSource giveDoctorRating:volunteer.token parameters:params completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
+    if (success) {
+      NSString *message = [NSString stringWithFormat:@"Doctor's rating updated to %f",_doctor.ratingValue];
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+      [alert show];
+    }else if (error){
+      NSString *message = @"Failed to update doctor's rating.";
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+      [alert show];
+    }
+    self.ratingView.value = self.doctor.ratingValue;
+  }];
 
 }
 
