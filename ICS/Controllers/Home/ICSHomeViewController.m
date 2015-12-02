@@ -82,6 +82,11 @@ UITableViewDataSource>
                           NSLog(@"%@",error);
                         }
                         [MBProgressHUD hideHUDForView:self.view animated:YES];
+						  if (!self.eventArray.count) {
+							  NSString * alertMessage = @"No event assigned to you. Please contact IT admin.";
+							  UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:alertMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+							  [alert show];
+						  }
                       }];
 }
 

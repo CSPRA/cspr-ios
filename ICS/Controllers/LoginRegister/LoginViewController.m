@@ -21,76 +21,79 @@
 
 #pragma mark - View life cycle
 - (void)viewDidLoad {
-    [super viewDidLoad];
-  [self.navigationController.navigationBar setHidden:NO];
-  [self addObservers];
-  self.scrollView.scrollEnabled = NO;
-  [self.usernameField becomeFirstResponder];
-    // Do any additional setup after loading the view.
+	[super viewDidLoad];
+	[self.navigationController.navigationBar setHidden:NO];
+	[self addObservers];
+	self.scrollView.scrollEnabled = NO;
+	[self.usernameField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
 }
 - (IBAction)forgotPwdClicked:(id)sender {
-    
-    NSString * alertMessage = @"Please contact IT admin with your email address.";
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:alertMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-    [alert show];
+	NSString * alertMessage = @"Please contact IT admin with your email address.";
+	UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:alertMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+	[alert show];
 }
 
 #pragma mark Observer and keyborad notification handling
 - (void)addObservers {
-  self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self.scrollView action:@selector(endViewEditing:)];
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(keyboardWillHide:)
-                                               name:UIKeyboardWillHideNotification
-                                             object:nil];
-  [[NSNotificationCenter defaultCenter]addObserver:self
-                                          selector:@selector(keyboardWillShow:)
-                                              name:UIKeyboardWillShowNotification
-                                            object:nil];
-  
+	self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self.scrollView action:@selector(endViewEditing:)];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(keyboardWillHide:)
+												 name:UIKeyboardWillHideNotification
+											   object:nil];
+	[[NSNotificationCenter defaultCenter]addObserver:self
+											selector:@selector(keyboardWillShow:)
+												name:UIKeyboardWillShowNotification
+											  object:nil];
+
 }
+
 - (void)keyboardWillHide: (NSNotification*)notification{
-  self.scrollView.scrollEnabled = NO;
-  [self.scrollView setContentOffset:CGPointZero animated:YES];
+	self.scrollView.scrollEnabled = NO;
+	[self.scrollView setContentOffset:CGPointZero animated:YES];
+	
 }
 
 - (void)keyboardWillShow: (NSNotification*)notification{
-  self.scrollView.scrollEnabled = YES;
-  NSDictionary *userInfo = [notification userInfo];
-  CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-  CGSize size = self.scrollView.contentSize;
-  size.height = 100+kbSize.height;
-  self.scrollView.contentSize = size;
+	self.scrollView.scrollEnabled = YES;
+	NSDictionary *userInfo = [notification userInfo];
+	CGSize kbSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+
+	CGSize size = self.scrollView.contentSize;
+	size.height = 100+kbSize.height;
+	size.width = self.view.bounds.size.width;
+	self.scrollView.contentSize = size;
 }
 
 - (void)endViewEditing: (UITapGestureRecognizer*)sender {
-  [self.scrollView endEditing:YES];
+	[self.scrollView endEditing:YES];
 }
 
 
 #pragma mark - IBActions
 - (IBAction)signInButton:(UIButton *)sender {
-  
-  [kDataSource loginVolunteerWithEmail:self.usernameField.text password:self.passwordField.text completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
-    if (success) {
-      UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-      [self presentViewController:[mainStoryboard instantiateInitialViewController]
-                         animated:YES
-                       completion:nil] ;
-    }
-    else if (error){
-      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                      message:@"Invalid credentials"
-                                                     delegate:self
-                                            cancelButtonTitle:@"OK"
-                                            otherButtonTitles:nil, nil];
-      [alert show];
-    }
-  }];
+	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+	[kDataSource loginVolunteerWithEmail:self.usernameField.text password:self.passwordField.text completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
+		[MBProgressHUD hideHUDForView:self.view animated:YES];
+		if (success) {
+			UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+			[self presentViewController:[mainStoryboard instantiateInitialViewController]
+							   animated:YES
+							 completion:nil] ;
+		}
+		else if (error){
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+															message:@"Invalid credentials"
+														   delegate:self
+												  cancelButtonTitle:@"OK"
+												  otherButtonTitles:nil, nil];
+			[alert show];
+		}
+	}];
 }
 
 
@@ -105,14 +108,14 @@
 //}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-  if ([textField isEqual:_usernameField]) {
-    [_passwordField becomeFirstResponder];
-  }
-  else{
-    [_passwordField resignFirstResponder];
-//    [self signInButton:Nil];
-  }
-  return YES;
+	if ([textField isEqual:_usernameField]) {
+		[_passwordField becomeFirstResponder];
+	}
+	else{
+		[_passwordField resignFirstResponder];
+		//    [self signInButton:Nil];
+	}
+	return YES;
 }
 
 

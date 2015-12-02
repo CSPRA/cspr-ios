@@ -65,7 +65,7 @@ UIAlertViewDelegate>
 
 - (void)initialSetup {
   if (!self.patientListArray) {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"oops!!"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                     message:@"No patient registered yet."
                                                    delegate:self
                                           cancelButtonTitle:@"Cancel"
@@ -114,15 +114,13 @@ UIAlertViewDelegate>
  
 }
 - (void)showPatientInfoViewControllerAtIndexPath:(NSIndexPath *)indexPath {
-//  UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//  UITabBarController *tabBarController = [mainStoryboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
-//  PatientInformationViewController *patientRegisterationVC = [[tabBarController childViewControllers] objectAtIndex:1];
-//  Patient *patient = [self.patientListArray objectAtIndex:indexPath.row];
-//  if (patient) {
-//    patientRegisterationVC.pId = [NSNumber numberWithLongLong:patient.patientId];
-//  }
-//  patientRegisterationVC.token = _token;
-//  [self.navigationController pushViewController:tabBarController animated:YES];
+  PatientInformationViewController *patientRegisterationVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientInfoVCIndetifier];
+  Patient *patient = [self.patientListArray objectAtIndex:indexPath.row];
+  if (patient) {
+    patientRegisterationVC.pId = [NSNumber numberWithLongLong:patient.patientId];
+  }
+  patientRegisterationVC.token = _token;
+  [self.navigationController pushViewController:patientRegisterationVC animated:YES];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -133,9 +131,6 @@ UIAlertViewDelegate>
       break;
     case 1:{
       [self showPatientInfoViewControllerAtIndexPath:nil];
-//      UIViewController *registerPatientVC = [self.storyboard instantiateViewControllerWithIdentifier:ktabBarViewControllerIdentifier];
-//      
-//      [self.navigationController pushViewController:registerPatientVC animated:YES];
     }
       break;
     default:

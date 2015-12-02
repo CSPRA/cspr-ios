@@ -89,7 +89,10 @@ static NSString *const kAddEmail          = @"Add Email";
 
 
 - (void)setupNavigationBar {
-  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(nextTapped:)];
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next"
+																			style:UIBarButtonItemStylePlain
+																		   target:self
+																		   action:@selector(nextTapped:)];
 }
 - (void)nextTapped:(UIBarButtonItem*)sender {
   [self performSegueWithIdentifier:kshowTabControllerSegue sender:self];
@@ -349,5 +352,8 @@ static NSString *const kAddEmail          = @"Add Email";
   }];
   
 }
-
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	[self nextTapped:nil];
+}
 @end

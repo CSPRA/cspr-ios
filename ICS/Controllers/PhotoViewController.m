@@ -196,6 +196,7 @@ FullImageContainerViewDelegate
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          [[self navigationController] setNavigationBarHidden:YES animated:YES];
+						 [self.tabBarController.tabBar setHidden:YES];
                          [self.fullImageView setupFullImageContainerWithDiagnosisPicture:(DiagnosisPhoto*)self.diagnosisDataArray[indexPath.item]];
                          self.fullImageView.containerTag = indexPath.item;
                          self.fullImageView.alpha = kMaxAlpha;
@@ -206,7 +207,8 @@ FullImageContainerViewDelegate
 
 - (void)fullView:(FullImageContainerView *)fullContainerView didDeletePhotoWithAnimation:(BOOL)deleteAnimation {
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
-    
+	[self.tabBarController.tabBar setHidden:NO];
+
     DiagnosisPhoto * phot = self.diagnosisDataArray[fullContainerView.containerTag];
     [self.diagnosisDataArray removeObject:phot];
     [self saveImagesToFile];
@@ -216,7 +218,7 @@ FullImageContainerViewDelegate
 
 - (void)fullView:(FullImageContainerView *)fullContainerView didCloseWithSuspectStatus:(BOOL)suspectStatus {
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
-    
+	[self.tabBarController.tabBar setHidden:NO];
     DiagnosisPhoto * phot = self.diagnosisDataArray[fullContainerView.containerTag];
     phot.dpSuspectStatus = suspectStatus;
     [self.diagnosisDataArray replaceObjectAtIndex:fullContainerView.containerTag withObject:phot];
@@ -226,6 +228,7 @@ FullImageContainerViewDelegate
 
 - (void)didTappedCrossButton:(FullImageContainerView *)fullView {
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
+	[self.tabBarController.tabBar setHidden:NO];
 }
 
 #pragma mark - IBActions

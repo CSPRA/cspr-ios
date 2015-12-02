@@ -10,7 +10,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="140" id="sVh-91-gvc" customClass="DoctorInformationCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="sVh-91-gvc" id="jFW-GF-Mc3">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sVh-91-gvc" id="jFW-GF-Mc3">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>

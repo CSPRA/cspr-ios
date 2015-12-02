@@ -53,7 +53,7 @@
                             NSMigratePersistentStoresAutomaticallyOption: @(YES),
                             NSInferMappingModelAutomaticallyOption: @(YES)
                             };
-  
+
   NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
   
   // create a persistent SQLite store with a new sqlite db file
@@ -67,6 +67,7 @@
     NSLog(@"unresolved error %@, %@", error, [error userInfo]);
     abort();
   }
+
   // create a managed object context for the new store
   [managedStore createManagedObjectContexts];
   // set the shared manager store as the new store
