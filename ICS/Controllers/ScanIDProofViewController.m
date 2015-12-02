@@ -137,7 +137,9 @@
 
 #pragma mark - 
 - (IBAction)proceedFurther:(id)sender {
-    [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:kPhotoVCIdentifier] animated:YES];
+	UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	UITabBarController *tbc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"tabBarViewControllerIdentifier"];
+	[self.navigationController pushViewController:tbc animated:YES];
 }
 
 - (IBAction)gotoBasicRegistration:(id)sender {
