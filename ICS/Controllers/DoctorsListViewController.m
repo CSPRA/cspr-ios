@@ -134,6 +134,8 @@ static NSString * const khidesection = @"tag1";
 #pragma DoctorInformationCellDelegate
 - (void)didAssignedDoctor:(DoctorInformationCell *)cell {
 	NSLog(@"doctor assigned %@",cell.nameLabel.text);
+	UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CompletionViewControllerID"];
+	[self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

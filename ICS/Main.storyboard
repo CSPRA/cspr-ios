@@ -145,6 +145,54 @@
             </objects>
             <point key="canvasLocation" x="5511" y="1200"/>
         </scene>
+        <!--Completion View Controller-->
+        <scene sceneID="EI0-ef-S8c">
+            <objects>
+                <viewController storyboardIdentifier="CompletionViewControllerID" id="1cb-tG-EXG" customClass="CompletionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tV4-Y4-S48"/>
+                        <viewControllerLayoutGuide type="bottom" id="GhQ-3h-TVt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YWV-LJ-x6L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Registration and Screening completed." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfT-GU-fvb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="1" green="0.62745098040000002" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udZ-ey-Zxd">
+                                <rect key="frame" x="141" y="417" width="319" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.62745098040000002" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="0BI-ql-BdL"/>
+                                    <constraint firstAttribute="width" constant="319" id="cfs-1d-7SY"/>
+                                </constraints>
+                                <state key="normal" title="Back to events">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToEventsTapped:" destination="1cb-tG-EXG" eventType="touchUpInside" id="LcJ-MX-sfz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LfT-GU-fvb" secondAttribute="trailing" id="4ak-ek-hbe"/>
+                            <constraint firstItem="udZ-ey-Zxd" firstAttribute="centerX" secondItem="LfT-GU-fvb" secondAttribute="centerX" id="GgM-Jf-ois"/>
+                            <constraint firstItem="LfT-GU-fvb" firstAttribute="top" secondItem="YWV-LJ-x6L" secondAttribute="top" id="Xwy-PO-UbM"/>
+                            <constraint firstItem="LfT-GU-fvb" firstAttribute="leading" secondItem="YWV-LJ-x6L" secondAttribute="leading" id="oTd-BH-2pY"/>
+                            <constraint firstItem="GhQ-3h-TVt" firstAttribute="top" secondItem="udZ-ey-Zxd" secondAttribute="bottom" constant="103" id="rc5-zo-tM7"/>
+                            <constraint firstItem="GhQ-3h-TVt" firstAttribute="top" secondItem="LfT-GU-fvb" secondAttribute="bottom" id="xFX-z9-gv5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yN4-Pq-0n3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6319" y="1050"/>
+        </scene>
         <!--Doctors-->
         <scene sceneID="hGC-jk-Eem">
             <objects>
