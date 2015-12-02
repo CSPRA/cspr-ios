@@ -8,7 +8,6 @@
 
 #import "XLFormViewController.h"
 
-
 @interface DoctorsListViewController : XLFormViewController
 @property (nonatomic, strong) NSString *token;
 @end

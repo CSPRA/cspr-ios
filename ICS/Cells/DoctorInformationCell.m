@@ -8,16 +8,8 @@
 //
 
 #import "DoctorInformationCell.h"
-#import "Doctor.h"
 
 NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
-
-@interface DoctorInformationCell ()
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *docInfoLabel;
-@property (weak, nonatomic) IBOutlet RatingView *ratingView;
-
-@end
 
 @implementation DoctorInformationCell
 
@@ -44,9 +36,9 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
   [super update];
   self.doctor = [self.rowDescriptor.value objectForKey:@"doctorInfo"];
   self.delegate = [self.rowDescriptor.value objectForKey:@"delegateInfo"];
-  self.ratingView.value = self.doctor.ratingValue;
+  self.ratingView.value = self.doctor.doctorRatingValue.intValue;
   self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",_doctor.firstName,_doctor.lastName];
-  self.docInfoLabel.text = [NSString stringWithFormat:@"%@, %@",_doctor.specialization,_doctor.address];
+  self.docInfoLabel.text = [NSString stringWithFormat:@"%@, %@",_doctor.specialization,_doctor.location];
   
   [self.ratingView setAlpha:((self.rowDescriptor.isDisabled) ? .6 : 1)];
 }
@@ -68,7 +60,7 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
                            };
   [kDataSource giveDoctorRating:volunteer.token parameters:params completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
     if (success) {
-      NSString *message = [NSString stringWithFormat:@"Doctor's rating updated to %f",_doctor.ratingValue];
+      NSString *message = [NSString stringWithFormat:@"Doctor's rating updated to %d",_doctor.doctorRatingValue.intValue];
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
       [alert show];
     }else if (error){
@@ -76,7 +68,7 @@ NSString * const XLFormRowDescriptorTypeRate = @"XLFormRowDescriptorTypeRate";
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
       [alert show];
     }
-    self.ratingView.value = self.doctor.ratingValue;
+    self.ratingView.value = self.doctor.doctorRatingValue.intValue;
   }];
 
 }

@@ -22,6 +22,7 @@
 #define kMaxAlpha 1.0
 
 //ViewController's Storyboard Identifier
+#define kPatientRegistrationVC			@"PatientRegistrationViewController"
 #define kPatientInfoVCIndetifier        @"PatientInfoVCIndetifier"
 #define kDiagnosisFormVCIdentifier      @"DiagnosisFormVCIdentifier"
 #define kHomeVCIdentifier               @"HomeViewControllerIdentifier"

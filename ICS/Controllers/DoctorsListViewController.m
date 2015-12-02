@@ -6,112 +6,134 @@
 //  Copyright © 2015 Meraki. All rights reserved.
 //
 
+
 #import "DoctorsListViewController.h"
-#import "DoctorInformationCell.h"
 #import <XLForm/XLForm.h>
-#import "ICSUtilities.h"
-#import "UIView+ICSAdditions.h"
+#import "DoctorInformationCell.h"
+#import "DoctorDummyObject.h"
+#import "CustomFormButtonCell.h"
 
 static NSString *const kDoctorBasicInfo = @"Doctor Basic Info";
-static NSString *const kAssignDoctor = @"Assign Doctor";
+static NSString *const kAssignDoctor = @"Click to show doctors";
 static NSString * const kCustomRowFirstRatingTag = @"CustomRowFirstRatingTag";
 static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
-static NSInteger const kCellHieght = 140.0;
+static NSString * const khidesection = @"tag1";
 
-@interface DoctorsListViewController ()
-@property (nonatomic,strong) NSArray *doctorsList;
+@interface DoctorsListViewController()<DoctorInformationCellDelegate>
+@property (nonatomic, strong) NSArray *doctorList;
 @end
 
 @implementation DoctorsListViewController
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  [self initialSetup];
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super initWithCoder:aDecoder];
+	[self setupForm];
+	return self;
+}
+
+#warning dummy data: remove when api integrated.
+- (void)initializeDummyData {
+	DoctorDummyObject *doc1 = [[DoctorDummyObject alloc] init];
+	doc1.doctorId = @"doc1";
+	doc1.firstName= @"Arun";
+	doc1.lastName = @"Jain";
+	doc1.location = @"Bangalore";
+	doc1.specialization = @"Cancer Specialist";
+	doc1.doctorRatingValue = @(3);
+
+	DoctorDummyObject *doc2 = [[DoctorDummyObject alloc] init];
+	doc2.doctorId = @"doc2";
+	doc2.firstName= @"Biswas";
+	doc2.lastName = @"Rao";
+	doc2.location = @"Delhi";
+	doc2.specialization = @"Cancer Specialist";
+	doc2.doctorRatingValue = @(3);
+
+
+	DoctorDummyObject *doc3 = [[DoctorDummyObject alloc] init];
+	doc3.doctorId = @"doc3";
+	doc3.firstName= @"Arun";
+	doc3.lastName = @"Jain";
+	doc3.location = @"Bangalore";
+	doc3.specialization = @"Cancer Specialist";
+	doc3.doctorRatingValue = @(3);
+
+
+	DoctorDummyObject *doc4 = [[DoctorDummyObject alloc] init];
+	doc4.doctorId = @"doc4";
+	doc4.firstName= @"Sunil";
+	doc4.lastName = @"Jain";
+	doc4.location = @"Bangalore";
+	doc4.specialization = @"Cancer Specialist";
+	doc1.doctorRatingValue = @(3);
+
+	NSMutableArray *doctorArray = [[NSMutableArray alloc] initWithObjects:doc1,doc2,doc3,doc4, nil];
+	self.doctorList = doctorArray;
 }
 
 
--(void)initializeForm
-{
-  XLFormDescriptor * form = [XLFormDescriptor formDescriptorWithTitle:@"Doctors"];
-  XLFormSectionDescriptor * section = [XLFormSectionDescriptor formSection];
-  [self.doctorsList enumerateObjectsUsingBlock:^(Doctor *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-    [self addDoctorInfoCell:obj section:section];
-  }];
-  [form addFormSection:section];
-  self.form = form;
+- (XLFormRowDescriptor*)customizationOFRow:(XLFormRowDescriptor*)row {
+	[row.cellConfigAtConfigure setObject:[UIColor clearColor] forKey:@"backgroundColor"];
+	[row.cellConfig setObject:[UIFont fontWithName:@"Helvetica" size:12] forKey:@"textLabel.font"];
+	[row.cellConfig setObject:@(NSTextAlignmentLeft) forKey:@"textLabel.textAlignment"];
+
+	if ([row.cellConfig valueForKey:@"textField"]) {
+
+		[row.cellConfig setObject:[UIColor lightGrayColor] forKey:@"textField.backgroundColor"];
+		[row.cellConfig setObject:[UIFont fontWithName:@"Helvetica" size:20] forKey:@"textField.font"];
+		[row.cellConfig setObject:@(NSTextAlignmentLeft) forKey:@"textField.textAlignment"];
+	}
+
+	return row;
 }
 
+#pragma mark - form intialization
+- (void)setupForm {
+	XLFormDescriptor *form = [XLFormDescriptor formDescriptorWithTitle:@"Doctor List"];
+	XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@""];
 
-- (void)initialSetup {
-  [self.view ICSViewBackgroungColor];
-  self.tableView.backgroundColor = [UIColor clearColor];
-  self.tableView.allowsSelection = NO;
-  self.doctorsList = [kSharedModel fetchObjectsWithEntityName:kDoctorEntityName];
-  if(self.doctorsList){
-    [self initializeForm];
-  }
-  if (![ICSUtilities hasActiveConnection]) {
-    [self fetchDoctorsList];
-  }
+	[form addFormSection:section];
+
+ XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kAssignDoctor rowType:XLFormRowDescriptorTypeCustomButton title:kAssignDoctor];
+	row.value = kButtonTypeAssignDoctor;
+	row.action.formSelector = @selector(didTappedAssignDoctor:);
+	[section addFormRow:row];
+
+	self.form = form;
 }
-- (void)fetchDoctorsList {
-  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-  [kDataSource fetchDoctorsWithToken:_token completionBlock:^(BOOL success, NSDictionary *result, NSError *error) {
-    if (success) {
-      self.doctorsList = [result objectForKey:@"result"];
-    }else if (error){
-      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-      [alert show];
-    }
-    [self initializeForm];
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-  }];
-  
-}
+
 #pragma mark - Handling assign doctors section
 
 - (void)addDoctorInfoCell:(Doctor*)doctor section:(XLFormSectionDescriptor*)section {
-  XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Rating"];
-  NSDictionary *value =[NSDictionary dictionaryWithObjects:@[doctor,self] forKeys:@[@"doctorInfo",@"delegateInfo"]];
-  row.value = value;
-  [section addFormRow:row];
+	XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFirstRatingTag rowType:XLFormRowDescriptorTypeRate title:@"Rating"];
+	NSDictionary *value =[NSDictionary dictionaryWithObjects:@[doctor,self] forKeys:@[@"doctorInfo",@"delegateInfo"]];
+	row.value = value;
+	[section addFormRow:row];
 }
 
 - (void)addAssignDoctorSectionWithDoctorList:(NSArray*)doctorsArray {
-  
-  XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@"Assign Doctor From List"];
-  [self.form addFormSection:section];
-  [doctorsArray enumerateObjectsUsingBlock:^(Doctor *doctor, NSUInteger idx, BOOL * _Nonnull stop) {
-    [self addDoctorInfoCell:doctor section:section];
-  }];
-  
+
+	XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:@"Assign Doctor From List"];
+	section.hidden = [NSString stringWithFormat:@"$%@==0", khidesection];
+	[self.form addFormSection:section];
+	[doctorsArray enumerateObjectsUsingBlock:^(Doctor *doctor, NSUInteger idx, BOOL * _Nonnull stop) {
+		[self addDoctorInfoCell:doctor section:section];
+	}];
 }
 
 - (void)didTappedAssignDoctor:(XLFormRowDescriptor*)sender {
-  NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-  [param setObject:self.formValues forKey:@"formValues"];
-  
+	if (!self.doctorList) {
+		[self initializeDummyData];
+		[self addAssignDoctorSectionWithDoctorList:self.doctorList];
+	}
+	else{
+		return;
+	}
 }
-
-#pragma mark - UITableViewCell delegate
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  return kCellHieght;
-}
-
-
 
 #pragma DoctorInformationCellDelegate
 - (void)didAssignedDoctor:(DoctorInformationCell *)cell {
-    NSLog(@"doctor assigned %@",cell.doctor.firstName);
-  NSArray *visibleCells = [self.tableView visibleCells];
-  
-  [visibleCells enumerateObjectsUsingBlock:^(DoctorInformationCell *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-    [obj setSelected:NO];
-  }];
-  [cell setSelected:YES];
-  
+	NSLog(@"doctor assigned %@",cell.nameLabel.text);
 }
-
 
 @end

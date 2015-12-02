@@ -8,6 +8,7 @@
 
 #import "XLFormBaseCell.h"
 #import "RatingView.h"
+#import "DoctorDummyObject.h"
 
 extern NSString * const XLFormRowDescriptorTypeRate;
 
@@ -15,8 +16,11 @@ extern NSString * const XLFormRowDescriptorTypeRate;
 
 @interface DoctorInformationCell : XLFormBaseCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *docInfoLabel;
+@property (weak, nonatomic) IBOutlet RatingView *ratingView;
 @property (weak, nonatomic) IBOutlet UIButton *assignButton;
-@property (strong, nonatomic) Doctor *doctor;
+@property (strong, nonatomic) DoctorDummyObject *doctor;
 @property (weak, nonatomic) id<DoctorInformationCellDelegate>delegate;
 
 @end

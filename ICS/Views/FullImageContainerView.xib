@@ -66,8 +66,7 @@
                         <color key="titleColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="crossTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Uzq-qz-3YP"/>
-                        <action selector="deleteTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="DlR-Fa-INa"/>
+                        <action selector="deleteTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="mqg-aa-SLG"/>
                     </connections>
                 </button>
             </subviews>

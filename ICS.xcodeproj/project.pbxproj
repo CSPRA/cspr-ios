@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13AB902E1C0F721D00E1AE95 /* DoctorDummyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AB902D1C0F721D00E1AE95 /* DoctorDummyObject.m */; settings = {ASSET_TAGS = (); }; };
 		3E10E1C61BC448C4008B9296 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E10E1C51BC448C4008B9296 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3E43FA4A1BC40F6B0021AE81 /* ICSStyleGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA481BC40F6B0021AE81 /* ICSStyleGuide.m */; };
 		3E43FA4D1BC410340021AE81 /* ICSDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E43FA4C1BC410340021AE81 /* ICSDataManager.m */; };
@@ -128,6 +129,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13AB902C1C0F721D00E1AE95 /* DoctorDummyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoctorDummyObject.h; path = Model/DoctorDummyObject.h; sourceTree = "<group>"; };
+		13AB902D1C0F721D00E1AE95 /* DoctorDummyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoctorDummyObject.m; path = Model/DoctorDummyObject.m; sourceTree = "<group>"; };
 		3C4ED20F431993D569F26029 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3E10E1C41BC448C4008B9296 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		3E10E1C51BC448C4008B9296 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
@@ -619,6 +622,8 @@
 				FA1ACD1D1BD2BF26001632BC /* Event+CoreDataProperties.m */,
 				FAD8E08D1BD16B040010E975 /* Event.h */,
 				FAD8E08E1BD16B040010E975 /* Event.m */,
+				13AB902C1C0F721D00E1AE95 /* DoctorDummyObject.h */,
+				13AB902D1C0F721D00E1AE95 /* DoctorDummyObject.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -882,6 +887,7 @@
 				FAD8E0831BD166D00010E975 /* ICSHomeViewController.m in Sources */,
 				FAFFC9F51BDA20E6001DD25B /* LoginViewController.m in Sources */,
 				4A71C4E11BE62994003C8BE9 /* Patient.m in Sources */,
+				13AB902E1C0F721D00E1AE95 /* DoctorDummyObject.m in Sources */,
 				FA1ACD091BD2B34E001632BC /* DoctorInformationCell.m in Sources */,
 				4AFB6ACF1BE4D413008AE13A /* PatientInformationViewController.m in Sources */,
 				FA5853351BD79FEF0037EEC5 /* Cancer+CoreDataProperties.m in Sources */,

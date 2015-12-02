@@ -107,7 +107,6 @@ UITableViewDataSource>
   if(self.eventArray)
   {
     cell.event = [self.eventArray objectAtIndex:indexPath.row];
-//    cell.eventDict = [self.eventArray objectAtIndexedSubscript:indexPath.row];
   }
   return cell;
 }

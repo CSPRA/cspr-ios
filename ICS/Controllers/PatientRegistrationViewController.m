@@ -24,6 +24,7 @@
 }
 
 - (IBAction)registerButtonTapped:(id)sender {
+	[self dismissViewControllerAnimated:YES completion:nil];
 //    UIViewController *patientInfoVC = [self.storyboard instantiateViewControllerWithIdentifier:kPatientInforamtionVCIndentifier];
 //    [self.navigationController pushViewController:patientInfoVC animated:YES];
 }

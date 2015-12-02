@@ -622,7 +622,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiH-UE-1sb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4637" y="2231"/>
+            <point key="canvasLocation" x="4597" y="2923"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="4P8-QL-WOJ">
@@ -750,7 +750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2a-EU-ZF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3913" y="2231"/>
+            <point key="canvasLocation" x="3765" y="2903"/>
         </scene>
         <!--Patient Onboarding-->
         <scene sceneID="8Af-hY-oih">
@@ -812,7 +812,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJz-1D-owk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3144" y="2231"/>
+            <point key="canvasLocation" x="2868" y="2911"/>
         </scene>
         <!--Volunteer Sign Up View Controller-->
         <scene sceneID="HEr-O8-287">
@@ -886,7 +886,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZo-Fv-ZuC" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399" y="2231"/>
+            <point key="canvasLocation" x="2063" y="2911"/>
         </scene>
     </scenes>
     <resources>
