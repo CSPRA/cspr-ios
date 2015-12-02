@@ -516,12 +516,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcr-qE-K8P">
                                 <rect key="frame" x="0.0" y="308" width="600" height="292"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Back to Manual Register">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Kg7-WW-hlA" kind="show" id="1Nq-M3-Jtf"/>
+                                    <action selector="registerButtonTapped:" destination="4Ip-Kw-mDC" eventType="touchUpInside" id="Cwq-aQ-NSK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeF-9w-FtA">
@@ -669,12 +669,12 @@ Verify your phone number to proceed to the initiation steps.</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2Se-ew-Z1v" kind="relationship" relationship="rootViewController" id="Z3T-rW-iDt"/>
+                        <segue destination="4Ip-Kw-mDC" kind="relationship" relationship="rootViewController" id="r1p-fQ-e0B"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eao-GX-h1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="-2210"/>
+            <point key="canvasLocation" x="-228" y="-1377"/>
         </scene>
     </scenes>
     <resources>
