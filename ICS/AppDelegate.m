@@ -12,6 +12,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import <RestKit/RestKit.h>
 #import "APIInterface.h"
+#import <Buglife/Buglife.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +24,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Fabric with:@[[Crashlytics class], [Digits class]]];
     [APIInterface sharedInterface];
+    [[Buglife sharedBuglife] startWithAPIKey:@"BL-API-KEY"];
+    [Buglife sharedBuglife].invocationOptions = LIFEInvocationOptionsShake;
+
     if (![self userLoggedIn]) {
         [self instantiateLoginSignupFlow];
     }
